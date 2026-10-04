@@ -1,0 +1,43 @@
+{
+  "kind": "rule_change",
+  "commit": "edd8a1764f8c38a0768601abba3724c411bbfe38",
+  "previous": "12bc910a9c6892d8f3c9560b457dd1812b2da25e",
+  "changed_at": "2026-10-04T20:06:58+00:00",
+  "reason": "intraday costs gain feed_mismatch_bps 5 (15Min, 5Min) for the measured IEX vs SIP gap (p95 4.7 bps, docs/intraday-data.md), and intraday candidates must keep validation Sharpe >= 0 at 2x costs (gates.cost_stress). Daily rules and the daily champion are unchanged.",
+  "files": [
+    {
+      "file": "protected/evaluation.yaml",
+      "change": "M",
+      "values": [
+        {
+          "key": "costs.15Min.feed_mismatch_bps",
+          "before": null,
+          "after": 5
+        },
+        {
+          "key": "costs.5Min.feed_mismatch_bps",
+          "before": null,
+          "after": 5
+        },
+        {
+          "key": "gates.cost_stress.min_validation_sharpe",
+          "before": null,
+          "after": 0.0
+        },
+        {
+          "key": "gates.cost_stress.multiple",
+          "before": null,
+          "after": 2.0
+        },
+        {
+          "key": "gates.cost_stress.timeframes",
+          "before": null,
+          "after": [
+            "15Min",
+            "5Min"
+          ]
+        }
+      ]
+    }
+  ]
+}
