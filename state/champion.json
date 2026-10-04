@@ -1,10 +1,17 @@
 {
-  "ref": "strategies.baselines.buy_hold:EqualWeightBuyHold",
-  "params": {"rebalance_every": 21},
-  "name": "equal_weight_buy_hold",
+  "ref": "strategies/candidates/blend_ew_vol_momentum.py",
+  "params": {
+    "lookback": 252,
+    "skip": 21,
+    "top_n": 8,
+    "rebalance_every": 21,
+    "vol_target": 0.1,
+    "vol_window": 60,
+    "ew_share": 0.5
+  },
+  "name": "blend_ew_vol_momentum",
   "timeframe": "1Day",
-  "code_sha256": null,
-  "experiment_id": "seed",
-  "score": null,
-  "promoted_at": "2026-10-04T00:00:00+00:00"
+  "code_sha256": "db3c0050b74feefbeb966d36449eac6ed172b6936251276712d8f8084a8bd1b1",
+  "experiment_id": "pr22-c0428f3-blend_ew_vol_momentum-r37182625038-1",
+  "promoted_at": "2026-10-04T06:23:40+00:00"
 }
