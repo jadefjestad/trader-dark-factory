@@ -1,0 +1,17 @@
+{
+  "kind": "rule_change",
+  "commit": "f0c8358a87adb6f03cceab38f0127a9d0d236c57",
+  "previous": "aad4e8497ee9b6bf69d267fedd41656d3188ff60",
+  "changed_at": "2026-10-04T23:36:39+00:00",
+  "reason": "let evaluate/execute workflows restore the FINRA short-volume cache and recognise the new panel name; no rule values change.",
+  "files": [
+    {
+      "file": ".github/workflows/evaluate.yml",
+      "change": "M"
+    },
+    {
+      "file": ".github/workflows/execute.yml",
+      "change": "M"
+    }
+  ]
+}
