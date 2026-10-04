@@ -63,7 +63,8 @@ def plan_orders(targets: dict, positions: dict, prices: dict, equity: float, min
     for sym in sorted(targets):
         px = prices[sym]
         have = int(positions.get(sym, 0))
-        if tolerance and abs(have * px / equity - targets[sym]) <= tolerance:
+        # the drift tolerance only skips resizing a held position; opening or closing one always trades
+        if tolerance and have != 0 and targets[sym] > 0 and abs(have * px / equity - targets[sym]) <= tolerance:
             continue
         want = math.floor(targets[sym] * equity / px) if targets[sym] > 0 else 0
         delta = want - have

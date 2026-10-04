@@ -135,14 +135,19 @@ def evaluate(ref: str, source: str = "synthetic", experiment_id: str | None = No
 
     cuts = cut_points(len(md.index), meta["lookback"], gates["causality_checks"])
     perturbed = perturbations(meta["params"], gates["robustness_perturbation"])
+    live_bars = int(meta["lookback"])           # the least history factory.execute will hand the strategy
     jobs = ([{"params": None, "rows": None}] + [{"params": None, "rows": c + 1} for c in cuts]
-            + [{"params": p, "rows": None} for p in perturbed])
+            + [{"params": p, "rows": None} for p in perturbed]
+            + [{"params": None, "rows": c + 1, "start": max(0, c + 1 - live_bars)} for c in cuts])
     frames = runner.run(ref, md, jobs)
+    window_frames = frames[len(frames) - len(cuts):]
+    frames = frames[:len(frames) - len(cuts)]
     w = frames[0]
     res = backtest_weights(w, md, cfg)
     pm = period_metrics(res, pers)
     violations = weight_violations(w, limits)
     leaks = causality_mismatches(w, dict(zip(cuts, frames[1:1 + len(cuts)])))
+    short = causality_mismatches(w, dict(zip(cuts, window_frames)))
 
     base_sharpe = pm["validation"].get("sharpe", 0.0)
     robust = [metrics.summarize(backtest_weights(f, md, cfg), *pers["validation"]).get("sharpe", 0.0)
@@ -177,6 +182,9 @@ def evaluate(ref: str, source: str = "synthetic", experiment_id: str | None = No
     gate("executable_timeframe", tf in cfg["promotion"]["executable_timeframes"], tf)
     gate("risk_limits", not violations, "; ".join(violations) or "ok")
     gate("no_lookahead", not leaks, f"mismatch at {leaks}" if leaks else f"{len(cuts)} truncated reruns matched")
+    gate("lookback_sufficient", not short,
+         f"with only {live_bars} bars (as live) signals differ at {short}" if short
+         else f"{len(cuts)} {live_bars}-bar reruns matched")
     gate("min_trades_validation", pm["validation"].get("trades", 0) >= gates["min_trades_validation"], pm["validation"].get("trades", 0))
     for name in pers:
         dd, vol = pm[name].get("max_drawdown", 1), pm[name].get("annual_vol", 1)
