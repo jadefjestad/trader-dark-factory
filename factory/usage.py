@@ -15,6 +15,7 @@ That is what the Routine uses, because it can comment on issues but may not push
 from __future__ import annotations
 
 import argparse
+import re
 import datetime as dt
 import json
 import sys
@@ -111,12 +112,20 @@ def _read_issue(issue: int) -> list[dict]:
     # REST, not `gh issue view`: GraphQL is unavailable from Claude Code cloud sessions
     out = subprocess.run(["gh", "api", "--paginate", f"repos/{{owner}}/{{repo}}/issues/{issue}/comments?per_page=100",
                           "--jq", ".[] | {body}"], capture_output=True, text=True, check=True).stdout
+    return parse_comments(json.loads(line)["body"] for line in out.splitlines() if line.strip())
+
+
+EVENT = re.compile(r"^" + re.escape(PREFIX) + r"`(\{.*?\})`", re.M)
+
+
+def parse_comments(bodies) -> list[dict]:
+    """Events from usage-log comments. Tolerates text appended after the event (e.g. a bot footer)."""
     events = []
-    for c in (json.loads(line) for line in out.splitlines() if line.strip()):
-        body = c["body"].strip()
-        if body.startswith(PREFIX):
+    for body in bodies:
+        m = EVENT.search(body or "")
+        if m:
             try:
-                events.append(json.loads(body[len(PREFIX):].strip().strip("`")))
+                events.append(json.loads(m.group(1)))
             except json.JSONDecodeError:
                 pass
     return events
