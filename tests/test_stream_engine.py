@@ -49,7 +49,7 @@ def test_signal_becomes_orders_only_after_the_bar_closes():
     assert e.tick(at(4), {}, 100_000, True) == []                  # bar still open
     [o] = e.tick(at(5.1), {}, 100_000, True)
     assert (o["symbol"], o["side"], o["qty"]) == ("AAPL", "buy", 100)
-    assert e.broker.orders[0][3] == "stream-20261005-00001"
+    assert e.broker.orders[0][3] == "stream-20261005-100005-AAPL"
 
 
 def test_shadow_mode_submits_nothing():
