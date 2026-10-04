@@ -85,6 +85,7 @@ def main(argv=None) -> int:
     ap.add_argument("--ledger", required=True)
     ap.add_argument("--out", default="status.md")
     ap.add_argument("--usage-table", default="", help="file with the usage report table")
+    ap.add_argument("--usage-issue", type=int, help="read usage events from this GitHub issue (e.g. 2)")
     ap.add_argument("--no-broker", action="store_true")
     a = ap.parse_args(argv)
     broker = None
@@ -95,6 +96,13 @@ def main(argv=None) -> int:
         except Exception as e:
             print(f"broker unavailable: {e}", file=sys.stderr)
     usage = Path(a.usage_table).read_text() if a.usage_table and Path(a.usage_table).exists() else ""
+    if not usage and a.usage_issue:
+        import yaml
+        from factory import usage as u
+        try:
+            usage = u.report(u._read_issue(a.usage_issue), yaml.safe_load(u.POLICY.read_text()))
+        except Exception as e:
+            usage = f"usage log unavailable: {e}"
     text = build(Path(a.ledger), broker, usage)
     Path(a.out).write_text(text)
     print(text)
