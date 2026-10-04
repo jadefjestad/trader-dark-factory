@@ -1,0 +1,25 @@
+{
+  "kind": "rule_change",
+  "commit": "f8f2397f7c88ccb8f630b36b1341d4b3981f06ed",
+  "previous": "b5f728e893906fe034e3822bce55fdf00a6db48f",
+  "changed_at": "2026-10-04T13:21:45+00:00",
+  "reason": "Jade said there is plenty of Claude usage left and asked the factory to keep working; today used 4 of 5 runs with 0 cut off. Cut-off detection and the 5h cooldown are unchanged.",
+  "files": [
+    {
+      "file": "agent/usage_policy.yaml",
+      "change": "M",
+      "values": [
+        {
+          "key": "max_runs_per_5h",
+          "before": 3,
+          "after": 4
+        },
+        {
+          "key": "max_runs_per_day",
+          "before": 5,
+          "after": 10
+        }
+      ]
+    }
+  ]
+}
