@@ -7,3 +7,4 @@ experiments/executions/
 .env
 *.env
 deploy/streamer/logs/
+ledger/
