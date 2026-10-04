@@ -3,7 +3,8 @@
 FRED publishes a day's value for these series the next business day, so row t of the panel holds the
 latest value dated on or before bar t-1 (one bar of lag), forward-filled across missing days.
 
-Series: T10Y2Y (10y minus 2y Treasury), BAMLH0A0HYM2 (US high-yield option-adjusted spread),
+Series: T10Y2Y (10y minus 2y Treasury), BAA10Y (Moody's Baa corporate yield minus 10y Treasury; the ICE
+high-yield spread is left out because FRED only carries its last few years),
 VIXCLS (VIX close), DGS3MO (3-month Treasury yield).
 """
 from __future__ import annotations
@@ -15,7 +16,7 @@ import pandas as pd
 from factory.data import CACHE_DIR, DataError
 
 FRED_CSV_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv"
-SERIES = ("T10Y2Y", "BAMLH0A0HYM2", "VIXCLS", "DGS3MO")
+SERIES = ("T10Y2Y", "BAA10Y", "VIXCLS", "DGS3MO")
 
 
 def fetch(series=SERIES) -> pd.DataFrame:
