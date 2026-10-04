@@ -59,7 +59,10 @@ class MarketData:
         return self._map(lambda df: df.iloc[:n])
 
     def select(self, symbols: list[str]) -> "MarketData":
-        return self._map(lambda df: df[symbols], lambda df: df[[s for s in symbols if s in df.columns]])
+        # per-symbol panels follow the selection; market-wide panels (e.g. macro series) are kept whole
+        own = set(self.symbols)
+        return self._map(lambda df: df[symbols],
+                         lambda df: df[[s for s in symbols if s in df.columns]] if set(df.columns) <= own else df)
 
     def fingerprint(self) -> str:
         h = hashlib.sha256()
