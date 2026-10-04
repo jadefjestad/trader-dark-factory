@@ -30,6 +30,7 @@ jobs:
       champion_changed: ${{ steps.diff.outputs.champion_changed }}
       needs_data: ${{ steps.diff.outputs.needs_data }}
       timeframes: ${{ steps.diff.outputs.timeframes }}
+      extra: ${{ steps.diff.outputs.extra }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -44,6 +45,11 @@ jobs:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
           valid='^(strategies/candidates/[A-Za-z0-9_]+\.py|strategies\.baselines\.[a-z_]+:[A-Za-z]+)$'
+          # extra data panels named by the candidates or the champion (files are read as text, never run)
+          extra_for() {
+            ch=$(python3 -c "import json; print(json.load(open('state/champion.json')).get('ref', ''))" 2>/dev/null || true)
+            for f in "$@" $ch; do [ -f "$f" ] && grep -Eq "extra_data *=.*news_count" "$f" && echo news_count && return; done; true
+          }
           if [ "$EVENT" = "workflow_dispatch" ]; then
             if [ -n "$DISPATCH_CANDIDATE" ] && ! printf '%s' "$DISPATCH_CANDIDATE" | grep -Eq "$valid"; then
               echo "::error::invalid candidate reference"; exit 1
@@ -51,7 +57,8 @@ jobs:
             tf=1Day
             if [ "$DISPATCH_INTRADAY" = "true" ] || printf '%s' "$DISPATCH_CANDIDATE" | grep -q intraday; then tf=1Day,15Min; fi
             if [ -n "$DISPATCH_CANDIDATE" ] && [ -f "$DISPATCH_CANDIDATE" ] && grep -Eq "timeframe *= *[\"']15Min[\"']" "$DISPATCH_CANDIDATE"; then tf=1Day,15Min; fi
-            { echo "candidates=$DISPATCH_CANDIDATE"; echo "champion_changed=false"; echo "needs_data=true"; echo "timeframes=$tf"; } >> "$GITHUB_OUTPUT"
+            { echo "candidates=$DISPATCH_CANDIDATE"; echo "champion_changed=false"; echo "needs_data=true"; echo "timeframes=$tf"
+              echo "extra=$(extra_for $DISPATCH_CANDIDATE)"; } >> "$GITHUB_OUTPUT"
             exit 0
           fi
           changed=$(git diff --name-only --diff-filter=A "$BASE_SHA"...HEAD -- 'strategies/candidates/' | grep -v -e '__init__.py$' -e '\.md$' || true)
@@ -63,6 +70,7 @@ jobs:
           for f in $c; do grep -Eq "timeframe *= *[\"']15Min[\"']" "$f" && tf=1Day,15Min; done
           { echo "candidates=$c"
             echo "timeframes=$tf"
+            echo "extra=$(extra_for $c)"
             echo "champion_changed=$([ "$ch" -gt 0 ] && echo true || echo false)"
             echo "needs_data=$([ -n "$c" ] || [ "$ch" -gt 0 ] && echo true || echo false)"; } >> "$GITHUB_OUTPUT"
 
@@ -86,12 +94,19 @@ jobs:
         with:
           path: data/cache
           key: bars-${{ hashFiles('protected/*.yaml') }}-${{ needs.plan.outputs.timeframes }}-${{ steps.day.outputs.day }}
+      - uses: actions/cache/restore@v4     # complete years of news, filled by the news-backfill workflow
+        if: needs.plan.outputs.extra != ''
+        with:
+          path: data/cache/news_*.csv.gz
+          key: news-v1-none
+          restore-keys: news-v1-
       - name: Download market data
         env:
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
           TIMEFRAMES: ${{ needs.plan.outputs.timeframes }}
-        run: python -m factory.prefetch --timeframes "$TIMEFRAMES"
+          EXTRA: ${{ needs.plan.outputs.extra }}
+        run: python -m factory.prefetch --timeframes "$TIMEFRAMES" --extra "$EXTRA"
       - uses: actions/upload-artifact@v4
         with:
           name: market-data

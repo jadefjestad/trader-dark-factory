@@ -20,7 +20,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from factory import config, runner
+from factory import config, extras, runner
 from factory.broker import PaperBroker
 from factory.config import ROOT
 from factory.data import DataError, load_alpaca, validate
@@ -145,6 +145,7 @@ def run(dry_run: bool, record: dict) -> None:
         raise DataError(f"{len(md.index)} bars < strategy lookback {meta['lookback']}")
     if md.close.iloc[-1].isna().any():
         raise DataError("missing closes on the latest bar")
+    md = extras.attach(md, meta.get("extra_data"), "alpaca")   # raises DataError: no orders without the data
 
     weights = runner.run(ch["ref"], md, [{"params": ch.get("params"), "rows": None}])[0]
     targets, hold = decide(weights, symbols)

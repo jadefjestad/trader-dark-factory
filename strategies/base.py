@@ -6,6 +6,10 @@ rejected by the live executor. Row t may only use data up to and
 including bar t (the evaluator re-runs on truncated data to prove this). Weights are fractions of
 equity per symbol; negative weights are shorts and are rejected while risk limits forbid shorting.
 Strategies never place orders, read files, or touch the network.
+
+Extra data: list panel names in `extra_data` (e.g. ("news_count",)) and read them from md.extra[name],
+a DataFrame aligned to md.close. Row t of every panel only reflects information available by bar t's
+close. If a panel cannot be loaded, the executor places no orders.
 """
 from __future__ import annotations
 
@@ -19,6 +23,7 @@ class Strategy:
     name: str = "unnamed"
     timeframe: str = "1Day"      # "1Day", "15Min" or "5Min"
     lookback: int = 300          # bars of history needed before signals are meaningful
+    extra_data: tuple = ()       # extra panels needed, from factory.extras.PANELS
     params: dict = {}
 
     def __init__(self, **overrides):

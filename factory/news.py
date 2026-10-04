@@ -60,15 +60,16 @@ def load(symbols: list[str], start: str, end: str = "latest", use_cache: bool = 
     end_ts = now if end == "latest" else pd.Timestamp(end, tz="UTC") + pd.Timedelta(days=1)
     frames = []
     for year in range(pd.Timestamp(start).year, end_ts.year + 1):
-        path = _year_path(year)
         complete = year < now.year
-        if use_cache and complete and path.exists():
+        # the running year is cached per day so a job without keys can reuse what the data job fetched
+        path = _year_path(year) if complete else CACHE_DIR / f"news_{year}_to_{(end_ts - pd.Timedelta(days=1) if end != 'latest' else now):%Y-%m-%d}.csv.gz"
+        if use_cache and path.exists():
             frames.append(pd.read_csv(path, keep_default_na=False))
             continue
         lo = f"{year}-01-01T00:00:00Z"
         hi = f"{year + 1}-01-01T00:00:00Z" if complete else end_ts.strftime("%Y-%m-%dT%H:%M:%SZ")
         df = fetch(symbols, lo, hi)
-        if use_cache and complete:
+        if use_cache:
             CACHE_DIR.mkdir(parents=True, exist_ok=True)
             df.to_csv(path, index=False)
         frames.append(df)

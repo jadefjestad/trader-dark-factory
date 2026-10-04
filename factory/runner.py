@@ -44,9 +44,15 @@ def _write_inputs(work: Path, md: MarketData | None, jobs: list[dict]) -> None:
         tz = str(idx.tz) if idx.tz is not None else ""
         ns = (idx.tz_convert("UTC").tz_localize(None) if tz else idx).as_unit("ns").asi8
         arrays = {f: getattr(md, f).reindex(columns=md.symbols).to_numpy(dtype=float) for f in FIELDS}
+        extra = {}
+        for name, df in md.extra.items():
+            if not df.index.equals(md.index):
+                raise StrategyError(f"extra panel {name} is not aligned to the bar index")
+            arrays[f"x_{name}"] = df.to_numpy(dtype=float)
+            extra[name] = [str(c) for c in df.columns]
         np.savez(work / "data.npz", index=ns, **arrays,
                  meta=np.frombuffer(json.dumps({"symbols": md.symbols, "tz": tz, "timeframe": md.timeframe,
-                                                 "source": md.source}).encode(), dtype=np.uint8))
+                                                 "source": md.source, "extra": extra}).encode(), dtype=np.uint8))
     for p in [work, *work.rglob("*")]:
         p.chmod(0o755 if p.is_dir() else 0o644)
 
@@ -101,7 +107,8 @@ def _child(work: Path, ref: str) -> None:
 
     cls = load_ref(ref)
     jobs = json.loads((work / "jobs.json").read_text())
-    meta = {"name": cls.name, "timeframe": cls.timeframe, "lookback": int(cls.lookback), "params": dict(cls.params)}
+    meta = {"name": cls.name, "timeframe": cls.timeframe, "lookback": int(cls.lookback), "params": dict(cls.params),
+            "extra_data": [str(x) for x in getattr(cls, "extra_data", ())]}
     out = {"meta": np.frombuffer(json.dumps(meta).encode(), dtype=np.uint8)}
     if jobs:
         with np.load(work / "data.npz", allow_pickle=False) as z:
@@ -110,11 +117,14 @@ def _child(work: Path, ref: str) -> None:
             if m["tz"]:
                 idx = idx.tz_localize("UTC").tz_convert(m["tz"])
             raw = {f: z[f] for f in FIELDS}
+            xraw = {name: z[f"x_{name}"] for name in m.get("extra", {})}
         for i, job in enumerate(jobs):
             n = job.get("rows") or len(idx)
             k = job.get("start") or 0
             md = MarketData(*(pd.DataFrame(raw[f][k:n].copy(), index=idx[k:n], columns=m["symbols"]) for f in FIELDS),
-                            timeframe=m["timeframe"], source=m["source"])
+                            timeframe=m["timeframe"], source=m["source"],
+                            extra={name: pd.DataFrame(a[k:n].copy(), index=idx[k:n], columns=m["extra"][name])
+                                   for name, a in xraw.items()})
             s = cls(**(job.get("params") or {}))
             w = s.target_weights(md)
             if not isinstance(w, pd.DataFrame):

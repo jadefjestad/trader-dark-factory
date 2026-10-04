@@ -17,7 +17,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from factory import backtest, config, metrics, runner
+from factory import backtest, config, extras, metrics, runner
 from factory.config import ROOT
 from factory.data import DataError, MarketData, load_alpaca, synthetic, validate
 
@@ -131,6 +131,12 @@ def evaluate(ref: str, source: str = "synthetic", experiment_id: str | None = No
     meta = runner.describe(ref)
     tf = meta["timeframe"]
     md, bench = load_data(tf, source, cfg)
+    md = extras.attach(md, meta.get("extra_data"), source)
+    if CHAMPION.exists():   # the champion is re-scored on the same data, so give it its panels too
+        ch_ref = json.loads(CHAMPION.read_text()).get("ref")
+        if ch_ref and ch_ref != ref:
+            need = [x for x in runner.describe(ch_ref).get("extra_data", []) if x not in md.extra]
+            md = extras.attach(md, need, source)
     pers = periods(tf, cfg, md.index)
 
     cuts = cut_points(len(md.index), meta["lookback"], gates["causality_checks"])

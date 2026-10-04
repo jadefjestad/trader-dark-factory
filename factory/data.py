@@ -10,7 +10,7 @@ import json
 import os
 import sys
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import numpy as np
@@ -36,6 +36,8 @@ class MarketData:
     volume: pd.DataFrame
     timeframe: str = "1Day"
     source: str = "unknown"
+    # optional extra panels (e.g. "news_count"), each aligned to the bar index; see factory.extras
+    extra: dict = field(default_factory=dict)
 
     @property
     def index(self) -> pd.Index:
@@ -45,16 +47,19 @@ class MarketData:
     def symbols(self) -> list[str]:
         return list(self.close.columns)
 
+    def _map(self, fn, extra_fn=None) -> "MarketData":
+        extra_fn = extra_fn or fn
+        return MarketData(*(fn(getattr(self, f)) for f in FIELDS), timeframe=self.timeframe, source=self.source,
+                          extra={k: extra_fn(v) for k, v in self.extra.items()})
+
     def slice(self, start=None, end=None) -> "MarketData":
-        def s(df):
-            return df.loc[start:end]
-        return MarketData(*(s(getattr(self, f)) for f in FIELDS), timeframe=self.timeframe, source=self.source)
+        return self._map(lambda df: df.loc[start:end])
 
     def head(self, n: int) -> "MarketData":
-        return MarketData(*(getattr(self, f).iloc[:n] for f in FIELDS), timeframe=self.timeframe, source=self.source)
+        return self._map(lambda df: df.iloc[:n])
 
     def select(self, symbols: list[str]) -> "MarketData":
-        return MarketData(*(getattr(self, f)[symbols] for f in FIELDS), timeframe=self.timeframe, source=self.source)
+        return self._map(lambda df: df[symbols], lambda df: df[[s for s in symbols if s in df.columns]])
 
     def fingerprint(self) -> str:
         h = hashlib.sha256()
