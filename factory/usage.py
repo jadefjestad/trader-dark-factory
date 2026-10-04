@@ -108,10 +108,11 @@ PREFIX = "usage-event "
 
 def _read_issue(issue: int) -> list[dict]:
     import subprocess
-    out = subprocess.run(["gh", "issue", "view", str(issue), "--comments", "--json", "comments"],
-                         capture_output=True, text=True, check=True).stdout
+    # REST, not `gh issue view`: GraphQL is unavailable from Claude Code cloud sessions
+    out = subprocess.run(["gh", "api", "--paginate", f"repos/{{owner}}/{{repo}}/issues/{issue}/comments?per_page=100",
+                          "--jq", ".[] | {body}"], capture_output=True, text=True, check=True).stdout
     events = []
-    for c in json.loads(out)["comments"]:
+    for c in (json.loads(line) for line in out.splitlines() if line.strip()):
         body = c["body"].strip()
         if body.startswith(PREFIX):
             try:
@@ -123,7 +124,8 @@ def _read_issue(issue: int) -> list[dict]:
 
 def _append_issue(issue: int, event: dict):
     import subprocess
-    subprocess.run(["gh", "issue", "comment", str(issue), "--body", f"{PREFIX}`{json.dumps(event)}`"], check=True)
+    subprocess.run(["gh", "api", "-X", "POST", f"repos/{{owner}}/{{repo}}/issues/{issue}/comments",
+                    "-f", f"body={PREFIX}`{json.dumps(event)}`"], check=True, capture_output=True)
 
 
 def main(argv=None) -> int:
