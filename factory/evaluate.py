@@ -104,7 +104,7 @@ def perturbations(params: dict, frac: float) -> list[dict]:
 # ---------------------------------------------------------------- core
 
 def backtest_weights(w, md, cfg):
-    return backtest.run(w, md, cfg["costs"][md.timeframe], cfg["initial_capital"])
+    return backtest.run(w, md, cfg["costs"][md.timeframe], cfg["initial_capital"], cfg.get("min_trade_weight", 0.0))
 
 
 def period_metrics(res, pers):

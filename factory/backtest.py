@@ -50,7 +50,8 @@ def _flatten_intraday(w: pd.DataFrame) -> pd.DataFrame:
     return w
 
 
-def run(weights: pd.DataFrame, md: MarketData, costs: dict, initial_capital: float = 100_000.0) -> BacktestResult:
+def run(weights: pd.DataFrame, md: MarketData, costs: dict, initial_capital: float = 100_000.0,
+        min_trade_weight: float = 0.0) -> BacktestResult:
     w = _clean_weights(weights, md)
     if md.timeframe != "1Day":
         w = _flatten_intraday(w)
@@ -84,6 +85,8 @@ def run(weights: pd.DataFrame, md: MarketData, costs: dict, initial_capital: flo
         # 2) fill the target decided at bar t-1 at open[t]
         target = drifted.copy() if hold_rows[t - 1] else wv[t - 1].copy()
         target[~tradable[t]] = drifted[~tradable[t]]   # cannot trade a missing bar
+        small = np.abs(target - drifted) < min_trade_weight
+        target[small] = drifted[small]                  # too small to be worth an order
         delta = target - drifted
         traded = np.abs(delta).sum()
         c = traded * per_side + np.clip(-delta, 0, None).sum() * sell_fee

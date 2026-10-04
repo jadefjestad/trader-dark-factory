@@ -26,6 +26,7 @@ costs:
     commission_per_share: 0.0
     sell_fee_bps: 0.3
 
+min_trade_weight: 0.0005   # skip rebalancing trades smaller than this fraction of equity ($50 on $100k), like the executor
 max_participation: 0.02    # max order size as a fraction of the bar's dollar volume
 
 periods:
