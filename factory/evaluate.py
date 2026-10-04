@@ -194,10 +194,11 @@ def evaluate(ref: str, source: str = "synthetic", experiment_id: str | None = No
             champion = {"ref": ch["ref"], "name": ch.get("name"), "score": score(cpm), "metrics": cpm}
 
     g = []
-    def gate(name, ok, detail):
-        g.append({"gate": name, "passed": bool(ok), "detail": detail})
+    def gate(name, ok, detail, promotion_only=False):
+        g.append({"gate": name, "passed": bool(ok), "detail": detail, **({"promotion_only": True} if promotion_only else {})})
     gate("data_not_synthetic", source != "synthetic" or cfg["promotion"]["synthetic_data_promotable"], md.source)
-    gate("executable_timeframe", tf in cfg["promotion"]["executable_timeframes"], tf)
+    # a strategy the executor cannot trade yet (intraday) can still pass research, but is never promoted
+    gate("executable_timeframe", tf in cfg["promotion"]["executable_timeframes"], tf, promotion_only=True)
     gate("risk_limits", not violations, "; ".join(violations) or "ok")
     gate("no_lookahead", not leaks, f"mismatch at {leaks}" if leaks else f"{len(cuts)} truncated reruns matched")
     gate("lookback_sufficient", not short,
@@ -213,7 +214,9 @@ def evaluate(ref: str, source: str = "synthetic", experiment_id: str | None = No
     gate("min_holdout_sharpe", pm["holdout"].get("sharpe", -9) >= gates["min_holdout_sharpe"], "hidden")
     decay = pm["in_sample"].get("sharpe", 0) - base_sharpe
     gate("sharpe_decay", decay <= gates["max_sharpe_decay"], round(decay, 3))
-    gate("turnover", pm["validation"].get("annual_turnover", 1e9) <= gates["max_annual_turnover"], pm["validation"].get("annual_turnover"))
+    max_turn = gates["max_annual_turnover"]
+    max_turn = max_turn[tf] if isinstance(max_turn, dict) else max_turn
+    gate("turnover", pm["validation"].get("annual_turnover", 1e9) <= max_turn, pm["validation"].get("annual_turnover"))
     gate("robustness", robust_ratio >= gates["robustness_min_ratio"], round(robust_ratio, 3))
     gate("fill_participation", res.max_participation <= cfg["max_participation"], round(res.max_participation, 5))
     cs = gates.get("cost_stress")
@@ -221,7 +224,8 @@ def evaluate(ref: str, source: str = "synthetic", experiment_id: str | None = No
         stressed = cost_stress_sharpe(w, md, cfg, pers)
         gate("cost_stress", stressed >= cs["min_validation_sharpe"], f"{cs['multiple']}x costs: validation Sharpe {round(stressed, 3)}")
 
-    passed = all(x["passed"] for x in g)
+    passed = all(x["passed"] for x in g if not x.get("promotion_only"))
+    executable = all(x["passed"] for x in g if x.get("promotion_only"))
     # report-only selection-bias check on the validation period (issue #49)
     v0, v1 = pers["validation"]
     dsr = metrics.deflated_sharpe(res.returns.loc[v0:v1], experiment_trials())
@@ -245,7 +249,7 @@ def evaluate(ref: str, source: str = "synthetic", experiment_id: str | None = No
         "deflated_sharpe": dsr,
         "passed_gates": passed,
         "beats_champion": bool(beats),
-        "promote": bool(passed and beats),
+        "promote": bool(passed and beats and executable),
     }
 
 
@@ -272,7 +276,10 @@ def _redact_holdout(pm: dict) -> dict:
 
 def to_markdown(r: dict) -> str:
     s = r["strategy"]
-    verdict = "PROMOTE" if r["promote"] else ("PASSED GATES, did not beat champion" if r["passed_gates"] else "REJECTED")
+    executable = all(x["passed"] for x in r["gates"] if x.get("promotion_only"))
+    verdict = ("PROMOTE" if r["promote"] else "REJECTED" if not r["passed_gates"]
+               else "PASSED GATES, not executable yet (research only)" if not executable
+               else "PASSED GATES, did not beat champion")
     lines = [f"## Experiment `{r['experiment_id']}`: **{verdict}**", "",
              f"Strategy `{s['name']}` ({s['timeframe']}), params `{json.dumps(s['params'])}`",
              f"Data `{r['data']['source']}` {r['data']['first_bar'][:10]} to {r['data']['last_bar'][:10]}, "
@@ -294,7 +301,8 @@ def to_markdown(r: dict) -> str:
                       f"Sharpe beats luck is {d['probability']} (luck benchmark {d['benchmark_annual_sharpe']} annual)."]
     lines += ["", "| Gate | Result | Detail |", "|---|---|---|"]
     for x in r["gates"]:
-        lines.append(f"| {x['gate']} | {'pass' if x['passed'] else '**FAIL**'} | {x['detail']} |")
+        note = " (promotion only)" if x.get("promotion_only") else ""
+        lines.append(f"| {x['gate']}{note} | {'pass' if x['passed'] else '**FAIL**'} | {x['detail']} |")
     return "\n".join(lines) + "\n"
 
 
