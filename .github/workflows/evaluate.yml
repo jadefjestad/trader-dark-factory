@@ -11,6 +11,10 @@ on:
       candidate:
         description: "Strategy file or module:Class. Blank evaluates every baseline."
         required: false
+      intraday:
+        description: "Also download 15-minute history (slow on the free plan: several minutes)"
+        type: boolean
+        default: false
 concurrency:
   group: evaluate-${{ github.event.pull_request.number || github.run_id }}
   cancel-in-progress: true
@@ -25,6 +29,7 @@ jobs:
       candidates: ${{ steps.diff.outputs.candidates }}
       champion_changed: ${{ steps.diff.outputs.champion_changed }}
       needs_data: ${{ steps.diff.outputs.needs_data }}
+      timeframes: ${{ steps.diff.outputs.timeframes }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -35,6 +40,7 @@ jobs:
         env:
           EVENT: ${{ github.event_name }}
           DISPATCH_CANDIDATE: ${{ inputs.candidate }}
+          DISPATCH_INTRADAY: ${{ inputs.intraday }}
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
           valid='^(strategies/candidates/[A-Za-z0-9_]+\.py|strategies\.baselines\.[a-z_]+:[A-Za-z]+)$'
@@ -42,7 +48,10 @@ jobs:
             if [ -n "$DISPATCH_CANDIDATE" ] && ! printf '%s' "$DISPATCH_CANDIDATE" | grep -Eq "$valid"; then
               echo "::error::invalid candidate reference"; exit 1
             fi
-            { echo "candidates=$DISPATCH_CANDIDATE"; echo "champion_changed=false"; echo "needs_data=true"; } >> "$GITHUB_OUTPUT"
+            tf=1Day
+            if [ "$DISPATCH_INTRADAY" = "true" ] || printf '%s' "$DISPATCH_CANDIDATE" | grep -q intraday; then tf=1Day,15Min; fi
+            if [ -n "$DISPATCH_CANDIDATE" ] && [ -f "$DISPATCH_CANDIDATE" ] && grep -Eq 'timeframe *= *"15Min"' "$DISPATCH_CANDIDATE"; then tf=1Day,15Min; fi
+            { echo "candidates=$DISPATCH_CANDIDATE"; echo "champion_changed=false"; echo "needs_data=true"; echo "timeframes=$tf"; } >> "$GITHUB_OUTPUT"
             exit 0
           fi
           changed=$(git diff --name-only --diff-filter=A "$BASE_SHA"...HEAD -- 'strategies/candidates/' | grep -v -e '__init__.py$' -e '\.md$' || true)
@@ -50,7 +59,10 @@ jobs:
           if [ -n "$bad" ]; then echo "::error::candidate files must be strategies/candidates/<letters_digits_underscores>.py"; exit 1; fi
           c=$(printf '%s\n' "$changed" | tr '\n' ' ' | sed 's/ *$//')
           ch=$(git diff --name-only "$BASE_SHA"...HEAD -- state/champion.json | wc -l)
+          tf=1Day   # 15-minute history is slow to download, so fetch it only for intraday candidates (read as text, never run)
+          for f in $c; do grep -Eq 'timeframe *= *"15Min"' "$f" && tf=1Day,15Min; done
           { echo "candidates=$c"
+            echo "timeframes=$tf"
             echo "champion_changed=$([ "$ch" -gt 0 ] && echo true || echo false)"
             echo "needs_data=$([ -n "$c" ] || [ "$ch" -gt 0 ] && echo true || echo false)"; } >> "$GITHUB_OUTPUT"
 
@@ -58,6 +70,7 @@ jobs:
     needs: plan
     if: needs.plan.outputs.needs_data == 'true'
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4          # base branch code only
         with:
@@ -72,12 +85,13 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: data/cache
-          key: bars-${{ hashFiles('protected/*.yaml') }}-${{ steps.day.outputs.day }}
+          key: bars-${{ hashFiles('protected/*.yaml') }}-${{ needs.plan.outputs.timeframes }}-${{ steps.day.outputs.day }}
       - name: Download market data
         env:
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
-        run: python -m factory.prefetch
+          TIMEFRAMES: ${{ needs.plan.outputs.timeframes }}
+        run: python -m factory.prefetch --timeframes "$TIMEFRAMES"
       - uses: actions/upload-artifact@v4
         with:
           name: market-data
@@ -88,6 +102,7 @@ jobs:
     needs: [plan, data]
     if: needs.plan.outputs.needs_data == 'true'
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
       contents: read
     steps:
@@ -117,12 +132,13 @@ jobs:
           PR: ${{ github.event.pull_request.number || 'manual' }}
           SHA: ${{ github.event.pull_request.head.sha || github.sha }}
           RUN: ${{ github.run_id }}-${{ github.run_attempt }}
+          TIMEFRAMES: ${{ needs.plan.outputs.timeframes }}
           FACTORY_SANDBOX_USER: sandbox
         run: |
           mkdir -p out/results
           touch out/errors.txt
           if [ "$EVENT" = "workflow_dispatch" ] && [ -z "$CANDIDATES" ]; then
-            python -m factory.evaluate --baselines --data alpaca --out out/results 2>err.log \
+            python -m factory.evaluate --baselines --timeframes "$TIMEFRAMES" --data alpaca --out out/results 2>err.log \
               || { echo "baseline evaluation failed"; tail -30 err.log; } >> out/errors.txt
             exit 0
           fi
