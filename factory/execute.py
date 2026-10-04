@@ -73,7 +73,7 @@ def plan_orders(targets: dict, positions: dict, prices: dict, equity: float, min
     return sorted(orders, key=lambda o: o["side"] != "sell")  # sells first
 
 
-def latest_prices(broker, symbols, closes: dict, limits: dict) -> dict:
+def latest_prices(broker, symbols, closes: dict, limits: dict, allow_stale: bool = False) -> dict:
     trades = broker.latest_trades(symbols)
     now = pd.Timestamp.now(tz="UTC")
     prices = {}
@@ -82,7 +82,7 @@ def latest_prices(broker, symbols, closes: dict, limits: dict) -> dict:
             raise DataError(f"no latest trade for {s}")
         px, ts = trades[s]
         age = (now - pd.Timestamp(ts)).total_seconds() / 60
-        if age > limits["max_quote_age_minutes"]:
+        if age > limits["max_quote_age_minutes"] and not allow_stale:
             raise DataError(f"latest trade for {s} is {age:.0f} minutes old")
         if not np.isfinite(px) or abs(px / closes[s] - 1) > limits["max_price_gap"]:
             raise DataError(f"latest trade {px} for {s} is implausible vs last close {closes[s]}")
@@ -154,7 +154,11 @@ def run(dry_run: bool, record: dict) -> None:
     check_targets(targets, symbols, limits)
 
     closes = {s: float(md.close[s].iloc[-1]) for s in symbols}
-    prices = latest_prices(broker, symbols, closes, limits)
+    # a dry run outside market hours previews orders on the last available trades
+    stale_ok = dry_run and not clock.get("is_open")
+    prices = latest_prices(broker, symbols, closes, limits, allow_stale=stale_ok)
+    if stale_ok:
+        record["note"] = "market closed: preview priced on the last available trades"
     sizing_equity = equity * (1 - limits["cash_buffer"])
     tol = limits["hold_rebalance_tolerance"] if hold else 0.0
     orders = plan_orders(targets, positions, prices, sizing_equity, limits["min_order_notional"], tol)

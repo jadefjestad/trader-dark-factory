@@ -40,3 +40,22 @@ def test_intraday_is_flat_overnight():
     days = pd.Series(res.weights.index.date, index=res.weights.index)
     last_bars = days != days.shift(-1)
     assert (res.weights[last_bars.values] == 0).all().all()
+
+
+def test_tiny_drift_trades_are_skipped():
+    md = synthetic(["A", "B"], "2020-01-01", "2020-12-31")
+    w = pd.DataFrame(0.5, index=md.index, columns=md.symbols)
+    every_day = backtest.run(w, md, COSTS, 100_000)
+    thresholded = backtest.run(w, md, COSTS, 100_000, min_trade_weight=0.01)
+    assert thresholded.trades < every_day.trades / 3
+
+
+def test_small_positions_still_flatten_at_session_end():
+    md = synthetic(["A"], "2024-01-01", "2024-01-10", timeframe="15Min")
+    bar = pd.Series(md.index.date, index=md.index).groupby(md.index.date).cumcount()
+    w = pd.DataFrame({"A": (bar < 5).map({True: 0.03, False: 0.01}).values}, index=md.index)
+    res = backtest.run(w, md, COSTS, 100_000, min_trade_weight=0.015)   # 0.01 left before the close
+    assert (res.holdings["A"] > 0).any()
+    days = pd.Series(res.holdings.index.date, index=res.holdings.index)
+    last_bars = days != days.shift(-1)
+    assert (res.holdings[last_bars.values] == 0).all().all()

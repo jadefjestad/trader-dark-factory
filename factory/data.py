@@ -8,6 +8,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import sys
 import time
 from dataclasses import dataclass
 from pathlib import Path
@@ -102,7 +103,9 @@ def _fetch_alpaca(symbols, start, end, timeframe, feed, adjustment) -> pd.DataFr
         "adjustment": adjustment, "feed": feed, "limit": 10000, "sort": "asc",
     }
     headers = _alpaca_headers()
-    for _ in range(10000):
+    for page in range(10000):
+        if page and page % 10 == 0:
+            print(f"  {timeframe} {feed}: {page} pages, {len(rows):,} bars so far", file=sys.stderr, flush=True)
         for attempt in range(5):
             r = requests.get(DATA_URL, params=params, headers=headers, timeout=30)
             if r.status_code == 429:  # free plan: 200 requests/minute

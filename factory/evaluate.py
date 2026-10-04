@@ -104,7 +104,7 @@ def perturbations(params: dict, frac: float) -> list[dict]:
 # ---------------------------------------------------------------- core
 
 def backtest_weights(w, md, cfg):
-    return backtest.run(w, md, cfg["costs"][md.timeframe], cfg["initial_capital"])
+    return backtest.run(w, md, cfg["costs"][md.timeframe], cfg["initial_capital"], cfg.get("min_trade_weight", 0.0))
 
 
 def period_metrics(res, pers):
@@ -267,6 +267,7 @@ def main(argv=None) -> int:
     ap.add_argument("--out", default=str(ROOT / "experiments" / "results"))
     ap.add_argument("--experiment-id")
     ap.add_argument("--write-promotion", action="store_true")
+    ap.add_argument("--timeframes", default="1Day", help="with --baselines: which timeframes to include")
     a = ap.parse_args(argv)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -275,7 +276,8 @@ def main(argv=None) -> int:
         refs = [a.candidate]
     else:
         from strategies import baselines
-        refs = [f"{c.__module__}:{c.__name__}" for c in baselines.ALL]
+        wanted = set(a.timeframes.split(","))
+        refs = [f"{c.__module__}:{c.__name__}" for c in baselines.ALL if c.timeframe in wanted]
     try:
         for ref in refs:
             r = evaluate(ref, a.data, a.experiment_id if a.candidate else None)

@@ -137,3 +137,15 @@ def test_partial_failure_keeps_submitted_orders(monkeypatch, tmp_path):
     rec = json.loads(next(tmp_path.glob("*.json")).read_text())
     assert len(rec["submitted"]) == 3 and rec["status"].startswith("STOPPED AFTER 3 ORDER(S)")
     assert "pending" in rec
+
+
+def test_dry_run_when_market_closed_uses_last_trades(monkeypatch, tmp_path):
+    import json
+    syms = execute.config.universe()["symbols"]
+    broker = _patch(monkeypatch, _fresh(syms))
+    broker.clock = lambda: {"is_open": False}
+    old = (pd.Timestamp.now(tz="UTC") - pd.Timedelta(days=2)).isoformat()
+    broker.latest_trades = lambda symbols, feed="iex": {s: (broker.closes[s], old) for s in symbols}
+    assert execute.main(["--out", str(tmp_path), "--dry-run"]) == 0
+    rec = json.loads(next(tmp_path.glob("*.json")).read_text())
+    assert rec["status"].startswith("dry run") and len(rec["orders"]) == len(syms) and broker.submitted == []
