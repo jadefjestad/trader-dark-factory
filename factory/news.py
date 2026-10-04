@@ -122,3 +122,44 @@ def main(argv=None) -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
+
+# ---------------------------------------------------------------- headline sentiment
+# A small fixed finance lexicon (in the spirit of Loughran-McDonald), applied deterministically to headlines.
+POSITIVE = frozenset("""
+beat beats beating tops topped exceeds exceeded surpass surpasses upgrade upgrades upgraded raise raises raised
+boost boosts boosted record strong stronger strength surge surges surged soar soars soared jump jumps jumped
+rally rallies rallied gain gains gained growth grows outperform outperforms bullish buy approval approved
+approves win wins won expands expansion profit profitable rebound rebounds rebounded higher upbeat optimistic
+breakthrough partnership accelerates accelerating tailwind tailwinds overweight
+""".split())
+NEGATIVE = frozenset("""
+miss misses missed downgrade downgrades downgraded cut cuts cutting lower lowers lowered weak weaker weakness
+plunge plunges plunged drop drops dropped fall falls fell slump slumps slumped sink sinks sank tumble tumbles
+tumbled decline declines declined loss losses lawsuit lawsuits sue sued sues probe investigation investigates
+recall recalls fine fined penalty layoffs layoff warns warning bearish sell underperform underperforms
+underweight halt halts halted delay delays delayed concern concerns risk risks headwind headwinds fraud
+antitrust subpoena bankruptcy default disappointing disappoints slowdown
+""".split())
+_WORD = __import__("re").compile(r"[a-z]+")
+
+
+def headline_score(text: str) -> float:
+    """(positive - negative) word count of a headline, clipped to [-2, 2]."""
+    words = _WORD.findall(str(text).lower())
+    s = sum(w in POSITIVE for w in words) - sum(w in NEGATIVE for w in words)
+    return float(max(-2, min(2, s)))
+
+
+def sentiment_panel(articles: pd.DataFrame, index: pd.DatetimeIndex, symbols: list[str]) -> pd.DataFrame:
+    """Sum of headline scores per symbol per daily bar (0 when no news), same timing rule as count_panel."""
+    panel = pd.DataFrame(0.0, index=index, columns=symbols)
+    if articles.empty:
+        return panel
+    d = articles.assign(bar=bar_dates(articles["created_at"], index), symbol=articles["symbols"].str.split("|"),
+                        score=articles["headline"].map(headline_score))
+    d = d.dropna(subset=["bar"]).explode("symbol")
+    d = d[d["symbol"].isin(symbols)]
+    sums = d.groupby(["bar", "symbol"])["score"].sum().unstack(fill_value=0.0)
+    panel.loc[:, :] = sums.reindex(index=index, columns=symbols, fill_value=0.0).to_numpy(dtype=float)
+    return panel

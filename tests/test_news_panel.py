@@ -29,3 +29,13 @@ def test_truncated_index_gives_identical_rows():
     full = news.count_panel(a, IDX, ["AAPL"])
     short = news.count_panel(a, IDX[:2], ["AAPL"])
     pd.testing.assert_frame_equal(full.iloc[:2], short)
+
+
+def test_headline_score_and_sentiment_panel():
+    assert news.headline_score("Apple Beats Estimates, Raises Guidance") == 2.0
+    assert news.headline_score("Analyst downgrades MSFT after earnings miss") == -2.0
+    assert news.headline_score("Microsoft to host developer conference") == 0.0
+    a = pd.DataFrame([(1, "2024-03-07T14:00:00Z", "AAPL", "Apple beats estimates"),
+                      (2, "2024-03-07T21:30:00Z", "AAPL", "Apple faces antitrust probe")], columns=news.COLUMNS)
+    p = news.sentiment_panel(a, IDX, ["AAPL"])
+    assert p["AAPL"].tolist() == [1.0, -2.0, 0.0]
