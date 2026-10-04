@@ -125,7 +125,7 @@ def fetch(symbols: list[str], filings: pd.DataFrame, use_cache: bool = True) -> 
     for i, (y, q) in enumerate(quarters):
         df = quarter_purchases(y, q, set(by_cik), use_cache)
         if df is None:
-            if i < len(quarters) - 2:    # only the latest one or two quarters may still be unpublished
+            if i < len(quarters) - 3:    # SEC publishes a quarter some months after it ends
                 raise DataError(f"SEC insider data set {y}q{q} is missing")
             continue
         frames.append(df)
