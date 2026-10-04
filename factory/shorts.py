@@ -176,11 +176,17 @@ def main(argv=None) -> int:
     if a.cmd == "backfill":
         from factory import config
         u = config.universe()
+        failed = 0
         for year in range(a.start, a.end + 1):
             t0 = time.time()
-            df = load(u["symbols"] + [u["benchmark"]], f"{year}-01-01", f"{year}-12-31")
+            try:   # one bad year must not stop the others; the error shows as an annotation (logs are not readable)
+                df = load(u["symbols"] + [u["benchmark"]], f"{year}-01-01", f"{year}-12-31")
+            except Exception as e:
+                failed += 1
+                print(f"::error title=shorts {year}::{type(e).__name__}: {str(e)[:300]}", flush=True)
+                continue
             print(f"::notice title=shorts {year}::{len(df)} rows in {time.time() - t0:.0f}s", flush=True)
-        return 0
+        return 1 if failed else 0
     text = json.dumps(probe(), indent=2, default=str)
     print(text)
     if a.out:
