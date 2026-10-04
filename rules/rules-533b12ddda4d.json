@@ -1,0 +1,13 @@
+{
+  "kind": "rule_change",
+  "commit": "533b12ddda4d28f395114a81faa02de3aa581f04",
+  "previous": "26722d9a24e096960bd455a405cdb622e9c8276c",
+  "changed_at": "2026-10-04T13:28:13+00:00",
+  "reason": "adds a read-only news-backfill workflow that fills the shared Actions cache with Alpaca news history (#29).",
+  "files": [
+    {
+      "file": ".github/workflows/news.yml",
+      "change": "A"
+    }
+  ]
+}
