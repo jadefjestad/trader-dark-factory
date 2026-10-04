@@ -1,0 +1,25 @@
+{
+  "kind": "rule_change",
+  "commit": "d82b3fd339f39af75666f81841cb83ef3e10236c",
+  "previous": "ac190dbb50fd96749dfbbf7a2d33efb9728ddd29",
+  "changed_at": "2026-10-04T22:43:31+00:00",
+  "reason": "Jade asked for the spare Claude usage to be used (2026-10-04 22:39Z); 10/10 runs used today with 0 cut off.",
+  "files": [
+    {
+      "file": "agent/usage_policy.yaml",
+      "change": "M",
+      "values": [
+        {
+          "key": "max_runs_per_5h",
+          "before": 4,
+          "after": 6
+        },
+        {
+          "key": "max_runs_per_day",
+          "before": 10,
+          "after": 20
+        }
+      ]
+    }
+  ]
+}
