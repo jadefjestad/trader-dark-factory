@@ -3,7 +3,8 @@
 Measures, for the universe on recent full sessions:
 - IEX share of consolidated (SIP) volume, and how many of the 390 regular-session minutes have an IEX bar;
 - how far IEX minute closes sit from SIP minute closes (bps), i.e. the error of signalling on IEX;
-- IEX quoted spreads from the latest quotes;
+- IEX quoted spreads from the latest quotes, and historical SIP spreads at each 15-minute bar open
+  (where the backtester fills), so the intraday cost model can be set from measurements (#74);
 - whether SIP bars from the last 15 minutes are refused on the free plan, and how far back 1-minute history goes;
 - Tiingo and Twelve Data free tiers, only when their keys are present (otherwise reported as not configured).
 
@@ -26,6 +27,7 @@ from factory import config
 from factory.data import DATA_URL, _alpaca_headers
 
 QUOTES_URL = "https://data.alpaca.markets/v2/stocks/quotes/latest"
+HIST_QUOTES_URL = "https://data.alpaca.markets/v2/stocks/quotes"
 TIINGO_URL = "https://api.tiingo.com/iex/{sym}/prices"
 TWELVEDATA_URL = "https://api.twelvedata.com/time_series"
 SESSION_MINUTES = 390
@@ -111,6 +113,46 @@ def probe_spreads(symbols) -> dict:
             "note": "latest IEX quote; outside market hours spreads are wider than intraday"}
 
 
+def half_spreads_bps(quotes: list[dict]) -> list[float]:
+    """Half the quoted spread in bps for each valid quote. Pure; unit-tested offline."""
+    out = []
+    for q in quotes:
+        bid, ask = q.get("bp") or 0, q.get("ap") or 0
+        if bid > 0 and ask >= bid:
+            out.append((ask - bid) / (ask + bid) * 1e4)
+    return out
+
+
+def bar_open_times(sessions: list[dt.date], minutes: int = 15) -> list[pd.Timestamp]:
+    """Fill instants of the backtester: every bar open after the first, including the last (the flatten)."""
+    out = []
+    for d in sessions:
+        t0 = pd.Timestamp(f"{d} 09:30", tz="America/New_York")
+        out += [t0 + pd.Timedelta(minutes=minutes * k) for k in range(1, 390 // minutes)]
+    return out
+
+
+def probe_historical_spreads(symbols, days: int = 3) -> dict:
+    """Median and p90 SIP half-spread at the backtester's 15-minute fill instants, per symbol and overall."""
+    per: dict[str, list[float]] = {s: [] for s in symbols}
+    for t in bar_open_times(recent_sessions(dt.date.today(), days)):
+        start = t.tz_convert("UTC")
+        params = {"symbols": ",".join(symbols), "feed": "sip", "limit": 10000,
+                  "start": start.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+                  "end": (start + pd.Timedelta(milliseconds=500)).strftime("%Y-%m-%dT%H:%M:%S.%fZ")}
+        r = _get(HIST_QUOTES_URL, params=params, headers=_alpaca_headers())
+        if r.status_code != 200:
+            return {"status": r.status_code, "error": r.text[:150]}
+        for sym, qs in (r.json().get("quotes") or {}).items():
+            hs = half_spreads_bps(qs[:1])          # the quote standing at the fill instant
+            if sym in per and hs:
+                per[sym] += hs
+    pooled = [x for v in per.values() for x in v]
+    q = lambda v, f: round(float(pd.Series(v).quantile(f)), 2) if v else None
+    return {"samples": len(pooled), "half_spread_bps_median": q(pooled, 0.5), "half_spread_bps_p90": q(pooled, 0.9),
+            "widest_symbols": sorted(((s, q(v, 0.5)) for s, v in per.items() if v), key=lambda x: -x[1])[:5]}
+
+
 def probe_limits() -> dict:
     now = dt.datetime.now(dt.timezone.utc)
     out = {}
@@ -157,6 +199,7 @@ def probe(days: int = 3) -> dict:
     symbols = config.universe()["symbols"]
     res = {}
     for name, fn in (("feeds", lambda: probe_feeds(symbols, days)), ("spreads", lambda: probe_spreads(symbols)),
+                     ("historical_spreads", lambda: probe_historical_spreads(symbols, days)),
                      ("limits", probe_limits),
                      ("third_party", lambda: probe_third_party(recent_sessions(dt.date.today(), 1)[0]))):
         try:

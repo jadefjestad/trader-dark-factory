@@ -37,5 +37,15 @@ def test_probe_never_raises(monkeypatch):
     monkeypatch.delenv("TIINGO_API_KEY", raising=False)
     monkeypatch.delenv("TWELVEDATA_API_KEY", raising=False)
     res = ip.probe(days=1)
-    assert set(res) == {"feeds", "spreads", "limits", "third_party"}
+    assert set(res) == {"feeds", "spreads", "historical_spreads", "limits", "third_party"}
     assert "error" in res["feeds"] and res["third_party"]["tiingo"].startswith("not configured")
+
+
+def test_half_spreads_skip_bad_quotes():
+    hs = ip.half_spreads_bps([{"bp": 99.99, "ap": 100.01}, {"bp": 0, "ap": 100}, {"bp": 101, "ap": 100}])
+    assert len(hs) == 1 and abs(hs[0] - 1.0) < 1e-6
+
+
+def test_bar_open_times_match_backtester_fills():
+    t = ip.bar_open_times([dt.date(2026, 10, 1)])
+    assert str(t[0].time()) == "09:45:00" and str(t[-1].time()) == "15:45:00" and len(t) == 25
