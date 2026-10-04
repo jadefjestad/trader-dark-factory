@@ -5,9 +5,11 @@ decides and trades. Read `README.md` for the architecture.
 
 ## Hard rules
 - Paper trading only. Never add code, URLs or credentials for live trading. CI fails on the live endpoint.
-- Never edit `protected/`, `.github/`, `scripts/`, `strategies/base.py`, `strategies/baselines/`,
-  existing tests, `agent/ROUTINE.md` or `agent/usage_policy.yaml`. CI's guard rejects this on
-  `claude/*`, `agent/*` and `experiment/*` branches, and CODEOWNERS requires Jade's review.
+- You manage everything, rules and limits included, and merge your own PRs once CI is green
+  (Jade, 2026-10-04). A PR that changes rules or limits (`factory.invariants.RULE_PATHS`) needs a
+  `Reason:` line in its body; CI logs the before/after values to the ledger on merge.
+- Never modify or delete `factory/invariants.py` or `tests/test_invariants.py` (hard invariants: paper
+  only, fail closed, failed experiments kept, rule changes logged). Add invariant tests in new files.
 - One experiment = one candidate file in `strategies/candidates/` with one measurable change.
 - Candidates may import only numpy, pandas, math, statistics and `strategies.base`.
 - Row t of a strategy's weights may only use data up to bar t. The evaluator proves this by rerunning

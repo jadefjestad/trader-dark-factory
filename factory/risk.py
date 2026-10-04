@@ -3,16 +3,18 @@ from __future__ import annotations
 
 import math
 
+from factory.invariants import require_paper
+
 
 class RiskError(RuntimeError):
     pass
 
 
 def check_account(acct: dict, limits: dict) -> None:
-    if not limits.get("paper_only", False):
-        raise RiskError("risk_limits.paper_only must be true")
-    if not str(acct.get("account_number", "")).startswith("PA"):
-        raise RiskError("account does not look like an Alpaca paper account (number should start with PA)")
+    try:
+        require_paper(limits, acct.get("account_number", ""))
+    except RuntimeError as e:
+        raise RiskError(str(e)) from None
     if acct.get("status") != "ACTIVE":
         raise RiskError(f"account status {acct.get('status')}")
     if acct.get("trading_blocked") or acct.get("account_blocked"):

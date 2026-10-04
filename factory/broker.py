@@ -5,7 +5,8 @@ import os
 
 import requests
 
-PAPER_URL = "https://paper-api.alpaca.markets"
+from factory.invariants import PAPER_URL
+
 DATA_URL = "https://data.alpaca.markets"
 
 
