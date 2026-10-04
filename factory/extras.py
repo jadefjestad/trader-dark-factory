@@ -26,7 +26,22 @@ def _news_count(md: MarketData, source: str) -> pd.DataFrame:
     return news.count_panel(arts, pd.DatetimeIndex(md.index), md.symbols)
 
 
-PANELS = {"news_count": _news_count}
+def _macro(md: MarketData, source: str) -> pd.DataFrame:
+    from factory import macro
+    if source == "synthetic":   # smooth deterministic fake series for tests and offline smoke runs
+        rng = np.random.default_rng(13)
+        days = pd.bdate_range(pd.Timestamp(md.index[0]) - pd.Timedelta(days=10), md.index[-1])
+        raw = pd.DataFrame(np.cumsum(rng.normal(0, 0.05, (len(days), len(macro.SERIES))), axis=0) + 3.0,
+                           index=days, columns=list(macro.SERIES))
+    else:
+        raw = macro.load()
+    out = macro.panel(raw, pd.DatetimeIndex(md.index))
+    if out.iloc[-1].isna().any():
+        raise DataError(f"macro series missing on the latest bar: {out.columns[out.iloc[-1].isna()].tolist()}")
+    return out
+
+
+PANELS = {"news_count": _news_count, "macro": _macro}
 
 
 def attach(md: MarketData, names, source: str) -> MarketData:
