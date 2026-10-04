@@ -1,0 +1,43 @@
+# Downloads FINRA daily short-sale volume (complete years, universe only) into the shared Actions cache
+# that evaluation jobs restore (issue #65). Keyless public data; never places orders.
+name: shorts-backfill
+on:
+  workflow_dispatch:
+    inputs:
+      start: {description: "first year", default: "2018"}
+      end: {description: "last complete year", default: "2025"}
+  schedule:
+    - cron: "37 6 2 1 *"   # each January, cache the year that just ended
+permissions:
+  contents: read
+concurrency:
+  group: shorts-backfill
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - uses: actions/cache/restore@v4
+        with:
+          path: data/cache/shorts_*.csv.gz
+          key: shorts-v1-${{ github.run_id }}
+          restore-keys: shorts-v1-
+      - name: Download missing years
+        timeout-minutes: 220   # leaves time to save whatever years finished
+        env:
+          START: ${{ inputs.start || '2018' }}
+          END: ${{ inputs.end || '' }}
+        run: python -m factory.shorts backfill --start "$START" ${END:+--end "$END"}
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: data/cache/shorts_*.csv.gz
+          key: shorts-v1-${{ github.run_id }}

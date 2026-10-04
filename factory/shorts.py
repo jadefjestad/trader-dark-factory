@@ -10,6 +10,7 @@ Availability rules (no look-ahead):
   from the first bar after its publication date, never from the settlement date.
 
     python -m factory.shorts probe [--out shorts_probe.json]
+    python -m factory.shorts backfill --start 2018 [--end 2025]   # cache complete years (Actions)
 """
 from __future__ import annotations
 
@@ -18,12 +19,18 @@ import datetime as dt
 import io
 import json
 import sys
+import time
 
 import pandas as pd
+
+from factory.data import CACHE_DIR, DataError
 
 DAILY_URL = "https://cdn.finra.org/equity/regsho/daily/CNMSshvol{day:%Y%m%d}.txt"
 SHORT_INTEREST_URL = "https://api.finra.org/data/group/otcMarket/name/consolidatedShortInterest"
 PUBLICATION_LAG_BDAYS = 7    # conservative when a record carries no publication date
+FIRST_YEAR = 2018            # older daily files answer 403 from Actions (probe, 2026-10-04)
+MAX_MISSING_DAYS = 0.06      # holidays have no file (~4%); more missing than this means a broken download
+COLUMNS = ["date", "symbol", "short_volume", "total_volume"]
 
 
 def _get(url, **kw):
@@ -44,6 +51,57 @@ def parse_daily(text: str) -> pd.DataFrame:
                         "short_volume": df["ShortVolume"].astype(float),
                         "total_volume": df["TotalVolume"].astype(float)})
     return out[out["total_volume"] > 0].reset_index(drop=True)
+
+
+def fetch_days(days, symbols: list[str], pause: float = 0.2) -> pd.DataFrame:
+    """Download and parse the daily files for `days`, keeping `symbols`. Raises DataError if too many are missing."""
+    frames, missing = [], []
+    for d in days:
+        r = None
+        for attempt in range(4):
+            try:
+                r = _get(DAILY_URL.format(day=d))
+            except Exception:  # network blip: retry, then count the day as missing
+                r = None
+            if r is not None and r.status_code not in (429, 500, 502, 503, 504):
+                break
+            time.sleep(2 ** attempt)
+        if r is None or r.status_code != 200:
+            missing.append(str(d))
+            continue
+        rows = parse_daily(r.text)
+        frames.append(rows[rows["symbol"].isin(symbols)])
+        time.sleep(pause)
+    if days and len(missing) / len(days) > MAX_MISSING_DAYS:
+        raise DataError(f"FINRA short volume: {len(missing)} of {len(days)} days missing, e.g. {missing[:5]}")
+    return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame(columns=COLUMNS)
+
+
+def _year_path(year: int):
+    return CACHE_DIR / f"shorts_{year}.csv.gz"
+
+
+def load(symbols: list[str], start: str, end: str = "latest", use_cache: bool = True) -> pd.DataFrame:
+    """Daily short volume rows from `start` to `end`. Complete years are cached; the running year is cached per day."""
+    today = pd.Timestamp.now(tz="America/New_York").normalize().tz_localize(None)
+    end_ts = today if end == "latest" else pd.Timestamp(end)
+    frames = []
+    for year in range(max(pd.Timestamp(start).year, FIRST_YEAR), end_ts.year + 1):
+        complete = year < today.year
+        last = pd.Timestamp(f"{year}-12-31") if complete else min(end_ts, today - pd.Timedelta(days=1))
+        path = _year_path(year) if complete else CACHE_DIR / f"shorts_{year}_to_{last:%Y-%m-%d}.csv.gz"
+        if use_cache and path.exists():
+            frames.append(pd.read_csv(path, parse_dates=["date"]))
+            continue
+        days = [d.date() for d in pd.bdate_range(f"{year}-01-01", last)]
+        df = fetch_days(days, symbols)
+        if use_cache:
+            CACHE_DIR.mkdir(parents=True, exist_ok=True)
+            df.to_csv(path, index=False)
+        frames.append(df)
+    out = pd.concat(frames, ignore_index=True) if frames else pd.DataFrame(columns=COLUMNS)
+    out["date"] = pd.to_datetime(out["date"])
+    return out[(out["date"] >= pd.Timestamp(start)) & (out["date"] <= end_ts)].reset_index(drop=True)
 
 
 def available_from(dates: pd.Series, lag_bdays: int = 0) -> pd.Series:
@@ -75,20 +133,18 @@ def probe_daily(day: dt.date) -> dict:
 
 
 def probe_short_interest() -> dict:
-    body = {"limit": 3, "compareFilters": [{"compareType": "equal", "fieldName": "symbolCode", "fieldValue": "AAPL"}],
-            "sortFields": ["-settlementDate"]}
+    # the API refuses sorting unless every partition key is filtered, so fetch AAPL's records and sort here
+    body = {"limit": 5000, "compareFilters": [{"compareType": "equal", "fieldName": "symbolCode", "fieldValue": "AAPL"}]}
     r = _post(SHORT_INTEREST_URL, json=body, headers={"Accept": "application/json"})
     out = {"status": r.status_code}
     if r.status_code == 200:
         recs = r.json() if r.text.strip() else []
-        out.update(records=len(recs), fields=sorted(recs[0]) if recs else [], sample=recs[0] if recs else None)
+        dates = sorted(x.get("settlementDate") for x in recs if x.get("settlementDate"))
+        out.update(records=len(recs), fields=sorted(recs[0]) if recs else [],
+                   earliest_settlement=dates[0] if dates else None, latest_settlement=dates[-1] if dates else None,
+                   sample=max(recs, key=lambda x: x.get("settlementDate") or "") if recs else None)
     else:
         out["body"] = r.text[:200]
-    r = _post(SHORT_INTEREST_URL, json={**body, "sortFields": ["settlementDate"], "limit": 1},
-              headers={"Accept": "application/json"})
-    if r.status_code == 200 and r.text.strip():
-        recs = r.json()
-        out["earliest_settlement"] = recs[0].get("settlementDate") if recs else None
     return out
 
 
@@ -112,9 +168,19 @@ def probe() -> dict:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["probe"])
+    ap.add_argument("cmd", choices=["probe", "backfill"])
     ap.add_argument("--out")
+    ap.add_argument("--start", type=int, default=FIRST_YEAR)
+    ap.add_argument("--end", type=int, default=dt.date.today().year - 1)
     a = ap.parse_args(argv)
+    if a.cmd == "backfill":
+        from factory import config
+        u = config.universe()
+        for year in range(a.start, a.end + 1):
+            t0 = time.time()
+            df = load(u["symbols"] + [u["benchmark"]], f"{year}-01-01", f"{year}-12-31")
+            print(f"::notice title=shorts {year}::{len(df)} rows in {time.time() - t0:.0f}s", flush=True)
+        return 0
     text = json.dumps(probe(), indent=2, default=str)
     print(text)
     if a.out:
