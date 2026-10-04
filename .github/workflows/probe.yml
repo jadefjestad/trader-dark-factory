@@ -8,7 +8,7 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
         with:
@@ -38,9 +38,20 @@ jobs:
           python -m factory.intraday_probe --out intraday_probe.json
           { echo '```json'; cat intraday_probe.json; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
           python -c "import json; [print(f'::notice title=intraday {k}::' + json.dumps(v, default=str)) for k, v in json.load(open('intraday_probe.json')).items()]"
+      - name: Probe SEC panels (issues #30, #64, #66)
+        if: always()
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: |
+          python -m factory.sec_probe --out sec_probe.json
+          { echo '```json'; cat sec_probe.json; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          python -c "import json; [print(f'::notice title=sec {k}::' + json.dumps(v, default=str)) for k, v in json.load(open('sec_probe.json')).items()]"
       - uses: actions/upload-artifact@v4
         with:
           name: probe
           path: |
             probe.json
             intraday_probe.json
+            sec_probe.json

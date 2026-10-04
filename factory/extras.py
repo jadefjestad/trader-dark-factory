@@ -55,7 +55,49 @@ def _macro(md: MarketData, source: str) -> pd.DataFrame:
     return out
 
 
-PANELS = {"news_count": _news_count, "news_sentiment": _news_sentiment, "macro": _macro}
+_SEC_MEMO: dict = {}
+
+
+def _sec(md: MarketData, source: str, family: str) -> dict:
+    """All panels of one SEC family (fundamentals, insiders, earnings), built once per dataset."""
+    key = (family, source, tuple(md.symbols), md.index[0], md.index[-1], len(md.index))
+    if key in _SEC_MEMO:
+        return _SEC_MEMO[key]
+    from factory import earnings, edgar, fundamentals, insiders
+    syms, idx = md.symbols, pd.DatetimeIndex(md.index)
+    if family == "fundamentals":
+        if source == "synthetic":
+            table = fundamentals.synthetic_table(syms)
+            out = fundamentals.panels(table, fundamentals.synthetic_filings(table), idx, syms)
+        else:
+            out = fundamentals.panels(fundamentals.fetch(syms), edgar.filings(syms), idx, syms)
+    elif family == "insiders":
+        if source == "synthetic":
+            out = insiders.panels(*insiders.synthetic_purchases(syms), idx, syms)
+        else:
+            fil = edgar.filings(syms)
+            out = insiders.panels(insiders.fetch(syms, fil), fil, idx, syms)
+    else:
+        fil = earnings.synthetic_filings(syms) if source == "synthetic" else edgar.filings(syms)
+        out = earnings.panels(earnings.announcements(fil), md.close)
+    if len(_SEC_MEMO) > 8:
+        _SEC_MEMO.clear()
+    _SEC_MEMO[key] = out
+    return out
+
+
+def _sec_panel(family: str, name: str):
+    return lambda md, source: _sec(md, source, family)[name].copy()
+
+
+PANELS = {"news_count": _news_count, "news_sentiment": _news_sentiment, "macro": _macro,
+          "gross_profitability": _sec_panel("fundamentals", "gross_profitability"),
+          "eps_ttm": _sec_panel("fundamentals", "eps_ttm"),
+          "eps_sue": _sec_panel("fundamentals", "eps_sue"),
+          "insider_buyers": _sec_panel("insiders", "insider_buyers"),
+          "insider_buy_value": _sec_panel("insiders", "insider_buy_value"),
+          "earnings_reaction": _sec_panel("earnings", "earnings_reaction"),
+          "earnings_age": _sec_panel("earnings", "earnings_age")}
 
 
 def attach(md: MarketData, names, source: str) -> MarketData:
