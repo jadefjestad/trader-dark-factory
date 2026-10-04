@@ -6,3 +6,4 @@ experiments/results/
 experiments/executions/
 .env
 *.env
+deploy/streamer/logs/

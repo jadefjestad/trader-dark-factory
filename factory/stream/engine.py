@@ -45,7 +45,6 @@ class StreamEngine:
         self.start_equity: float | None = None
         self.halted: str | None = None
         self.bad_decisions = 0
-        self.seq = 0
 
     # ---------------------------------------------------------------- setup and feed
     def start(self, account: dict) -> None:
@@ -118,6 +117,7 @@ class StreamEngine:
         if not market_open:                     # orders sent while closed would queue for the next open
             return []
         prices = {b.symbol: b.close for b in new}
+        bar_end = new[-1].end.astimezone(NY)
         halt = self._halt_reason(now, equity)
         if halt:
             targets, allowed = {s: 0.0 for s in self.symbols}, set(self.symbols)   # flatten whatever is held
@@ -147,8 +147,7 @@ class StreamEngine:
                 if not ok:
                     self.log({"event": "order_skipped", "symbol": o["symbol"], "reason": why, "at": now.isoformat()})
                     continue
-            self.seq += 1
-            o = {**o, "client_order_id": client_order_id(now.astimezone(NY).date(), self.seq),
+            o = {**o, "client_order_id": client_order_id(bar_end, o["symbol"]),
                  "expected_price": prices[o["symbol"]], "reason": halt or "signal"}
             if not self.shadow:
                 self.broker.submit_order(o["symbol"], o["qty"], o["side"], o["client_order_id"])

@@ -62,4 +62,4 @@ def test_throttle_enforces_spacing_budget_and_daily_cap():
 
 
 def test_client_order_ids_are_deterministic():
-    assert client_order_id(dt.date(2026, 10, 5), 7) == "stream-20261005-00007"
+    assert client_order_id(dt.datetime(2026, 10, 5, 10, 0, 5), "AAPL") == "stream-20261005-100005-AAPL"

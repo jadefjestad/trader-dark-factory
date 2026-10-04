@@ -38,6 +38,7 @@ class OrderThrottle:
         return True, "ok"
 
 
-def client_order_id(day: dt.date, seq: int) -> str:
-    """Deterministic id, so an order resubmitted after a restart is rejected as a duplicate by the broker."""
-    return f"stream-{day:%Y%m%d}-{seq:05d}"
+def client_order_id(bar_end: dt.datetime, symbol: str) -> str:
+    """One id per (bar, symbol): a restart that re-decides the same bar sends the same id, which the
+    broker rejects as a duplicate, while later bars get fresh ids."""
+    return f"stream-{bar_end:%Y%m%d-%H%M%S}-{symbol}"

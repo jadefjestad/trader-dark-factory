@@ -1,0 +1,16 @@
+# Local run of the streamer in shadow mode. Put the PAPER keys of the dedicated streaming paper
+# account in deploy/streamer/.env (git-ignored):
+#   ALPACA_API_KEY_ID=...
+#   ALPACA_API_SECRET_KEY=...
+# then, from the repo root:  docker compose -f deploy/streamer/docker-compose.yml up --build
+services:
+  streamer:
+    build:
+      context: ../..
+      dockerfile: deploy/streamer/Dockerfile
+    env_file: .env
+    environment:
+      STREAM_SUBMIT: "0"        # shadow: log orders, submit nothing
+    ports: ["8080:8080"]
+    volumes: ["./logs:/var/log/stream"]
+    restart: unless-stopped
