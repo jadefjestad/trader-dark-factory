@@ -12,6 +12,15 @@ import pandas as pd
 from factory.data import DataError, MarketData
 
 
+def _news_articles(md: MarketData) -> pd.DataFrame:
+    from factory import news
+    start = (pd.Timestamp(md.index[0]) - pd.Timedelta(days=7)).strftime("%Y-%m-%d")
+    arts = news.load(md.symbols, start, "latest")
+    if arts.empty:
+        raise DataError("no news articles loaded")
+    return arts
+
+
 def _news_count(md: MarketData, source: str) -> pd.DataFrame:
     if source == "synthetic":   # deterministic fake counts for tests and offline smoke runs
         rng = np.random.default_rng(11)
@@ -19,11 +28,16 @@ def _news_count(md: MarketData, source: str) -> pd.DataFrame:
         return pd.DataFrame(rng.poisson(lam, (len(md.index), len(md.symbols))).astype(float),
                             index=md.index, columns=md.symbols)
     from factory import news
-    start = (pd.Timestamp(md.index[0]) - pd.Timedelta(days=7)).strftime("%Y-%m-%d")
-    arts = news.load(md.symbols, start, "latest")
-    if arts.empty:
-        raise DataError("no news articles loaded")
-    return news.count_panel(arts, pd.DatetimeIndex(md.index), md.symbols)
+    return news.count_panel(_news_articles(md), pd.DatetimeIndex(md.index), md.symbols)
+
+
+def _news_sentiment(md: MarketData, source: str) -> pd.DataFrame:
+    if source == "synthetic":
+        rng = np.random.default_rng(17)
+        return pd.DataFrame(rng.integers(-2, 3, (len(md.index), len(md.symbols))).astype(float),
+                            index=md.index, columns=md.symbols)
+    from factory import news
+    return news.sentiment_panel(_news_articles(md), pd.DatetimeIndex(md.index), md.symbols)
 
 
 def _macro(md: MarketData, source: str) -> pd.DataFrame:
@@ -41,7 +55,7 @@ def _macro(md: MarketData, source: str) -> pd.DataFrame:
     return out
 
 
-PANELS = {"news_count": _news_count, "macro": _macro}
+PANELS = {"news_count": _news_count, "news_sentiment": _news_sentiment, "macro": _macro}
 
 
 def attach(md: MarketData, names, source: str) -> MarketData:

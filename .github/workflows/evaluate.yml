@@ -51,7 +51,7 @@ jobs:
             names=""
             for f in "$@" $ch; do
               [ -f "$f" ] || continue
-              for n in news_count macro; do grep -Eq "extra_data *=.*[\"']$n[\"']" "$f" && names="$names,$n"; done
+              for n in news_count news_sentiment macro; do grep -Eq "extra_data *=.*[\"']$n[\"']" "$f" && names="$names,$n"; done
             done
             printf '%s' "$names" | tr ',' '\n' | grep -v '^$' | sort -u | paste -sd, - || true
           }
@@ -100,7 +100,7 @@ jobs:
           path: data/cache
           key: bars-${{ hashFiles('protected/*.yaml') }}-${{ needs.plan.outputs.timeframes }}-${{ steps.day.outputs.day }}
       - uses: actions/cache/restore@v4     # complete years of news, filled by the news-backfill workflow
-        if: contains(needs.plan.outputs.extra, 'news_count')
+        if: contains(needs.plan.outputs.extra, 'news_')
         with:
           path: data/cache/news_*.csv.gz
           key: news-v1-none
