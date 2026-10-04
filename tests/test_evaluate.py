@@ -60,3 +60,24 @@ def test_full_evaluation_on_synthetic_is_never_promotable():
 def test_intraday_candidate_cannot_be_promoted():
     r = evaluate.evaluate("strategies.baselines.intraday_orb:OpeningRangeBreakout", "synthetic", "t", include_baselines=False)
     assert {g["gate"]: g["passed"] for g in r["gates"]}["executable_timeframe"] is False
+
+
+def test_intraday_gates_are_research_gates(monkeypatch):
+    r = evaluate.evaluate("strategies.baselines.intraday_orb:OpeningRangeBreakout", "synthetic", "t", include_baselines=False)
+    gates = {g["gate"]: g for g in r["gates"]}
+    assert gates["executable_timeframe"].get("promotion_only") is True
+    # turnover is judged against the intraday limit, not the daily 25x
+    turn = gates["turnover"]
+    assert turn["passed"] == (turn["detail"] <= evaluate.config.evaluation()["gates"]["max_annual_turnover"]["15Min"])
+    research = all(g["passed"] for g in r["gates"] if not g.get("promotion_only"))
+    assert r["passed_gates"] == research and r["promote"] is False
+
+
+def test_research_pass_on_unexecutable_timeframe_is_labelled():
+    r = {"experiment_id": "x", "strategy": {"name": "s", "timeframe": "15Min", "params": {}},
+         "data": {"source": "alpaca:sip", "first_bar": "2023-01-01", "last_bar": "2026-01-01", "fingerprint": "f"},
+         "protected_fingerprint": "p", "champion": None, "metrics": {}, "benchmark": {"symbol": "SPY", "metrics": {"validation": {}}},
+         "baselines": {}, "passed_gates": True, "promote": False, "beats_champion": True,
+         "gates": [{"gate": "executable_timeframe", "passed": False, "detail": "15Min", "promotion_only": True}]}
+    md = evaluate.to_markdown(r)
+    assert "not executable yet" in md and "executable_timeframe (promotion only)" in md

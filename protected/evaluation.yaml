@@ -52,7 +52,10 @@ gates:
   min_validation_sharpe: 0.30
   min_holdout_sharpe: 0.00
   max_sharpe_decay: 1.00        # in-sample Sharpe minus validation Sharpe
-  max_annual_turnover: 25.0     # sum of |trades| / equity per year
+  max_annual_turnover:          # sum of |trades| / equity per year
+    "1Day": 25.0
+    "15Min": 1000.0             # flat every night means >= 504x/yr for one full round trip a day; ~2 a day allowed
+    "5Min": 1000.0
   robustness_min_ratio: 0.50    # median Sharpe of perturbed params / base Sharpe (validation)
   robustness_perturbation: 0.20 # +/- 20% on numeric params
   causality_checks: 5           # truncated-data reruns that must reproduce signals exactly
