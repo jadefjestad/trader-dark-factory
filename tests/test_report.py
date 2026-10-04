@@ -33,3 +33,20 @@ def test_report_survives_broker_errors(tmp_path):
         def account(self):
             raise RuntimeError("401")
     assert "could not read account" in report.build(tmp_path, Bad())
+
+
+def test_execution_quality_signs_costs_against_us(tmp_path):
+    now = dt.datetime.now(dt.timezone.utc).isoformat()
+    (tmp_path / "executions").mkdir()
+    (tmp_path / "executions" / "run.json").write_text(json.dumps({
+        "started_at": now, "prices": {"AAPL": 100.0, "MSFT": 200.0},
+        "submitted": [{"client_order_id": "a", "symbol": "AAPL", "side": "buy"},
+                      {"client_order_id": "m", "symbol": "MSFT", "side": "sell"}]}))
+
+    class B(Broker):
+        def closed_orders(self, after):
+            return [{"client_order_id": "a", "filled_avg_price": "100.10"},   # paid 10 bps more
+                    {"client_order_id": "m", "filled_avg_price": "199.60"},   # sold 20 bps lower
+                    {"client_order_id": "other", "filled_avg_price": "1"}]
+    line = report.execution_quality(tmp_path, B())[0]
+    assert "2 fills" in line and "mean cost +15.0 bps" in line and "above the backtest assumption" in line
