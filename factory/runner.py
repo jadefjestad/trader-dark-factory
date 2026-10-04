@@ -80,15 +80,17 @@ def describe(ref: str, timeout: int = 120) -> dict:
 
 
 def run(ref: str, md: MarketData, jobs: list[dict], timeout: int = DEFAULT_TIMEOUT_S) -> list[pd.DataFrame]:
-    """jobs: [{"params": {...} or None, "rows": n or None}] -> one weights frame per job (rows = first n bars)."""
+    """jobs: [{"params": {...} or None, "rows": n or None, "start": k or None}] -> one weights frame per
+    job, computed on bars [start, rows) (default: all bars)."""
     out = _invoke(ref, md, jobs, timeout)
     frames = []
     for i, job in enumerate(jobs):
         n = job.get("rows") or len(md.index)
+        k = job.get("start") or 0
         a = out[f"w{i}"]
-        if a.shape != (n, len(md.symbols)):
-            raise StrategyError(f"{ref} returned shape {a.shape}, expected {(n, len(md.symbols))}")
-        frames.append(pd.DataFrame(a, index=md.index[:n], columns=md.symbols))
+        if a.shape != (n - k, len(md.symbols)):
+            raise StrategyError(f"{ref} returned shape {a.shape}, expected {(n - k, len(md.symbols))}")
+        frames.append(pd.DataFrame(a, index=md.index[k:n], columns=md.symbols))
     return frames
 
 
@@ -110,7 +112,8 @@ def _child(work: Path, ref: str) -> None:
             raw = {f: z[f] for f in FIELDS}
         for i, job in enumerate(jobs):
             n = job.get("rows") or len(idx)
-            md = MarketData(*(pd.DataFrame(raw[f][:n].copy(), index=idx[:n], columns=m["symbols"]) for f in FIELDS),
+            k = job.get("start") or 0
+            md = MarketData(*(pd.DataFrame(raw[f][k:n].copy(), index=idx[k:n], columns=m["symbols"]) for f in FIELDS),
                             timeframe=m["timeframe"], source=m["source"])
             s = cls(**(job.get("params") or {}))
             w = s.target_weights(md)
