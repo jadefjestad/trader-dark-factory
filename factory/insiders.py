@@ -117,24 +117,31 @@ def recent_purchases(filings: pd.DataFrame, after: str, use_cache: bool = True) 
 
 
 def fetch(symbols: list[str], filings: pd.DataFrame, use_cache: bool = True) -> pd.DataFrame:
-    """Every open-market purchase in the universe since FIRST_QUARTER, with a `symbol` column."""
-    by_cik = {c: s for s, ciks in edgar.ciks_for(symbols, use_cache).items() for c in ciks}
-    today = pd.Timestamp.now(tz="UTC").tz_localize(None)
-    frames, covered = [], None
-    quarters = list(_quarters(today))
-    for i, (y, q) in enumerate(quarters):
-        df = quarter_purchases(y, q, set(by_cik), use_cache)
-        if df is None:
-            if i < len(quarters) - 3:    # SEC publishes a quarter some months after it ends
-                raise DataError(f"SEC insider data set {y}q{q} is missing")
-            continue
-        frames.append(df)
-        covered = pd.Timestamp(y, 3 * q, 1) + pd.offsets.MonthEnd(0)
-    if covered is None:
-        raise DataError("no SEC insider data sets available")
-    frames.append(recent_purchases(filings, covered.strftime("%Y-%m-%d"), use_cache))
-    out = pd.concat(frames, ignore_index=True).drop_duplicates(["accn", "owner", "trans_date", "shares", "price"])
-    return out.assign(symbol=out["issuer_cik"].astype(int).map(by_cik))
+    """Every open-market purchase in the universe since FIRST_QUARTER, with a `symbol` column.
+
+    Cached per UTC day as a whole, so the evaluate job (no network) never asks SEC whether a quarter
+    has been published since the data job looked."""
+    def build():
+        by_cik = {c: s for s, ciks in edgar.ciks_for(symbols, use_cache).items() for c in ciks}
+        today = pd.Timestamp.now(tz="UTC").tz_localize(None)
+        frames, covered = [], None
+        quarters = list(_quarters(today))
+        for i, (y, q) in enumerate(quarters):
+            df = quarter_purchases(y, q, set(by_cik), use_cache)
+            if df is None:
+                if i < len(quarters) - 3:    # SEC publishes a quarter some months after it ends
+                    raise DataError(f"SEC insider data set {y}q{q} is missing")
+                continue
+            frames.append(df)
+            covered = pd.Timestamp(y, 3 * q, 1) + pd.offsets.MonthEnd(0)
+        if covered is None:
+            raise DataError("no SEC insider data sets available")
+        frames.append(recent_purchases(filings, covered.strftime("%Y-%m-%d"), use_cache))
+        out = pd.concat(frames, ignore_index=True).drop_duplicates(["accn", "owner", "trans_date", "shares", "price"])
+        return out.assign(symbol=out["issuer_cik"].astype(int).map(by_cik))
+
+    out = edgar.cached_table("insiders", build, use_cache)
+    return out.assign(owner=out["owner"].fillna("").astype(str))
 
 
 def panels(purchases: pd.DataFrame, filings: pd.DataFrame, index: pd.DatetimeIndex, symbols: list[str]) -> dict:

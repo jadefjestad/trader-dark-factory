@@ -201,3 +201,13 @@ def test_evaluate_workflow_fetches_every_panel():
     text = (Path(__file__).resolve().parent.parent / ".github/workflows/evaluate.yml").read_text()
     line = next(x for x in text.splitlines() if "for n in news_count" in x)
     assert set(extras.PANELS) <= set(line.replace(";", " ").split())
+
+
+def test_insider_fetch_reuses_the_days_cache_without_network(tmp_path, monkeypatch):
+    """The evaluate job has no SEC access; it must read what the data job cached that day."""
+    monkeypatch.setattr(edgar, "CACHE_DIR", tmp_path)
+    monkeypatch.delenv("SEC_USER_AGENT", raising=False)
+    pd.DataFrame([{"accn": "a", "issuer_cik": 320193, "owner": "42", "filed": "2024-03-05", "trans_date": "2024-03-01",
+                   "shares": 1.0, "price": 2.0, "symbol": "AAPL"}]).to_csv(edgar.daily_cache("insiders"), index=False)
+    out = insiders.fetch(["AAPL"], pd.DataFrame())
+    assert out["symbol"].tolist() == ["AAPL"] and out["owner"].tolist() == ["42"]
