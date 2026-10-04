@@ -1,0 +1,13 @@
+{
+  "kind": "rule_change",
+  "commit": "ac190dbb50fd96749dfbbf7a2d33efb9728ddd29",
+  "previous": "e715b97fc548711c36761b50e8d06b376a0c862d",
+  "changed_at": "2026-10-04T21:58:23+00:00",
+  "reason": "probe.yml passes the new SEC_USER_AGENT secret to the read-only SEC probe step; no other workflow or rule changes.",
+  "files": [
+    {
+      "file": ".github/workflows/probe.yml",
+      "change": "M"
+    }
+  ]
+}
