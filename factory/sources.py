@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 
 from factory.data import _alpaca_headers
@@ -16,8 +17,17 @@ SEC_FACTS_URL = "https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json"
 SEC_SUBMISSIONS_URL = "https://data.sec.gov/submissions/CIK{cik:010d}.json"
 FRED_CSV_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv"
 ALFRED_CSV_URL = "https://alfred.stlouisfed.org/graph/alfredgraph.csv"
-# SEC asks automated clients to identify themselves; no personal contact details in this public repo
-SEC_HEADERS = {"User-Agent": "trader-dark-factory research bot (github.com/jadefjestad/trader-dark-factory)"}
+SEC_APP_NAME = "Trader Dark Factory"
+
+
+def sec_headers() -> dict:
+    """SEC requires a User-Agent naming the app and a contact email. The contact comes from the
+    SEC_USER_AGENT secret only (never committed or logged); an app name is prepended if it is a bare email."""
+    contact = os.environ.get("SEC_USER_AGENT", "").strip()
+    if not contact:
+        raise RuntimeError("SEC_USER_AGENT not set")
+    ua = contact if " " in contact else f"{SEC_APP_NAME} {contact}"
+    return {"User-Agent": ua, "Accept-Encoding": "gzip, deflate"}
 
 
 def _get(url, **kw):
@@ -43,14 +53,14 @@ def probe_alpaca_news() -> dict:
 
 def probe_sec(cik: int = 320193) -> dict:
     out = {}
-    r = _get(SEC_FACTS_URL.format(cik=cik), headers=SEC_HEADERS)
+    r = _get(SEC_FACTS_URL.format(cik=cik), headers=sec_headers())
     out["companyfacts"] = {"status": r.status_code}
     if r.status_code == 200:
         eps = r.json().get("facts", {}).get("us-gaap", {}).get("EarningsPerShareDiluted", {}).get("units", {})
         vals = next(iter(eps.values()), [])
         out["companyfacts"].update(eps_rows=len(vals), first_filed=min((v["filed"] for v in vals), default=None),
                                    sample=vals[-1] if vals else None)
-    r = _get(SEC_SUBMISSIONS_URL.format(cik=cik), headers=SEC_HEADERS)
+    r = _get(SEC_SUBMISSIONS_URL.format(cik=cik), headers=sec_headers())
     out["submissions"] = {"status": r.status_code}
     if r.status_code == 200:
         recent = r.json().get("filings", {}).get("recent", {})
