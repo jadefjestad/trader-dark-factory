@@ -33,6 +33,11 @@ jobs:
           path: data/cache/news_*.csv.gz
           key: news-v1-none
           restore-keys: news-v1-
+      - uses: actions/cache/restore@v4     # published quarters of SEC insider data for strategies that use it
+        with:
+          path: data/cache/sec_insiders_*q*_*.csv.gz
+          key: sec-insiders-v1-none
+          restore-keys: sec-insiders-v1-
       - name: Create unprivileged sandbox user for strategy code
         run: sudo useradd --system --no-create-home --shell /usr/sbin/nologin sandbox
       - name: Execute champion on paper account
@@ -40,6 +45,7 @@ jobs:
         env:
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
           FACTORY_SANDBOX_USER: sandbox
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
         run: |
