@@ -1,0 +1,30 @@
+# PROTECTED (CODEOWNERS). The agent may not edit this file.
+# Large-cap US stocks. Chosen from today's large caps, so long backtests carry
+# survivorship bias; treat early-period results as optimistic.
+symbols:
+  - AAPL
+  - MSFT
+  - NVDA
+  - AMZN
+  - GOOGL
+  - META
+  - AVGO
+  - JPM
+  - V
+  - MA
+  - UNH
+  - LLY
+  - JNJ
+  - MRK
+  - XOM
+  - CVX
+  - PG
+  - KO
+  - PEP
+  - COST
+  - WMT
+  - HD
+  - BAC
+  - ADBE
+  - CSCO
+benchmark: SPY   # used for comparison only, never traded by strategies

@@ -1,0 +1,13 @@
+# PROTECTED (CODEOWNERS). Hard limits enforced by factory/risk.py before any order.
+trading_enabled: true          # kill switch: set false to stop all order submission
+paper_only: true               # must stay true; execution refuses to run otherwise
+allow_short: false
+max_gross_exposure: 1.00       # fraction of equity, no leverage
+max_position_weight: 0.15
+min_price: 5.0
+max_order_notional: 25000
+min_order_notional: 50
+max_orders_per_run: 60
+max_run_turnover: 1.00         # sum |order notional| / equity per run
+max_drawdown_halt: 0.20        # halt new orders if equity is 20% below its 1-year peak
+max_data_staleness_days: 4     # last completed daily bar must be this recent (calendar days)

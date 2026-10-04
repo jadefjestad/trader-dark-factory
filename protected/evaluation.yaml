@@ -1,0 +1,58 @@
+# PROTECTED (CODEOWNERS). Evaluation rules, periods and promotion gates.
+# The agent proposes strategies; this file decides whether they pass.
+
+initial_capital: 100000
+
+data:
+  historical_feed: sip   # Alpaca free plan allows SIP history older than 15 minutes
+  fallback_feed: iex
+  adjustment: all
+
+# Fills: signals use bar t close; orders fill at bar t+1 open plus costs.
+costs:
+  "1Day":
+    slippage_bps: 5        # per side, against us
+    half_spread_bps: 2     # per side
+    commission_per_share: 0.0
+    sell_fee_bps: 0.3      # SEC/FINRA style fees on sells
+  "15Min":
+    slippage_bps: 8
+    half_spread_bps: 3
+    commission_per_share: 0.0
+    sell_fee_bps: 0.3
+  "5Min":
+    slippage_bps: 10
+    half_spread_bps: 4
+    commission_per_share: 0.0
+    sell_fee_bps: 0.3
+
+max_participation: 0.02    # max order size as a fraction of the bar's dollar volume
+
+periods:
+  "1Day":
+    in_sample:  {start: "2017-01-01", end: "2021-12-31"}
+    validation: {start: "2022-01-01", end: "2023-12-31"}
+    holdout:    {start: "2024-01-01", end: "latest"}   # unseen: only gates and rounded figures are reported
+    warmup_days: 300
+  "15Min":
+    in_sample:  {start: "2023-01-01", end: "2024-06-30"}
+    validation: {start: "2024-07-01", end: "2025-06-30"}
+    holdout:    {start: "2025-07-01", end: "latest"}
+    warmup_days: 10
+
+gates:
+  min_trades_validation: 20
+  max_drawdown: 0.25            # every period
+  max_annual_vol: 0.25          # every period
+  min_validation_sharpe: 0.30
+  min_holdout_sharpe: 0.00
+  max_sharpe_decay: 1.00        # in-sample Sharpe minus validation Sharpe
+  max_annual_turnover: 25.0     # sum of |trades| / equity per year
+  robustness_min_ratio: 0.50    # median Sharpe of perturbed params / base Sharpe (validation)
+  robustness_perturbation: 0.20 # +/- 20% on numeric params
+  causality_checks: 5           # truncated-data reruns that must reproduce signals exactly
+
+promotion:
+  # Score = mean of validation and holdout Sharpe, both net of costs.
+  min_score_improvement: 0.05   # over the current champion, re-run on the same data
+  synthetic_data_promotable: false

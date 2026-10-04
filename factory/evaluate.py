@@ -1,0 +1,301 @@
+"""Evaluate a strategy against protected rules, baselines, a benchmark and the current champion.
+
+    python -m factory.evaluate --candidate strategies/candidates/my_idea.py --data alpaca
+    python -m factory.evaluate --baselines --data synthetic
+
+Writes <out>/<experiment_id>.json and .md. With --write-promotion, a candidate that passes every
+gate and beats the champion is written to state/champion.json (merging that PR = promotion).
+"""
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import json
+import signal
+import sys
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+from factory import backtest, config, metrics
+from factory.config import ROOT
+from factory.data import DataError, MarketData, load_alpaca, synthetic, validate
+from factory.sandbox import load_ref
+
+CHAMPION = ROOT / "state" / "champion.json"
+STRATEGY_TIMEOUT_S = 300
+
+
+class _Timeout(Exception):
+    pass
+
+
+def _with_timeout(fn, *a):
+    def handler(*_):
+        raise _Timeout(f"strategy exceeded {STRATEGY_TIMEOUT_S}s")
+    old = signal.signal(signal.SIGALRM, handler)
+    signal.alarm(STRATEGY_TIMEOUT_S)
+    try:
+        return fn(*a)
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, old)
+
+
+# ---------------------------------------------------------------- data
+
+def load_data(timeframe: str, source: str, cfg: dict) -> tuple[MarketData, MarketData]:
+    """Return (universe data, benchmark data) covering warmup through the end of the holdout."""
+    uni = config.universe()
+    symbols, bench = uni["symbols"], uni["benchmark"]
+    per = cfg["periods"][timeframe]
+    start = (pd.Timestamp(per["in_sample"]["start"]) - pd.Timedelta(days=int(per["warmup_days"] * 1.5))).strftime("%Y-%m-%d")
+    end = per["holdout"]["end"]
+    if source == "synthetic":
+        md = synthetic(symbols + [bench], start=start, end="2026-06-30" if end == "latest" else end, timeframe=timeframe)
+    else:
+        d = cfg["data"]
+        md = load_alpaca(symbols + [bench], start, end, timeframe, feed=d["historical_feed"],
+                         fallback_feed=d.get("fallback_feed"), adjustment=d["adjustment"])
+    validate(md, symbols + [bench])
+    return md.select(symbols), md.select([bench])
+
+
+def periods(timeframe: str, cfg: dict, index: pd.Index) -> dict:
+    out = {}
+    for name in ("in_sample", "validation", "holdout"):
+        p = cfg["periods"][timeframe][name]
+        end = index[-1] if p["end"] == "latest" else pd.Timestamp(p["end"]) + pd.Timedelta(hours=23, minutes=59)
+        start = pd.Timestamp(p["start"])
+        if getattr(index, "tz", None) is not None:
+            start = start.tz_localize(index.tz)
+            if not isinstance(end, pd.Timestamp) or end.tzinfo is None:
+                end = pd.Timestamp(end).tz_localize(index.tz)
+        out[name] = (start, end)
+    return out
+
+
+# ---------------------------------------------------------------- checks
+
+def weight_violations(w: pd.DataFrame, limits: dict) -> list[str]:
+    v = []
+    if not np.isfinite(w.fillna(0).values).all():
+        v.append("non-finite weights")
+    if not limits["allow_short"] and (w < -1e-9).any().any():
+        v.append("negative weights while shorting is disabled")
+    gross = w.abs().sum(axis=1).max()
+    if gross > limits["max_gross_exposure"] + 1e-6:
+        v.append(f"gross exposure {gross:.3f} > {limits['max_gross_exposure']}")
+    biggest = w.abs().max().max()
+    if biggest > limits["max_position_weight"] + 1e-6:
+        v.append(f"position weight {biggest:.3f} > {limits['max_position_weight']}")
+    return v
+
+
+def causality_check(strategy, md: MarketData, full: pd.DataFrame, n: int, seed: int = 0) -> list[str]:
+    """Re-run on truncated data; the last row must equal the full run's row at that bar."""
+    rng = np.random.default_rng(seed)
+    lo = min(max(strategy.lookback + 5, len(md.index) // 4), len(md.index) - 2)
+    cuts = sorted(set(rng.integers(lo, len(md.index) - 1, n).tolist()))
+    bad = []
+    for cut in cuts:
+        part = strategy.target_weights(md.head(cut + 1))
+        a = part.reindex(columns=md.symbols).iloc[-1].fillna(0).values
+        b = full.reindex(columns=md.symbols).iloc[cut].fillna(0).values
+        if not np.allclose(a, b, atol=1e-9):
+            bad.append(str(md.index[cut]))
+    return bad
+
+
+def perturbations(params: dict, frac: float) -> list[dict]:
+    out = []
+    for k, v in params.items():
+        if isinstance(v, bool) or not isinstance(v, (int, float)):
+            continue
+        for s in (1 - frac, 1 + frac):
+            nv = type(v)(round(v * s)) if isinstance(v, int) else v * s
+            if nv != v and nv > 0:
+                out.append({**params, k: nv})
+    return out
+
+
+# ---------------------------------------------------------------- core
+
+def run_strategy(cls, md, cfg, params=None):
+    s = cls(**(params or {}))
+    w = _with_timeout(s.target_weights, md)
+    res = backtest.run(w, md, cfg["costs"][md.timeframe], cfg["initial_capital"])
+    return s, w, res
+
+
+def period_metrics(res, pers):
+    return {name: metrics.summarize(res, a, b) for name, (a, b) in pers.items()}
+
+
+def score(pm: dict) -> float:
+    return round((pm["validation"].get("sharpe", 0.0) + pm["holdout"].get("sharpe", 0.0)) / 2, 4)
+
+
+def evaluate(ref: str, source: str = "synthetic", experiment_id: str | None = None,
+             include_baselines: bool = True) -> dict:
+    cfg = config.evaluation()
+    limits = config.risk_limits()
+    gates = cfg["gates"]
+    cls = load_ref(ref)
+    md, bench = load_data(cls.timeframe, source, cfg)
+    pers = periods(cls.timeframe, cfg, md.index)
+
+    strat, w, res = run_strategy(cls, md, cfg)
+    pm = period_metrics(res, pers)
+    violations = weight_violations(w, limits)
+    leaks = causality_check(strat, md, w, gates["causality_checks"])
+
+    base_sharpe = pm["validation"].get("sharpe", 0.0)
+    robust = []
+    for p in perturbations(strat.params, gates["robustness_perturbation"]):
+        try:
+            _, _, r2 = run_strategy(cls, md, cfg, p)
+            robust.append(metrics.summarize(r2, *pers["validation"]).get("sharpe", 0.0))
+        except Exception:  # a perturbation that crashes counts as fragile
+            robust.append(0.0)
+    robust_ratio = float(np.median(robust) / base_sharpe) if robust and base_sharpe > 0 else (1.0 if not robust else 0.0)
+
+    # benchmark: buy and hold the benchmark ETF
+    bw = pd.DataFrame(1.0, index=bench.index, columns=bench.symbols)
+    bres = backtest.run(bw, bench, cfg["costs"][bench.timeframe], cfg["initial_capital"])
+    bench_pm = period_metrics(bres, pers)
+
+    baselines = {}
+    if include_baselines:
+        from strategies import baselines as B
+        for bcls in B.ALL:
+            if bcls.timeframe == cls.timeframe and bcls is not cls:
+                _, _, br = run_strategy(bcls, md, cfg)
+                baselines[bcls.name] = period_metrics(br, pers)
+
+    champion = None
+    if CHAMPION.exists():
+        ch = json.loads(CHAMPION.read_text())
+        ccls = load_ref(ch["ref"])
+        if ccls.timeframe == cls.timeframe:
+            _, _, cres = run_strategy(ccls, md, cfg, ch.get("params"))
+            cpm = period_metrics(cres, pers)
+            champion = {"ref": ch["ref"], "name": ccls.name, "score": score(cpm), "metrics": cpm}
+
+    g = []
+    def gate(name, ok, detail):
+        g.append({"gate": name, "passed": bool(ok), "detail": detail})
+    gate("data_not_synthetic", source != "synthetic" or cfg["promotion"]["synthetic_data_promotable"], md.source)
+    gate("risk_limits", not violations, "; ".join(violations) or "ok")
+    gate("no_lookahead", not leaks, f"mismatch at {leaks}" if leaks else f"{gates['causality_checks']} truncated reruns matched")
+    gate("min_trades_validation", pm["validation"].get("trades", 0) >= gates["min_trades_validation"], pm["validation"].get("trades", 0))
+    for name in pers:
+        gate(f"max_drawdown_{name}", pm[name].get("max_drawdown", 1) <= gates["max_drawdown"], pm[name].get("max_drawdown"))
+        gate(f"max_vol_{name}", pm[name].get("annual_vol", 1) <= gates["max_annual_vol"], pm[name].get("annual_vol"))
+    gate("min_validation_sharpe", base_sharpe >= gates["min_validation_sharpe"], base_sharpe)
+    gate("min_holdout_sharpe", pm["holdout"].get("sharpe", -9) >= gates["min_holdout_sharpe"], round(pm["holdout"].get("sharpe", -9), 1))
+    decay = pm["in_sample"].get("sharpe", 0) - base_sharpe
+    gate("sharpe_decay", decay <= gates["max_sharpe_decay"], round(decay, 3))
+    gate("turnover", pm["validation"].get("annual_turnover", 1e9) <= gates["max_annual_turnover"], pm["validation"].get("annual_turnover"))
+    gate("robustness", robust_ratio >= gates["robustness_min_ratio"], round(robust_ratio, 3))
+    gate("fill_participation", res.max_participation <= cfg["max_participation"], round(res.max_participation, 5))
+
+    passed = all(x["passed"] for x in g)
+    sc = score(pm)
+    beats = champion is None or sc >= champion["score"] + cfg["promotion"]["min_score_improvement"]
+    exp_id = experiment_id or f"{dt.datetime.now(dt.timezone.utc):%Y%m%dT%H%M%S}-{strat.name}"
+    ref_path = ROOT / ref if ref.endswith(".py") else None
+    return {
+        "experiment_id": exp_id,
+        "strategy": {"name": strat.name, "ref": ref, "params": strat.params, "timeframe": cls.timeframe,
+                     "code_sha256": config.file_sha256(ref_path) if ref_path and ref_path.exists() else None},
+        "data": {"source": md.source, "fingerprint": md.fingerprint(), "first_bar": str(md.index[0]), "last_bar": str(md.index[-1])},
+        "protected_fingerprint": config.protected_fingerprint(),
+        "evaluated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+        "metrics": _redact_holdout(pm),
+        "benchmark": {"symbol": bench.symbols[0], "metrics": _redact_holdout(bench_pm)},
+        "baselines": {k: _redact_holdout(v) for k, v in baselines.items()},
+        "champion": None if champion is None else {**champion, "metrics": _redact_holdout(champion["metrics"])},
+        "gates": g,
+        "passed_gates": passed,
+        "score": sc,
+        "beats_champion": bool(beats),
+        "promote": bool(passed and beats),
+    }
+
+
+def _redact_holdout(pm: dict) -> dict:
+    """The holdout stays 'unseen': report only coarse figures so the agent cannot tune to it."""
+    out = dict(pm)
+    h = pm.get("holdout", {})
+    out["holdout"] = {"sharpe": round(h.get("sharpe", 0.0), 1), "max_drawdown": round(h.get("max_drawdown", 0.0), 2)}
+    return out
+
+
+# ---------------------------------------------------------------- reporting
+
+def to_markdown(r: dict) -> str:
+    s = r["strategy"]
+    verdict = "PROMOTE" if r["promote"] else ("PASSED GATES, did not beat champion" if r["passed_gates"] else "REJECTED")
+    lines = [f"## Experiment `{r['experiment_id']}`: **{verdict}**", "",
+             f"Strategy `{s['name']}` ({s['timeframe']}), params `{json.dumps(s['params'])}`",
+             f"Data `{r['data']['source']}` {r['data']['first_bar'][:10]} to {r['data']['last_bar'][:10]}, "
+             f"fingerprint `{r['data']['fingerprint']}`, rules `{r['protected_fingerprint']}`", "",
+             f"Score (mean of validation and holdout Sharpe): **{r['score']}**"]
+    if r["champion"]:
+        lines.append(f"Champion `{r['champion']['name']}` score: {r['champion']['score']}")
+    lines += ["", "| Period | Sharpe | CAGR | Vol | Max DD | Turnover/yr | Trades |", "|---|---|---|---|---|---|---|"]
+    for p, m in r["metrics"].items():
+        lines.append(f"| {p} | {m.get('sharpe','')} | {m.get('cagr','')} | {m.get('annual_vol','')} | "
+                     f"{m.get('max_drawdown','')} | {m.get('annual_turnover','')} | {m.get('trades','')} |")
+    lines += ["", f"Validation Sharpe vs others: benchmark {r['benchmark']['symbol']} "
+              f"{r['benchmark']['metrics']['validation'].get('sharpe')}"]
+    for k, v in r["baselines"].items():
+        lines.append(f"- {k}: {v['validation'].get('sharpe')}")
+    lines += ["", "| Gate | Result | Detail |", "|---|---|---|"]
+    for x in r["gates"]:
+        lines.append(f"| {x['gate']} | {'pass' if x['passed'] else '**FAIL**'} | {x['detail']} |")
+    return "\n".join(lines) + "\n"
+
+
+def write_promotion(r: dict) -> None:
+    CHAMPION.parent.mkdir(exist_ok=True)
+    CHAMPION.write_text(json.dumps({
+        "ref": r["strategy"]["ref"], "params": r["strategy"]["params"], "name": r["strategy"]["name"],
+        "timeframe": r["strategy"]["timeframe"], "code_sha256": r["strategy"]["code_sha256"],
+        "experiment_id": r["experiment_id"], "score": r["score"], "promoted_at": r["evaluated_at"],
+    }, indent=2) + "\n")
+
+
+def main(argv=None) -> int:
+    ap = argparse.ArgumentParser()
+    g = ap.add_mutually_exclusive_group(required=True)
+    g.add_argument("--candidate", help="strategy file or module:Class")
+    g.add_argument("--baselines", action="store_true", help="evaluate every baseline (leaderboard)")
+    ap.add_argument("--data", choices=["synthetic", "alpaca"], default="synthetic")
+    ap.add_argument("--out", default=str(ROOT / "experiments" / "results"))
+    ap.add_argument("--experiment-id")
+    ap.add_argument("--write-promotion", action="store_true")
+    a = ap.parse_args(argv)
+    out = Path(a.out)
+    out.mkdir(parents=True, exist_ok=True)
+
+    refs = [a.candidate] if a.candidate else [f"{c.__module__}:{c.__name__}" for c in __import__("strategies.baselines", fromlist=["ALL"]).ALL]
+    try:
+        for ref in refs:
+            r = evaluate(ref, a.data, a.experiment_id if a.candidate else None)
+            (out / f"{r['experiment_id']}.json").write_text(json.dumps(r, indent=2, default=str) + "\n")
+            (out / f"{r['experiment_id']}.md").write_text(to_markdown(r))
+            print(to_markdown(r))
+            if a.write_promotion and a.candidate and r["promote"]:
+                write_promotion(r)
+                print(f"champion updated -> {r['strategy']['name']}")
+    except DataError as e:
+        print(f"DATA ERROR: {e}", file=sys.stderr)
+        return 2
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
