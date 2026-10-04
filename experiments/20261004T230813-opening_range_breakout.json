@@ -1,0 +1,196 @@
+{
+  "experiment_id": "20261004T230813-opening_range_breakout",
+  "strategy": {
+    "name": "opening_range_breakout",
+    "ref": "strategies.baselines.intraday_orb:OpeningRangeBreakout",
+    "params": {
+      "range_bars": 2,
+      "max_names": 8
+    },
+    "timeframe": "15Min",
+    "code_sha256": null
+  },
+  "data": {
+    "source": "alpaca:sip",
+    "fingerprint": "cb56a692d8abf930",
+    "first_bar": "2022-12-19 09:30:00-05:00",
+    "last_bar": "2026-10-02 15:45:00-04:00"
+  },
+  "protected_fingerprint": "3c4bdbf656f7d9f4",
+  "evaluated_at": "2026-10-04T23:08:13+00:00",
+  "metrics": {
+    "in_sample": {
+      "bars": 9724,
+      "total_return": -0.771998,
+      "cagr": -0.630698,
+      "annual_vol": 0.080457,
+      "sharpe": -12.3398,
+      "sortino": -14.815,
+      "max_drawdown": 0.771998,
+      "annual_turnover": 649.3899,
+      "cost_drag": 1.103172,
+      "avg_exposure": 0.7036,
+      "trades": 24315
+    },
+    "validation": {
+      "bars": 6500,
+      "total_return": -0.687545,
+      "cagr": -0.69044,
+      "annual_vol": 0.111381,
+      "sharpe": -10.4712,
+      "sortino": -12.2422,
+      "max_drawdown": 0.689515,
+      "annual_turnover": 654.5867,
+      "cost_drag": 1.083804,
+      "avg_exposure": 0.7181,
+      "trades": 16743
+    },
+    "holdout": {
+      "sharpe": -14.7,
+      "max_drawdown": 0.7
+    }
+  },
+  "benchmark": {
+    "symbol": "SPY",
+    "metrics": {
+      "in_sample": {
+        "bars": 9724,
+        "total_return": -0.671827,
+        "cagr": -0.527989,
+        "annual_vol": 0.09993,
+        "sharpe": -7.4623,
+        "sortino": -9.9307,
+        "max_drawdown": 0.675674,
+        "annual_turnover": 504.0,
+        "cost_drag": 0.844554,
+        "avg_exposure": 0.9231,
+        "trades": 748
+      },
+      "validation": {
+        "bars": 6500,
+        "total_return": -0.561086,
+        "cagr": -0.563967,
+        "annual_vol": 0.152425,
+        "sharpe": -5.3692,
+        "sortino": -7.2124,
+        "max_drawdown": 0.562063,
+        "annual_turnover": 504.0,
+        "cost_drag": 0.832816,
+        "avg_exposure": 0.9231,
+        "trades": 500
+      },
+      "holdout": {
+        "sharpe": -8.1,
+        "max_drawdown": 0.6
+      }
+    }
+  },
+  "baselines": {},
+  "champion": null,
+  "gates": [
+    {
+      "gate": "data_not_synthetic",
+      "passed": true,
+      "detail": "alpaca:sip"
+    },
+    {
+      "gate": "executable_timeframe",
+      "passed": false,
+      "detail": "15Min",
+      "promotion_only": true
+    },
+    {
+      "gate": "risk_limits",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "gate": "no_lookahead",
+      "passed": true,
+      "detail": "5 truncated reruns matched"
+    },
+    {
+      "gate": "lookback_sufficient",
+      "passed": true,
+      "detail": "5 30-bar reruns matched"
+    },
+    {
+      "gate": "min_trades_validation",
+      "passed": true,
+      "detail": 16743
+    },
+    {
+      "gate": "max_drawdown_in_sample",
+      "passed": false,
+      "detail": 0.771998
+    },
+    {
+      "gate": "max_vol_in_sample",
+      "passed": true,
+      "detail": 0.080457
+    },
+    {
+      "gate": "max_drawdown_validation",
+      "passed": false,
+      "detail": 0.689515
+    },
+    {
+      "gate": "max_vol_validation",
+      "passed": true,
+      "detail": 0.111381
+    },
+    {
+      "gate": "max_drawdown_holdout",
+      "passed": false,
+      "detail": "hidden"
+    },
+    {
+      "gate": "max_vol_holdout",
+      "passed": true,
+      "detail": "hidden"
+    },
+    {
+      "gate": "min_validation_sharpe",
+      "passed": false,
+      "detail": -10.4712
+    },
+    {
+      "gate": "min_holdout_sharpe",
+      "passed": false,
+      "detail": "hidden"
+    },
+    {
+      "gate": "sharpe_decay",
+      "passed": true,
+      "detail": -1.869
+    },
+    {
+      "gate": "turnover",
+      "passed": true,
+      "detail": 654.5867
+    },
+    {
+      "gate": "robustness",
+      "passed": false,
+      "detail": 0.0
+    },
+    {
+      "gate": "fill_participation",
+      "passed": false,
+      "detail": 0.07153
+    },
+    {
+      "gate": "cost_stress",
+      "passed": false,
+      "detail": "2.0x costs: validation Sharpe -18.455"
+    }
+  ],
+  "deflated_sharpe": {
+    "trials": 23,
+    "probability": 0.0,
+    "benchmark_annual_sharpe": 0.386
+  },
+  "passed_gates": false,
+  "beats_champion": true,
+  "promote": false
+}
