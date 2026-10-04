@@ -76,7 +76,7 @@ def build(before: str, after: str) -> dict | None:
         if not path.startswith(RULE_PATHS) and not parts[1].startswith(RULE_PATHS):
             continue
         entry = {"file": path, "change": code[0]}
-        if path.endswith((".yaml", ".yml")):
+        if path.startswith(("protected/", "agent/")) and path.endswith((".yaml", ".yml")):
             entry["values"] = yaml_diff(show(before, parts[1]), show(after, path))
         files.append(entry)
     if not files:
