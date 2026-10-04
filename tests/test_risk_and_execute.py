@@ -50,10 +50,10 @@ def test_decide_hold_and_nan():
 
 
 @pytest.fixture(autouse=True)
-def seed_champion(monkeypatch, tmp_path):
+def seed_champion(monkeypatch, tmp_path_factory):
     """Executor tests use the equal-weight baseline, whatever state/champion.json currently promotes."""
     import json
-    p = tmp_path / "champion.json"
+    p = tmp_path_factory.mktemp("seed") / "champion.json"   # not in tmp_path, where tests read run records
     p.write_text(json.dumps({"ref": "strategies.baselines.buy_hold:EqualWeightBuyHold",
                              "params": {"rebalance_every": 21}, "name": "equal_weight_buy_hold", "timeframe": "1Day"}))
     monkeypatch.setattr(execute, "CHAMPION", p)
