@@ -1,0 +1,13 @@
+{
+  "kind": "rule_change",
+  "commit": "fec547f3b1abc2f21bcae4d57318034df2500149",
+  "previous": "c4b844b0d86ca9646d02ad4bb7f6c492d90d841a",
+  "changed_at": "2026-10-04T22:51:01+00:00",
+  "reason": "fix a broken cache key that stopped every intraday evaluation in CI; no rule values change.",
+  "files": [
+    {
+      "file": ".github/workflows/evaluate.yml",
+      "change": "M"
+    }
+  ]
+}
