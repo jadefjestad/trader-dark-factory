@@ -86,6 +86,11 @@ def _sec(md: MarketData, source: str, family: str) -> dict:
     return out
 
 
+def _short_volume_ratio(md: MarketData, source: str) -> pd.DataFrame:
+    from factory import shorts   # FINRA daily short volume / total volume, usable from the next bar (#65)
+    return shorts.panel(md.index, md.symbols, source)
+
+
 def _sec_panel(family: str, name: str):
     return lambda md, source: _sec(md, source, family)[name].copy()
 
@@ -97,7 +102,8 @@ PANELS = {"news_count": _news_count, "news_sentiment": _news_sentiment, "macro":
           "insider_buyers": _sec_panel("insiders", "insider_buyers"),
           "insider_buy_value": _sec_panel("insiders", "insider_buy_value"),
           "earnings_reaction": _sec_panel("earnings", "earnings_reaction"),
-          "earnings_age": _sec_panel("earnings", "earnings_age")}
+          "earnings_age": _sec_panel("earnings", "earnings_age"),
+          "short_volume_ratio": _short_volume_ratio}
 
 
 def attach(md: MarketData, names, source: str) -> MarketData:

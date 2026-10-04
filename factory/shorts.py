@@ -28,7 +28,7 @@ from factory.data import CACHE_DIR, DataError
 DAILY_URL = "https://cdn.finra.org/equity/regsho/daily/CNMSshvol{day:%Y%m%d}.txt"
 SHORT_INTEREST_URL = "https://api.finra.org/data/group/otcMarket/name/consolidatedShortInterest"
 PUBLICATION_LAG_BDAYS = 7    # conservative when a record carries no publication date
-FIRST_YEAR = 2018            # older daily files answer 403 from Actions (probe, 2026-10-04)
+FIRST_YEAR = 2019            # 2018 is missing Jan-Jul and older files answer 403 (backfill, 2026-10-04)
 MAX_MISSING_DAYS = 0.06      # holidays have no file (~4%); more missing than this means a broken download
 COLUMNS = ["date", "symbol", "short_volume", "total_volume"]
 
@@ -115,6 +115,22 @@ def short_volume_ratio_panel(rows: pd.DataFrame, index: pd.DatetimeIndex, symbol
     rows = rows.assign(ratio=rows["short_volume"] / rows["total_volume"])
     wide = rows.pivot_table(index="usable", columns="symbol", values="ratio", aggfunc="last").sort_index()
     return wide.reindex(columns=symbols).reindex(index.union(wide.index)).ffill().reindex(index)
+
+
+def panel(md_index, symbols: list[str], source: str) -> pd.DataFrame:
+    """The short_volume_ratio panel for a daily dataset; synthetic data gets deterministic fake ratios."""
+    import numpy as np
+    idx = pd.DatetimeIndex(md_index)
+    if source == "synthetic":
+        rng = np.random.default_rng(19)
+        base = rng.uniform(0.35, 0.55, len(symbols))
+        return pd.DataFrame(np.clip(base + rng.normal(0, 0.06, (len(idx), len(symbols))), 0, 1),
+                            index=idx, columns=symbols)
+    start = (idx[0] - pd.Timedelta(days=10)).strftime("%Y-%m-%d")
+    out = short_volume_ratio_panel(load(symbols, start, "latest"), idx, symbols)
+    if out.iloc[-1].isna().all():
+        raise DataError("no FINRA short volume for the latest bar")
+    return out
 
 
 def probe_daily(day: dt.date) -> dict:

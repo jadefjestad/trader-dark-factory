@@ -87,3 +87,21 @@ def test_load_caches_complete_years(monkeypatch, tmp_path):
     a = shorts.load(["AAPL"], "2022-01-01", "2022-12-31")
     b = shorts.load(["AAPL"], "2022-01-01", "2022-12-31")
     assert len(calls) == 1 and (tmp_path / "shorts_2022.csv.gz").exists() and len(a) == len(b) == 2
+
+
+def test_synthetic_panel_attaches_through_extras():
+    from factory import extras
+    from factory.data import synthetic
+    md = extras.attach(synthetic(["AAA", "BBB"], start="2024-01-01", end="2024-03-01"), ["short_volume_ratio"], "synthetic")
+    p = md.extra["short_volume_ratio"]
+    assert p.shape == md.close.shape and p.notna().all().all() and ((p >= 0) & (p <= 1)).all().all()
+
+
+def test_real_panel_fails_closed_without_a_latest_value(monkeypatch):
+    monkeypatch.setattr(shorts, "load", lambda *a, **k: shorts.parse_daily(SAMPLE))
+    idx = pd.bdate_range("2026-09-01", "2026-09-30")          # before the only file: nothing usable
+    try:
+        shorts.panel(idx, ["AAPL"], "alpaca")
+    except shorts.DataError:
+        return
+    raise AssertionError("expected DataError")

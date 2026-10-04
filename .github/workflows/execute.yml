@@ -38,6 +38,11 @@ jobs:
           path: data/cache/sec_insiders_*q*_*.csv.gz
           key: sec-insiders-v1-none
           restore-keys: sec-insiders-v1-
+      - uses: actions/cache/restore@v4     # complete years of FINRA short volume for strategies that use it
+        with:
+          path: data/cache/shorts_*.csv.gz
+          key: shorts-v1-none
+          restore-keys: shorts-v1-
       - name: Create unprivileged sandbox user for strategy code
         run: sudo useradd --system --no-create-home --shell /usr/sbin/nologin sandbox
       - name: Execute champion on paper account

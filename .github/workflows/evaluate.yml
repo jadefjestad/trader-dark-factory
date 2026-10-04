@@ -63,7 +63,7 @@ jobs:
             names=""
             for f in "$@" $ch; do
               [ -f "$f" ] || continue
-              for n in news_count news_sentiment macro gross_profitability eps_ttm eps_sue insider_buyers insider_buy_value earnings_reaction earnings_age; do grep -Eq "extra_data *=.*[\"']$n[\"']" "$f" && names="$names,$n"; done
+              for n in news_count news_sentiment macro gross_profitability eps_ttm eps_sue insider_buyers insider_buy_value earnings_reaction earnings_age short_volume_ratio; do grep -Eq "extra_data *=.*[\"']$n[\"']" "$f" && names="$names,$n"; done
             done
             printf '%s' "$names" | tr ',' '\n' | grep -v '^$' | sort -u | paste -sd, - || true
           }
@@ -127,6 +127,12 @@ jobs:
           path: data/cache/sec_insiders_*q*_*.csv.gz
           key: sec-insiders-v1-${{ steps.day.outputs.day }}
           restore-keys: sec-insiders-v1-
+      - uses: actions/cache/restore@v4     # complete years of FINRA short volume, filled by shorts-backfill
+        if: contains(needs.plan.outputs.extra, 'short_volume')
+        with:
+          path: data/cache/shorts_*.csv.gz
+          key: shorts-v1-none
+          restore-keys: shorts-v1-
       - name: Download market data
         env:
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
