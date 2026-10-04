@@ -1,0 +1,13 @@
+{
+  "kind": "rule_change",
+  "commit": "26722d9a24e096960bd455a405cdb622e9c8276c",
+  "previous": "96db77391b45a6390a4d86c039890201d5d729bb",
+  "changed_at": "2026-10-04T13:24:09+00:00",
+  "reason": "lets the agent read probe results via the REST API.",
+  "files": [
+    {
+      "file": ".github/workflows/probe.yml",
+      "change": "M"
+    }
+  ]
+}
