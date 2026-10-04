@@ -206,6 +206,9 @@ def evaluate(ref: str, source: str = "synthetic", experiment_id: str | None = No
     gate("fill_participation", res.max_participation <= cfg["max_participation"], round(res.max_participation, 5))
 
     passed = all(x["passed"] for x in g)
+    # report-only selection-bias check on the validation period (issue #49)
+    v0, v1 = pers["validation"]
+    dsr = metrics.deflated_sharpe(res.returns.loc[v0:v1], experiment_trials())
     sc = score(pm)
     beats = champion is None or sc >= champion["score"] + cfg["promotion"]["min_score_improvement"]
     exp_id = experiment_id or f"{dt.datetime.now(dt.timezone.utc):%Y%m%dT%H%M%S}-{meta['name']}"
@@ -223,10 +226,22 @@ def evaluate(ref: str, source: str = "synthetic", experiment_id: str | None = No
         "champion": None if champion is None else {"ref": champion["ref"], "name": champion["name"],
                                                     "metrics": _redact_holdout(champion["metrics"])},
         "gates": g,
+        "deflated_sharpe": dsr,
         "passed_gates": passed,
         "beats_champion": bool(beats),
         "promote": bool(passed and beats),
     }
+
+
+def experiment_trials() -> int:
+    """How many experiments have been tried: FACTORY_TRIALS (set by CI from the PR history), else the
+    candidate files on disk plus the baselines."""
+    import os
+    env = os.environ.get("FACTORY_TRIALS", "")
+    if env.isdigit() and int(env) > 0:
+        return int(env)
+    from strategies import baselines
+    return len(list((ROOT / "strategies" / "candidates").glob("*.py"))) + len(baselines.ALL)
 
 
 def _redact_holdout(pm: dict) -> dict:
@@ -257,6 +272,10 @@ def to_markdown(r: dict) -> str:
               f"{r['benchmark']['metrics']['validation'].get('sharpe')}"]
     for k, v in r["baselines"].items():
         lines.append(f"- {k}: {v['validation'].get('sharpe')}")
+    d = r.get("deflated_sharpe") or {}
+    if d.get("probability") is not None:
+        lines += ["", f"Selection-bias check (report only): after {d['trials']} experiments, probability the validation "
+                      f"Sharpe beats luck is {d['probability']} (luck benchmark {d['benchmark_annual_sharpe']} annual)."]
     lines += ["", "| Gate | Result | Detail |", "|---|---|---|"]
     for x in r["gates"]:
         lines.append(f"| {x['gate']} | {'pass' if x['passed'] else '**FAIL**'} | {x['detail']} |")

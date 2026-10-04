@@ -31,12 +31,24 @@ jobs:
       needs_data: ${{ steps.diff.outputs.needs_data }}
       timeframes: ${{ steps.diff.outputs.timeframes }}
       extra: ${{ steps.diff.outputs.extra }}
+      trials: ${{ steps.trials.outputs.trials }}
+    permissions:
+      contents: read
+      pull-requests: read
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           persist-credentials: false
+      - id: trials              # experiments tried so far, for the selection-bias check (report only)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          n=$(gh api "repos/$REPO/pulls?state=all&per_page=100" --paginate \
+                --jq '.[] | select(.head.ref | startswith("experiment/")) | .number' 2>/dev/null | wc -l || echo 0)
+          echo "trials=$n" >> "$GITHUB_OUTPUT"
       - id: diff
         env:
           EVENT: ${{ github.event_name }}
@@ -153,6 +165,7 @@ jobs:
           SHA: ${{ github.event.pull_request.head.sha || github.sha }}
           RUN: ${{ github.run_id }}-${{ github.run_attempt }}
           TIMEFRAMES: ${{ needs.plan.outputs.timeframes }}
+          FACTORY_TRIALS: ${{ needs.plan.outputs.trials }}
           FACTORY_SANDBOX_USER: sandbox
         run: |
           mkdir -p out/results
