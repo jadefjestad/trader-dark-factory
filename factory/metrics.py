@@ -26,8 +26,8 @@ def summarize(res: BacktestResult, start=None, end=None) -> dict:
     mean = float(r.mean() * ppy)
     downside = float(r[r < 0].std(ddof=0) * np.sqrt(ppy)) if (r < 0).any() else 0.0
     dd = float((eq / eq.cummax() - 1.0).min())
-    w = res.weights.loc[start:end]
-    trades = int((w.diff().abs() > 1e-6).sum().sum())
+    w = res.holdings.loc[start:end]
+    trades = int(res.fills.loc[start:end].sum())   # actual fills, including drift rebalancing
     return {
         "bars": int(len(r)),
         "total_return": round(total, 6),

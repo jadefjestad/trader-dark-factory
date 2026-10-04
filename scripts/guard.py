@@ -1,9 +1,12 @@
 """Repository guard, run in CI on every PR and push. PROTECTED.
 
 1. No live-trading endpoint anywhere in the repo.
-2. Agent branches (experiment/*, agent/*) may not touch protected paths.
+2. Agent branches (experiment/*, agent/*, claude/*) may not touch protected paths (source or
+   destination of a rename), and may only add tests.
+3. On every branch, candidate files already on the base branch are immutable: no edits, deletes or
+   renames, so experiment history and the promoted champion's code stay intact.
    (state/champion.json changes are verified separately by the evaluate workflow's verdict.)
-3. Every candidate strategy passes the sandbox static check.
+4. Every candidate strategy passes the sandbox static check.
 """
 from __future__ import annotations
 
@@ -43,18 +46,23 @@ def check_live_endpoints() -> list[str]:
 
 def check_branch(base: str, head_ref: str) -> list[str]:
     errs = []
-    status = [line.split("\t") for line in git("diff", "--name-status", f"{base}...HEAD").splitlines() if line]
-    changed = [parts[-1] for parts in status]
+    status = [line.split("\t") for line in git("diff", "--name-status", "-M", f"{base}...HEAD").splitlines() if line]
+    for parts in status:
+        code, paths = parts[0], parts[1:]
+        src = paths[0]
+        if src.startswith("strategies/candidates/") and src.endswith(".py") and code[0] in "MDR":
+            errs.append(f"{src}: candidate files on {base} are immutable; write a new candidate file instead")
     bootstrap = subprocess.run(["git", "cat-file", "-e", f"{base}:scripts/guard.py"], cwd=ROOT, stderr=subprocess.DEVNULL).returncode != 0
     if bootstrap:
         print("guard: base branch has no guard yet (bootstrap PR); protected-path rule not applied")
     if AGENT_BRANCH.match(head_ref) and not bootstrap:
         for parts in status:
-            code, f = parts[0], parts[-1]
-            if f.startswith(AGENT_FORBIDDEN):
-                errs.append(f"{f}: agent branch '{head_ref}' may not modify protected paths")
-            elif f.startswith("tests/") and code[0] != "A":
-                errs.append(f"{f}: agent branches may add tests but not change or delete existing ones")
+            code, paths = parts[0], parts[1:]
+            for f in paths:                      # renames list source and destination
+                if f.startswith(AGENT_FORBIDDEN):
+                    errs.append(f"{f}: agent branch '{head_ref}' may not modify protected paths")
+                elif f.startswith("tests/") and code[0] != "A":
+                    errs.append(f"{f}: agent branches may add tests but not change, move or delete existing ones")
     return errs
 
 

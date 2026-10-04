@@ -53,6 +53,8 @@ gates:
   causality_checks: 5           # truncated-data reruns that must reproduce signals exactly
 
 promotion:
-  # Score = mean of validation and holdout Sharpe, both net of costs.
+  # Score = mean of validation and holdout Sharpe, both net of costs. Used internally, never published,
+  # because publishing it alongside validation Sharpe would reveal the holdout Sharpe.
+  executable_timeframes: ["1Day"]   # only timeframes the executor can trade may be promoted
   min_score_improvement: 0.05   # over the current champion, re-run on the same data
   synthetic_data_promotable: false

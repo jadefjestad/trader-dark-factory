@@ -12,7 +12,7 @@ def _verdict(tmp, head):
     (tmp / "head.json").write_text(json.dumps(head))
     return subprocess.run([sys.executable, str(ROOT / "scripts" / "pr_verdict.py"), "--results", str(tmp / "results"),
                            "--head-champion", str(tmp / "head.json"), "--base-champion", str(ROOT / "state" / "champion.json"),
-                           "--out", str(tmp / "v.md")], capture_output=True, text=True).returncode
+                           "--head-root", str(ROOT), "--out", str(tmp / "v.md")], capture_output=True, text=True).returncode
 
 
 def test_champion_change_requires_matching_promote(tmp_path):
@@ -27,3 +27,9 @@ def test_champion_change_requires_matching_promote(tmp_path):
     (tmp_path / "results" / "x.json").write_text(json.dumps(r, default=str))
     assert _verdict(tmp_path, champ) == 0
     assert _verdict(tmp_path, {**champ, "params": {**s["params"], "top_n": 3}}) == 1
+
+
+def test_champion_pointing_at_changed_code_fails(tmp_path):
+    (tmp_path / "results").mkdir()
+    head = {"ref": "strategies/candidates/example_momentum_trend.py", "params": {}, "code_sha256": "0" * 64, "timeframe": "1Day"}
+    assert _verdict(tmp_path, head) == 1

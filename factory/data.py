@@ -146,10 +146,12 @@ def load_alpaca(symbols, start, end, timeframe="1Day", feed="sip", fallback_feed
         cache_end = end
     key = hashlib.sha256(json.dumps([sorted(symbols), start, cache_end, timeframe, feed, adjustment]).encode()).hexdigest()[:20]
     path = CACHE_DIR / f"bars_{timeframe}_{key}.csv.gz"
+    long = None
     if use_cache and path.exists():
-        long = pd.read_csv(path)
-        used = long.attrs.get("feed", feed)
-    else:
+        cached = pd.read_csv(path)
+        if "feed" in cached.columns and cached["feed"].nunique() == 1:   # entries without provenance are refetched
+            long, used = cached.drop(columns="feed"), str(cached["feed"].iloc[0])
+    if long is None:
         try:
             long, used = _fetch_alpaca(symbols, start, end, timeframe, feed, adjustment), feed
         except DataError as e:
@@ -159,7 +161,7 @@ def load_alpaca(symbols, start, end, timeframe="1Day", feed="sip", fallback_feed
                 raise
         if use_cache:
             CACHE_DIR.mkdir(parents=True, exist_ok=True)
-            long.to_csv(path, index=False)
+            long.assign(feed=used).to_csv(path, index=False)
     return _to_market_data(long, timeframe, source=f"alpaca:{used}")
 
 

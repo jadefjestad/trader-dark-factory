@@ -28,20 +28,25 @@ jobs:
           python-version: "3.11"
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Create unprivileged sandbox user for strategy code
+        run: sudo useradd --system --no-create-home --shell /usr/sbin/nologin sandbox
       - name: Execute champion on paper account
         id: run
         env:
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+          FACTORY_SANDBOX_USER: sandbox
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
         run: |
           set +e
-          python -m factory.execute --out out ${{ (github.event_name == 'workflow_dispatch' && inputs.dry_run) && '--dry-run' || '' }}
+          if [ "$DRY_RUN" = "true" ]; then python -m factory.execute --out out --dry-run; else python -m factory.execute --out out; fi
           echo "code=$?" >> "$GITHUB_OUTPUT"
       - name: Record run on the ledger branch
         if: always()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: scripts/ledger_append.sh executions "execution run ${{ github.run_id }}" out/*.json
+          RUN: ${{ github.run_id }}
+        run: scripts/ledger_append.sh executions "execution run $RUN" out/*.json
       - name: Fail visibly when no orders were placed because of an error
         if: steps.run.outputs.code != '0'
         run: exit 1

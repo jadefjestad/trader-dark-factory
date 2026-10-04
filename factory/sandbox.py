@@ -12,11 +12,22 @@ from pathlib import Path
 ALLOWED_IMPORTS = {"numpy", "pandas", "math", "statistics", "strategies.base", "__future__"}
 BANNED_NAMES = {
     "open", "exec", "eval", "compile", "__import__", "getattr", "setattr", "delattr", "globals",
-    "locals", "vars", "input", "breakpoint", "exit", "quit", "memoryview",
+    "locals", "vars", "input", "breakpoint", "exit", "quit", "memoryview", "__builtins__", "help",
 }
-BANNED_ATTRS = {"read_csv", "read_parquet", "read_json", "read_html", "read_sql", "to_csv", "to_parquet",
-                "to_pickle", "read_pickle", "to_json", "to_sql", "load", "save", "savez", "fromfile", "tofile",
-                "system", "popen"}
+# File, process and code-evaluation entry points in numpy/pandas. Checked on attribute access AND on
+# `from x import name`. This is a lint for honest mistakes, not the security boundary: candidate code
+# only ever runs in factory/runner.py's credential-free child process.
+BANNED_ATTRS = {
+    "save", "savez", "savez_compressed", "savetxt", "load", "loadtxt", "genfromtxt", "fromfile", "tofile",
+    "fromregex", "memmap", "DataSource", "lib", "ctypeslib", "f2py", "testing",
+    "to_csv", "to_parquet", "to_pickle", "to_json", "to_sql", "to_excel", "to_hdf", "to_feather", "to_stata",
+    "to_html", "to_latex", "to_markdown", "to_clipboard", "to_xml", "to_orc", "ExcelWriter", "HDFStore",
+    "eval", "query", "system", "popen", "io", "api",
+}
+
+
+def _banned_attr(name: str) -> bool:
+    return name.startswith("_") or name.startswith("read_") or name in BANNED_ATTRS
 
 
 class CandidateRejected(ValueError):
@@ -33,10 +44,13 @@ def check_source(src: str) -> None:
         elif isinstance(node, ast.ImportFrom):
             if (node.module or "") not in ALLOWED_IMPORTS or node.level:
                 raise CandidateRejected(f"import not allowed: {node.module}")
+            for a in node.names:
+                if a.name == "*" or _banned_attr(a.name):
+                    raise CandidateRejected(f"import not allowed: {node.module}.{a.name}")
         elif isinstance(node, ast.Name) and node.id in BANNED_NAMES:
             raise CandidateRejected(f"name not allowed: {node.id}")
         elif isinstance(node, ast.Attribute):
-            if node.attr.startswith("__") or node.attr in BANNED_ATTRS:
+            if _banned_attr(node.attr):
                 raise CandidateRejected(f"attribute not allowed: {node.attr}")
         elif isinstance(node, (ast.Global, ast.Nonlocal)):
             raise CandidateRejected("global/nonlocal not allowed")
