@@ -22,4 +22,11 @@ jobs:
         env:
           GUARD_BASE: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || '' }}
           GUARD_HEAD_REF: ${{ github.head_ref }}
-        run: python scripts/guard.py
+        run: |
+          # run the BASE branch's guard so a PR cannot weaken the guard that judges it
+          if [ -n "$GUARD_BASE" ] && git cat-file -e "$GUARD_BASE:scripts/guard.py" 2>/dev/null; then
+            git show "$GUARD_BASE:scripts/guard.py" > "$RUNNER_TEMP/guard.py"
+            GUARD_ROOT="$PWD" python "$RUNNER_TEMP/guard.py"
+          else
+            python scripts/guard.py
+          fi

@@ -30,8 +30,7 @@ evaluator still run and still fail the checks.
 ## 4. The research Routine
 claude.ai/code → Routines → New:
 - Repository: `jadefjestad/trader-dark-factory`
-- Prompt: the block in `agent/ROUTINE.md`, with `$USAGE_ISSUE` replaced by the number of the
-  "Factory usage log" issue
+- Prompt: the block in `agent/ROUTINE.md` (it already points at issue #2, "Factory usage log")
 - Schedule: as often as your plan allows (for example every 2 hours on weekdays). The budget in
   `agent/usage_policy.yaml` makes surplus runs exit immediately; set `max_runs_per_day` to your plan's
   daily Routine cap.

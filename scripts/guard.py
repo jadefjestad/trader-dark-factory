@@ -13,7 +13,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(os.environ.get("GUARD_ROOT") or Path(__file__).resolve().parent.parent)
 sys.path.insert(0, str(ROOT))
 
 LIVE = re.compile(r"(?<![-.\w])api\.alpaca\.markets")
@@ -45,7 +45,10 @@ def check_branch(base: str, head_ref: str) -> list[str]:
     errs = []
     status = [line.split("\t") for line in git("diff", "--name-status", f"{base}...HEAD").splitlines() if line]
     changed = [parts[-1] for parts in status]
-    if AGENT_BRANCH.match(head_ref):
+    bootstrap = subprocess.run(["git", "cat-file", "-e", f"{base}:scripts/guard.py"], cwd=ROOT, stderr=subprocess.DEVNULL).returncode != 0
+    if bootstrap:
+        print("guard: base branch has no guard yet (bootstrap PR); protected-path rule not applied")
+    if AGENT_BRANCH.match(head_ref) and not bootstrap:
         for parts in status:
             code, f = parts[0], parts[-1]
             if f.startswith(AGENT_FORBIDDEN):
