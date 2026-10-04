@@ -1,0 +1,25 @@
+{
+  "kind": "rule_change",
+  "commit": "0b918e526ff38b530b7135318e14536ddff90147",
+  "previous": "6de51f5148e214928d9c5b3eaa8e1a8263d67311",
+  "changed_at": "2026-10-04T23:48:08+00:00",
+  "reason": "replace guessed intraday costs with measured ones (SIP half-spread at fill instants: median 1.0 bps, p90 2.8 bps); still conservative, cost-stress gate unchanged, daily costs untouched.",
+  "files": [
+    {
+      "file": "protected/evaluation.yaml",
+      "change": "M",
+      "values": [
+        {
+          "key": "costs.15Min.slippage_bps",
+          "before": 8,
+          "after": 3
+        },
+        {
+          "key": "costs.5Min.slippage_bps",
+          "before": 10,
+          "after": 4
+        }
+      ]
+    }
+  ]
+}
