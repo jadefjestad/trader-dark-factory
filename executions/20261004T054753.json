@@ -1,0 +1,17 @@
+{
+  "started_at": "2026-10-04T05:47:51+00:00",
+  "dry_run": true,
+  "status": "NO ORDERS: DataError: latest trade for AAPL is 2028 minutes old",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0,
+  "champion": {
+    "name": "equal_weight_buy_hold",
+    "ref": "strategies.baselines.buy_hold:EqualWeightBuyHold",
+    "experiment_id": "seed"
+  },
+  "signal_bar": "2026-10-02",
+  "hold_day": true,
+  "equity": 100000.0,
+  "data_source": "alpaca:sip"
+}
