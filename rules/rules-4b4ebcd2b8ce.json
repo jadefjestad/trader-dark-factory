@@ -1,0 +1,33 @@
+{
+  "kind": "rule_change",
+  "commit": "4b4ebcd2b8cef188f8bf7c19cc71d7b028d71f6e",
+  "previous": "dfe8460c7084a9ec2251aef375a65dd6b0eddc94",
+  "changed_at": "2026-10-04T06:17:14+00:00",
+  "reason": "Jade asked in the project thread (2026-10-04) for the agent to manage everything itself without her review.",
+  "files": [
+    {
+      "file": ".github/CODEOWNERS",
+      "change": "M"
+    },
+    {
+      "file": ".github/workflows/ci.yml",
+      "change": "M"
+    },
+    {
+      "file": "agent/ROUTINE.md",
+      "change": "M"
+    },
+    {
+      "file": "factory/invariants.py",
+      "change": "A"
+    },
+    {
+      "file": "factory/risk.py",
+      "change": "M"
+    },
+    {
+      "file": "scripts/guard.py",
+      "change": "M"
+    }
+  ]
+}
