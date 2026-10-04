@@ -12,6 +12,7 @@ import argparse
 import json
 import sys
 import time
+import traceback
 
 import numpy as np
 import pandas as pd
@@ -49,6 +50,8 @@ def main(argv=None) -> int:
     symbols = config.universe()["symbols"]
     try:
         res["ciks"] = edgar.cik_map(symbols)
+        res["predecessor_names"] = {f"{sym} {c}": edgar.get_json(edgar.SUBMISSIONS_URL.format(cik=c)).get("name")
+                                    for sym, cs in edgar.PREDECESSORS.items() for c in cs}
         fil = edgar.filings(symbols)
         res["filings_seconds"] = round(time.time() - t0)
         res["filings_by_form"] = fil.groupby("form").size().to_dict()
@@ -59,7 +62,7 @@ def main(argv=None) -> int:
             ["filingDate", "acceptanceDateTime"]].values.tolist()
         res["acceptance_hour_hist"] = edgar.acceptance_times(ek["acceptanceDateTime"]).dt.hour.value_counts().sort_index().to_dict()
     except Exception as e:
-        res["filings_error"] = f"{type(e).__name__}: {e}"[:300]
+        res["filings_error"] = traceback.format_exc()[-700:]
     try:
         from factory import fundamentals
         t1 = time.time()
@@ -71,7 +74,7 @@ def main(argv=None) -> int:
         acc = set(fil["accessionNumber"])
         res["fundamentals_accn_with_acceptance"] = round(float(tab["accn"].isin(acc).mean()), 3)
     except Exception as e:
-        res["fundamentals_error"] = f"{type(e).__name__}: {e}"[:300]
+        res["fundamentals_error"] = traceback.format_exc()[-700:]
     try:
         from factory import insiders
         t1 = time.time()
@@ -81,7 +84,7 @@ def main(argv=None) -> int:
         res["insider_buys_per_year"] = ins.groupby(ins["filed"].astype(str).str[:4]).size().to_dict()
         res["insider_accn_with_acceptance"] = round(float(ins["accn"].isin(set(fil["accessionNumber"])).mean()), 3) if len(ins) else None
     except Exception as e:
-        res["insiders_error"] = f"{type(e).__name__}: {e}"[:300]
+        res["insiders_error"] = traceback.format_exc()[-700:]
     try:
         md, _ = load_data("1Day", "alpaca", config.evaluation())
         md = extras.attach(md, SEC_PANELS, "alpaca")
@@ -97,7 +100,7 @@ def main(argv=None) -> int:
         res["latest_bar"] = str(md.index[-1].date())
         res["latest_row"] = {n: md.extra[n].iloc[-1].round(3).dropna().to_dict() for n in ("eps_sue", "insider_buyers", "earnings_age")}
     except Exception as e:
-        res["panels_error"] = f"{type(e).__name__}: {e}"[:300]
+        res["panels_error"] = traceback.format_exc()[-700:]
     res["seconds"] = round(time.time() - t0)
     text = json.dumps(res, indent=1, default=str)
     print(text)

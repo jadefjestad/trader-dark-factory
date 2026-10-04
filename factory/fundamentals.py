@@ -110,10 +110,12 @@ def quarterize(raw: pd.DataFrame) -> pd.DataFrame:
 def fetch(symbols: list[str], use_cache: bool = True) -> pd.DataFrame:
     """Quarterly fundamentals for the universe (cached per UTC day)."""
     def build():
-        ciks = edgar.cik_map(symbols, use_cache)
         frames = []
-        for s in symbols:
-            q = quarterize(extract(edgar.get_json(edgar.FACTS_URL.format(cik=ciks[s]))))
+        for s, ciks in edgar.ciks_for(symbols, use_cache).items():
+            # a predecessor registrant's periods fill in history; the first-filed value of a period wins
+            q = pd.concat([quarterize(extract(edgar.get_json(edgar.FACTS_URL.format(cik=c)))) for c in ciks],
+                          ignore_index=True)
+            q = q.sort_values("filed").drop_duplicates(["metric", "start", "end"], keep="first")
             frames.append(q.assign(symbol=s))
         df = pd.concat(frames, ignore_index=True)
         if df.empty:
@@ -238,6 +240,6 @@ def synthetic_table(symbols: list[str]) -> pd.DataFrame:
 def synthetic_filings(table: pd.DataFrame) -> pd.DataFrame:
     """Acceptance times for the synthetic accessions: some before the close, some after."""
     acc = table.drop_duplicates("accn")[["accn", "filed"]]
-    hours = np.where(np.arange(len(acc)) % 2 == 0, "07:30:00", "16:45:00")
+    hours = np.where(np.arange(len(acc)) % 2 == 0, "12:30:00", "21:45:00")
     return pd.DataFrame({"accessionNumber": acc["accn"].to_numpy(),
                          "acceptanceDateTime": [f"{f}T{h}.000Z" for f, h in zip(acc["filed"], hours)]})

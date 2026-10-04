@@ -6,10 +6,12 @@ evaluate job (no network, no secrets) reuses what the data job fetched. Failures
 strategy that needs SEC data places no orders without it.
 
 Availability rule (no look-ahead): a filing counts toward daily bar d when EDGAR accepted it at or
-before 16:00 New York time on d; later filings roll to the next bar. EDGAR's `acceptanceDateTime`
-carries a "Z" suffix but holds Eastern time, so it is read as New York time; if it were really UTC
-that reading would only make filings look later, never earlier. A filing without an acceptance time
-falls back to the first bar after its filing date.
+before 16:00 New York time on d; later filings roll to the next bar. EDGAR's `acceptanceDateTime` is
+UTC (the probe shows Apple's 4:30 pm ET releases at 20:30Z in summer and 21:30Z in winter). A filing
+without an acceptance time falls back to the first bar after its filing date.
+
+Some tickers changed registrant (Google Inc became Alphabet, Avago became Broadcom, Exxon Mobil moved
+to a new holding company in 2026), so a symbol maps to its current CIK plus PREDECESSORS.
 """
 from __future__ import annotations
 
@@ -107,6 +109,20 @@ def cik_map(symbols: list[str], use_cache: bool = True) -> dict[str, int]:
     return {s: m[s.upper()] for s in symbols}
 
 
+# earlier registrants whose filings belong to today's ticker (checked by factory.sec_probe)
+PREDECESSORS = {
+    "GOOGL": [1288776],            # Google Inc., before Alphabet (October 2015)
+    "AVGO": [1649338, 1441634],    # Broadcom Ltd (2016-2018) and Avago Technologies (to 2016)
+    "XOM": [34088],                # Exxon Mobil Corp, before the 2026 holding-company reorganization
+}
+
+
+def ciks_for(symbols: list[str], use_cache: bool = True) -> dict[str, list[int]]:
+    """Symbol -> [current CIK, predecessor CIKs...]."""
+    cur = cik_map(symbols, use_cache)
+    return {s: [cur[s]] + [c for c in PREDECESSORS.get(s.upper(), []) if c != cur[s]] for s in symbols}
+
+
 def _page_rows(block: dict) -> pd.DataFrame:
     n = len(block.get("accessionNumber", []))
     return pd.DataFrame({c: block.get(c, [""] * n) for c in FILING_COLUMNS})
@@ -130,20 +146,20 @@ FORMS_KEPT = ("10-K", "10-Q", "10-K/A", "10-Q/A", "8-K", "4", "20-F", "40-F", "6
 def filings(symbols: list[str], use_cache: bool = True) -> pd.DataFrame:
     """Filing index for the universe (forms the panels use), with a `symbol` column."""
     def build():
-        ciks = cik_map(symbols, use_cache)
         frames = []
-        for s in symbols:
-            df = fetch_filings(ciks[s])
-            frames.append(df[df["form"].isin(FORMS_KEPT)].assign(symbol=s, cik=ciks[s]))
-        return pd.concat(frames, ignore_index=True)
+        for s, ciks in ciks_for(symbols, use_cache).items():
+            for cik in ciks:
+                df = fetch_filings(cik)
+                frames.append(df[df["form"].isin(FORMS_KEPT)].assign(symbol=s, cik=cik))
+        return pd.concat(frames, ignore_index=True).drop_duplicates("accessionNumber")
 
     return cached_table("filings", build, use_cache)
 
 
 def acceptance_times(accepted: pd.Series) -> pd.Series:
-    """EDGAR acceptanceDateTime strings as naive New York times (see the module docstring)."""
-    s = accepted.fillna("").astype(str).str.replace("Z", "", regex=False).str.replace(".000", "", regex=False)
-    return pd.to_datetime(s, errors="coerce")
+    """EDGAR acceptanceDateTime strings (UTC) as naive New York times."""
+    t = pd.to_datetime(accepted.fillna("").astype(str), utc=True, errors="coerce", format="ISO8601")
+    return t.dt.tz_convert("America/New_York").dt.tz_localize(None)
 
 
 def available_bar(accepted_et: pd.Series, filed: pd.Series, index: pd.DatetimeIndex) -> pd.Series:

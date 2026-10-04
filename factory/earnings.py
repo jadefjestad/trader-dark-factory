@@ -69,11 +69,11 @@ def synthetic_filings(symbols: list[str], start="2014-01-01", end="2026-06-30") 
         for k, d in enumerate(pd.date_range(start, end, freq="QS") + pd.Timedelta(days=25 + i % 7)):
             while d.weekday() >= 5:
                 d += pd.Timedelta(days=1)
-            hhmm = "07:05:00" if k % 2 else "16:31:00"
+            hhmm = "12:05:00" if k % 2 else "21:31:00"
             rows.append({"symbol": s, "accessionNumber": f"E{i:03d}-{k:04d}", "form": "8-K", "items": "2.02,9.01",
                          "filingDate": f"{d:%Y-%m-%d}", "acceptanceDateTime": f"{d:%Y-%m-%d}T{hhmm}.000Z"})
             if k == 3:   # same-quarter correction, not a new announcement
                 c = d + pd.Timedelta(days=3)
                 rows.append({**rows[-1], "accessionNumber": f"E{i:03d}-{k:04d}c", "filingDate": f"{c:%Y-%m-%d}",
-                             "acceptanceDateTime": f"{c:%Y-%m-%d}T10:00:00.000Z"})
+                             "acceptanceDateTime": f"{c:%Y-%m-%d}T15:00:00.000Z"})
     return pd.DataFrame(rows)

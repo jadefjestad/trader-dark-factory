@@ -57,7 +57,7 @@ def parse_dataset(data: bytes, ciks: set[int]) -> pd.DataFrame:
     out = pd.DataFrame({
         "accn": tr["ACCESSION_NUMBER"].to_numpy(),
         "issuer_cik": _num(tr["ACCESSION_NUMBER"].map(s["ISSUERCIK"])).to_numpy(),
-        "owner": tr["ACCESSION_NUMBER"].map(owner).fillna("").str.lstrip("0").to_numpy(),
+        "owner": tr["ACCESSION_NUMBER"].map(owner).fillna("").astype(str).str.lstrip("0").to_numpy(),
         "filed": pd.to_datetime(tr["ACCESSION_NUMBER"].map(s["FILING_DATE"]), format="mixed", dayfirst=False,
                                 errors="coerce").dt.strftime("%Y-%m-%d").to_numpy(),
         "trans_date": pd.to_datetime(tr["TRANS_DATE"], format="mixed", errors="coerce").dt.strftime("%Y-%m-%d").to_numpy(),
@@ -118,8 +118,7 @@ def recent_purchases(filings: pd.DataFrame, after: str, use_cache: bool = True) 
 
 def fetch(symbols: list[str], filings: pd.DataFrame, use_cache: bool = True) -> pd.DataFrame:
     """Every open-market purchase in the universe since FIRST_QUARTER, with a `symbol` column."""
-    ciks = edgar.cik_map(symbols, use_cache)
-    by_cik = {c: s for s, c in ciks.items()}
+    by_cik = {c: s for s, ciks in edgar.ciks_for(symbols, use_cache).items() for c in ciks}
     today = pd.Timestamp.now(tz="UTC").tz_localize(None)
     frames, covered = [], None
     quarters = list(_quarters(today))
@@ -171,5 +170,5 @@ def synthetic_purchases(symbols: list[str], start="2014-01-01", end="2026-06-30"
             rows.append({"accn": accn, "issuer_cik": i + 1, "owner": str(int(rng.integers(1, 8))),
                          "filed": f"{filed:%Y-%m-%d}", "trans_date": f"{filed - pd.Timedelta(days=2):%Y-%m-%d}",
                          "shares": float(rng.integers(100, 20000)), "price": float(rng.uniform(20, 400)), "symbol": s})
-            fil.append({"accessionNumber": accn, "acceptanceDateTime": f"{filed:%Y-%m-%d}T{'15:10:00' if k % 2 else '18:20:00'}.000Z"})
+            fil.append({"accessionNumber": accn, "acceptanceDateTime": f"{filed:%Y-%m-%d}T{'15:10:00' if k % 2 else '22:20:00'}.000Z"})
     return pd.DataFrame(rows), pd.DataFrame(fil)
