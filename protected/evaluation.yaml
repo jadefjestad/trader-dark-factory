@@ -16,14 +16,14 @@ costs:
     commission_per_share: 0.0
     sell_fee_bps: 0.3      # SEC/FINRA style fees on sells
   "15Min":
-    slippage_bps: 8
-    half_spread_bps: 3
+    slippage_bps: 3        # beyond the spread; order size is charged separately by the impact term
+    half_spread_bps: 3     # measured SIP half-spread at fill instants: median 1.0, p90 2.8 bps (docs/intraday-data.md)
     feed_mismatch_bps: 5   # live IEX vs backtest SIP minute closes, measured p95 4.7 bps (docs/intraday-data.md)
     impact_bps_per_sqrt_pct: 10  # extra per side: 10 bps x sqrt(order as % of the bar's dollar volume)
     commission_per_share: 0.0
     sell_fee_bps: 0.3
   "5Min":
-    slippage_bps: 10
+    slippage_bps: 4
     half_spread_bps: 4
     feed_mismatch_bps: 5
     impact_bps_per_sqrt_pct: 10

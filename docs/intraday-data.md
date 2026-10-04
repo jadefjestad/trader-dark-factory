@@ -13,7 +13,7 @@ Measured by `python -m factory.intraday_probe` (workflow `probe-sources`) on 202
 | SIP bars from the last 15 minutes | refused (403: "subscription does not permit querying recent SIP data") |
 | 1-minute history depth | SIP from 2016-01; IEX from 2020-07 |
 | Data API rate limit | 200 requests a minute |
-| IEX quoted spreads | not measured yet: the probe ran on a weekend, when stale quotes give meaningless spreads. Rerun during market hours. |
+| SIP half-spread at the backtester's 15-minute fill instants (09:45 to 15:45, 1,499 quotes, same sessions) | median 1.0 bps, 90th percentile 2.8 bps; widest names LLY 5.3, COST 2.4, ADBE 2.3 |
 
 ## What this means
 
@@ -28,6 +28,10 @@ Measured by `python -m factory.intraday_probe` (workflow `probe-sources`) on 202
   (#68) should use SIP bars, stamp each bar with its availability time, and add a feed-mismatch
   buffer of at least the measured 95th-percentile gap (about 5 bps per trade) on top of spread and
   slippage.
+- **Intraday costs, set from these numbers (#74):** per side, half-spread 3 bps (about the measured
+  90th percentile), slippage 3 bps on top of the spread, feed mismatch 5 bps (95th-percentile gap), plus
+  square-root market impact for large orders. That is 11 bps a side for 15-minute bars, down from a
+  guessed 16, and still several times the measured median spread. The 2x cost-stress gate stays.
 - **Rate limits are fine** for polling 25 symbols every few minutes (one multi-symbol request per poll).
 
 ## Tiingo and Twelve Data
