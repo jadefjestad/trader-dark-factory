@@ -25,6 +25,8 @@ jobs:
         run: |
           python -m factory.sources probe --out probe.json
           { echo '```json'; cat probe.json; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          # annotations are readable through the REST check-runs API, unlike logs and artifacts
+          python -c "import json; [print(f'::notice title=probe {k}::' + json.dumps(v, default=str)) for k, v in json.load(open('probe.json')).items()]"
       - uses: actions/upload-artifact@v4
         with:
           name: probe
