@@ -1,7 +1,9 @@
 """Deterministic portfolio backtester.
 
 Timing rule (no look-ahead): weights a strategy outputs on bar t may use data up to bar t's close.
-They are filled at bar t+1's open, with slippage, half-spread and fees charged on the traded notional.
+They are filled at bar t+1's open, with slippage, half-spread and fees charged on the traded notional,
+plus (when configured) market impact that grows with the square root of the order's share of the bar's
+dollar volume.
 Returns are measured open-to-open, so a weight decided at t earns open[t+1] -> open[t+2].
 An all-NaN weight row means "hold": no trades, positions drift with prices.
 Intraday runs are forced flat by each session's final bar (no overnight holding).
@@ -67,6 +69,8 @@ def run(weights: pd.DataFrame, md: MarketData, costs: dict, initial_capital: flo
     per_side = (costs.get("slippage_bps", 0) + costs.get("half_spread_bps", 0)
                 + costs.get("feed_mismatch_bps", 0)) / 1e4
     sell_fee = costs.get("sell_fee_bps", 0) / 1e4
+    # impact per side: impact_bps_per_sqrt_pct * sqrt(participation in %); 1% of the bar's volume costs that many bps
+    impact = costs.get("impact_bps_per_sqrt_pct", 0) / 1e4
 
     equity = np.empty(n)
     rets = np.zeros(n)
@@ -91,20 +95,22 @@ def run(weights: pd.DataFrame, md: MarketData, costs: dict, initial_capital: flo
         target[small] = drifted[small]                  # too small to be worth an order; exits always trade
         delta = target - drifted
         traded = np.abs(delta).sum()
-        c = traded * per_side + np.clip(-delta, 0, None).sum() * sell_fee
         eq_before = equity[t - 1] * gross
-        equity[t] = eq_before * (1.0 - c)
-        rets[t] = equity[t] / equity[t - 1] - 1.0
-        turn[t] = traded
-        cost[t] = c
+        c = traded * per_side + np.clip(-delta, 0, None).sum() * sell_fee
         changed = np.abs(delta) > 1e-6
-        fills[t] = changed.sum()
-        trades += int(changed.sum())
         if changed.any():
             dollar_vol = vol[t] * opv[t]
             with np.errstate(divide="ignore", invalid="ignore"):
                 part = np.where(dollar_vol > 0, np.abs(delta) * eq_before / dollar_vol, np.where(changed, np.inf, 0))
             max_part = max(max_part, float(np.nanmax(part)))
+            if impact:   # an order with no volume behind it is charged as if it were the whole bar
+                c += float((np.abs(delta) * impact * np.sqrt(100 * np.minimum(part, 1.0))).sum())
+        equity[t] = eq_before * (1.0 - c)
+        rets[t] = equity[t] / equity[t - 1] - 1.0
+        turn[t] = traded
+        cost[t] = c
+        fills[t] = changed.sum()
+        trades += int(changed.sum())
         held = target
         applied[t] = held
 

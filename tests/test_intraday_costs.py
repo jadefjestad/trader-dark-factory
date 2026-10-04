@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import pytest
 
 from factory import backtest, config, evaluate
 from factory.data import synthetic
@@ -43,3 +44,20 @@ def test_cost_stress_sharpe_is_lower_than_base():
     w = _flip(md)
     base = evaluate.metrics.summarize(evaluate.backtest_weights(w, md, cfg), *pers["validation"]).get("sharpe", 0.0)
     assert evaluate.cost_stress_sharpe(w, md, cfg, pers) < base
+
+
+def test_impact_grows_with_participation():
+    md = synthetic(["A", "B"], start="2026-01-05", end="2026-01-09", timeframe="15Min")
+    w = pd.DataFrame(0.5, index=md.index, columns=md.symbols)
+    base = {"slippage_bps": 8, "half_spread_bps": 3}
+    cost = lambda c, cap: backtest.run(w, md, c, cap).costs.sum()
+    with_impact = {**base, "impact_bps_per_sqrt_pct": 10}
+    assert cost(with_impact, 1e5) > cost(base, 1e5)
+    # the same weights on 100x the capital are a bigger share of each bar, so cost more per dollar
+    assert cost(with_impact, 1e7) > cost(with_impact, 1e5)
+    assert cost(base, 1e7) == pytest.approx(cost(base, 1e5))
+
+
+def test_intraday_rules_charge_impact():
+    cfg = config.evaluation()
+    assert all(cfg["costs"][tf]["impact_bps_per_sqrt_pct"] > 0 for tf in ("15Min", "5Min"))
