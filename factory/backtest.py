@@ -85,8 +85,8 @@ def run(weights: pd.DataFrame, md: MarketData, costs: dict, initial_capital: flo
         # 2) fill the target decided at bar t-1 at open[t]
         target = drifted.copy() if hold_rows[t - 1] else wv[t - 1].copy()
         target[~tradable[t]] = drifted[~tradable[t]]   # cannot trade a missing bar
-        small = np.abs(target - drifted) < min_trade_weight
-        target[small] = drifted[small]                  # too small to be worth an order
+        small = (np.abs(target - drifted) < min_trade_weight) & (target != 0)
+        target[small] = drifted[small]                  # too small to be worth an order; exits always trade
         delta = target - drifted
         traded = np.abs(delta).sum()
         c = traded * per_side + np.clip(-delta, 0, None).sum() * sell_fee
