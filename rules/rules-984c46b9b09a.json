@@ -1,0 +1,13 @@
+{
+  "kind": "rule_change",
+  "commit": "984c46b9b09a72187c2a81aa8b983e9c7783c6cc",
+  "previous": "f729e55dfd50b6a542bfca4bb715f1d9b48294b4",
+  "changed_at": "2026-10-04T18:08:17+00:00",
+  "reason": "probe.yml gains a read-only intraday probe step and a 20-minute timeout; it reads market data only, needs no new secrets to run, and places no orders.",
+  "files": [
+    {
+      "file": ".github/workflows/probe.yml",
+      "change": "M"
+    }
+  ]
+}
