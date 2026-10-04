@@ -28,6 +28,11 @@ jobs:
           python-version: "3.11"
           cache: pip
       - run: pip install -r requirements.txt
+      - uses: actions/cache/restore@v4     # past years of news for strategies that use it
+        with:
+          path: data/cache/news_*.csv.gz
+          key: news-v1-none
+          restore-keys: news-v1-
       - name: Create unprivileged sandbox user for strategy code
         run: sudo useradd --system --no-create-home --shell /usr/sbin/nologin sandbox
       - name: Execute champion on paper account
