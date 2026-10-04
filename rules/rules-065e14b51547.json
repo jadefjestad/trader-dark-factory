@@ -1,0 +1,60 @@
+{
+  "kind": "rule_change",
+  "commit": "065e14b51547e6aaf01d61616ce14a977341749e",
+  "previous": "c18f333c91866dccd03dd16e43c85799c66aeae2",
+  "changed_at": "2026-10-04T23:29:08+00:00",
+  "reason": "add protected limits for the streaming paper tier (issue #76) so the engine enforces rule-file values rather than caller-supplied ones; daily limits unchanged.",
+  "files": [
+    {
+      "file": "protected/risk_limits.yaml",
+      "change": "M",
+      "values": [
+        {
+          "key": "stream.flatten_at",
+          "before": null,
+          "after": "15:55"
+        },
+        {
+          "key": "stream.max_daily_loss",
+          "before": null,
+          "after": 0.01
+        },
+        {
+          "key": "stream.max_feed_gap_seconds",
+          "before": null,
+          "after": 10
+        },
+        {
+          "key": "stream.max_gross_exposure",
+          "before": null,
+          "after": 0.5
+        },
+        {
+          "key": "stream.max_orders_per_day",
+          "before": null,
+          "after": 500
+        },
+        {
+          "key": "stream.max_orders_per_minute",
+          "before": null,
+          "after": 30
+        },
+        {
+          "key": "stream.max_position_weight",
+          "before": null,
+          "after": 0.1
+        },
+        {
+          "key": "stream.max_stream_gap_seconds",
+          "before": null,
+          "after": 30
+        },
+        {
+          "key": "stream.min_seconds_between_trades_per_symbol",
+          "before": null,
+          "after": 30
+        }
+      ]
+    }
+  ]
+}
