@@ -50,3 +50,40 @@ def test_probe_never_raises(monkeypatch):
 
 def test_last_weekday_skips_weekend():
     assert shorts.last_weekday(dt.date(2026, 10, 5)) == dt.date(2026, 10, 2)
+
+
+class _Resp:
+    def __init__(self, status, text=""):
+        self.status_code, self.text = status, text
+
+
+def test_fetch_days_skips_holidays_and_filters_symbols(monkeypatch):
+    monkeypatch.setattr(shorts.time, "sleep", lambda s: None)
+    days = [dt.date(2026, 9, d) for d in range(1, 31) if dt.date(2026, 9, d).weekday() < 5]
+    def get(url):
+        return _Resp(404) if "20260907" in url else _Resp(200, SAMPLE.replace("20261001", url[-12:-4]))
+    monkeypatch.setattr(shorts, "_get", get)
+    rows = shorts.fetch_days(days, ["AAPL"])
+    assert set(rows["symbol"]) == {"AAPL"} and len(rows) == len(days) - 1
+
+
+def test_fetch_days_fails_closed_when_many_missing(monkeypatch):
+    monkeypatch.setattr(shorts.time, "sleep", lambda s: None)
+    monkeypatch.setattr(shorts, "_get", lambda url: _Resp(403))
+    try:
+        shorts.fetch_days([dt.date(2026, 9, 1), dt.date(2026, 9, 2)], ["AAPL"])
+    except shorts.DataError:
+        return
+    raise AssertionError("expected DataError")
+
+
+def test_load_caches_complete_years(monkeypatch, tmp_path):
+    monkeypatch.setattr(shorts, "CACHE_DIR", tmp_path)
+    calls = []
+    def fake(days, symbols, pause=0.2):
+        calls.append(len(days))
+        return shorts.parse_daily(SAMPLE.replace("20261001", "20220103"))
+    monkeypatch.setattr(shorts, "fetch_days", fake)
+    a = shorts.load(["AAPL"], "2022-01-01", "2022-12-31")
+    b = shorts.load(["AAPL"], "2022-01-01", "2022-12-31")
+    assert len(calls) == 1 and (tmp_path / "shorts_2022.csv.gz").exists() and len(a) == len(b) == 2
