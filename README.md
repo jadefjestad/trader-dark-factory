@@ -1,7 +1,7 @@
 # Trader Dark Factory
 
 An autonomous, cloud-hosted **paper-trading** research factory. A Claude Routine proposes one strategy
-change at a time; deterministic Python backtests it against protected rules; GitHub PRs carry the
+change at a time; deterministic Python backtests it against fixed rules; GitHub PRs carry the
 results; a verified winner is promoted by merging; GitHub Actions trades the promoted strategy on an
 Alpaca paper account every weekday, with or without Claude.
 
@@ -17,20 +17,27 @@ copies champion.json if PROMOTE      ──►    merge = promotion (state/champ
                                             ci.yml       tests + guard on every PR
 ```
 
-## What is protected from the agent
+## Rules, limits and hard invariants
+The agent manages everything itself, including the rule files (Jade, 2026-10-04):
 | Path | Holds |
 |---|---|
 | `protected/evaluation.yaml` | periods (in-sample / validation / unseen holdout), costs, slippage, gates, promotion rule |
 | `protected/risk_limits.yaml` | kill switch, exposure and order limits, drawdown halt, data staleness |
 | `protected/universe.yaml` | tradable symbols and the SPY benchmark |
-| `factory/`, `strategies/baselines/`, `strategies/base.py`, `scripts/`, `.github/` | the evaluator, executor, baselines and workflows |
+
+A few things are hard invariants that no rule file can change. They live in `factory/invariants.py`,
+are tested by `tests/test_invariants.py`, and agent branches may not edit either file:
+- **Paper only.** The only broker endpoint is the paper one; the live endpoint may appear nowhere;
+  `paper_only` must be true and the account number must start with `PA`.
+- **Fail closed.** No orders when data, authentication or validation fails.
+- **Failed experiments are kept.** Candidate files on main are immutable; the ledger is append-only.
+- **Rule changes are logged.** A PR touching rules or limits needs a `Reason:` line, and on merge CI
+  writes a `rules/` record to the ledger with every changed value (before and after) and the reason.
 
 Strategy code never runs inside the evaluator or executor: `factory/runner.py` runs it in a child
 process with a private copy of code and data, an empty environment, a timeout and (in Actions) a
-separate unprivileged OS user, and reads back only numeric weights.
-
-Enforced three ways: CODEOWNERS (Jade's review), `scripts/guard.py` in CI (agent branches may not touch
-these paths at all), and `evaluate.yml` running the evaluator from the base branch, never the PR's copy.
+separate unprivileged OS user, and reads back only numeric weights. `evaluate.yml` runs the evaluator
+and rules from the base branch, never the PR's copy, so a rule change only applies once merged.
 
 ## How a candidate is judged
 - Signals use bar t's close, fills happen at bar t+1's open, plus slippage, half-spread and sell fees.

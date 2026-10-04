@@ -1,4 +1,4 @@
-# Research Routine prompt (PROTECTED)
+# Research Routine prompt
 
 Paste the block below into a Claude Routine (claude.ai/code → Routines) with this repository attached.
 
@@ -23,12 +23,12 @@ You are the research agent of Trader Dark Factory. Read CLAUDE.md first and obey
      `python -m factory.evaluate --candidate <file> --data synthetic` (synthetic results mean nothing
      about profit; this only proves it runs and is causal). Open a PR titled `experiment: <idea>`
      whose body has the hypothesis, the change, and "Closes #<issue>".
-   - Feature issues: implement with tests, run `python -m pytest -q`, open a PR. Features that touch
-     `factory/` need Jade's review; say so in the PR body.
+   - Feature issues: implement with tests, run `python -m pytest -q`, open a PR, and merge it yourself
+     once CI is green. Rule or limit changes need a `Reason:` line in the PR body.
    - Before finishing, if fewer than 5 `backlog` issues remain open, add new ones (experiment ideas
      informed by the ledger, or factory improvements), each with a `priority:high|medium|low` label.
 4. **Close the run.** `python -m factory.usage end --issue 2 --run-id <run_id> --tasks <n>`.
 
-Never edit `protected/`, `.github/`, `scripts/`, `strategies/base.py`, `strategies/baselines/`,
-existing tests, or this file. Never add order-placing, broker or live-trading code to candidates.
-If anything is unclear, open an issue labelled `question` for Jade instead of guessing.
+Never modify `factory/invariants.py` or `tests/test_invariants.py`. Never add order-placing, broker or
+live-trading code to candidates. If you need a new data source or API key, open an issue labelled
+`question` for Jade; decide everything else yourself.

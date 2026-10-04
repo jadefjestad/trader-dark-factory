@@ -20,12 +20,12 @@ Settings → Actions → General:
 
 ## 3. Branch protection for `main`
 Settings → Branches → Add rule (or Rules → Rulesets) for `main`:
-- Require a pull request before merging; **Require review from Code Owners**.
+- Require a pull request before merging (no review needed: the agent merges its own PRs).
 - Require status checks: `ci / test` and `evaluate / report`.
 
 Note: GitHub Free does not enforce branch protection on **private** repos. Until the repo is public (or
-you have GitHub Pro), CODEOWNERS and required checks are advisory; the CI guard and the base-branch
-evaluator still run and still fail the checks.
+you have GitHub Pro), required checks are advisory; the CI guard and the base-branch evaluator still
+run and still fail the checks.
 
 ## 4. The research Routine
 claude.ai/code → Routines → New:

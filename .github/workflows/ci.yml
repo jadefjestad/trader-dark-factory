@@ -22,6 +22,7 @@ jobs:
         env:
           GUARD_BASE: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || '' }}
           GUARD_HEAD_REF: ${{ github.head_ref }}
+          GUARD_PR_BODY: ${{ github.event_name == 'pull_request' && format('{0}', github.event.pull_request.body) || '' }}
         run: |
           # run the BASE branch's guard so a PR cannot weaken the guard that judges it
           if [ -n "$GUARD_BASE" ] && git cat-file -e "$GUARD_BASE:scripts/guard.py" 2>/dev/null; then
@@ -29,4 +30,31 @@ jobs:
             GUARD_ROOT="$PWD" python "$RUNNER_TEMP/guard.py"
           else
             python scripts/guard.py
+          fi
+  rule-log:
+    # Hard invariant: every change to rules or limits lands on the ledger with before/after values and a reason.
+    if: github.event_name == 'push'
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pyyaml
+      - name: Record rule and limit changes on the ledger branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          python scripts/rule_log.py --before "$BEFORE" --after "$AFTER" --out out
+          if ls out/rules-*.json >/dev/null 2>&1; then
+            scripts/ledger_append.sh rules "rule change $AFTER" out/rules-*.json
           fi

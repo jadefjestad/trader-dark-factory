@@ -1,12 +1,16 @@
-"""Repository guard, run in CI on every PR and push. PROTECTED.
+"""Repository guard, run in CI on every PR and push.
 
+The agent manages the rules itself (Jade, 2026-10-04); the guard enforces only the hard invariants
+in factory/invariants.py:
 1. No live-trading endpoint anywhere in the repo.
-2. Agent branches (experiment/*, agent/*, claude/*) may not touch protected paths (source or
-   destination of a rename), and may only add tests.
+2. Agent branches (experiment/*, agent/*, claude/*) may not modify, rename or delete the invariant
+   files (factory/invariants.py, tests/test_invariants.py).
 3. On every branch, candidate files already on the base branch are immutable: no edits, deletes or
-   renames, so experiment history and the promoted champion's code stay intact.
+   renames, so failed experiments and the promoted champion's code stay intact.
    (state/champion.json changes are verified separately by the evaluate workflow's verdict.)
-4. Every candidate strategy passes the sandbox static check.
+4. A PR that changes rules or limits (invariants.RULE_PATHS) states why: its body has a
+   "Reason:" line. CI logs the change to the ledger when it lands on main.
+5. Every candidate strategy passes the sandbox static check.
 """
 from __future__ import annotations
 
@@ -21,8 +25,7 @@ sys.path.insert(0, str(ROOT))
 
 LIVE = re.compile(r"(?<![-.\w])api\.alpaca\.markets")
 AGENT_BRANCH = re.compile(r"^(experiment|agent|claude)/")
-AGENT_FORBIDDEN = ("protected/", ".github/", "scripts/", "strategies/base.py", "strategies/baselines/",
-                   "agent/usage_policy.yaml", "agent/ROUTINE.md")
+REASON = re.compile(r"^\s*\**reason\**\s*:\s*\S", re.I | re.M)
 
 
 def git(*args) -> str:
@@ -55,14 +58,17 @@ def check_branch(base: str, head_ref: str) -> list[str]:
     bootstrap = subprocess.run(["git", "cat-file", "-e", f"{base}:scripts/guard.py"], cwd=ROOT, stderr=subprocess.DEVNULL).returncode != 0
     if bootstrap:
         print("guard: base branch has no guard yet (bootstrap PR); protected-path rule not applied")
+    from factory.invariants import INVARIANT_FILES, RULE_PATHS
     if AGENT_BRANCH.match(head_ref) and not bootstrap:
         for parts in status:
             code, paths = parts[0], parts[1:]
             for f in paths:                      # renames list source and destination
-                if f.startswith(AGENT_FORBIDDEN):
-                    errs.append(f"{f}: agent branch '{head_ref}' may not modify protected paths")
-                elif f.startswith("tests/") and code[0] != "A":
-                    errs.append(f"{f}: agent branches may add tests but not change, move or delete existing ones")
+                if f in INVARIANT_FILES and code[0] != "A":
+                    errs.append(f"{f}: hard invariant; agent branch '{head_ref}' may not modify, move or delete it")
+    body = os.environ.get("GUARD_PR_BODY")
+    rule_files = sorted({f for parts in status for f in parts[1:] if f.startswith(RULE_PATHS)})
+    if body is not None and rule_files and not REASON.search(body):
+        errs.append(f"rule/limit change ({', '.join(rule_files)}): add a 'Reason:' line to the PR body")
     return errs
 
 
