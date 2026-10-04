@@ -16,3 +16,16 @@ price_buffer: 0.03             # assume buys fill up to 3% above the latest trad
 max_price_gap: 0.25            # reject a latest trade more than 25% away from the last close (bad data)
 max_quote_age_minutes: 30      # latest trade must be this fresh
 hold_rebalance_tolerance: 0.03 # on "hold" days, only fix positions more than 3 points off the last decision
+
+# Streaming paper tier (docs/streaming-design.md 3.4, issue #76). Enforced by factory/stream/engine.py.
+# Tighter than the daily limits while the tier is unproven. It runs on its own paper account.
+stream:
+  max_gross_exposure: 0.50
+  max_position_weight: 0.10
+  max_orders_per_minute: 30            # well under Alpaca's ~200 API calls a minute
+  max_orders_per_day: 500
+  min_seconds_between_trades_per_symbol: 30
+  max_daily_loss: 0.01                 # 1% of start-of-day equity: flatten and stop for the day
+  max_stream_gap_seconds: 30           # a symbol with no trade or quote this long gets no new orders
+  max_feed_gap_seconds: 10             # nothing at all this long: no new orders anywhere
+  flatten_at: "15:55"                  # New York time
