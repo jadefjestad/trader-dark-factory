@@ -105,12 +105,16 @@ jobs:
           python-version: "3.11"
           cache: pip
       - run: pip install -r requirements.txt
-      - id: day
-        run: echo "day=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+      - id: day                            # cache keys may not contain commas, so 1Day,15Min becomes 1Day_15Min
+        env:
+          TIMEFRAMES: ${{ needs.plan.outputs.timeframes }}
+        run: |
+          echo "day=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+          echo "tf=${TIMEFRAMES//,/_}" >> "$GITHUB_OUTPUT"
       - uses: actions/cache@v4
         with:
           path: data/cache
-          key: bars-${{ hashFiles('protected/*.yaml') }}-${{ needs.plan.outputs.timeframes }}-${{ steps.day.outputs.day }}
+          key: bars-${{ hashFiles('protected/*.yaml') }}-${{ steps.day.outputs.tf }}-${{ steps.day.outputs.day }}
       - uses: actions/cache/restore@v4     # complete years of news, filled by the news-backfill workflow
         if: contains(needs.plan.outputs.extra, 'news_')
         with:

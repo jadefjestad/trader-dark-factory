@@ -19,12 +19,14 @@ costs:
     slippage_bps: 8
     half_spread_bps: 3
     feed_mismatch_bps: 5   # live IEX vs backtest SIP minute closes, measured p95 4.7 bps (docs/intraday-data.md)
+    impact_bps_per_sqrt_pct: 10  # extra per side: 10 bps x sqrt(order as % of the bar's dollar volume)
     commission_per_share: 0.0
     sell_fee_bps: 0.3
   "5Min":
     slippage_bps: 10
     half_spread_bps: 4
     feed_mismatch_bps: 5
+    impact_bps_per_sqrt_pct: 10
     commission_per_share: 0.0
     sell_fee_bps: 0.3
 
@@ -50,7 +52,10 @@ gates:
   min_validation_sharpe: 0.30
   min_holdout_sharpe: 0.00
   max_sharpe_decay: 1.00        # in-sample Sharpe minus validation Sharpe
-  max_annual_turnover: 25.0     # sum of |trades| / equity per year
+  max_annual_turnover:          # sum of |trades| / equity per year
+    "1Day": 25.0
+    "15Min": 1000.0             # flat every night means >= 504x/yr for one full round trip a day; ~2 a day allowed
+    "5Min": 1000.0
   robustness_min_ratio: 0.50    # median Sharpe of perturbed params / base Sharpe (validation)
   robustness_perturbation: 0.20 # +/- 20% on numeric params
   causality_checks: 5           # truncated-data reruns that must reproduce signals exactly
