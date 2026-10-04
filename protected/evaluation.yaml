@@ -18,11 +18,13 @@ costs:
   "15Min":
     slippage_bps: 8
     half_spread_bps: 3
+    feed_mismatch_bps: 5   # live IEX vs backtest SIP minute closes, measured p95 4.7 bps (docs/intraday-data.md)
     commission_per_share: 0.0
     sell_fee_bps: 0.3
   "5Min":
     slippage_bps: 10
     half_spread_bps: 4
+    feed_mismatch_bps: 5
     commission_per_share: 0.0
     sell_fee_bps: 0.3
 
@@ -52,6 +54,10 @@ gates:
   robustness_min_ratio: 0.50    # median Sharpe of perturbed params / base Sharpe (validation)
   robustness_perturbation: 0.20 # +/- 20% on numeric params
   causality_checks: 5           # truncated-data reruns that must reproduce signals exactly
+  cost_stress:                  # intraday edges must survive costs well above our estimates (issue #68)
+    timeframes: ["15Min", "5Min"]
+    multiple: 2.0               # every per-side cost doubled
+    min_validation_sharpe: 0.0
 
 promotion:
   # Score = mean of validation and holdout Sharpe, both net of costs. Used internally, never published,
