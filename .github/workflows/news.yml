@@ -1,0 +1,45 @@
+# Downloads Alpaca news history (complete years) into the shared Actions cache that evaluation jobs
+# restore. Read-only market data; never places orders. Re-run to fill years a previous run missed.
+name: news-backfill
+on:
+  workflow_dispatch:
+    inputs:
+      start: {description: "first year", default: "2015"}
+      end: {description: "last complete year", default: "2025"}
+  schedule:
+    - cron: "17 6 2 1 *"   # each January, cache the year that just ended
+permissions:
+  contents: read
+concurrency:
+  group: news-backfill
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - uses: actions/cache/restore@v4
+        with:
+          path: data/cache/news_*.csv.gz
+          key: news-v1-${{ github.run_id }}
+          restore-keys: news-v1-
+      - name: Download missing years
+        timeout-minutes: 320   # leaves time to save whatever years finished
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+          START: ${{ inputs.start || '2015' }}
+          END: ${{ inputs.end || '' }}
+        run: python -m factory.news backfill --start "$START" ${END:+--end "$END"}
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: data/cache/news_*.csv.gz
+          key: news-v1-${{ github.run_id }}
