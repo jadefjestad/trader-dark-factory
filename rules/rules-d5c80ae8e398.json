@@ -1,0 +1,25 @@
+{
+  "kind": "rule_change",
+  "commit": "d5c80ae8e398fd5415f87ceacdd28be333f850fd",
+  "previous": "d82b3fd339f39af75666f81841cb83ef3e10236c",
+  "changed_at": "2026-10-04T22:48:28+00:00",
+  "reason": "issue #68 fill model needs slippage that grows with participation; intraday-only, daily rules untouched.",
+  "files": [
+    {
+      "file": "protected/evaluation.yaml",
+      "change": "M",
+      "values": [
+        {
+          "key": "costs.15Min.impact_bps_per_sqrt_pct",
+          "before": null,
+          "after": 10
+        },
+        {
+          "key": "costs.5Min.impact_bps_per_sqrt_pct",
+          "before": null,
+          "after": 10
+        }
+      ]
+    }
+  ]
+}
