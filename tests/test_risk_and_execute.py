@@ -49,6 +49,16 @@ def test_decide_hold_and_nan():
         execute.decide(pd.DataFrame({"A": [0.1], "B": [float("nan")]}), ["A", "B"])
 
 
+@pytest.fixture(autouse=True)
+def seed_champion(monkeypatch, tmp_path):
+    """Executor tests use the equal-weight baseline, whatever state/champion.json currently promotes."""
+    import json
+    p = tmp_path / "champion.json"
+    p.write_text(json.dumps({"ref": "strategies.baselines.buy_hold:EqualWeightBuyHold",
+                             "params": {"rebalance_every": 21}, "name": "equal_weight_buy_hold", "timeframe": "1Day"}))
+    monkeypatch.setattr(execute, "CHAMPION", p)
+
+
 class FakeBroker:
     def __init__(self, positions=None, fail_after=None, closes=None):
         self.submitted = []
