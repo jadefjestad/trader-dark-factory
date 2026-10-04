@@ -1,0 +1,10 @@
+{
+  "ref": "strategies.baselines.buy_hold:EqualWeightBuyHold",
+  "params": {"rebalance_every": 21},
+  "name": "equal_weight_buy_hold",
+  "timeframe": "1Day",
+  "code_sha256": null,
+  "experiment_id": "seed",
+  "score": null,
+  "promoted_at": "2026-10-04T00:00:00+00:00"
+}

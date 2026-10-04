@@ -1,0 +1,10 @@
+# Changes here need Jade's review. The factory agent may not edit these paths.
+/protected/            @jadefjestad
+/factory/              @jadefjestad
+/strategies/base.py    @jadefjestad
+/strategies/baselines/ @jadefjestad
+/.github/              @jadefjestad
+/scripts/              @jadefjestad
+/tests/                @jadefjestad
+/agent/ROUTINE.md      @jadefjestad
+/agent/usage_policy.yaml @jadefjestad

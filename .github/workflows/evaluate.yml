@@ -1,0 +1,191 @@
+# Evaluates candidate strategies in experiment PRs against the protected rules on main.
+# Runs the workflow and evaluator from the BASE branch, copies in only candidate files from the PR,
+# and executes candidate code in a job with no secrets and read-only permissions.
+name: evaluate
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    inputs:
+      candidate:
+        description: "Strategy file or module:Class. Blank evaluates every baseline."
+        required: false
+concurrency:
+  group: evaluate-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
+    outputs:
+      candidates: ${{ steps.diff.outputs.candidates }}
+      champion_changed: ${{ steps.diff.outputs.champion_changed }}
+      needs_data: ${{ steps.diff.outputs.needs_data }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - id: diff
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "candidates=${{ inputs.candidate }}" >> "$GITHUB_OUTPUT"
+            echo "champion_changed=false" >> "$GITHUB_OUTPUT"
+            echo "needs_data=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          base="${{ github.event.pull_request.base.sha }}"
+          c=$(git diff --name-only --diff-filter=AM "$base"...HEAD -- 'strategies/candidates/*.py' | grep -v '__init__.py' | tr '\n' ' ' || true)
+          ch=$(git diff --name-only "$base"...HEAD -- state/champion.json | wc -l)
+          echo "candidates=$c" >> "$GITHUB_OUTPUT"
+          echo "champion_changed=$([ "$ch" -gt 0 ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+          echo "needs_data=$([ -n "$c$( [ "$ch" -gt 0 ] && echo x)" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
+  data:
+    needs: plan
+    if: needs.plan.outputs.needs_data == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4          # base branch code only
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - id: day
+        run: echo "day=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: bars-${{ hashFiles('protected/*.yaml') }}-${{ steps.day.outputs.day }}
+      - name: Download market data
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: python -m factory.prefetch
+      - uses: actions/upload-artifact@v4
+        with:
+          name: market-data
+          path: data/cache
+          retention-days: 3
+
+  evaluate:
+    needs: [plan, data]
+    if: needs.plan.outputs.needs_data == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4          # base branch: evaluator, rules, baselines
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4          # PR head, used only for candidate files and champion.json
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: pr
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: market-data
+          path: data/cache
+      - name: Evaluate candidates (no secrets in this job)
+        env:
+          CANDIDATES: ${{ needs.plan.outputs.candidates }}
+          PR: ${{ github.event.pull_request.number || 'manual' }}
+          SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          mkdir -p out/results
+          cp pr/state/champion.json out/head_champion.json
+          cp state/champion.json out/base_champion.json
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -z "$CANDIDATES" ]; then
+            python -m factory.evaluate --baselines --data alpaca --out out/results 2>err.log || { echo "baseline evaluation failed"; tail -30 err.log; } >> out/errors.txt
+            exit 0
+          fi
+          # champion change without a candidate change: re-evaluate the referenced candidate
+          if [ -z "$CANDIDATES" ]; then
+            CANDIDATES=$(python -c "import json;r=json.load(open('out/head_champion.json'))['ref'];print(r if r.endswith('.py') else '')")
+          fi
+          for f in $CANDIDATES; do
+            case "$f" in
+              strategies/candidates/*.py) cp "pr/$f" "$f" ;;
+              *.py) echo "refusing non-candidate path $f" >> out/errors.txt; continue ;;
+            esac
+            name=$(basename "$f" .py)
+            python -m factory.evaluate --candidate "$f" --data alpaca --out out/results \
+              --experiment-id "pr${PR}-${SHA:0:7}-${name}" 2>err.log || { echo "evaluation of $f failed"; tail -30 err.log; } >> out/errors.txt
+          done
+          rm -rf pr
+      - uses: actions/upload-artifact@v4
+        with:
+          name: evaluation
+          path: out
+
+  report:
+    needs: [plan, evaluate]
+    if: always() && needs.plan.result == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/download-artifact@v4
+        if: needs.evaluate.result == 'success'
+        with:
+          name: evaluation
+          path: out
+      - name: Verdict
+        id: verdict
+        run: |
+          mkdir -p out/results
+          [ -f out/head_champion.json ] || cp state/champion.json out/head_champion.json
+          [ -f out/base_champion.json ] || cp state/champion.json out/base_champion.json
+          if [ "${{ needs.plan.outputs.needs_data }}" = "true" ] && [ "${{ needs.evaluate.result }}" != "success" ]; then
+            echo "Evaluation job did not finish (${{ needs.evaluate.result }}). Check the data download (Alpaca secrets) and logs." >> out/errors.txt
+          fi
+          set +e
+          python scripts/pr_verdict.py --results out/results --head-champion out/head_champion.json \
+            --base-champion out/base_champion.json --errors out/errors.txt --out verdict.md
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          echo "promote=$(python -c "import json,glob;print(any(json.load(open(p))['promote'] for p in glob.glob('out/results/*.json')))")" >> "$GITHUB_OUTPUT"
+      - name: Record every result on the ledger branch
+        if: hashFiles('out/results/*.json') != ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: scripts/ledger_append.sh experiments "experiment results from run ${{ github.run_id }}" out/results/*
+      - name: Comment and label the PR
+        if: github.event_name == 'pull_request_target'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          gh label create promote --color 2ea44f --force >/dev/null
+          gh label create rejected --color d73a4a --force >/dev/null
+          gh label create experiment --color 5319e7 --force >/dev/null
+          gh pr comment "$PR" --body-file verdict.md
+          if [ -n "${{ needs.plan.outputs.candidates }}" ]; then
+            gh pr edit "$PR" --add-label experiment
+            if [ "${{ steps.verdict.outputs.promote }}" = "True" ]; then gh pr edit "$PR" --add-label promote; gh pr edit "$PR" --remove-label rejected || true
+            else gh pr edit "$PR" --add-label rejected; gh pr edit "$PR" --remove-label promote || true; fi
+          fi
+      - name: Auto-merge verified promotions
+        if: github.event_name == 'pull_request_target' && vars.AUTO_PROMOTE == 'true' && needs.plan.outputs.champion_changed == 'true' && steps.verdict.outputs.code == '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr merge "${{ github.event.pull_request.number }}" --auto --squash
+      - name: Fail the check if the verdict failed
+        if: steps.verdict.outputs.code != '0'
+        run: exit 1

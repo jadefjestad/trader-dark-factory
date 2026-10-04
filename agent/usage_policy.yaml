@@ -1,0 +1,8 @@
+# PROTECTED (CODEOWNERS). How hard the research agent may push the Claude subscription.
+# Claude does not expose remaining usage to a Routine, so the factory budgets by counting its own
+# runs and by noticing runs that never finished (the usual sign of hitting a usage limit).
+max_runs_per_day: 5            # set to your plan's daily Routine run cap (see claude.ai/code/routines)
+max_runs_per_5h: 3             # Pro usage resets on a rolling 5-hour window
+tasks_per_run: {start: 1, min: 1, max: 3}
+cooldown_after_limit_hours: 5  # after a run is cut off, skip work until the window has reset
+unfinished_after_minutes: 90   # a run with no end marker after this long counts as cut off

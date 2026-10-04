@@ -1,0 +1,47 @@
+# Runs the promoted strategy on Alpaca PAPER every weekday after the open. Needs no Claude access.
+name: execute
+on:
+  schedule:
+    - cron: "0 15 * * 1-5"    # 11:00 ET in summer, 10:00 ET in winter
+    - cron: "30 17 * * 1-5"   # backup run if the first is delayed or dropped; it trades only the remaining difference
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Compute orders without submitting"
+        type: boolean
+        default: true
+concurrency:
+  group: execute
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Execute champion on paper account
+        id: run
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: |
+          set +e
+          python -m factory.execute --out out ${{ (github.event_name == 'workflow_dispatch' && inputs.dry_run) && '--dry-run' || '' }}
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+      - name: Record run on the ledger branch
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: scripts/ledger_append.sh executions "execution run ${{ github.run_id }}" out/*.json
+      - name: Fail visibly when no orders were placed because of an error
+        if: steps.run.outputs.code != '0'
+        run: exit 1
