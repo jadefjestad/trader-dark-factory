@@ -1,8 +1,11 @@
 # Checks which alternative data sources the factory can reach from Actions and how much history they
-# hold. Manual only; it reads data and never places orders.
+# hold. It reads data and never places orders. Runs on demand and weekly in market hours, so the
+# IEX spread probe (issue #74) sees live quotes.
 name: probe-sources
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "40 15 * * 1"   # Mondays 11:40 New York (10:40 in winter): regular session
 permissions:
   contents: read
 jobs:
@@ -38,6 +41,11 @@ jobs:
           python -m factory.intraday_probe --out intraday_probe.json
           { echo '```json'; cat intraday_probe.json; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
           python -c "import json; [print(f'::notice title=intraday {k}::' + json.dumps(v, default=str)) for k, v in json.load(open('intraday_probe.json')).items()]"
+      - name: Probe FINRA short-sale data (issue #65)
+        run: |
+          python -m factory.shorts probe --out shorts_probe.json
+          { echo '```json'; cat shorts_probe.json; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          python -c "import json; [print(f'::notice title=shorts {k}::' + json.dumps(v, default=str)) for k, v in json.load(open('shorts_probe.json')).items()]"
       - name: Probe SEC panels (issues #30, #64, #66)
         if: always()
         env:
@@ -54,4 +62,5 @@ jobs:
           path: |
             probe.json
             intraday_probe.json
+            shorts_probe.json
             sec_probe.json
