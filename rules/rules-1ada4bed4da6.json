@@ -1,0 +1,13 @@
+{
+  "kind": "rule_change",
+  "commit": "1ada4bed4da611ec6b4e1fa963f98a511ddef464",
+  "previous": "fec547f3b1abc2f21bcae4d57318034df2500149",
+  "changed_at": "2026-10-04T23:05:31+00:00",
+  "reason": "add a read-only FINRA probe step and a weekly market-hours schedule to probe.yml; no rule values change.",
+  "files": [
+    {
+      "file": ".github/workflows/probe.yml",
+      "change": "M"
+    }
+  ]
+}
