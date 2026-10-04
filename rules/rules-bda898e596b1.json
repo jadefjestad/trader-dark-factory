@@ -1,0 +1,13 @@
+{
+  "kind": "rule_change",
+  "commit": "bda898e596b11e9659d163a5f7e925ef79c9a200",
+  "previous": "97d2c8a7f6f18f98e793852ba653fbda99f57ddf",
+  "changed_at": "2026-10-04T14:45:39+00:00",
+  "reason": "report-only deflated Sharpe probability in verdicts using the count of experiment PRs; the evaluate plan job gains pull-requests: read. No gate changes. (#49)",
+  "files": [
+    {
+      "file": ".github/workflows/evaluate.yml",
+      "change": "M"
+    }
+  ]
+}
