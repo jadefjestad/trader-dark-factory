@@ -10,7 +10,7 @@ Claude Routine (research, budgeted)         GitHub Actions (deterministic, no Cl
 ───────────────────────────────────         ────────────────────────────────────────────────
 reads ledger + backlog issues        ──►    evaluate.yml  on every PR
 writes ONE candidate strategy               ├─ data job: downloads Alpaca bars (has keys, runs base code only)
-opens experiment PR                         ├─ evaluate job: runs candidate, NO secrets, read-only
+opens experiment PR                         ├─ evaluate job: runs candidate as an unprivileged user, NO secrets
                                             └─ report job: gates verdict, PR comment, ledger branch
 copies champion.json if PROMOTE      ──►    merge = promotion (state/champion.json on main)
                                             execute.yml  weekdays: champion → Alpaca PAPER orders
@@ -25,6 +25,10 @@ copies champion.json if PROMOTE      ──►    merge = promotion (state/champ
 | `protected/universe.yaml` | tradable symbols and the SPY benchmark |
 | `factory/`, `strategies/baselines/`, `strategies/base.py`, `scripts/`, `.github/` | the evaluator, executor, baselines and workflows |
 
+Strategy code never runs inside the evaluator or executor: `factory/runner.py` runs it in a child
+process with a private copy of code and data, an empty environment, a timeout and (in Actions) a
+separate unprivileged OS user, and reads back only numeric weights.
+
 Enforced three ways: CODEOWNERS (Jade's review), `scripts/guard.py` in CI (agent branches may not touch
 these paths at all), and `evaluate.yml` running the evaluator from the base branch, never the PR's copy.
 
@@ -38,7 +42,8 @@ these paths at all), and `evaluate.yml` running the evaluator from the base bran
 - **Risk**: drawdown, volatility, turnover, position-size and gross-exposure gates; order size vs bar
   dollar volume.
 - **Promotion**: pass every gate AND beat the current champion's score (mean of validation and
-  holdout Sharpe) by 0.05, re-run on identical data. Synthetic data is never promotable.
+  holdout Sharpe) by 0.05, re-run on identical data. The score itself is never published, since it
+  would reveal the holdout Sharpe. Synthetic data and timeframes without an executor are never promotable.
 
 Every result, pass or fail, is appended to the `ledger` branch (`experiments/`), and every execution
 run to `ledger/executions/`. Candidate files are never deleted.

@@ -6,6 +6,7 @@ import os
 import requests
 
 PAPER_URL = "https://paper-api.alpaca.markets"
+DATA_URL = "https://data.alpaca.markets"
 
 
 class BrokerError(RuntimeError):
@@ -52,3 +53,10 @@ class PaperBroker:
             "symbol": symbol, "qty": str(qty), "side": side, "type": "market",
             "time_in_force": "day", "client_order_id": client_order_id,
         })
+
+    def latest_trades(self, symbols: list[str], feed: str = "iex") -> dict:
+        """{symbol: (price, timestamp)} from the market-data API (IEX is real-time on the free plan)."""
+        r = self.s.get(DATA_URL + "/v2/stocks/trades/latest", params={"symbols": ",".join(symbols), "feed": feed}, timeout=30)
+        if r.status_code >= 300:
+            raise BrokerError(f"latest trades -> {r.status_code}: {r.text[:300]}")
+        return {sym: (float(t["p"]), t["t"]) for sym, t in (r.json().get("trades") or {}).items()}

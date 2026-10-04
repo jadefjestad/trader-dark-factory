@@ -11,36 +11,17 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
-import signal
 import sys
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-from factory import backtest, config, metrics
+from factory import backtest, config, metrics, runner
 from factory.config import ROOT
 from factory.data import DataError, MarketData, load_alpaca, synthetic, validate
-from factory.sandbox import load_ref
 
 CHAMPION = ROOT / "state" / "champion.json"
-STRATEGY_TIMEOUT_S = 300
-
-
-class _Timeout(Exception):
-    pass
-
-
-def _with_timeout(fn, *a):
-    def handler(*_):
-        raise _Timeout(f"strategy exceeded {STRATEGY_TIMEOUT_S}s")
-    old = signal.signal(signal.SIGALRM, handler)
-    signal.alarm(STRATEGY_TIMEOUT_S)
-    try:
-        return fn(*a)
-    finally:
-        signal.alarm(0)
-        signal.signal(signal.SIGALRM, old)
 
 
 # ---------------------------------------------------------------- data
@@ -93,18 +74,18 @@ def weight_violations(w: pd.DataFrame, limits: dict) -> list[str]:
     return v
 
 
-def causality_check(strategy, md: MarketData, full: pd.DataFrame, n: int, seed: int = 0) -> list[str]:
-    """Re-run on truncated data; the last row must equal the full run's row at that bar."""
+def cut_points(n_bars: int, lookback: int, n: int, seed: int = 0) -> list[int]:
     rng = np.random.default_rng(seed)
-    lo = min(max(strategy.lookback + 5, len(md.index) // 4), len(md.index) - 2)
-    cuts = sorted(set(rng.integers(lo, len(md.index) - 1, n).tolist()))
+    lo = min(max(lookback + 5, n_bars // 4), n_bars - 2)
+    return sorted(set(rng.integers(lo, n_bars - 1, n).tolist()))
+
+
+def causality_mismatches(full: pd.DataFrame, truncated: dict[int, pd.DataFrame]) -> list[str]:
+    """The last row of each truncated rerun must equal the full run's row at that bar (NaN == NaN)."""
     bad = []
-    for cut in cuts:
-        part = strategy.target_weights(md.head(cut + 1))
-        a = part.reindex(columns=md.symbols).iloc[-1].fillna(0).values
-        b = full.reindex(columns=md.symbols).iloc[cut].fillna(0).values
-        if not np.allclose(a, b, atol=1e-9):
-            bad.append(str(md.index[cut]))
+    for cut, part in truncated.items():
+        if not np.allclose(part.iloc[-1].values, full.iloc[cut].values, atol=1e-9, equal_nan=True):
+            bad.append(str(full.index[cut]))
     return bad
 
 
@@ -122,11 +103,8 @@ def perturbations(params: dict, frac: float) -> list[dict]:
 
 # ---------------------------------------------------------------- core
 
-def run_strategy(cls, md, cfg, params=None):
-    s = cls(**(params or {}))
-    w = _with_timeout(s.target_weights, md)
-    res = backtest.run(w, md, cfg["costs"][md.timeframe], cfg["initial_capital"])
-    return s, w, res
+def backtest_weights(w, md, cfg):
+    return backtest.run(w, md, cfg["costs"][md.timeframe], cfg["initial_capital"])
 
 
 def period_metrics(res, pers):
@@ -134,67 +112,79 @@ def period_metrics(res, pers):
 
 
 def score(pm: dict) -> float:
-    return round((pm["validation"].get("sharpe", 0.0) + pm["holdout"].get("sharpe", 0.0)) / 2, 4)
+    return (pm["validation"].get("sharpe", 0.0) + pm["holdout"].get("sharpe", 0.0)) / 2
+
+
+def verify_champion_code(ch: dict, root: Path = ROOT) -> None:
+    if ch["ref"].endswith(".py"):
+        path = root / ch["ref"]
+        if not path.is_file() or config.file_sha256(path) != ch.get("code_sha256"):
+            raise DataError(f"champion code {ch['ref']} is missing or does not match its recorded hash")
 
 
 def evaluate(ref: str, source: str = "synthetic", experiment_id: str | None = None,
              include_baselines: bool = True) -> dict:
+    """Score one strategy. All strategy code runs in factory.runner's child process."""
     cfg = config.evaluation()
     limits = config.risk_limits()
     gates = cfg["gates"]
-    cls = load_ref(ref)
-    md, bench = load_data(cls.timeframe, source, cfg)
-    pers = periods(cls.timeframe, cfg, md.index)
+    meta = runner.describe(ref)
+    tf = meta["timeframe"]
+    md, bench = load_data(tf, source, cfg)
+    pers = periods(tf, cfg, md.index)
 
-    strat, w, res = run_strategy(cls, md, cfg)
+    cuts = cut_points(len(md.index), meta["lookback"], gates["causality_checks"])
+    perturbed = perturbations(meta["params"], gates["robustness_perturbation"])
+    jobs = ([{"params": None, "rows": None}] + [{"params": None, "rows": c + 1} for c in cuts]
+            + [{"params": p, "rows": None} for p in perturbed])
+    frames = runner.run(ref, md, jobs)
+    w = frames[0]
+    res = backtest_weights(w, md, cfg)
     pm = period_metrics(res, pers)
     violations = weight_violations(w, limits)
-    leaks = causality_check(strat, md, w, gates["causality_checks"])
+    leaks = causality_mismatches(w, dict(zip(cuts, frames[1:1 + len(cuts)])))
 
     base_sharpe = pm["validation"].get("sharpe", 0.0)
-    robust = []
-    for p in perturbations(strat.params, gates["robustness_perturbation"]):
-        try:
-            _, _, r2 = run_strategy(cls, md, cfg, p)
-            robust.append(metrics.summarize(r2, *pers["validation"]).get("sharpe", 0.0))
-        except Exception:  # a perturbation that crashes counts as fragile
-            robust.append(0.0)
+    robust = [metrics.summarize(backtest_weights(f, md, cfg), *pers["validation"]).get("sharpe", 0.0)
+              for f in frames[1 + len(cuts):]]
     robust_ratio = float(np.median(robust) / base_sharpe) if robust and base_sharpe > 0 else (1.0 if not robust else 0.0)
 
     # benchmark: buy and hold the benchmark ETF
     bw = pd.DataFrame(1.0, index=bench.index, columns=bench.symbols)
-    bres = backtest.run(bw, bench, cfg["costs"][bench.timeframe], cfg["initial_capital"])
-    bench_pm = period_metrics(bres, pers)
+    bench_pm = period_metrics(backtest_weights(bw, bench, cfg), pers)
 
     baselines = {}
     if include_baselines:
         from strategies import baselines as B
         for bcls in B.ALL:
-            if bcls.timeframe == cls.timeframe and bcls is not cls:
-                _, _, br = run_strategy(bcls, md, cfg)
-                baselines[bcls.name] = period_metrics(br, pers)
+            bref = f"{bcls.__module__}:{bcls.__name__}"
+            if bcls.timeframe == tf and bref != ref:
+                baselines[bcls.name] = period_metrics(backtest_weights(runner.run(bref, md, [{}])[0], md, cfg), pers)
 
     champion = None
     if CHAMPION.exists():
         ch = json.loads(CHAMPION.read_text())
-        ccls = load_ref(ch["ref"])
-        if ccls.timeframe == cls.timeframe:
-            _, _, cres = run_strategy(ccls, md, cfg, ch.get("params"))
-            cpm = period_metrics(cres, pers)
-            champion = {"ref": ch["ref"], "name": ccls.name, "score": score(cpm), "metrics": cpm}
+        verify_champion_code(ch)
+        if ch.get("timeframe", "1Day") == tf:
+            cw = runner.run(ch["ref"], md, [{"params": ch.get("params")}])[0]
+            cpm = period_metrics(backtest_weights(cw, md, cfg), pers)
+            champion = {"ref": ch["ref"], "name": ch.get("name"), "score": score(cpm), "metrics": cpm}
 
     g = []
     def gate(name, ok, detail):
         g.append({"gate": name, "passed": bool(ok), "detail": detail})
     gate("data_not_synthetic", source != "synthetic" or cfg["promotion"]["synthetic_data_promotable"], md.source)
+    gate("executable_timeframe", tf in cfg["promotion"]["executable_timeframes"], tf)
     gate("risk_limits", not violations, "; ".join(violations) or "ok")
-    gate("no_lookahead", not leaks, f"mismatch at {leaks}" if leaks else f"{gates['causality_checks']} truncated reruns matched")
+    gate("no_lookahead", not leaks, f"mismatch at {leaks}" if leaks else f"{len(cuts)} truncated reruns matched")
     gate("min_trades_validation", pm["validation"].get("trades", 0) >= gates["min_trades_validation"], pm["validation"].get("trades", 0))
     for name in pers:
-        gate(f"max_drawdown_{name}", pm[name].get("max_drawdown", 1) <= gates["max_drawdown"], pm[name].get("max_drawdown"))
-        gate(f"max_vol_{name}", pm[name].get("annual_vol", 1) <= gates["max_annual_vol"], pm[name].get("annual_vol"))
+        dd, vol = pm[name].get("max_drawdown", 1), pm[name].get("annual_vol", 1)
+        hidden = name == "holdout"   # holdout gates report pass/fail only
+        gate(f"max_drawdown_{name}", dd <= gates["max_drawdown"], "hidden" if hidden else dd)
+        gate(f"max_vol_{name}", vol <= gates["max_annual_vol"], "hidden" if hidden else vol)
     gate("min_validation_sharpe", base_sharpe >= gates["min_validation_sharpe"], base_sharpe)
-    gate("min_holdout_sharpe", pm["holdout"].get("sharpe", -9) >= gates["min_holdout_sharpe"], round(pm["holdout"].get("sharpe", -9), 1))
+    gate("min_holdout_sharpe", pm["holdout"].get("sharpe", -9) >= gates["min_holdout_sharpe"], "hidden")
     decay = pm["in_sample"].get("sharpe", 0) - base_sharpe
     gate("sharpe_decay", decay <= gates["max_sharpe_decay"], round(decay, 3))
     gate("turnover", pm["validation"].get("annual_turnover", 1e9) <= gates["max_annual_turnover"], pm["validation"].get("annual_turnover"))
@@ -204,11 +194,11 @@ def evaluate(ref: str, source: str = "synthetic", experiment_id: str | None = No
     passed = all(x["passed"] for x in g)
     sc = score(pm)
     beats = champion is None or sc >= champion["score"] + cfg["promotion"]["min_score_improvement"]
-    exp_id = experiment_id or f"{dt.datetime.now(dt.timezone.utc):%Y%m%dT%H%M%S}-{strat.name}"
+    exp_id = experiment_id or f"{dt.datetime.now(dt.timezone.utc):%Y%m%dT%H%M%S}-{meta['name']}"
     ref_path = ROOT / ref if ref.endswith(".py") else None
     return {
         "experiment_id": exp_id,
-        "strategy": {"name": strat.name, "ref": ref, "params": strat.params, "timeframe": cls.timeframe,
+        "strategy": {"name": meta["name"], "ref": ref, "params": meta["params"], "timeframe": tf,
                      "code_sha256": config.file_sha256(ref_path) if ref_path and ref_path.exists() else None},
         "data": {"source": md.source, "fingerprint": md.fingerprint(), "first_bar": str(md.index[0]), "last_bar": str(md.index[-1])},
         "protected_fingerprint": config.protected_fingerprint(),
@@ -216,10 +206,10 @@ def evaluate(ref: str, source: str = "synthetic", experiment_id: str | None = No
         "metrics": _redact_holdout(pm),
         "benchmark": {"symbol": bench.symbols[0], "metrics": _redact_holdout(bench_pm)},
         "baselines": {k: _redact_holdout(v) for k, v in baselines.items()},
-        "champion": None if champion is None else {**champion, "metrics": _redact_holdout(champion["metrics"])},
+        "champion": None if champion is None else {"ref": champion["ref"], "name": champion["name"],
+                                                    "metrics": _redact_holdout(champion["metrics"])},
         "gates": g,
         "passed_gates": passed,
-        "score": sc,
         "beats_champion": bool(beats),
         "promote": bool(passed and beats),
     }
@@ -229,7 +219,7 @@ def _redact_holdout(pm: dict) -> dict:
     """The holdout stays 'unseen': report only coarse figures so the agent cannot tune to it."""
     out = dict(pm)
     h = pm.get("holdout", {})
-    out["holdout"] = {"sharpe": round(h.get("sharpe", 0.0), 1), "max_drawdown": round(h.get("max_drawdown", 0.0), 2)}
+    out["holdout"] = {"sharpe": round(h.get("sharpe", 0.0), 1), "max_drawdown": round(h.get("max_drawdown", 0.0), 1)}
     return out
 
 
@@ -241,10 +231,10 @@ def to_markdown(r: dict) -> str:
     lines = [f"## Experiment `{r['experiment_id']}`: **{verdict}**", "",
              f"Strategy `{s['name']}` ({s['timeframe']}), params `{json.dumps(s['params'])}`",
              f"Data `{r['data']['source']}` {r['data']['first_bar'][:10]} to {r['data']['last_bar'][:10]}, "
-             f"fingerprint `{r['data']['fingerprint']}`, rules `{r['protected_fingerprint']}`", "",
-             f"Score (mean of validation and holdout Sharpe): **{r['score']}**"]
+             f"fingerprint `{r['data']['fingerprint']}`, rules `{r['protected_fingerprint']}`", ""]
     if r["champion"]:
-        lines.append(f"Champion `{r['champion']['name']}` score: {r['champion']['score']}")
+        lines.append(f"Beats champion `{r['champion']['name']}` (validation + holdout Sharpe, margin per rules): "
+                     f"**{'yes' if r['beats_champion'] else 'no'}**")
     lines += ["", "| Period | Sharpe | CAGR | Vol | Max DD | Turnover/yr | Trades |", "|---|---|---|---|---|---|---|"]
     for p, m in r["metrics"].items():
         lines.append(f"| {p} | {m.get('sharpe','')} | {m.get('cagr','')} | {m.get('annual_vol','')} | "
@@ -264,7 +254,7 @@ def write_promotion(r: dict) -> None:
     CHAMPION.write_text(json.dumps({
         "ref": r["strategy"]["ref"], "params": r["strategy"]["params"], "name": r["strategy"]["name"],
         "timeframe": r["strategy"]["timeframe"], "code_sha256": r["strategy"]["code_sha256"],
-        "experiment_id": r["experiment_id"], "score": r["score"], "promoted_at": r["evaluated_at"],
+        "experiment_id": r["experiment_id"], "promoted_at": r["evaluated_at"],
     }, indent=2) + "\n")
 
 
@@ -281,7 +271,11 @@ def main(argv=None) -> int:
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
 
-    refs = [a.candidate] if a.candidate else [f"{c.__module__}:{c.__name__}" for c in __import__("strategies.baselines", fromlist=["ALL"]).ALL]
+    if a.candidate:
+        refs = [a.candidate]
+    else:
+        from strategies import baselines
+        refs = [f"{c.__module__}:{c.__name__}" for c in baselines.ALL]
     try:
         for ref in refs:
             r = evaluate(ref, a.data, a.experiment_id if a.candidate else None)
@@ -291,8 +285,8 @@ def main(argv=None) -> int:
             if a.write_promotion and a.candidate and r["promote"]:
                 write_promotion(r)
                 print(f"champion updated -> {r['strategy']['name']}")
-    except DataError as e:
-        print(f"DATA ERROR: {e}", file=sys.stderr)
+    except (DataError, runner.StrategyError) as e:
+        print(f"{type(e).__name__}: {e}", file=sys.stderr)
         return 2
     return 0
 

@@ -25,16 +25,19 @@ class Honest(Strategy):
         return (md.close > md.close.rolling(self.params["window"]).mean()).astype(float) * 0.1
 
 
+def _mismatches(s, md):
+    cuts = evaluate.cut_points(len(md.index), s.lookback, 5)
+    return evaluate.causality_mismatches(s.target_weights(md), {c: s.target_weights(md.head(c + 1)) for c in cuts})
+
+
 def test_lookahead_detected():
     md = synthetic(["A", "B", "C"], "2020-01-01", "2021-12-31")
-    s = Cheater()
-    assert evaluate.causality_check(s, md, s.target_weights(md), 5)
+    assert _mismatches(Cheater(), md)
 
 
 def test_honest_strategy_passes_causality():
     md = synthetic(["A", "B", "C"], "2020-01-01", "2021-12-31")
-    s = Honest()
-    assert not evaluate.causality_check(s, md, s.target_weights(md), 5)
+    assert not _mismatches(Honest(), md)
 
 
 def test_weight_violations():
@@ -50,3 +53,10 @@ def test_full_evaluation_on_synthetic_is_never_promotable():
     assert gates["data_not_synthetic"] is False
     assert r["promote"] is False
     assert set(r["metrics"]["holdout"]) == {"sharpe", "max_drawdown"}   # holdout stays coarse
+    assert "score" not in r                                              # score would reveal holdout Sharpe
+    assert {g["detail"] for g in r["gates"] if "holdout" in g["gate"]} == {"hidden"}
+
+
+def test_intraday_candidate_cannot_be_promoted():
+    r = evaluate.evaluate("strategies.baselines.intraday_orb:OpeningRangeBreakout", "synthetic", "t", include_baselines=False)
+    assert {g["gate"]: g["passed"] for g in r["gates"]}["executable_timeframe"] is False

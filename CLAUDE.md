@@ -12,7 +12,9 @@ decides and trades. Read `README.md` for the architecture.
 - Candidates may import only numpy, pandas, math, statistics and `strategies.base`.
 - Row t of a strategy's weights may only use data up to bar t. The evaluator proves this by rerunning
   on truncated data; peeking ahead fails the `no_lookahead` gate.
-- Never delete candidate files or ledger records. Failed experiments are data.
+- Never delete candidate files or ledger records. Failed experiments are data. Candidate files already
+  on main are immutable (CI rejects edits, deletes and renames); improve an idea in a new file.
+- A weight row that is entirely NaN means "hold" (no trades). Any other NaN is a bug.
 - Do not try to tune against the holdout. Its figures are deliberately coarse.
 - Do not write `state/champion.json` yourself except by copying the exact JSON an evaluation comment
   gives you; the evaluate check rejects anything else.

@@ -11,3 +11,8 @@ max_orders_per_run: 60
 max_run_turnover: 1.00         # sum |order notional| / equity per run
 max_drawdown_halt: 0.20        # halt new orders if equity is 20% below its 1-year peak
 max_data_staleness_days: 4     # last completed daily bar must be this recent (calendar days)
+cash_buffer: 0.02              # size targets on 98% of equity to absorb price moves before fills
+price_buffer: 0.03             # assume buys fill up to 3% above the latest trade when checking limits
+max_price_gap: 0.25            # reject a latest trade more than 25% away from the last close (bad data)
+max_quote_age_minutes: 30      # latest trade must be this fresh
+hold_rebalance_tolerance: 0.03 # on "hold" days, only fix positions more than 3 points off the last decision
