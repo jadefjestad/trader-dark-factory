@@ -1,0 +1,13 @@
+{
+  "kind": "rule_change",
+  "commit": "96db77391b45a6390a4d86c039890201d5d729bb",
+  "previous": "f8f2397f7c88ccb8f630b36b1341d4b3981f06ed",
+  "changed_at": "2026-10-04T13:22:31+00:00",
+  "reason": "adds a manual, read-only workflow so the factory can check from Actions which free alternative data sources are reachable (#29 #30 #31).",
+  "files": [
+    {
+      "file": ".github/workflows/probe.yml",
+      "change": "A"
+    }
+  ]
+}
