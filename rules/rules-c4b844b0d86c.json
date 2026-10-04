@@ -1,0 +1,35 @@
+{
+  "kind": "rule_change",
+  "commit": "c4b844b0d86ca9646d02ad4bb7f6c492d90d841a",
+  "previous": "d5c80ae8e398fd5415f87ceacdd28be333f850fd",
+  "changed_at": "2026-10-04T22:50:56+00:00",
+  "reason": "issue #68 step 4: reuse the evaluator gates with intraday-aware limits; a nightly-flat strategy cannot meet a 25x/yr turnover cap, and the executor gate should block promotion, not research.",
+  "files": [
+    {
+      "file": "protected/evaluation.yaml",
+      "change": "M",
+      "values": [
+        {
+          "key": "gates.max_annual_turnover",
+          "before": 25.0,
+          "after": null
+        },
+        {
+          "key": "gates.max_annual_turnover.15Min",
+          "before": null,
+          "after": 1000.0
+        },
+        {
+          "key": "gates.max_annual_turnover.1Day",
+          "before": null,
+          "after": 25.0
+        },
+        {
+          "key": "gates.max_annual_turnover.5Min",
+          "before": null,
+          "after": 1000.0
+        }
+      ]
+    }
+  ]
+}
