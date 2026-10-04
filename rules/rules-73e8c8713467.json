@@ -1,0 +1,13 @@
+{
+  "kind": "rule_change",
+  "commit": "73e8c871346777049ac129fde470a45099275cce",
+  "previous": "1ada4bed4da611ec6b4e1fa963f98a511ddef464",
+  "changed_at": "2026-10-04T23:09:14+00:00",
+  "reason": "new read-only backfill workflow for keyless FINRA data; no rule values change.",
+  "files": [
+    {
+      "file": ".github/workflows/shorts.yml",
+      "change": "A"
+    }
+  ]
+}
