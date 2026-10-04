@@ -107,6 +107,18 @@ def backtest_weights(w, md, cfg):
     return backtest.run(w, md, cfg["costs"][md.timeframe], cfg["initial_capital"], cfg.get("min_trade_weight", 0.0))
 
 
+def stressed_costs(costs: dict, multiple: float) -> dict:
+    """Every per-trade cost scaled by `multiple` (commission per share included)."""
+    return {k: (v * multiple if isinstance(v, (int, float)) else v) for k, v in costs.items()}
+
+
+def cost_stress_sharpe(w, md, cfg, pers) -> float:
+    cs = cfg["gates"]["cost_stress"]
+    res = backtest.run(w, md, stressed_costs(cfg["costs"][md.timeframe], cs["multiple"]),
+                       cfg["initial_capital"], cfg.get("min_trade_weight", 0.0))
+    return metrics.summarize(res, *pers["validation"]).get("sharpe", 0.0)
+
+
 def period_metrics(res, pers):
     return {name: metrics.summarize(res, a, b) for name, (a, b) in pers.items()}
 
@@ -204,6 +216,10 @@ def evaluate(ref: str, source: str = "synthetic", experiment_id: str | None = No
     gate("turnover", pm["validation"].get("annual_turnover", 1e9) <= gates["max_annual_turnover"], pm["validation"].get("annual_turnover"))
     gate("robustness", robust_ratio >= gates["robustness_min_ratio"], round(robust_ratio, 3))
     gate("fill_participation", res.max_participation <= cfg["max_participation"], round(res.max_participation, 5))
+    cs = gates.get("cost_stress")
+    if cs and tf in cs["timeframes"]:
+        stressed = cost_stress_sharpe(w, md, cfg, pers)
+        gate("cost_stress", stressed >= cs["min_validation_sharpe"], f"{cs['multiple']}x costs: validation Sharpe {round(stressed, 3)}")
 
     passed = all(x["passed"] for x in g)
     # report-only selection-bias check on the validation period (issue #49)

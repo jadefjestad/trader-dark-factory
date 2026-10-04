@@ -63,7 +63,9 @@ def run(weights: pd.DataFrame, md: MarketData, costs: dict, initial_capital: flo
     wv = w.values
     hold_rows = np.isnan(wv).all(axis=1)
     n, k = wv.shape
-    per_side = (costs.get("slippage_bps", 0) + costs.get("half_spread_bps", 0)) / 1e4
+    # feed_mismatch_bps: signals computed live on a thinner feed than the backtest's (see docs/intraday-data.md)
+    per_side = (costs.get("slippage_bps", 0) + costs.get("half_spread_bps", 0)
+                + costs.get("feed_mismatch_bps", 0)) / 1e4
     sell_fee = costs.get("sell_fee_bps", 0) / 1e4
 
     equity = np.empty(n)
