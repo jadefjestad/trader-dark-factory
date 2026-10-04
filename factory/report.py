@@ -47,6 +47,42 @@ def account_section(broker) -> list[str]:
     ]
 
 
+ASSUMED_COST_BPS_KEYS = ("slippage_bps", "half_spread_bps")
+
+
+def execution_quality(ledger: Path, broker, days: int = 7) -> list[str]:
+    """Realised fill cost versus the price the executor sized orders on, against the backtest's assumption.
+
+    Cost is signed against us: a buy filled above the decision price or a sell filled below it is positive."""
+    from factory import config
+    cut = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=days)
+    refs = {}
+    for f in sorted((ledger / "executions").glob("*.json")):
+        try:
+            r = json.loads(f.read_text())
+            if dt.datetime.fromisoformat(str(r.get("started_at"))) < cut:
+                continue
+        except (ValueError, OSError):
+            continue
+        for o in r.get("submitted") or []:
+            px = (r.get("prices") or {}).get(o.get("symbol"))
+            if px:
+                refs[o["client_order_id"]] = (o["side"], float(px))
+    if not refs:
+        return [f"- no submitted orders in the last {days} days"]
+    filled = {o.get("client_order_id"): float(o["filled_avg_price"]) for o in broker.closed_orders(cut.date().isoformat())
+              if o.get("filled_avg_price") and o.get("client_order_id") in refs}
+    if not filled:
+        return [f"- {len(refs)} orders submitted, none reported filled yet"]
+    bps = sorted(((p / refs[c][1] - 1) * (1 if refs[c][0] == "buy" else -1) * 1e4) for c, p in filled.items())
+    costs = config.evaluation()["costs"]["1Day"]
+    assumed = sum(float(costs[k]) for k in ASSUMED_COST_BPS_KEYS)
+    mean = sum(bps) / len(bps)
+    flag = " **(above the backtest assumption)**" if mean > assumed else ""
+    return [f"- {len(bps)} fills in the last {days} days: mean cost {mean:+.1f} bps, median {bps[len(bps) // 2]:+.1f} bps "
+            f"vs {assumed:.0f} bps assumed per side{flag}"]
+
+
 def build(ledger: Path, broker=None, usage_table: str = "", hours: int = 24) -> str:
     now = dt.datetime.now(dt.timezone.utc)
     since = now - dt.timedelta(hours=hours)
@@ -62,6 +98,13 @@ def build(ledger: Path, broker=None, usage_table: str = "", hours: int = 24) -> 
             lines += account_section(broker)
         except Exception as e:  # report must still go out
             lines.append(f"- could not read account: {type(e).__name__}: {e}")
+
+    if broker is not None:
+        lines += ["", "## Execution quality (fills vs decision prices)"]
+        try:
+            lines += execution_quality(ledger, broker)
+        except Exception as e:
+            lines.append(f"- could not compute: {type(e).__name__}: {e}")
 
     ex = _since(_jsonl(ledger / "executions" / "index.jsonl"), "started_at", since)
     lines += ["", f"## Execution runs (last {hours}h): {len(ex)}"]

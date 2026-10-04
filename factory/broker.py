@@ -46,6 +46,10 @@ class PaperBroker:
     def open_orders(self):
         return self._req("GET", "/v2/orders", params={"status": "open", "limit": 500})
 
+    def closed_orders(self, after: str):
+        """Orders closed (filled, cancelled, ...) since `after` (ISO date), newest first."""
+        return self._req("GET", "/v2/orders", params={"status": "closed", "after": after, "limit": 500})
+
     def portfolio_history(self, period: str = "1A"):
         return self._req("GET", "/v2/account/portfolio/history", params={"period": period, "timeframe": "1D"})
 
