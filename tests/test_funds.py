@@ -9,8 +9,8 @@ from factory import execute, funds
 from factory.data import synthetic
 from tests.test_risk_and_execute import FakeBroker
 
-NAMES = ["The Empire Strikes Black", "Darth Trader", "Back to the Futures", "Marty McBuy", "Wizard of Odds",
-         "Jon Dough", "Live Long and Profit", "Game of Loans", "Frodough Baggins", "Spyder-man"]
+NAMES = ["Darth Trader", "The Empire Strikes Black", "Live Long and Profit", "Marty McBuy", "Back to the Futures",
+         "Wizard of Odds", "Frodough Baggins", "Jon Dough", "Game of Loans", "Spyder-man"]
 
 
 def test_config_has_the_nine_funds_and_valid_strategies():
