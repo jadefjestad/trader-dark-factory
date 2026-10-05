@@ -191,3 +191,16 @@ def test_daily_executor_skips_intraday_funds():
     from factory import execute
     daily = [f.number for f in funds.load() if not f.benchmark and funds.timeframe_of(f, execute.CHAMPION) == "1Day"]
     assert set(daily) | {f.number for f in intraday.intraday_funds()} == {f.number for f in funds.load() if not f.benchmark}
+
+
+def test_closed_market_dry_run_previews_on_the_last_bars(monkeypatch, tmp_path):
+    md = _md().slice(None, pd.Timestamp(f"{DAY} 11:00", tz="America/New_York"))
+    broker = FakeBroker(md)
+    broker.clock = lambda: {"is_open": False, "next_close": "2026-10-07T16:00:00-04:00"}
+    _patch(monkeypatch, broker, md)
+    assert intraday.run_fund(_fund(), ("k", "s"), True, tmp_path, {}, _now("19:00")) == 0
+    rec = json.loads(next(tmp_path.glob("*.json")).read_text())
+    assert rec["status"].startswith("dry run") and len(rec["orders"]) == 5 and broker.submitted == []
+    # a real run on stale bars still refuses
+    broker.clock = lambda: {"is_open": True, "next_close": "2026-10-06T16:00:00-04:00"}
+    assert intraday.run_fund(_fund(), ("k", "s"), False, tmp_path, {}, _now("14:00")) == 2
