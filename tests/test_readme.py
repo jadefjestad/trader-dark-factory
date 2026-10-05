@@ -59,9 +59,10 @@ def test_splice_only_touches_the_block():
     assert out == f"intro\n{readme.RESULTS_START}\nnew\n{readme.RESULTS_END}\noutro\n"
 
 
-def test_main_copies_block_from_another_readme(tmp_path):
-    src, dst = tmp_path / "src.md", tmp_path / "dst.md"
-    src.write_text(f"x\n{readme.RESULTS_START}\nfresh\n{readme.RESULTS_END}\n")
-    dst.write_text(f"changed prose\n{readme.RESULTS_START}\nstale\n{readme.RESULTS_END}\ntail\n")
-    readme.main(["--ledger", str(tmp_path), "--readme", str(dst), "--block-from", str(src)])
-    assert dst.read_text() == f"changed prose\n{readme.RESULTS_START}\nfresh\n{readme.RESULTS_END}\ntail\n"
+def test_main_appends_a_block_to_a_file_without_markers(tmp_path):
+    out = tmp_path / "RESULTS.md"
+    out.write_text("# Results page\n")
+    (tmp_path / "experiments").mkdir()
+    readme.main(["--ledger", str(tmp_path), "--readme", str(out), "--no-broker"])
+    text = out.read_text()
+    assert text.startswith("# Results page") and readme.RESULTS_START in text and text.rstrip().endswith(readme.RESULTS_END)

@@ -1,4 +1,4 @@
-# Refreshes the README's results block after each trading day from the ledger and the paper account. No Claude needed.
+# Rebuilds RESULTS.md on the `results` branch after each trading day from the ledger and the paper account. No Claude needed.
 name: readme
 on:
   schedule:
@@ -26,22 +26,23 @@ jobs:
           python-version: "3.11"
           cache: pip
       - run: pip install -r requirements.txt
-      - name: Rewrite the results block
+      - name: Build RESULTS.md
         env:
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
-        run: python -m factory.readme --ledger ledger --readme README.md
-      - name: Commit to main if anything changed
         run: |
-          git diff --quiet README.md && { echo "README unchanged"; exit 0; }
+          mkdir -p "$RUNNER_TEMP/site"
+          printf '# Trader Dark Factory results\n\nRebuilt every weekday after the close by `.github/workflows/readme.yml`. Background and lessons: [README](https://github.com/%s#readme).\n' "$GITHUB_REPOSITORY" > "$RUNNER_TEMP/site/RESULTS.md"
+          python -m factory.readme --ledger ledger --readme "$RUNNER_TEMP/site/RESULTS.md"
+      - name: Publish to the results branch
+        # main only accepts pull requests, so the daily figures live on their own branch (history replaced each run)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd "$RUNNER_TEMP/site"
+          git init --quiet -b results
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          cp README.md "$RUNNER_TEMP/README.md"
-          for i in 1 2 3 4 5; do
-            git fetch --quiet origin main && git reset --quiet --hard origin/main
-            python -m factory.readme --ledger ledger --readme README.md --no-broker --block-from "$RUNNER_TEMP/README.md"
-            git diff --quiet README.md && exit 0
-            git commit --quiet -am "readme: refresh results" && git push --quiet origin HEAD:main && exit 0
-            sleep $((i * 3))
-          done
-          echo "README push failed after retries" >&2; exit 1
+          git add RESULTS.md
+          git commit --quiet -m "results: refresh"
+          git push --quiet --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:results

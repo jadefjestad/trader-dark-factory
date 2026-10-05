@@ -3,7 +3,8 @@
     python -m factory.readme --ledger ledger/ --readme README.md [--no-broker]
 
 Rewrites only the text between the RESULTS_START and RESULTS_END markers, so the hand-written parts of
-the README stay as they are. Run daily by .github/workflows/readme.yml; needs no Claude.
+the file stay as they are. .github/workflows/readme.yml runs it daily into RESULTS.md on the `results`
+branch (main only accepts PRs); a PR can refresh the snapshot in README.md. Needs no Claude.
 """
 from __future__ import annotations
 
@@ -11,6 +12,7 @@ import argparse
 import ast
 import datetime as dt
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -153,6 +155,12 @@ def research_section(ledger: Path, champ: dict) -> list[str]:
     return lines
 
 
+def _link(ref: str) -> str:
+    """Absolute link in Actions, so it also works from the results branch; relative otherwise."""
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    return f"https://github.com/{repo}/blob/main/{ref}" if repo else ref
+
+
 def section(ledger: Path, broker=None, now: dt.datetime | None = None) -> str:
     now = now or dt.datetime.now(dt.timezone.utc)
     champ = json.loads((ROOT / "state" / "champion.json").read_text())
@@ -160,7 +168,7 @@ def section(ledger: Path, broker=None, now: dt.datetime | None = None) -> str:
              f"{' and the Alpaca paper account' if broker is not None else ''}._", "",
              f"### Current strategy: `{champ.get('name')}`",
              f"- {champ.get('timeframe')} bars, promoted {str(champ.get('promoted_at'))[:10]}, source "
-             f"[{champ.get('ref')}]({champ.get('ref')})."]
+             f"[{champ.get('ref')}]({_link(champ.get('ref', ''))})."]
     if m := methodology(champ.get("ref", "")):
         lines.append(f"- Method: {m}")
     lines += [""] + trading_section(executions(ledger), broker) + [""] + research_section(ledger, champ) + [RESULTS_END]
@@ -179,14 +187,8 @@ def main(argv=None) -> int:
     ap.add_argument("--ledger", required=True)
     ap.add_argument("--readme", default=str(ROOT / "README.md"))
     ap.add_argument("--no-broker", action="store_true")
-    ap.add_argument("--block-from", help="copy the results block from this README instead of rebuilding it")
     a = ap.parse_args(argv)
     path = Path(a.readme)
-    if a.block_from:
-        src = Path(a.block_from).read_text()
-        block = RESULTS_START + src.split(RESULTS_START, 1)[1].split(RESULTS_END, 1)[0] + RESULTS_END
-        path.write_text(splice(path.read_text(), block))
-        return 0
     broker = None
     if not a.no_broker:
         from factory.broker import PaperBroker
