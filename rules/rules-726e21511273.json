@@ -1,0 +1,13 @@
+{
+  "kind": "rule_change",
+  "commit": "726e2151127381fff0f347f9ab327f1aa5755729",
+  "previous": "0b918e526ff38b530b7135318e14536ddff90147",
+  "changed_at": "2026-10-05T00:04:08+00:00",
+  "reason": "new workflow that only refreshes the README results block daily (reads the ledger and paper account, writes README.md); no rule or limit values change.",
+  "files": [
+    {
+      "file": ".github/workflows/readme.yml",
+      "change": "A"
+    }
+  ]
+}
