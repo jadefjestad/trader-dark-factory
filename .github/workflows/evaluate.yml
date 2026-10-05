@@ -63,7 +63,7 @@ jobs:
             names=""
             for f in "$@" $ch; do
               [ -f "$f" ] || continue
-              for n in news_count news_sentiment macro gross_profitability eps_ttm eps_sue insider_buyers insider_buy_value earnings_reaction earnings_age short_volume_ratio; do grep -Eq "extra_data *=.*[\"']$n[\"']" "$f" && names="$names,$n"; done
+              for n in news_count news_sentiment macro gross_profitability eps_ttm eps_sue insider_buyers insider_buy_value earnings_reaction earnings_age short_volume_ratio short_interest_days; do grep -Eq "extra_data *=.*[\"']$n[\"']" "$f" && names="$names,$n"; done
             done
             printf '%s' "$names" | tr ',' '\n' | grep -v '^$' | sort -u | paste -sd, - || true
           }
