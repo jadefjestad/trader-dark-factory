@@ -1,0 +1,17 @@
+{
+  "kind": "rule_change",
+  "commit": "013e0dafb9bbe019d66a06cdfd207093387109c3",
+  "previous": "7acc4731dd8e935e3be10c4433264bd9e2517a5f",
+  "changed_at": "2026-10-05T03:31:00+00:00",
+  "reason": "new `.github/workflows/snapshot.yml`, and `readme.yml` publishes the chart. No rule, limit or evaluation change.",
+  "files": [
+    {
+      "file": ".github/workflows/readme.yml",
+      "change": "M"
+    },
+    {
+      "file": ".github/workflows/snapshot.yml",
+      "change": "A"
+    }
+  ]
+}
