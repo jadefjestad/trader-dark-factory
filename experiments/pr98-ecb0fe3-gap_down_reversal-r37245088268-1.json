@@ -1,0 +1,229 @@
+{
+  "experiment_id": "pr98-ecb0fe3-gap_down_reversal-r37245088268-1",
+  "strategy": {
+    "name": "gap_down_reversal",
+    "ref": "strategies/candidates/gap_down_reversal.py",
+    "params": {
+      "min_gap": 0.015,
+      "max_names": 6
+    },
+    "timeframe": "15Min",
+    "code_sha256": "b909be2bfcf184821d063a3712d7e70e1b32297b115cd448772a5dea3833d540"
+  },
+  "data": {
+    "source": "alpaca:sip",
+    "fingerprint": "cb56a692d8abf930",
+    "first_bar": "2022-12-19 09:30:00-05:00",
+    "last_bar": "2026-10-02 15:45:00-04:00"
+  },
+  "protected_fingerprint": "e388c160c85ccbdc",
+  "evaluated_at": "2026-10-05T00:01:43+00:00",
+  "metrics": {
+    "in_sample": {
+      "bars": 9724,
+      "total_return": -0.02488,
+      "cagr": -0.016833,
+      "annual_vol": 0.02851,
+      "sharpe": -0.5812,
+      "sortino": -0.3377,
+      "max_drawdown": 0.050903,
+      "annual_turnover": 24.3683,
+      "cost_drag": 0.02945,
+      "avg_exposure": 0.0441,
+      "trades": 833
+    },
+    "validation": {
+      "bars": 6500,
+      "total_return": -0.06544,
+      "cagr": -0.065945,
+      "annual_vol": 0.065454,
+      "sharpe": -1.0096,
+      "sortino": -0.7216,
+      "max_drawdown": 0.073726,
+      "annual_turnover": 43.47,
+      "cost_drag": 0.051742,
+      "avg_exposure": 0.0781,
+      "trades": 1200
+    },
+    "holdout": {
+      "sharpe": -1.5,
+      "max_drawdown": 0.1
+    }
+  },
+  "benchmark": {
+    "symbol": "SPY",
+    "metrics": {
+      "in_sample": {
+        "bars": 9724,
+        "total_return": -0.524776,
+        "cagr": -0.394248,
+        "annual_vol": 0.096456,
+        "sharpe": -5.1486,
+        "sortino": -6.9756,
+        "max_drawdown": 0.540338,
+        "annual_turnover": 504.0,
+        "cost_drag": 0.595442,
+        "avg_exposure": 0.9231,
+        "trades": 748
+      },
+      "validation": {
+        "bars": 6500,
+        "total_return": -0.439114,
+        "cagr": -0.441703,
+        "annual_vol": 0.15016,
+        "sharpe": -3.8066,
+        "sortino": -5.1212,
+        "max_drawdown": 0.443925,
+        "annual_turnover": 504.0,
+        "cost_drag": 0.58599,
+        "avg_exposure": 0.9231,
+        "trades": 500
+      },
+      "holdout": {
+        "sharpe": -5.8,
+        "max_drawdown": 0.5
+      }
+    }
+  },
+  "baselines": {
+    "opening_range_breakout": {
+      "in_sample": {
+        "bars": 9724,
+        "total_return": -0.634167,
+        "cagr": -0.492143,
+        "annual_vol": 0.078437,
+        "sharpe": -8.5986,
+        "sortino": -10.4895,
+        "max_drawdown": 0.634167,
+        "annual_turnover": 649.3899,
+        "cost_drag": 0.784864,
+        "avg_exposure": 0.7036,
+        "trades": 24315
+      },
+      "validation": {
+        "bars": 6500,
+        "total_return": -0.571701,
+        "cagr": -0.574597,
+        "annual_vol": 0.110143,
+        "sharpe": -7.7045,
+        "sortino": -9.0161,
+        "max_drawdown": 0.576475,
+        "annual_turnover": 654.5867,
+        "cost_drag": 0.766188,
+        "avg_exposure": 0.7181,
+        "trades": 16743
+      },
+      "holdout": {
+        "sharpe": -10.8,
+        "max_drawdown": 0.6
+      }
+    }
+  },
+  "champion": null,
+  "gates": [
+    {
+      "gate": "data_not_synthetic",
+      "passed": true,
+      "detail": "alpaca:sip"
+    },
+    {
+      "gate": "executable_timeframe",
+      "passed": false,
+      "detail": "15Min",
+      "promotion_only": true
+    },
+    {
+      "gate": "risk_limits",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "gate": "no_lookahead",
+      "passed": true,
+      "detail": "5 truncated reruns matched"
+    },
+    {
+      "gate": "lookback_sufficient",
+      "passed": true,
+      "detail": "5 60-bar reruns matched"
+    },
+    {
+      "gate": "min_trades_validation",
+      "passed": true,
+      "detail": 1200
+    },
+    {
+      "gate": "max_drawdown_in_sample",
+      "passed": true,
+      "detail": 0.050903
+    },
+    {
+      "gate": "max_vol_in_sample",
+      "passed": true,
+      "detail": 0.02851
+    },
+    {
+      "gate": "max_drawdown_validation",
+      "passed": true,
+      "detail": 0.073726
+    },
+    {
+      "gate": "max_vol_validation",
+      "passed": true,
+      "detail": 0.065454
+    },
+    {
+      "gate": "max_drawdown_holdout",
+      "passed": true,
+      "detail": "hidden"
+    },
+    {
+      "gate": "max_vol_holdout",
+      "passed": true,
+      "detail": "hidden"
+    },
+    {
+      "gate": "min_validation_sharpe",
+      "passed": false,
+      "detail": -1.0096
+    },
+    {
+      "gate": "min_holdout_sharpe",
+      "passed": false,
+      "detail": "hidden"
+    },
+    {
+      "gate": "sharpe_decay",
+      "passed": true,
+      "detail": 0.428
+    },
+    {
+      "gate": "turnover",
+      "passed": true,
+      "detail": 43.47
+    },
+    {
+      "gate": "robustness",
+      "passed": false,
+      "detail": 0.0
+    },
+    {
+      "gate": "fill_participation",
+      "passed": true,
+      "detail": 0.0007
+    },
+    {
+      "gate": "cost_stress",
+      "passed": false,
+      "detail": "2.0x costs: validation Sharpe -1.781"
+    }
+  ],
+  "deflated_sharpe": {
+    "trials": 26,
+    "probability": 0.0015,
+    "benchmark_annual_sharpe": 0.397
+  },
+  "passed_gates": false,
+  "beats_champion": true,
+  "promote": false
+}
