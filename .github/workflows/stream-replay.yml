@@ -1,0 +1,42 @@
+# Replays a past session through the streaming engine with simulated quote fills (issue #75) and reports
+# the result as an annotation. Uses the paper data keys only to read history; never places orders.
+name: stream-replay
+on:
+  workflow_dispatch:
+    inputs:
+      day: {description: "session date YYYY-MM-DD", required: true}
+      symbols: {description: "comma-separated symbols", default: "AAPL,MSFT,NVDA"}
+      start: {description: "window start, New York time", default: "10:00"}
+      end: {description: "window end, New York time", default: "11:00"}
+      strategy: {description: "probe or champion", default: "probe"}
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Replay
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+          DAY: ${{ inputs.day }}
+          SYMBOLS: ${{ inputs.symbols }}
+          START: ${{ inputs.start }}
+          END: ${{ inputs.end }}
+          STRATEGY: ${{ inputs.strategy }}
+        run: python -m factory.stream.replay --day "$DAY" --symbols "$SYMBOLS" --start "$START" --end "$END" --strategy "$STRATEGY" --out replay.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stream-replay
+          path: replay.json
+          if-no-files-found: ignore

@@ -62,3 +62,23 @@ def test_thin_quotes_leave_unfilled_size():
     out = replay(trades, quotes, lambda md: {"AAPL": 0.25}, ["AAPL"], 5, LIMITS, STREAM,
                  max_wait=dt.timedelta(seconds=2))
     assert not out["unfilled"].empty
+
+
+def test_probe_buys_then_sells_and_cost_is_measured():
+    from factory.stream.replay import cost_bps, probe_strategy, summarize
+    trades, quotes = _tape(240, drift=0.0)
+    half = T0 + pd.Timedelta(seconds=120)
+    out = replay(trades, quotes, probe_strategy(["AAPL"], half), ["AAPL"], 5, LIMITS, STREAM)
+    sides = set(out["fills"]["side"])
+    assert sides == {"buy", "sell"}
+    c = cost_bps(out["fills"])
+    assert (c > 0).all() and abs(c.median() - 1.0) < 0.01     # 1 cent half-spread on $100 = 1 bp
+    s = summarize(out, 100_000.0)
+    assert s["fills"] == len(out["fills"]) and s["cost_bps_median"] == round(float(c.median()), 2)
+
+
+def test_main_fails_closed_without_data(monkeypatch, capsys):
+    from factory.stream import history, replay as R
+    monkeypatch.setattr(history, "fetch", lambda *a, **k: (_ for _ in ()).throw(history.DataError("401")))
+    assert R.main(["--day", "2026-10-02"]) == 1
+    assert "::error" in capsys.readouterr().out
