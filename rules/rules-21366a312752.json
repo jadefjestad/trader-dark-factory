@@ -1,0 +1,13 @@
+{
+  "kind": "rule_change",
+  "commit": "21366a31275297235cf558c48fb4a8bb81bd59ac",
+  "previous": "726e2151127381fff0f347f9ab327f1aa5755729",
+  "changed_at": "2026-10-05T00:15:20+00:00",
+  "reason": "fix the README refresh workflow added in #99, which cannot push to main; no rule or limit values change.",
+  "files": [
+    {
+      "file": ".github/workflows/readme.yml",
+      "change": "M"
+    }
+  ]
+}
