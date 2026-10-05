@@ -102,7 +102,7 @@ def run(dry_run: bool, record: dict, fund, creds, shared: dict, now: pd.Timestam
     expected = now.floor(f"{minutes}min") - bar_len          # the bar that has just completed
     # the backtester zeroes a decision whose fill bar is the session's last; from then on the book is flat,
     # decided without fresh bars so a data failure can never keep a position overnight
-    if close_at is not None and expected + bar_len * flat_bars >= close_at:
+    if clock.get("is_open") and close_at is not None and expected + bar_len * flat_bars >= close_at:
         stop = stop or "end of session"
 
     if broker.open_orders():
@@ -133,7 +133,7 @@ def run(dry_run: bool, record: dict, fund, creds, shared: dict, now: pd.Timestam
         validate(md, symbols)
         signal = md.index[-1]
         age = (now - (signal + bar_len)).total_seconds() / 60
-        if age > il["max_bar_age_minutes"]:
+        if age > il["max_bar_age_minutes"] and not (dry_run and not clock.get("is_open")):   # closed-market preview
             raise DataError(f"newest completed bar {signal} ended {age:.0f} minutes ago")
         if len(md.index) < meta["lookback"]:
             raise DataError(f"{len(md.index)} bars < strategy lookback {meta['lookback']}")
