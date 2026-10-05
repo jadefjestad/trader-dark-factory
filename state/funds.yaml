@@ -1,5 +1,7 @@
 # Paper funds. Numbers are what the code uses; names and emojis are decoration and say nothing about strategy.
-# Agents reassign strategies freely by PR. `strategy: champion` follows state/champion.json; otherwise copy the
+# Agents reassign strategies freely by PR. Daily (1Day) funds trade via factory/execute.py once a day; intraday
+# (15Min) funds trade every 15 minutes via factory/intraday.py and are flat every night.
+# `strategy: champion` follows state/champion.json; otherwise copy the
 # `strategy` block of the strategy's ledger evaluation record exactly (the executor checks code_sha256).
 # Keys: GitHub secrets ALPACA_FUND_<N>_KEY_ID / ALPACA_FUND_<N>_SECRET_KEY (fund 1 falls back to ALPACA_API_KEY_ID /
 # ALPACA_API_SECRET_KEY). A fund without keys is skipped; a failure in one fund never stops another.
@@ -45,47 +47,51 @@ funds:
   5:
     name: "Back to the Futures"
     emoji: "🕰️"
-    # passed gates (0.81); promoted before the current champion
+    # intraday: buys 15-min dips under session VWAP, sells back at VWAP. Rejected by the gates (no 15-minute strategy beats costs yet);
+    # on a fund for trading activity at Jade's request (2026-10-05). Flat every night.
     strategy:
-      name: "blend_ew_vol_momentum"
-      ref: "strategies/candidates/blend_ew_vol_momentum.py"
-      timeframe: "1Day"
-      code_sha256: "db3c0050b74feefbeb966d36449eac6ed172b6936251276712d8f8084a8bd1b1"
-      experiment_id: "pr22-8a0a8cc-blend_ew_vol_momentum-r37183047587-1"
-      params: {"lookback": 252, "skip": 21, "top_n": 8, "rebalance_every": 21, "vol_target": 0.1, "vol_window": 60, "ew_share": 0.5}
+      name: "intraday_vwap_reversion"
+      ref: "strategies/candidates/intraday_vwap_reversion.py"
+      timeframe: "15Min"
+      code_sha256: "b70d622aaf5b0a34bc22fc685eeb744d042c2cb647d2a104b5748e7261711174"
+      experiment_id: "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+      params: {"entry_gap": 0.005, "slots": 5, "weight": 0.1, "first_bar": 2, "last_entry_bar": 23}
   6:
     name: "Wizard of Odds"
     emoji: "🧙"
-    # passed gates (0.79); risk-parity mix of sleeves
+    # intraday: every 90 min holds the 5 worst 90-min performers. Rejected by the gates (no 15-minute strategy beats costs yet);
+    # on a fund for trading activity at Jade's request (2026-10-05). Flat every night.
     strategy:
-      name: "risk_parity_ensemble_v2"
-      ref: "strategies/candidates/risk_parity_ensemble_v2.py"
-      timeframe: "1Day"
-      code_sha256: "2a5463a9ad99aa6e24e19f5e22baaa58076d4c4fc253233394a94f3f4e766fe7"
-      experiment_id: "pr63-a5d265f-risk_parity_ensemble_v2-r37210938706-1"
-      params: {"lookback": 252, "skip": 21, "top_n": 8, "vol_target": 0.1, "vol_window": 60, "risk_window": 60, "rebalance_every": 21}
+      name: "intraday_hourly_reversal"
+      ref: "strategies/candidates/intraday_hourly_reversal.py"
+      timeframe: "15Min"
+      code_sha256: "59b1dfbc9a20153210e161f8eed6e686cfbb3e6b97c65e86ee4c1b0141d59b93"
+      experiment_id: "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+      params: {"window": 6, "names": 5, "weight": 0.1}
   7:
     name: "Frodough Baggins"
     emoji: "💍"
-    # passed gates (0.69); per-stock trend that can sit in cash
+    # intraday: buys short RSI pullbacks in up-trending names. Rejected by the gates (no 15-minute strategy beats costs yet);
+    # on a fund for trading activity at Jade's request (2026-10-05). Flat every night.
     strategy:
-      name: "ts_trend_invvol"
-      ref: "strategies/candidates/ts_trend_invvol.py"
-      timeframe: "1Day"
-      code_sha256: "1f19480b5bb334e630d9bb1bbc59d5a23edec8ca9dedbb70ad5183c502a2b04b"
-      experiment_id: "pr57-099edbb-ts_trend_invvol-r37210248410-1"
-      params: {"lookback": 252, "skip": 21, "vol_window": 60, "vol_target": 0.1, "rebalance_every": 21}
+      name: "intraday_rsi_pullback"
+      ref: "strategies/candidates/intraday_rsi_pullback.py"
+      timeframe: "15Min"
+      code_sha256: "bf782e13bd94a6b4055a22d2d8f6e1d32830ce22c6f1616323f62093593ac194"
+      experiment_id: "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+      params: {"rsi_bars": 6, "trend_bars": 26, "entry_rsi": 25.0, "exit_rsi": 55.0, "slots": 5, "weight": 0.1, "first_bar": 1, "last_entry_bar": 23}
   8:
     name: "Jon Dough"
     emoji: "🐺"
-    # baseline that passed gates (0.85); 50/200-day trend filter
+    # intraday: rides names holding above session VWAP and their open. Rejected by the gates (no 15-minute strategy beats costs yet);
+    # on a fund for trading activity at Jade's request (2026-10-05). Flat every night.
     strategy:
-      name: "sma_trend"
-      ref: "strategies.baselines.sma_trend:SmaTrend"
-      timeframe: "1Day"
-      code_sha256: null
-      experiment_id: "20261004T230757-sma_trend"
-      params: {"fast": 50, "slow": 200}
+      name: "intraday_vwap_trend"
+      ref: "strategies/candidates/intraday_vwap_trend.py"
+      timeframe: "15Min"
+      code_sha256: "dd5e90f77a03c202e04af3f672ecdc3eb7d4c8e9bcf491f30e1e899f7338ee99"
+      experiment_id: "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+      params: {"entry_gap": 0.004, "slots": 5, "weight": 0.1, "first_bar": 2, "last_entry_bar": 23}
   9:
     name: "Game of Loans"
     emoji: "👑"
