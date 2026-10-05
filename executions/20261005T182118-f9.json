@@ -1,0 +1,375 @@
+{
+  "started_at": "2026-10-05T18:21:14+00:00",
+  "fund": 9,
+  "fund_name": "\ud83d\udc51 Game of Loans",
+  "dry_run": false,
+  "status": "submitted 25 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 11,
+      "side": "buy"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 16,
+      "side": "buy"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 10,
+      "side": "buy"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 72,
+      "side": "buy"
+    },
+    {
+      "symbol": "COST",
+      "qty": 4,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 11,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 11,
+      "side": "buy"
+    },
+    {
+      "symbol": "KO",
+      "qty": 45,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 3,
+      "side": "buy"
+    },
+    {
+      "symbol": "MA",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 5,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 16,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 31,
+      "side": "buy"
+    },
+    {
+      "symbol": "PG",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 10,
+      "side": "buy"
+    },
+    {
+      "symbol": "V",
+      "qty": 10,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-AAPL-buy",
+      "id": "7ab41abb-00da-4ee5-853e-950df6ca7440",
+      "symbol": "AAPL",
+      "qty": 11,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-ADBE-buy",
+      "id": "657aa9e8-0e9d-4ac7-8f32-ca16c697e643",
+      "symbol": "ADBE",
+      "qty": 16,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-AMZN-buy",
+      "id": "8bfd220b-9f0e-4fc2-8e4e-89c270a981d2",
+      "symbol": "AMZN",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-AVGO-buy",
+      "id": "da62139b-97b7-4f10-bd24-b06075b16f11",
+      "symbol": "AVGO",
+      "qty": 10,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-BAC-buy",
+      "id": "b36946d0-fa63-4f28-abff-24d271b14cc3",
+      "symbol": "BAC",
+      "qty": 72,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-COST-buy",
+      "id": "46ae8262-46fb-41ad-a801-b4da79eb9aca",
+      "symbol": "COST",
+      "qty": 4,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-CSCO-buy",
+      "id": "591bc4c4-3b43-4808-946a-acebd466725c",
+      "symbol": "CSCO",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-CVX-buy",
+      "id": "a975c9ef-77e1-4b0d-bae1-0fc262d3bedc",
+      "symbol": "CVX",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-GOOGL-buy",
+      "id": "da9fe61c-e28c-4bcf-99d0-dc162833df31",
+      "symbol": "GOOGL",
+      "qty": 11,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-HD-buy",
+      "id": "325c9658-e7cb-49d4-90ac-4393ad4c6c05",
+      "symbol": "HD",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-JNJ-buy",
+      "id": "6f5d4b3e-f055-4b31-8cf9-55db83304387",
+      "symbol": "JNJ",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-JPM-buy",
+      "id": "9d52e3be-49ab-4a84-b67c-64099559c5f4",
+      "symbol": "JPM",
+      "qty": 11,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-KO-buy",
+      "id": "5f18c6fa-d87e-43f9-a141-20a981b3e905",
+      "symbol": "KO",
+      "qty": 45,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-LLY-buy",
+      "id": "9c1728d9-d683-484c-81ab-39df4ce1fe93",
+      "symbol": "LLY",
+      "qty": 3,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-MA-buy",
+      "id": "41e97deb-5c0d-402f-834c-7bb3dda41f42",
+      "symbol": "MA",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-META-buy",
+      "id": "4c8f0174-ea65-4ab7-af39-92c35a627216",
+      "symbol": "META",
+      "qty": 5,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-MRK-buy",
+      "id": "62f2de46-e6a5-452b-9f0a-91554064b1e9",
+      "symbol": "MRK",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-MSFT-buy",
+      "id": "ff65ca7f-6f4a-4251-ac93-cd6c2166ee02",
+      "symbol": "MSFT",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-NVDA-buy",
+      "id": "6d3ef151-a383-4715-93c2-0076d5c14a4a",
+      "symbol": "NVDA",
+      "qty": 16,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-PEP-buy",
+      "id": "4c5aa806-cecc-4e9e-bdce-39736f732b18",
+      "symbol": "PEP",
+      "qty": 31,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-PG-buy",
+      "id": "c77df535-b864-4b59-bdfd-c9fb630d8f29",
+      "symbol": "PG",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-UNH-buy",
+      "id": "35a667c6-f42b-48d2-88d2-57726e8f744e",
+      "symbol": "UNH",
+      "qty": 10,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-V-buy",
+      "id": "c5d9932b-0dd8-4ed9-922c-743326b4dff7",
+      "symbol": "V",
+      "qty": 10,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-WMT-buy",
+      "id": "8759d30c-fcae-45d8-9f10-99f0fee7eca9",
+      "symbol": "WMT",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261005-37355162756-1-XOM-buy",
+      "id": "b0ff42ba-da46-47bb-9940-d4e09c9b220d",
+      "symbol": "XOM",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "equal_weight_buy_hold",
+    "ref": "strategies.baselines.buy_hold:EqualWeightBuyHold",
+    "experiment_id": "20261004T230755-equal_weight_buy_hold"
+  },
+  "signal_bar": "2026-10-02",
+  "hold_day": true,
+  "equity": 100000.0,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.04,
+    "MSFT": 0.04,
+    "NVDA": 0.04,
+    "AMZN": 0.04,
+    "GOOGL": 0.04,
+    "META": 0.04,
+    "AVGO": 0.04,
+    "JPM": 0.04,
+    "V": 0.04,
+    "MA": 0.04,
+    "UNH": 0.04,
+    "LLY": 0.04,
+    "JNJ": 0.04,
+    "MRK": 0.04,
+    "XOM": 0.04,
+    "CVX": 0.04,
+    "PG": 0.04,
+    "KO": 0.04,
+    "PEP": 0.04,
+    "COST": 0.04,
+    "WMT": 0.04,
+    "HD": 0.04,
+    "BAC": 0.04,
+    "ADBE": 0.04,
+    "CSCO": 0.04
+  },
+  "prices": {
+    "AAPL": 332.77,
+    "MSFT": 525.12,
+    "NVDA": 238.355,
+    "AMZN": 253.41,
+    "GOOGL": 347.05,
+    "META": 743.34,
+    "AVGO": 362.37,
+    "JPM": 332.815,
+    "V": 368.34,
+    "MA": 564.28,
+    "UNH": 374.35,
+    "LLY": 1149.77,
+    "JNJ": 253.05,
+    "MRK": 139.98,
+    "XOM": 164.58,
+    "CVX": 207.09,
+    "PG": 145.72,
+    "KO": 86.305,
+    "PEP": 125.28,
+    "COST": 923.15,
+    "WMT": 104.865,
+    "HD": 281.4,
+    "BAC": 54.15,
+    "ADBE": 236.09,
+    "CSCO": 112.59
+  }
+}

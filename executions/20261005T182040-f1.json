@@ -1,0 +1,176 @@
+{
+  "started_at": "2026-10-05T18:20:36+00:00",
+  "fund": 1,
+  "fund_name": "\ud83d\udc80 Darth Trader",
+  "dry_run": false,
+  "status": "submitted 8 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 83,
+      "side": "buy"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 45,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "symbol": "KO",
+      "qty": 109,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 67,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 57,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f1-20261005-37355162756-1-CSCO-buy",
+      "id": "af7e43b3-91e6-4e9a-85b8-4880229fe2a7",
+      "symbol": "CSCO",
+      "qty": 83,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f1-20261005-37355162756-1-CVX-buy",
+      "id": "dd6375ac-41d2-4254-bf47-4e7cb557f4f7",
+      "symbol": "CVX",
+      "qty": 45,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f1-20261005-37355162756-1-GOOGL-buy",
+      "id": "adc604ab-ddd4-44b7-95eb-d72156e3e785",
+      "symbol": "GOOGL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f1-20261005-37355162756-1-JNJ-buy",
+      "id": "6c001962-283a-4964-94fd-5a87a9e5e2c5",
+      "symbol": "JNJ",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f1-20261005-37355162756-1-KO-buy",
+      "id": "158dbd45-1f37-4fdd-943c-1a944a92a945",
+      "symbol": "KO",
+      "qty": 109,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f1-20261005-37355162756-1-LLY-buy",
+      "id": "c1c5dd04-c39f-482f-ab46-33cb02fe2b14",
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f1-20261005-37355162756-1-MRK-buy",
+      "id": "ec3aa1d9-b5b7-4742-85f1-c7c59fe59352",
+      "symbol": "MRK",
+      "qty": 67,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f1-20261005-37355162756-1-XOM-buy",
+      "id": "e8ecfda2-3433-42e3-8719-fa843fe1ef71",
+      "symbol": "XOM",
+      "qty": 57,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "residual_vol_momentum",
+    "ref": "strategies/candidates/residual_vol_momentum.py",
+    "experiment_id": "pr23-58f2c52-residual_vol_momentum-r37183165888-1"
+  },
+  "champion": {
+    "name": "residual_vol_momentum",
+    "ref": "strategies/candidates/residual_vol_momentum.py",
+    "experiment_id": "pr23-58f2c52-residual_vol_momentum-r37183165888-1"
+  },
+  "signal_bar": "2026-10-02",
+  "hold_day": true,
+  "equity": 100000.0,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.0,
+    "MSFT": 0.0,
+    "NVDA": 0.0,
+    "AMZN": 0.0,
+    "GOOGL": 0.09633650505923405,
+    "META": 0.0,
+    "AVGO": 0.0,
+    "JPM": 0.0,
+    "V": 0.0,
+    "MA": 0.0,
+    "UNH": 0.0,
+    "LLY": 0.09633650505923405,
+    "JNJ": 0.09633650505923405,
+    "MRK": 0.09633650505923405,
+    "XOM": 0.09633650505923405,
+    "CVX": 0.09633650505923405,
+    "PG": 0.0,
+    "KO": 0.09633650505923405,
+    "PEP": 0.0,
+    "COST": 0.0,
+    "WMT": 0.0,
+    "HD": 0.0,
+    "BAC": 0.0,
+    "ADBE": 0.0,
+    "CSCO": 0.09633650505923405
+  },
+  "prices": {
+    "AAPL": 332.695,
+    "MSFT": 525.15,
+    "NVDA": 238.29,
+    "AMZN": 253.39,
+    "GOOGL": 347.0,
+    "META": 742.765,
+    "AVGO": 362.31,
+    "JPM": 332.815,
+    "V": 368.225,
+    "MA": 564.16,
+    "UNH": 374.2,
+    "LLY": 1149.5,
+    "JNJ": 253.18,
+    "MRK": 140.065,
+    "XOM": 164.58,
+    "CVX": 207.09,
+    "PG": 145.72,
+    "KO": 86.305,
+    "PEP": 125.28,
+    "COST": 923.15,
+    "WMT": 104.9,
+    "HD": 281.43,
+    "BAC": 54.15,
+    "ADBE": 236.09,
+    "CSCO": 112.525
+  }
+}

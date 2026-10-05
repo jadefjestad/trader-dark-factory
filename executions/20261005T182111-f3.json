@@ -1,0 +1,147 @@
+{
+  "started_at": "2026-10-05T18:21:08+00:00",
+  "fund": 3,
+  "fund_name": "\ud83d\udd96 Live Long and Profit",
+  "dry_run": false,
+  "status": "submitted 6 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 226,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 48,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 97,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 32,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f3-20261005-37355162756-1-BAC-buy",
+      "id": "bb1feaa8-3dfd-4460-bb1b-6a3b0ef6e4f4",
+      "symbol": "BAC",
+      "qty": 226,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f3-20261005-37355162756-1-GOOGL-buy",
+      "id": "57e53ae4-bae4-40a9-ad86-5af2ab39333a",
+      "symbol": "GOOGL",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f3-20261005-37355162756-1-JNJ-buy",
+      "id": "9f8f70a3-2c2d-4423-b0f7-32a50031d88f",
+      "symbol": "JNJ",
+      "qty": 48,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f3-20261005-37355162756-1-JPM-buy",
+      "id": "7752beba-ddad-4caf-8163-c9cee4089a83",
+      "symbol": "JPM",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f3-20261005-37355162756-1-PEP-buy",
+      "id": "89080a6d-3afa-442c-884a-fdd2decb54f6",
+      "symbol": "PEP",
+      "qty": 97,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f3-20261005-37355162756-1-UNH-buy",
+      "id": "a8f71bcd-6d69-4844-bfe1-57fb148d4745",
+      "symbol": "UNH",
+      "qty": 32,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "earnings_announcement_premium",
+    "ref": "strategies/candidates/earnings_announcement_premium.py",
+    "experiment_id": "pr87-6530167-earnings_announcement_premium-r37243169062-1"
+  },
+  "signal_bar": "2026-10-02",
+  "hold_day": true,
+  "equity": 100000.0,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.0,
+    "MSFT": 0.0,
+    "NVDA": 0.0,
+    "AMZN": 0.0,
+    "GOOGL": 0.125,
+    "META": 0.0,
+    "AVGO": 0.0,
+    "JPM": 0.125,
+    "V": 0.0,
+    "MA": 0.0,
+    "UNH": 0.125,
+    "LLY": 0.0,
+    "JNJ": 0.125,
+    "MRK": 0.0,
+    "XOM": 0.0,
+    "CVX": 0.0,
+    "PG": 0.0,
+    "KO": 0.0,
+    "PEP": 0.125,
+    "COST": 0.0,
+    "WMT": 0.0,
+    "HD": 0.0,
+    "BAC": 0.125,
+    "ADBE": 0.0,
+    "CSCO": 0.0
+  },
+  "prices": {
+    "AAPL": 332.735,
+    "MSFT": 525.07,
+    "NVDA": 238.3,
+    "AMZN": 253.41,
+    "GOOGL": 347.08,
+    "META": 743.09,
+    "AVGO": 362.37,
+    "JPM": 332.815,
+    "V": 368.34,
+    "MA": 564.28,
+    "UNH": 374.35,
+    "LLY": 1149.5,
+    "JNJ": 253.05,
+    "MRK": 139.98,
+    "XOM": 164.58,
+    "CVX": 207.09,
+    "PG": 145.72,
+    "KO": 86.31,
+    "PEP": 125.28,
+    "COST": 923.15,
+    "WMT": 104.865,
+    "HD": 281.4,
+    "BAC": 54.15,
+    "ADBE": 236.09,
+    "CSCO": 112.59
+  }
+}
