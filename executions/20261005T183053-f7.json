@@ -1,0 +1,67 @@
+{
+  "started_at": "2026-10-05T18:30:52+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "KO",
+      "qty": 113,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610051415-JPM-buy",
+      "id": "c7eba40a-1040-4f97-95e1-692717e104de",
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610051415-KO-buy",
+      "id": "c60f7302-a572-45c8-bb56-afead9ac773a",
+      "symbol": "KO",
+      "qty": 113,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610051415-MSFT-buy",
+      "id": "6fd5b549-0095-41f6-82d5-60f906b71a55",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-05 14:15:00-04:00",
+  "hold_day": false,
+  "equity": 100000.0,
+  "targets": {
+    "MSFT": 0.1,
+    "JPM": 0.1,
+    "KO": 0.1
+  },
+  "prices": {
+    "MSFT": 525.51,
+    "JPM": 333.205,
+    "KO": 86.355
+  }
+}

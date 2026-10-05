@@ -1,0 +1,37 @@
+{
+  "started_at": "2026-10-05T19:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610051445-MSFT-sell",
+      "id": "fa2d631a-895c-4fc6-8d40-b8b7b80ebbd7",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-05 14:45:00-04:00",
+  "hold_day": false,
+  "equity": 100068.37,
+  "targets": {},
+  "prices": {
+    "MSFT": 527.7
+  }
+}

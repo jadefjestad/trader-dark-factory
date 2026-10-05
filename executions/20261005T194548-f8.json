@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-05T19:45:47+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 113,
+      "side": "sell"
+    },
+    {
+      "symbol": "MA",
+      "qty": 17,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 59,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610051545-AVGO-sell",
+      "id": "84edfb9c-f780-46c3-b4c5-d866bed1130a",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610051545-KO-sell",
+      "id": "32ccbb71-e31f-409d-a33d-aa2d5865248e",
+      "symbol": "KO",
+      "qty": 113,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610051545-MA-sell",
+      "id": "d9aeca94-1f4f-49b4-b3c6-3def2ff7fdb3",
+      "symbol": "MA",
+      "qty": 17,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610051545-V-sell",
+      "id": "f67318b6-ec6b-4b38-90d3-e1c040af7e1b",
+      "symbol": "V",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610051545-XOM-sell",
+      "id": "3892db54-54f0-4ab1-875f-06a6f5b3a240",
+      "symbol": "XOM",
+      "qty": 59,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0002,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99983.45,
+  "targets": {},
+  "prices": {
+    "AVGO": 362.48,
+    "V": 369.365,
+    "MA": 564.775,
+    "XOM": 163.84,
+    "KO": 86.34
+  }
+}

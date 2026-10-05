@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-05T18:30:50+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610051415-AAPL-buy",
+      "id": "c05bb6c8-72f3-47a4-9f33-ef1077fe42ca",
+      "symbol": "AAPL",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610051415-ADBE-buy",
+      "id": "4eeddd5a-cea9-43b3-bdb6-c2c5b274c4e5",
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610051415-JNJ-buy",
+      "id": "512f516f-8463-41de-bdab-a49a3a254413",
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610051415-LLY-buy",
+      "id": "2f493de6-6bfe-43a5-8b7d-ddaa278122c0",
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610051415-META-buy",
+      "id": "ceb2ac4c-f977-4a6a-a670-57012a5bb06c",
+      "symbol": "META",
+      "qty": 13,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-05 14:15:00-04:00",
+  "hold_day": true,
+  "equity": 100000.0,
+  "targets": {
+    "AAPL": 0.1,
+    "META": 0.1,
+    "LLY": 0.1,
+    "JNJ": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "AAPL": 333.28,
+    "META": 743.075,
+    "LLY": 1149.59,
+    "JNJ": 253.24,
+    "ADBE": 236.525
+  }
+}

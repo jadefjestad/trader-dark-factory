@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-05T19:45:45+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610051545-AAPL-sell",
+      "id": "a8faa882-fcba-4359-964e-d0f2cb44ec80",
+      "symbol": "AAPL",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610051545-ADBE-sell",
+      "id": "5ee7e152-c623-4a4e-b82a-17e4f10596e7",
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610051545-JNJ-sell",
+      "id": "db0f9767-547e-4104-b9e8-afc2765a1d89",
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610051545-LLY-sell",
+      "id": "c4ae4522-2799-4362-a545-1b823e960a9c",
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610051545-META-sell",
+      "id": "79c539d7-305d-474d-99d8-5ece56be6429",
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 100020.13,
+  "targets": {},
+  "prices": {
+    "AAPL": 332.57,
+    "META": 742.92,
+    "LLY": 1145.74,
+    "JNJ": 253.545,
+    "ADBE": 238.41
+  }
+}

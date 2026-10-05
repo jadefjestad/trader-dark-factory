@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-05T18:30:53+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "KO",
+      "qty": 113,
+      "side": "buy"
+    },
+    {
+      "symbol": "MA",
+      "qty": 17,
+      "side": "buy"
+    },
+    {
+      "symbol": "V",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 59,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610051415-AVGO-buy",
+      "id": "330d6a6b-ecf7-45cd-a974-9fef7df8426e",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610051415-KO-buy",
+      "id": "2ae10b16-04ae-4958-9e66-b61c1aadf922",
+      "symbol": "KO",
+      "qty": 113,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610051415-MA-buy",
+      "id": "87ec5855-d3c3-4a3c-ae7b-cd381c00cad5",
+      "symbol": "MA",
+      "qty": 17,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610051415-V-buy",
+      "id": "8443e713-825f-40e4-8b18-3b3f578f9312",
+      "symbol": "V",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610051415-XOM-buy",
+      "id": "60914dae-b71a-4d42-a0b4-4ff36cefacbe",
+      "symbol": "XOM",
+      "qty": 59,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-05 14:15:00-04:00",
+  "hold_day": false,
+  "equity": 100000.0,
+  "targets": {
+    "AVGO": 0.1,
+    "V": 0.1,
+    "MA": 0.1,
+    "XOM": 0.1,
+    "KO": 0.1
+  },
+  "prices": {
+    "AVGO": 362.77,
+    "V": 368.89,
+    "MA": 565.06,
+    "XOM": 163.98,
+    "KO": 86.355
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "started_at": "2026-10-05T19:30:53+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 47,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610051515-META-sell",
+      "id": "8e19977a-6078-44d5-8c12-2602cd2a6f02",
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610051515-CVX-buy",
+      "id": "e2072e29-ca75-42e9-9b86-9adbbc72a3f6",
+      "symbol": "CVX",
+      "qty": 47,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-05 15:15:00-04:00",
+  "hold_day": false,
+  "equity": 100016.74,
+  "targets": {
+    "JPM": 0.1,
+    "CVX": 0.1
+  },
+  "prices": {
+    "META": 743.69,
+    "JPM": 332.55,
+    "CVX": 206.375
+  }
+}
