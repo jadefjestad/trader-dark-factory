@@ -91,6 +91,24 @@ def test_one_funds_failure_does_not_stop_another(monkeypatch, tmp_path):
     assert all(o["client_order_id"].startswith("tdf-f5-") for o in recs[5]["submitted"])
 
 
+def test_each_fund_fetches_bars_with_its_own_keys(monkeypatch, tmp_path):
+    syms = execute.config.universe()["symbols"]
+    md = _fresh(syms)
+    seen = []
+
+    def load(*a, creds=None, **k):
+        seen.append(creds)
+        if creds[0] == "k2":
+            raise execute.DataError("alpaca bars 401")
+        return md
+    monkeypatch.setattr(execute, "load_alpaca", load)
+    b2, b3 = _broker(md, "PA2"), _broker(md, "PA3")
+    _setup(monkeypatch, tmp_path, {2: b2, 3: b3}, {2: EW, 3: EW})
+    assert execute.main(["--out", str(tmp_path / "out")]) == 2
+    assert seen == [("k2", "s2"), ("k3", "s3")]            # fund 2's bad keys don't stop fund 3
+    assert b2.submitted == [] and len(b3.submitted) == len(syms)
+
+
 def test_two_funds_on_one_account_refuse(monkeypatch, tmp_path):
     syms = execute.config.universe()["symbols"]
     md = _fresh(syms)

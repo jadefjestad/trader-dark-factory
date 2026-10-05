@@ -94,15 +94,14 @@ def validate(md: MarketData, symbols: list[str], max_missing_frac: float = 0.02)
 
 # ---------------------------------------------------------------- Alpaca
 
-def _alpaca_headers() -> dict:
-    key = os.environ.get("ALPACA_API_KEY_ID")
-    secret = os.environ.get("ALPACA_API_SECRET_KEY")
+def _alpaca_headers(creds: tuple[str, str] | None = None) -> dict:
+    key, secret = creds or (os.environ.get("ALPACA_API_KEY_ID"), os.environ.get("ALPACA_API_SECRET_KEY"))
     if not key or not secret:
         raise DataError("ALPACA_API_KEY_ID / ALPACA_API_SECRET_KEY not set")
     return {"APCA-API-KEY-ID": key, "APCA-API-SECRET-KEY": secret}
 
 
-def _fetch_alpaca(symbols, start, end, timeframe, feed, adjustment) -> pd.DataFrame:
+def _fetch_alpaca(symbols, start, end, timeframe, feed, adjustment, creds=None) -> pd.DataFrame:
     import requests
 
     rows = []
@@ -110,7 +109,7 @@ def _fetch_alpaca(symbols, start, end, timeframe, feed, adjustment) -> pd.DataFr
         "symbols": ",".join(symbols), "timeframe": timeframe, "start": start, "end": end,
         "adjustment": adjustment, "feed": feed, "limit": 10000, "sort": "asc",
     }
-    headers = _alpaca_headers()
+    headers = _alpaca_headers(creds)
     for page in range(10000):
         if page and page % 10 == 0:
             print(f"  {timeframe} {feed}: {page} pages, {len(rows):,} bars so far", file=sys.stderr, flush=True)
@@ -147,8 +146,9 @@ def _to_market_data(long: pd.DataFrame, timeframe: str, source: str) -> MarketDa
 
 
 def load_alpaca(symbols, start, end, timeframe="1Day", feed="sip", fallback_feed="iex",
-                adjustment="all", use_cache=True) -> MarketData:
-    """Fetch bars from Alpaca (with a disk cache). `end` of "latest" means 20 minutes ago."""
+                adjustment="all", use_cache=True, creds=None) -> MarketData:
+    """Fetch bars from Alpaca (with a disk cache). `end` of "latest" means 20 minutes ago.
+    `creds` (key, secret) overrides the ALPACA_API_KEY_ID pair, e.g. a fund's own paper keys."""
     if end == "latest":
         end_ts = pd.Timestamp.now(tz="UTC") - pd.Timedelta(minutes=20)
         end = end_ts.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -164,10 +164,10 @@ def load_alpaca(symbols, start, end, timeframe="1Day", feed="sip", fallback_feed
             long, used = cached.drop(columns="feed"), str(cached["feed"].iloc[0])
     if long is None:
         try:
-            long, used = _fetch_alpaca(symbols, start, end, timeframe, feed, adjustment), feed
+            long, used = _fetch_alpaca(symbols, start, end, timeframe, feed, adjustment, creds), feed
         except DataError as e:
             if fallback_feed and fallback_feed != feed and ("403" in str(e) or "subscription" in str(e).lower()):
-                long, used = _fetch_alpaca(symbols, start, end, timeframe, fallback_feed, adjustment), fallback_feed
+                long, used = _fetch_alpaca(symbols, start, end, timeframe, fallback_feed, adjustment, creds), fallback_feed
             else:
                 raise
         if use_cache:
