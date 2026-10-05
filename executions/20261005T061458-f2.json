@@ -1,0 +1,135 @@
+{
+  "started_at": "2026-10-05T06:14:32+00:00",
+  "fund": 2,
+  "fund_name": "\u2b1b The Empire Strikes Black",
+  "dry_run": true,
+  "status": "dry run: no orders submitted",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 113,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 22,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 31,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "symbol": "KO",
+      "qty": 55,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 4,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 48,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 16,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 28,
+      "side": "buy"
+    }
+  ],
+  "submitted": [],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "residual_momentum_announcement_blend",
+    "ref": "strategies/candidates/residual_momentum_announcement_blend.py",
+    "experiment_id": "pr90-8040a1f-residual_momentum_announcement_blend-r37243483853-1"
+  },
+  "signal_bar": "2026-10-02",
+  "hold_day": true,
+  "equity": 100000.0,
+  "data_source": "alpaca:sip",
+  "note": "market closed: preview priced on the last available trades",
+  "targets": {
+    "AAPL": 0.0,
+    "MSFT": 0.0,
+    "NVDA": 0.0,
+    "AMZN": 0.0,
+    "GOOGL": 0.11066825252961703,
+    "META": 0.0,
+    "AVGO": 0.0,
+    "JPM": 0.0625,
+    "V": 0.0,
+    "MA": 0.0,
+    "UNH": 0.0625,
+    "LLY": 0.048168252529617026,
+    "JNJ": 0.11066825252961703,
+    "MRK": 0.048168252529617026,
+    "XOM": 0.048168252529617026,
+    "CVX": 0.048168252529617026,
+    "PG": 0.0,
+    "KO": 0.048168252529617026,
+    "PEP": 0.0625,
+    "COST": 0.0,
+    "WMT": 0.0,
+    "HD": 0.0,
+    "BAC": 0.0625,
+    "ADBE": 0.0,
+    "CSCO": 0.048168252529617026
+  },
+  "prices": {
+    "AAPL": 333.75,
+    "MSFT": 517.32,
+    "NVDA": 234.0,
+    "AMZN": 251.42,
+    "GOOGL": 343.47,
+    "META": 728.09,
+    "AVGO": 355.125,
+    "JPM": 332.22,
+    "V": 360.615,
+    "MA": 552.44,
+    "UNH": 371.775,
+    "LLY": 1143.54,
+    "JNJ": 256.025,
+    "MRK": 144.31,
+    "XOM": 164.11,
+    "CVX": 206.71,
+    "PG": 144.89,
+    "KO": 85.66,
+    "PEP": 125.86,
+    "COST": 920.83,
+    "WMT": 104.29,
+    "HD": 282.88,
+    "BAC": 53.78,
+    "ADBE": 237.64,
+    "CSCO": 112.18
+  }
+}
