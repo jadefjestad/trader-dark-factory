@@ -1,0 +1,9 @@
+{
+  "started_at": "2026-10-05T02:46:51+00:00",
+  "fund": 1,
+  "fund_name": "\ud83d\udc80 Darth Trader",
+  "dry_run": true,
+  "status": "NO ORDERS: BrokerError: GET /v2/account -> 401: {\"message\": \"unauthorized.\"}\n",
+  "orders": [],
+  "submitted": []
+}
