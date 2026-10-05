@@ -1,0 +1,200 @@
+{
+  "started_at": "2026-10-05T02:50:53+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "dry_run": true,
+  "status": "dry run: no orders submitted",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 5,
+      "side": "buy"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 5,
+      "side": "buy"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "symbol": "COST",
+      "qty": 2,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 59,
+      "side": "buy"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 19,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 5,
+      "side": "buy"
+    },
+    {
+      "symbol": "KO",
+      "qty": 77,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 5,
+      "side": "buy"
+    },
+    {
+      "symbol": "MA",
+      "qty": 3,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 2,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 46,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 3,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "symbol": "PG",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 5,
+      "side": "buy"
+    },
+    {
+      "symbol": "V",
+      "qty": 5,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 40,
+      "side": "buy"
+    }
+  ],
+  "submitted": [],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "blend_ew_vol_momentum",
+    "ref": "strategies/candidates/blend_ew_vol_momentum.py",
+    "experiment_id": "pr22-8a0a8cc-blend_ew_vol_momentum-r37183047587-1"
+  },
+  "signal_bar": "2026-10-02",
+  "hold_day": true,
+  "equity": 100000.0,
+  "data_source": "alpaca:sip",
+  "note": "market closed: preview priced on the last available trades",
+  "targets": {
+    "AAPL": 0.02,
+    "MSFT": 0.02,
+    "NVDA": 0.02,
+    "AMZN": 0.02,
+    "GOOGL": 0.06816825252961703,
+    "META": 0.02,
+    "AVGO": 0.02,
+    "JPM": 0.02,
+    "V": 0.02,
+    "MA": 0.02,
+    "UNH": 0.02,
+    "LLY": 0.06816825252961703,
+    "JNJ": 0.06816825252961703,
+    "MRK": 0.06816825252961703,
+    "XOM": 0.06816825252961703,
+    "CVX": 0.06816825252961703,
+    "PG": 0.02,
+    "KO": 0.06816825252961703,
+    "PEP": 0.02,
+    "COST": 0.02,
+    "WMT": 0.02,
+    "HD": 0.02,
+    "BAC": 0.02,
+    "ADBE": 0.02,
+    "CSCO": 0.06816825252961703
+  },
+  "prices": {
+    "AAPL": 333.75,
+    "MSFT": 517.32,
+    "NVDA": 234.0,
+    "AMZN": 251.42,
+    "GOOGL": 343.47,
+    "META": 728.09,
+    "AVGO": 355.125,
+    "JPM": 332.22,
+    "V": 360.615,
+    "MA": 552.44,
+    "UNH": 371.775,
+    "LLY": 1143.54,
+    "JNJ": 256.025,
+    "MRK": 144.31,
+    "XOM": 164.11,
+    "CVX": 206.71,
+    "PG": 144.89,
+    "KO": 85.66,
+    "PEP": 125.86,
+    "COST": 920.83,
+    "WMT": 104.29,
+    "HD": 282.88,
+    "BAC": 53.78,
+    "ADBE": 237.64,
+    "CSCO": 112.18
+  }
+}

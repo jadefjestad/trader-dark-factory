@@ -1,0 +1,175 @@
+{
+  "started_at": "2026-10-05T02:50:58+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "dry_run": true,
+  "status": "dry run: no orders submitted",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 12,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 109,
+      "side": "buy"
+    },
+    {
+      "symbol": "COST",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 24,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 10,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 22,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 20,
+      "side": "buy"
+    },
+    {
+      "symbol": "KO",
+      "qty": 68,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 3,
+      "side": "buy"
+    },
+    {
+      "symbol": "MA",
+      "qty": 11,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 24,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 45,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "symbol": "V",
+      "qty": 17,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 29,
+      "side": "buy"
+    }
+  ],
+  "submitted": [],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "ts_trend_invvol",
+    "ref": "strategies/candidates/ts_trend_invvol.py",
+    "experiment_id": "pr57-099edbb-ts_trend_invvol-r37210248410-1"
+  },
+  "signal_bar": "2026-10-02",
+  "hold_day": true,
+  "equity": 100000.0,
+  "data_source": "alpaca:sip",
+  "note": "market closed: preview priced on the last available trades",
+  "targets": {
+    "AAPL": 0.04549293196322114,
+    "MSFT": 0.0,
+    "NVDA": 0.03288262276667304,
+    "AMZN": 0.031045685874845786,
+    "GOOGL": 0.03755322169282062,
+    "META": 0.0,
+    "AVGO": 0.03251598993459151,
+    "JPM": 0.06848933855196086,
+    "V": 0.0647597932987142,
+    "MA": 0.06208487211353525,
+    "UNH": 0.05812665075742196,
+    "LLY": 0.04330009972784907,
+    "JNJ": 0.05839128990793526,
+    "MRK": 0.03640899068348757,
+    "XOM": 0.04982588651925369,
+    "CVX": 0.05250746124114302,
+    "PG": 0.0,
+    "KO": 0.059595791699538186,
+    "PEP": 0.05877231856036535,
+    "COST": 0.06516048196412248,
+    "WMT": 0.04560340699045385,
+    "HD": 0.0,
+    "BAC": 0.059854138496883764,
+    "ADBE": 0.0,
+    "CSCO": 0.037629027255183314
+  },
+  "prices": {
+    "AAPL": 333.75,
+    "MSFT": 517.32,
+    "NVDA": 234.0,
+    "AMZN": 251.42,
+    "GOOGL": 343.47,
+    "META": 728.09,
+    "AVGO": 355.125,
+    "JPM": 332.22,
+    "V": 360.615,
+    "MA": 552.44,
+    "UNH": 371.775,
+    "LLY": 1143.54,
+    "JNJ": 256.025,
+    "MRK": 144.31,
+    "XOM": 164.11,
+    "CVX": 206.71,
+    "PG": 144.89,
+    "KO": 85.66,
+    "PEP": 125.86,
+    "COST": 920.83,
+    "WMT": 104.29,
+    "HD": 282.88,
+    "BAC": 53.78,
+    "ADBE": 237.64,
+    "CSCO": 112.18
+  }
+}
