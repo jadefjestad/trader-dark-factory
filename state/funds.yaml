@@ -1,0 +1,99 @@
+# Paper funds. Numbers are what the code uses; names and emojis are decoration and say nothing about strategy.
+# Agents reassign strategies freely by PR. `strategy: champion` follows state/champion.json; otherwise copy the
+# `strategy` block of the strategy's ledger evaluation record exactly (the executor checks code_sha256).
+# Keys: GitHub secrets ALPACA_FUND_<N>_KEY_ID / ALPACA_FUND_<N>_SECRET_KEY (fund 1 falls back to ALPACA_API_KEY_ID /
+# ALPACA_API_SECRET_KEY). A fund without keys is skipped; a failure in one fund never stops another.
+funds:
+  1:
+    name: "The Empire Strikes Black"
+    emoji: "⬛"
+    # the promoted champion; follows state/champion.json
+    strategy: champion
+  2:
+    name: "Darth Trader"
+    emoji: "💀"
+    # passed gates, best validation Sharpe (0.99); first fallback
+    strategy:
+      name: "residual_momentum_announcement_blend"
+      ref: "strategies/candidates/residual_momentum_announcement_blend.py"
+      timeframe: "1Day"
+      code_sha256: "c040ac6b54d2d668409250d6c9ed82bcdb79fadff77372e716d4e1b20ec2c004"
+      experiment_id: "pr90-8040a1f-residual_momentum_announcement_blend-r37243483853-1"
+      params: {"lookback": 252, "skip": 21, "top_n": 8, "rebalance_every": 21, "vol_target": 0.1, "vol_window": 60, "window_start": 45, "window_end": 70, "min_slots": 8, "premium_share": 0.5, "blend_every": 5}
+  3:
+    name: "Back to the Futures"
+    emoji: "🕰️"
+    # passed gates (validation Sharpe 0.97); SEC 8-K signal
+    strategy:
+      name: "earnings_announcement_premium"
+      ref: "strategies/candidates/earnings_announcement_premium.py"
+      timeframe: "1Day"
+      code_sha256: "a358478e0adf83255608b31c5dd7e37b878a9c5416bfdd26232949860fe8dcd9"
+      experiment_id: "pr87-6530167-earnings_announcement_premium-r37243169062-1"
+      params: {"window_start": 45, "window_end": 70, "min_slots": 8, "rebalance_every": 5}
+  4:
+    name: "Marty McBuy"
+    emoji: "🛹"
+    # passed gates (0.94); plain vol-targeted momentum
+    strategy:
+      name: "vol_target_momentum_10"
+      ref: "strategies/candidates/vol_target_momentum_10.py"
+      timeframe: "1Day"
+      code_sha256: "403f42955b3f25b494dc04a5562bae78ebf8ef43727dc6f7bc337dcb4ebe7990"
+      experiment_id: "pr19-6b2e162-vol_target_momentum_10-r37182506562-1"
+      params: {"lookback": 252, "skip": 21, "top_n": 8, "rebalance_every": 21, "vol_target": 0.1, "vol_window": 60}
+  5:
+    name: "Wizard of Odds"
+    emoji: "🧙"
+    # passed gates (0.81); promoted before the current champion
+    strategy:
+      name: "blend_ew_vol_momentum"
+      ref: "strategies/candidates/blend_ew_vol_momentum.py"
+      timeframe: "1Day"
+      code_sha256: "db3c0050b74feefbeb966d36449eac6ed172b6936251276712d8f8084a8bd1b1"
+      experiment_id: "pr22-8a0a8cc-blend_ew_vol_momentum-r37183047587-1"
+      params: {"lookback": 252, "skip": 21, "top_n": 8, "rebalance_every": 21, "vol_target": 0.1, "vol_window": 60, "ew_share": 0.5}
+  6:
+    name: "Jon Dough"
+    emoji: "🐺"
+    # passed gates (0.79); risk-parity mix of sleeves
+    strategy:
+      name: "risk_parity_ensemble_v2"
+      ref: "strategies/candidates/risk_parity_ensemble_v2.py"
+      timeframe: "1Day"
+      code_sha256: "2a5463a9ad99aa6e24e19f5e22baaa58076d4c4fc253233394a94f3f4e766fe7"
+      experiment_id: "pr63-a5d265f-risk_parity_ensemble_v2-r37210938706-1"
+      params: {"lookback": 252, "skip": 21, "top_n": 8, "vol_target": 0.1, "vol_window": 60, "risk_window": 60, "rebalance_every": 21}
+  7:
+    name: "Live Long and Profit"
+    emoji: "🖖"
+    # passed gates (0.69); per-stock trend that can sit in cash
+    strategy:
+      name: "ts_trend_invvol"
+      ref: "strategies/candidates/ts_trend_invvol.py"
+      timeframe: "1Day"
+      code_sha256: "1f19480b5bb334e630d9bb1bbc59d5a23edec8ca9dedbb70ad5183c502a2b04b"
+      experiment_id: "pr57-099edbb-ts_trend_invvol-r37210248410-1"
+      params: {"lookback": 252, "skip": 21, "vol_window": 60, "vol_target": 0.1, "rebalance_every": 21}
+  8:
+    name: "Game of Loans"
+    emoji: "👑"
+    # baseline that passed gates (0.85); 50/200-day trend filter
+    strategy:
+      name: "sma_trend"
+      ref: "strategies.baselines.sma_trend:SmaTrend"
+      timeframe: "1Day"
+      code_sha256: null
+      experiment_id: "20261004T230757-sma_trend"
+      params: {"fast": 50, "slow": 200}
+  9:
+    name: "Frodough Baggins"
+    emoji: "💍"
+    # benchmark: equal-weight buy and hold of the universe
+    strategy:
+      name: "equal_weight_buy_hold"
+      ref: "strategies.baselines.buy_hold:EqualWeightBuyHold"
+      timeframe: "1Day"
+      code_sha256: null
+      experiment_id: "20261004T230755-equal_weight_buy_hold"
+      params: {"rebalance_every": 21}

@@ -66,3 +66,29 @@ def test_main_appends_a_block_to_a_file_without_markers(tmp_path):
     readme.main(["--ledger", str(tmp_path), "--readme", str(out), "--no-broker"])
     text = out.read_text()
     assert text.startswith("# Results page") and readme.RESULTS_START in text and text.rstrip().endswith(readme.RESULTS_END)
+
+
+def test_fund_leaderboard_ranks_funded_accounts_and_counts_trades(tmp_path):
+    class Up(Broker):
+        def account(self):
+            return {"equity": "105000", "last_equity": "104000", "cash": "0"}
+
+    class Down(Broker):
+        def portfolio_history(self):
+            return {"equity": [110000, 101000]}
+
+    class Broken:
+        def account(self):
+            raise RuntimeError("401")
+
+    led = _ledger(tmp_path)
+    (led / "executions" / "r2.json").write_text(json.dumps({
+        "started_at": "2026-10-06T15:00:00+00:00", "fund": 4, "status": "submitted 1 orders", "submitted": [{"symbol": "KO"}]}))
+    text = readme.section(led, Broker(), fund_brokers={1: Down(), 4: Up(), 6: Broken()})
+    rows = [line for line in text.splitlines() if line.startswith("| ") and "Darth" not in line[:4]]
+    board = [r for r in rows if r.split("|")[1].strip().isdigit()]
+    assert [r.split("|")[1].strip() for r in board][:3] == ["4", "1", "6"]   # best total first, then broken, then unfunded
+    assert "| 4 | 🛹 Marty McBuy |" in board[0] and "$105,000 | +1,000 (+0.96%) | +5,000 (+5.00%) | 1 |" in board[0]
+    assert "(champion)" in board[1] and "-9,000 (-8.18%) | 2 |" in board[1]
+    assert "unavailable (RuntimeError)" in board[2]
+    assert sum("not funded yet" in r for r in board) == 6

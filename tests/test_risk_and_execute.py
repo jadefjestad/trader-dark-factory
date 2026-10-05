@@ -97,7 +97,12 @@ class FakeBroker:
 
 def _patch(monkeypatch, md, **kw):
     broker = FakeBroker(closes={s: float(md.close[s].iloc[-1]) for s in md.symbols}, **kw)
-    monkeypatch.setattr(execute, "PaperBroker", lambda: broker)
+    monkeypatch.setattr(execute, "PaperBroker", lambda *a, **k: broker)
+    for n in range(1, 10):   # only fund 1 (the champion) has keys
+        monkeypatch.delenv(f"ALPACA_FUND_{n}_KEY_ID", raising=False)
+        monkeypatch.delenv(f"ALPACA_FUND_{n}_SECRET_KEY", raising=False)
+    monkeypatch.setenv("ALPACA_API_KEY_ID", "k")
+    monkeypatch.setenv("ALPACA_API_SECRET_KEY", "s")
     monkeypatch.setattr(execute, "load_alpaca", lambda *a, **k: md)
     return broker
 

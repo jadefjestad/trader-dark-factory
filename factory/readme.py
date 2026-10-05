@@ -68,7 +68,7 @@ def trading_section(runs: list[dict], broker) -> list[str]:
     submitted = [o for r in runs for o in (r.get("submitted") or [])]
     days = sorted({str(r.get("started_at"))[:10] for r in runs if r.get("submitted")})
     lines = ["### Paper trading",
-             f"- Orders sent to the paper account so far: **{len(submitted)}** on {len(days)} trading day(s); "
+             f"- Orders sent to the paper accounts so far (all funds): **{len(submitted)}** on {len(days)} trading day(s); "
              f"{len(runs)} executor run(s) recorded."]
     if runs:
         last = runs[-1]
@@ -78,6 +78,7 @@ def trading_section(runs: list[dict], broker) -> list[str]:
                      "the scheduled executor trades weekdays at 15:00 UTC.")
     if broker is None:
         return lines + ["- Paper account not checked in this build."]
+    lines.append("- Fund 1 account in detail:")
     try:
         acct = broker.account()
         equity = float(acct["equity"])
@@ -98,6 +99,55 @@ def trading_section(runs: list[dict], broker) -> list[str]:
             lines.append(f"| {p.get('symbol')} | {p.get('qty')} | ${float(p.get('market_value') or 0):,.0f} | "
                          f"{float(p.get('unrealized_pl') or 0):+,.0f} |")
     return lines
+
+
+def _account_figures(broker) -> dict:
+    acct = broker.account()
+    equity = float(acct["equity"])
+    last_eq = float(acct.get("last_equity") or equity)
+    hist = [float(x) for x in (broker.portfolio_history().get("equity") or []) if x]
+    return {"equity": equity, "day": equity - last_eq, "day_pct": equity / last_eq - 1 if last_eq else 0.0,
+            "start": hist[0] if hist else equity}
+
+
+def fund_section(runs: list[dict], brokers: dict | None) -> list[str]:
+    """Leaderboard of the paper funds (state/funds.yaml), best total return first; unfunded funds last."""
+    from factory import funds
+    try:
+        fs = funds.load()
+    except Exception as e:
+        return ["### Fund leaderboard", f"- Could not read state/funds.yaml: {type(e).__name__}"]
+    trades: dict[int, int] = {}
+    for r in runs:
+        n = int(r.get("fund") or 1)   # runs from before the funds existed were the original account, fund 1
+        trades[n] = trades.get(n, 0) + len(r.get("submitted") or [])
+    rows = []
+    for f in fs:
+        try:
+            strat = f"`{funds.strategy(f)['name']}`" + (" (champion)" if f.strategy == "champion" else "")
+        except Exception:
+            strat = "invalid assignment"
+        if brokers is None:
+            rows.append((0, f.number, f"| {f.number} | {f.label} | {strat} | not checked in this build | | | {trades.get(f.number, 0)} |"))
+            continue
+        b = brokers.get(f.number)
+        if b is None:
+            rows.append((2, 0.0, f"| {f.number} | {f.label} | {strat} | not funded yet | | | {trades.get(f.number, 0)} |"))
+            continue
+        try:
+            a = _account_figures(b)
+        except Exception as e:
+            rows.append((1, 0.0, f"| {f.number} | {f.label} | {strat} | unavailable ({type(e).__name__}) | | | "
+                                 f"{trades.get(f.number, 0)} |"))
+            continue
+        total = a["equity"] / a["start"] - 1 if a["start"] else 0.0
+        rows.append((0, -total, f"| {f.number} | {f.label} | {strat} | ${a['equity']:,.0f} | {a['day']:+,.0f} ({a['day_pct']:+.2%}) | "
+                                f"{a['equity'] - a['start']:+,.0f} ({total:+.2%}) | {trades.get(f.number, 0)} |"))
+    return ["### Fund leaderboard",
+            "Each fund is its own Alpaca paper account running the strategy in `state/funds.yaml`. Names are just for fun; "
+            "strategies move between funds whenever research suggests. Total P&L is since the account's first recorded equity.",
+            "", "| # | Fund | Strategy now | Equity | Last day | Total P&L | Trades |", "|---|---|---|---|---|---|---|"
+            ] + [r[2] for r in sorted(rows, key=lambda r: r[:2])]
 
 
 def _verdict(r: dict) -> str:
@@ -161,7 +211,7 @@ def _link(ref: str) -> str:
     return f"https://github.com/{repo}/blob/main/{ref}" if repo else ref
 
 
-def section(ledger: Path, broker=None, now: dt.datetime | None = None) -> str:
+def section(ledger: Path, broker=None, now: dt.datetime | None = None, fund_brokers: dict | None = None) -> str:
     now = now or dt.datetime.now(dt.timezone.utc)
     champ = json.loads((ROOT / "state" / "champion.json").read_text())
     lines = [RESULTS_START, f"_Updated {now:%Y-%m-%d %H:%M} UTC by `factory/readme.py` from the ledger branch"
@@ -171,7 +221,11 @@ def section(ledger: Path, broker=None, now: dt.datetime | None = None) -> str:
              f"[{champ.get('ref')}]({_link(champ.get('ref', ''))})."]
     if m := methodology(champ.get("ref", "")):
         lines.append(f"- Method: {m}")
-    lines += [""] + trading_section(executions(ledger), broker) + [""] + research_section(ledger, champ) + [RESULTS_END]
+    runs = executions(ledger)
+    if fund_brokers is None and broker is not None:
+        fund_brokers = {1: broker}
+    lines += [""] + fund_section(runs, fund_brokers) + [""] + trading_section(runs, broker) + [""]
+    lines += research_section(ledger, champ) + [RESULTS_END]
     return "\n".join(lines)
 
 
@@ -189,14 +243,18 @@ def main(argv=None) -> int:
     ap.add_argument("--no-broker", action="store_true")
     a = ap.parse_args(argv)
     path = Path(a.readme)
-    broker = None
+    brokers = None
     if not a.no_broker:
+        brokers = {}
+        from factory import funds
         from factory.broker import PaperBroker
-        try:
-            broker = PaperBroker()
-        except Exception as e:
-            print(f"broker unavailable: {e}", file=sys.stderr)
-    path.write_text(splice(path.read_text(), section(Path(a.ledger), broker)))
+        for n in range(1, funds.MAX_FUNDS + 1):
+            if creds := funds.credentials(n):
+                try:
+                    brokers[n] = PaperBroker(*creds)
+                except Exception as e:
+                    print(f"fund {n} broker unavailable: {e}", file=sys.stderr)
+    path.write_text(splice(path.read_text(), section(Path(a.ledger), (brokers or {}).get(1), fund_brokers=brokers)))
     return 0
 
 

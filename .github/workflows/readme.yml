@@ -30,6 +30,25 @@ jobs:
         env:
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+          # one paper account per fund (state/funds.yaml); fund 1 falls back to the two above, missing funds are skipped
+          ALPACA_FUND_1_KEY_ID: ${{ secrets.ALPACA_FUND_1_KEY_ID }}
+          ALPACA_FUND_1_SECRET_KEY: ${{ secrets.ALPACA_FUND_1_SECRET_KEY }}
+          ALPACA_FUND_2_KEY_ID: ${{ secrets.ALPACA_FUND_2_KEY_ID }}
+          ALPACA_FUND_2_SECRET_KEY: ${{ secrets.ALPACA_FUND_2_SECRET_KEY }}
+          ALPACA_FUND_3_KEY_ID: ${{ secrets.ALPACA_FUND_3_KEY_ID }}
+          ALPACA_FUND_3_SECRET_KEY: ${{ secrets.ALPACA_FUND_3_SECRET_KEY }}
+          ALPACA_FUND_4_KEY_ID: ${{ secrets.ALPACA_FUND_4_KEY_ID }}
+          ALPACA_FUND_4_SECRET_KEY: ${{ secrets.ALPACA_FUND_4_SECRET_KEY }}
+          ALPACA_FUND_5_KEY_ID: ${{ secrets.ALPACA_FUND_5_KEY_ID }}
+          ALPACA_FUND_5_SECRET_KEY: ${{ secrets.ALPACA_FUND_5_SECRET_KEY }}
+          ALPACA_FUND_6_KEY_ID: ${{ secrets.ALPACA_FUND_6_KEY_ID }}
+          ALPACA_FUND_6_SECRET_KEY: ${{ secrets.ALPACA_FUND_6_SECRET_KEY }}
+          ALPACA_FUND_7_KEY_ID: ${{ secrets.ALPACA_FUND_7_KEY_ID }}
+          ALPACA_FUND_7_SECRET_KEY: ${{ secrets.ALPACA_FUND_7_SECRET_KEY }}
+          ALPACA_FUND_8_KEY_ID: ${{ secrets.ALPACA_FUND_8_KEY_ID }}
+          ALPACA_FUND_8_SECRET_KEY: ${{ secrets.ALPACA_FUND_8_SECRET_KEY }}
+          ALPACA_FUND_9_KEY_ID: ${{ secrets.ALPACA_FUND_9_KEY_ID }}
+          ALPACA_FUND_9_SECRET_KEY: ${{ secrets.ALPACA_FUND_9_SECRET_KEY }}
         run: |
           mkdir -p "$RUNNER_TEMP/site"
           printf '# Trader Dark Factory results\n\nRebuilt every weekday after the close by `.github/workflows/readme.yml`. Background and lessons: [README](https://github.com/%s#readme).\n' "$GITHUB_REPOSITORY" > "$RUNNER_TEMP/site/RESULTS.md"

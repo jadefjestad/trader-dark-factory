@@ -1,4 +1,4 @@
-# Runs the promoted strategy on Alpaca PAPER every weekday after the open. Needs no Claude access.
+# Runs each fund's strategy (state/funds.yaml) on its own Alpaca PAPER account every weekday after the open. Needs no Claude access.
 name: execute
 on:
   schedule:
@@ -18,7 +18,7 @@ permissions:
 jobs:
   execute:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -45,11 +45,30 @@ jobs:
           restore-keys: shorts-v1-
       - name: Create unprivileged sandbox user for strategy code
         run: sudo useradd --system --no-create-home --shell /usr/sbin/nologin sandbox
-      - name: Execute champion on paper account
+      - name: Execute every funded paper account
         id: run
         env:
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+          # one paper account per fund (state/funds.yaml); fund 1 falls back to the two above, missing funds are skipped
+          ALPACA_FUND_1_KEY_ID: ${{ secrets.ALPACA_FUND_1_KEY_ID }}
+          ALPACA_FUND_1_SECRET_KEY: ${{ secrets.ALPACA_FUND_1_SECRET_KEY }}
+          ALPACA_FUND_2_KEY_ID: ${{ secrets.ALPACA_FUND_2_KEY_ID }}
+          ALPACA_FUND_2_SECRET_KEY: ${{ secrets.ALPACA_FUND_2_SECRET_KEY }}
+          ALPACA_FUND_3_KEY_ID: ${{ secrets.ALPACA_FUND_3_KEY_ID }}
+          ALPACA_FUND_3_SECRET_KEY: ${{ secrets.ALPACA_FUND_3_SECRET_KEY }}
+          ALPACA_FUND_4_KEY_ID: ${{ secrets.ALPACA_FUND_4_KEY_ID }}
+          ALPACA_FUND_4_SECRET_KEY: ${{ secrets.ALPACA_FUND_4_SECRET_KEY }}
+          ALPACA_FUND_5_KEY_ID: ${{ secrets.ALPACA_FUND_5_KEY_ID }}
+          ALPACA_FUND_5_SECRET_KEY: ${{ secrets.ALPACA_FUND_5_SECRET_KEY }}
+          ALPACA_FUND_6_KEY_ID: ${{ secrets.ALPACA_FUND_6_KEY_ID }}
+          ALPACA_FUND_6_SECRET_KEY: ${{ secrets.ALPACA_FUND_6_SECRET_KEY }}
+          ALPACA_FUND_7_KEY_ID: ${{ secrets.ALPACA_FUND_7_KEY_ID }}
+          ALPACA_FUND_7_SECRET_KEY: ${{ secrets.ALPACA_FUND_7_SECRET_KEY }}
+          ALPACA_FUND_8_KEY_ID: ${{ secrets.ALPACA_FUND_8_KEY_ID }}
+          ALPACA_FUND_8_SECRET_KEY: ${{ secrets.ALPACA_FUND_8_SECRET_KEY }}
+          ALPACA_FUND_9_KEY_ID: ${{ secrets.ALPACA_FUND_9_KEY_ID }}
+          ALPACA_FUND_9_SECRET_KEY: ${{ secrets.ALPACA_FUND_9_SECRET_KEY }}
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
           FACTORY_SANDBOX_USER: sandbox
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
