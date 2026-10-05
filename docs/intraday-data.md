@@ -47,3 +47,24 @@ published free tiers (to be confirmed by the probe if keys are added):
 Verdict: neither beats Alpaca for this use today, so the factory does not ask for their keys. The
 data layer stays pluggable (#68), and the probe already tests both the moment
 `TIINGO_API_KEY` or `TWELVEDATA_API_KEY` exists as a repository secret.
+
+## Streaming fill costs from replays (issue #75, 2026-10-05)
+
+`stream-replay` (factory/stream/replay.py) replays IEX trades and quotes through the live StreamEngine
+with quote fills: 1 s latency, buys at the ask and sells at the bid of the first quote after that. The
+probe strategy buys 5% of AAPL, MSFT and NVDA, then sells halfway through the window. Cost is each fill
+against the last trade the engine saw when it decided, in bps per side.
+
+| Session | Window (ET) | Fills | Median | p90 |
+|---|---|---|---|---|
+| 2026-09-28 | 09:35-10:35 | 6 | 2.32 | 44.41 |
+| 2026-09-29 | 09:35-10:35 | 6 | 2.36 | 13.08 |
+| 2026-09-30 | 09:35-10:35 | 6 | 0.75 | 2.13 |
+| 2026-10-01 | 09:35-10:35 | 6 | 1.78 | 4.61 |
+| 2026-10-02 | 09:35-10:35 | 6 | 2.60 | 17.66 |
+| 2026-10-02 | 10:00-11:00 | 6 | 0.72 | 2.48 |
+
+Typical fills cost 1 to 3 bps, well inside the 11 bps per side the 15Min and 5Min rules charge. The
+tail is the risk: in the first hour one fill in ten cost 13 to 44 bps, because a second of latency in a
+fast market moves the price more than the spread. Samples are small (6 fills a day), so these are a
+sanity check, not a calibration; the cost rules stay as they are.
