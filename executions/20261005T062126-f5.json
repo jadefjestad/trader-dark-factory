@@ -1,0 +1,52 @@
+{
+  "started_at": "2026-10-05T06:21:22+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": true,
+  "status": "dry run: no orders submitted",
+  "orders": [
+    {
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 41,
+      "side": "buy"
+    }
+  ],
+  "submitted": [],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-02 15:45:00-04:00",
+  "hold_day": false,
+  "equity": 100000.0,
+  "targets": {
+    "NVDA": 0.1,
+    "META": 0.1,
+    "LLY": 0.1,
+    "JNJ": 0.1
+  },
+  "prices": {
+    "NVDA": 234.0,
+    "META": 728.09,
+    "LLY": 1143.54,
+    "JNJ": 256.025
+  }
+}
