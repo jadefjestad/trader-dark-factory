@@ -1,0 +1,64 @@
+{
+  "kind": "rule_change",
+  "commit": "bed670c48e886c2dfa974de84f2eccff382a8525",
+  "previous": "71080694a3ac14ad1603b6164e0b446b762fef20",
+  "changed_at": "2026-10-05T06:15:35+00:00",
+  "reason": "intraday funds need their own per-bar turnover cap (a full rotation is 2x),",
+  "files": [
+    {
+      "file": ".github/workflows/intraday.yml",
+      "change": "A"
+    },
+    {
+      "file": "protected/risk_limits.yaml",
+      "change": "M",
+      "values": [
+        {
+          "key": "intraday.decision_delay_seconds",
+          "before": null,
+          "after": 45
+        },
+        {
+          "key": "intraday.feed",
+          "before": null,
+          "after": "iex"
+        },
+        {
+          "key": "intraday.flatten_bars_before_close",
+          "before": null,
+          "after": 2
+        },
+        {
+          "key": "intraday.history_days",
+          "before": null,
+          "after": 10
+        },
+        {
+          "key": "intraday.max_bar_age_minutes",
+          "before": null,
+          "after": 10
+        },
+        {
+          "key": "intraday.max_daily_loss",
+          "before": null,
+          "after": 0.03
+        },
+        {
+          "key": "intraday.max_missing_bars",
+          "before": null,
+          "after": 2
+        },
+        {
+          "key": "intraday.max_orders_per_day",
+          "before": null,
+          "after": 400
+        },
+        {
+          "key": "intraday.max_run_turnover",
+          "before": null,
+          "after": 2.0
+        }
+      ]
+    }
+  ]
+}
