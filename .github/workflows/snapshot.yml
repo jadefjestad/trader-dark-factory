@@ -1,36 +1,32 @@
-# Rebuilds RESULTS.md and the fund chart (funds.svg) on the `results` branch after each trading day from the ledger and the paper account. No Claude needed.
-name: readme
+# Records every fund's equity four times each trading day for the README performance chart. No Claude needed.
+name: snapshot
 on:
   schedule:
-    - cron: "30 21 * * 1-5"   # after the US close in summer and winter
+    - cron: "45 14,16,18 * * 1-5"   # 10:45, 12:45, 14:45 ET in summer (an hour earlier in winter)
+    - cron: "50 19 * * 1-5"         # 15:50 ET in summer, 14:50 in winter
   workflow_dispatch:
 concurrency:
-  group: readme
+  group: snapshot
   cancel-in-progress: false
 permissions:
   contents: write
 jobs:
-  refresh:
+  snapshot:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
-      - uses: actions/checkout@v4
-        with:
-          ref: ledger
-          path: ledger
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: pip
       - run: pip install -r requirements.txt
-      - name: Build RESULTS.md
+      - name: Take a snapshot of every funded paper account
         env:
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
-          # one paper account per fund (state/funds.yaml); fund 1 falls back to the two above, missing funds are skipped
           ALPACA_FUND_1_KEY_ID: ${{ secrets.ALPACA_FUND_1_KEY_ID }}
           ALPACA_FUND_1_SECRET_KEY: ${{ secrets.ALPACA_FUND_1_SECRET_KEY }}
           ALPACA_FUND_2_KEY_ID: ${{ secrets.ALPACA_FUND_2_KEY_ID }}
@@ -49,19 +45,9 @@ jobs:
           ALPACA_FUND_8_SECRET_KEY: ${{ secrets.ALPACA_FUND_8_SECRET_KEY }}
           ALPACA_FUND_9_KEY_ID: ${{ secrets.ALPACA_FUND_9_KEY_ID }}
           ALPACA_FUND_9_SECRET_KEY: ${{ secrets.ALPACA_FUND_9_SECRET_KEY }}
-        run: |
-          mkdir -p "$RUNNER_TEMP/site"
-          printf '# Trader Dark Factory results\n\nRebuilt every weekday after the close by `.github/workflows/readme.yml`. Background and lessons: [README](https://github.com/%s#readme).\n' "$GITHUB_REPOSITORY" > "$RUNNER_TEMP/site/RESULTS.md"
-          python -m factory.readme --ledger ledger --readme "$RUNNER_TEMP/site/RESULTS.md" --chart "$RUNNER_TEMP/site/funds.svg"
-      - name: Publish to the results branch
-        # main only accepts pull requests, so the daily figures live on their own branch (history replaced each run)
+        run: python -m factory.equity snapshot --out out
+      - name: Record it on the ledger branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cd "$RUNNER_TEMP/site"
-          git init --quiet -b results
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add RESULTS.md funds.svg
-          git commit --quiet -m "results: refresh"
-          git push --quiet --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:results
+          if ls out/*.json >/dev/null 2>&1; then scripts/ledger_append.sh equity "equity snapshot" out/*.json; fi

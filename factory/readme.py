@@ -189,6 +189,24 @@ def fund_section(runs: list[dict], brokers: dict | None, prices=benchmark_closes
             ] + [r[2] for r in sorted(rows, key=lambda r: r[:2])]
 
 
+def chart_section(ledger: Path) -> list[str]:
+    """The fund performance chart (drawn by factory/equity.py into funds.svg on the results branch)."""
+    from factory import equity, funds
+    repo = os.environ.get("GITHUB_REPOSITORY", "jadefjestad/trader-dark-factory")
+    lines = ["### Fund performance",
+             f"![Fund performance over the last {equity.WINDOW_DAYS} days, Spyder-man (SPY) highlighted as the benchmark]"
+             f"(https://raw.githubusercontent.com/{repo}/results/funds.svg)", "",
+             f"% change of each fund over the last {equity.WINDOW_DAYS} days from four readings per trading day; the thick "
+             "line is Spyder-man (SPY). A dot marks a fund switching strategy."]
+    try:
+        changes = equity.changes_markdown(equity.load(ledger), funds.load())
+    except Exception:
+        changes = []
+    if changes:
+        lines += ["", "Strategy changes in the chart window:"] + changes
+    return lines
+
+
 def _verdict(r: dict) -> str:
     if r.get("promote"):
         return "promoted"
@@ -263,7 +281,7 @@ def section(ledger: Path, broker=None, now: dt.datetime | None = None, fund_brok
     runs = executions(ledger)
     if fund_brokers is None and broker is not None:
         fund_brokers = {1: broker}
-    lines += [""] + fund_section(runs, fund_brokers) + [""] + trading_section(runs, broker) + [""]
+    lines += [""] + fund_section(runs, fund_brokers) + [""] + chart_section(ledger) + [""] + trading_section(runs, broker) + [""]
     lines += research_section(ledger, champ) + [RESULTS_END]
     return "\n".join(lines)
 
@@ -280,8 +298,12 @@ def main(argv=None) -> int:
     ap.add_argument("--ledger", required=True)
     ap.add_argument("--readme", default=str(ROOT / "README.md"))
     ap.add_argument("--no-broker", action="store_true")
+    ap.add_argument("--chart", help="also write the fund performance chart (SVG) here")
     a = ap.parse_args(argv)
     path = Path(a.readme)
+    if a.chart:
+        from factory import equity, funds
+        Path(a.chart).write_text(equity.svg(equity.load(Path(a.ledger)), funds.load()))
     brokers = None
     if not a.no_broker:
         brokers = {}
