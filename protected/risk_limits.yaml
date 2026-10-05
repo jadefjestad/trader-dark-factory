@@ -29,3 +29,16 @@ stream:
   max_stream_gap_seconds: 30           # a symbol with no trade or quote this long gets no new orders
   max_feed_gap_seconds: 10             # nothing at all this long: no new orders anywhere
   flatten_at: "15:55"                  # New York time
+
+# Intraday paper funds (15-minute strategies in state/funds.yaml), run by factory/intraday.py once per bar.
+# The daily limits above all apply too, except that max_run_turnover is replaced by the value here.
+intraday:
+  feed: iex                    # live 15-minute bars: IEX is real-time on the free plan (docs/intraday-data.md)
+  history_days: 10             # calendar days of bars fetched each bar for the strategy's lookback
+  decision_delay_seconds: 45   # wait this long after a bar ends before reading it, so the bar is complete
+  max_bar_age_minutes: 10      # the newest completed bar must have ended this recently
+  max_missing_bars: 2          # a symbol may lack this many recent bars (filled from the last price); more fails
+  max_run_turnover: 2.00       # sum |order notional| / equity per bar: a full rotation out of one book into another
+  max_orders_per_day: 400      # per fund, counted from the account's orders today
+  max_daily_loss: 0.03         # 3% below the previous close: flatten and trade no more that day
+  flatten_bars_before_close: 2 # decisions on the last two bars are flat, as the backtester models it

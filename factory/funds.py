@@ -67,6 +67,19 @@ def load(path=None) -> list[Fund]:
     return funds
 
 
+def timeframe_of(fund: Fund, champion_path=None) -> str:
+    """The fund's bar size from its config, without running strategy code: "1Day" funds are traded by
+    factory.execute, intraday ones ("15Min") by factory.intraday. The champion is always daily."""
+    if fund.benchmark:
+        return ""
+    if fund.strategy == "champion":
+        try:
+            return str(json.loads((champion_path or CHAMPION).read_text()).get("timeframe", "1Day"))
+        except (OSError, ValueError):
+            return "1Day"
+    return str(fund.strategy.get("timeframe", "1Day"))
+
+
 def credentials(number: int, env=None) -> tuple[str, str] | None:
     env = os.environ if env is None else env
     key, secret = env.get(f"ALPACA_FUND_{number}_KEY_ID"), env.get(f"ALPACA_FUND_{number}_SECRET_KEY")

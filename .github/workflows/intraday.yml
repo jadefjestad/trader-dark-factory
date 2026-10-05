@@ -1,0 +1,79 @@
+# Runs the intraday (15-minute) paper funds in state/funds.yaml bar by bar through the session (factory/intraday.py).
+# One job loops for up to 340 minutes; the later schedules queue behind it (only the newest pending run is kept)
+# and take over when it ends, so the whole session is covered in summer and winter time. Needs no Claude access.
+name: intraday
+on:
+  schedule:
+    - cron: "20 13 * * 1-5"   # before the open (09:30 ET = 13:30 UTC in summer, 14:30 in winter)
+    - cron: "20 14 * * 1-5"   # backup if the first is delayed or dropped
+    - cron: "50 16 * * 1-5"   # takes over when the first job reaches its time limit, through the close
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Compute orders without submitting"
+        type: boolean
+        default: true
+concurrency:
+  group: intraday
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  intraday:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Create unprivileged sandbox user for strategy code
+        run: sudo useradd --system --no-create-home --shell /usr/sbin/nologin sandbox
+      - name: Trade every intraday fund bar by bar
+        id: run
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+          # one paper account per fund (state/funds.yaml); fund 1 falls back to the two above, missing funds are skipped
+          ALPACA_FUND_1_KEY_ID: ${{ secrets.ALPACA_FUND_1_KEY_ID }}
+          ALPACA_FUND_1_SECRET_KEY: ${{ secrets.ALPACA_FUND_1_SECRET_KEY }}
+          ALPACA_FUND_2_KEY_ID: ${{ secrets.ALPACA_FUND_2_KEY_ID }}
+          ALPACA_FUND_2_SECRET_KEY: ${{ secrets.ALPACA_FUND_2_SECRET_KEY }}
+          ALPACA_FUND_3_KEY_ID: ${{ secrets.ALPACA_FUND_3_KEY_ID }}
+          ALPACA_FUND_3_SECRET_KEY: ${{ secrets.ALPACA_FUND_3_SECRET_KEY }}
+          ALPACA_FUND_4_KEY_ID: ${{ secrets.ALPACA_FUND_4_KEY_ID }}
+          ALPACA_FUND_4_SECRET_KEY: ${{ secrets.ALPACA_FUND_4_SECRET_KEY }}
+          ALPACA_FUND_5_KEY_ID: ${{ secrets.ALPACA_FUND_5_KEY_ID }}
+          ALPACA_FUND_5_SECRET_KEY: ${{ secrets.ALPACA_FUND_5_SECRET_KEY }}
+          ALPACA_FUND_6_KEY_ID: ${{ secrets.ALPACA_FUND_6_KEY_ID }}
+          ALPACA_FUND_6_SECRET_KEY: ${{ secrets.ALPACA_FUND_6_SECRET_KEY }}
+          ALPACA_FUND_7_KEY_ID: ${{ secrets.ALPACA_FUND_7_KEY_ID }}
+          ALPACA_FUND_7_SECRET_KEY: ${{ secrets.ALPACA_FUND_7_SECRET_KEY }}
+          ALPACA_FUND_8_KEY_ID: ${{ secrets.ALPACA_FUND_8_KEY_ID }}
+          ALPACA_FUND_8_SECRET_KEY: ${{ secrets.ALPACA_FUND_8_SECRET_KEY }}
+          ALPACA_FUND_9_KEY_ID: ${{ secrets.ALPACA_FUND_9_KEY_ID }}
+          ALPACA_FUND_9_SECRET_KEY: ${{ secrets.ALPACA_FUND_9_SECRET_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          FACTORY_SANDBOX_USER: sandbox
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+        run: |
+          set +e
+          mkdir -p out
+          if [ "$DRY_RUN" = "true" ]; then python -m factory.intraday --out out --once --dry-run; else python -m factory.intraday --out out --max-minutes 340; fi
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+      - name: Record run on the ledger branch
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN: ${{ github.run_id }}
+        run: |
+          shopt -s nullglob
+          files=(out/*.json)
+          if [ ${#files[@]} -gt 0 ]; then scripts/ledger_append.sh executions "intraday run $RUN" "${files[@]}"; fi
+      - name: Fail visibly when a fund stopped on an error
+        if: steps.run.outputs.code != '0'
+        run: exit 1
