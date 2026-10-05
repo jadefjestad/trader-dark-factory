@@ -1,6 +1,7 @@
 """Results section of the README, built deterministically from the ledger and the paper account.
 
     python -m factory.readme --ledger ledger/ --readme README.md [--no-broker]
+    python -m factory.readme --from RESULTS.md --readme README.md   # copy the daily block into the README
 
 Rewrites only the text between the RESULTS_START and RESULTS_END markers, so the hand-written parts of
 the file stay as they are. .github/workflows/readme.yml runs it daily into RESULTS.md on the `results`
@@ -293,14 +294,29 @@ def splice(readme: str, block: str) -> str:
     return readme.rstrip("\n") + "\n\n## Results\n" + block + "\n"
 
 
+def block(text: str) -> str:
+    """The generated results block (markers included) from a file that has one, e.g. RESULTS.md."""
+    if RESULTS_START not in text or RESULTS_END not in text:
+        raise ValueError("no results block found")
+    return RESULTS_START + text.split(RESULTS_START, 1)[1].split(RESULTS_END, 1)[0] + RESULTS_END
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--ledger", required=True)
+    ap.add_argument("--ledger")
+    ap.add_argument("--from", dest="source",
+                    help="copy the block from this generated file (RESULTS.md on the results branch, built with "
+                         "paper-account figures) instead of rebuilding it")
     ap.add_argument("--readme", default=str(ROOT / "README.md"))
     ap.add_argument("--no-broker", action="store_true")
     ap.add_argument("--chart", help="also write the fund performance chart (SVG) here")
     a = ap.parse_args(argv)
     path = Path(a.readme)
+    if a.source:
+        path.write_text(splice(path.read_text(), block(Path(a.source).read_text())))
+        return 0
+    if not a.ledger:
+        ap.error("--ledger is required unless --from is given")
     if a.chart:
         from factory import equity, funds
         Path(a.chart).write_text(equity.svg(equity.load(Path(a.ledger)), funds.load()))

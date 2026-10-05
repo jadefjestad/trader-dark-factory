@@ -102,3 +102,18 @@ def test_fund_leaderboard_ranks_funded_accounts_and_counts_trades(tmp_path):
     assert "(champion)" in board[2] and "-9,000 (-8.18%) | 2 |" in board[2]
     assert "unavailable (RuntimeError)" in board[3]
     assert sum("not funded yet" in r for r in board) == 6
+
+
+def test_main_copies_the_block_from_a_generated_results_file(tmp_path):
+    src = tmp_path / "RESULTS.md"
+    src.write_text(f"# Results\n\n{readme.RESULTS_START}\nfund table\n{readme.RESULTS_END}\n")
+    dst = tmp_path / "README.md"
+    dst.write_text(f"intro\n{readme.RESULTS_START}\nold\n{readme.RESULTS_END}\noutro\n")
+    assert readme.main(["--from", str(src), "--readme", str(dst)]) == 0
+    assert dst.read_text() == f"intro\n{readme.RESULTS_START}\nfund table\n{readme.RESULTS_END}\noutro\n"
+
+
+def test_block_requires_markers():
+    import pytest
+    with pytest.raises(ValueError):
+        readme.block("no markers here")
