@@ -1,0 +1,240 @@
+{
+  "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1",
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "params": {
+      "window": 6,
+      "names": 5,
+      "weight": 0.1
+    },
+    "timeframe": "15Min",
+    "code_sha256": "59b1dfbc9a20153210e161f8eed6e686cfbb3e6b97c65e86ee4c1b0141d59b93"
+  },
+  "data": {
+    "source": "alpaca:sip",
+    "fingerprint": "cb56a692d8abf930",
+    "first_bar": "2022-12-19 09:30:00-05:00",
+    "last_bar": "2026-10-02 15:45:00-04:00"
+  },
+  "protected_fingerprint": "498e29287e6ccc46",
+  "evaluated_at": "2026-10-05T05:50:41+00:00",
+  "metrics": {
+    "in_sample": {
+      "bars": 9724,
+      "total_return": -0.679791,
+      "cagr": -0.535739,
+      "annual_vol": 0.051955,
+      "sharpe": -14.7417,
+      "sortino": -17.7931,
+      "max_drawdown": 0.680092,
+      "annual_turnover": 644.238,
+      "cost_drag": 0.798954,
+      "avg_exposure": 0.3462,
+      "trades": 9850
+    },
+    "validation": {
+      "bars": 6500,
+      "total_return": -0.52737,
+      "cagr": -0.530195,
+      "annual_vol": 0.06993,
+      "sharpe": -10.7672,
+      "sortino": -13.8762,
+      "max_drawdown": 0.527411,
+      "annual_turnover": 645.3713,
+      "cost_drag": 0.767482,
+      "avg_exposure": 0.3463,
+      "trades": 6656
+    },
+    "holdout": {
+      "sharpe": -14.0,
+      "max_drawdown": 0.6
+    }
+  },
+  "benchmark": {
+    "symbol": "SPY",
+    "metrics": {
+      "in_sample": {
+        "bars": 9724,
+        "total_return": -0.524776,
+        "cagr": -0.394248,
+        "annual_vol": 0.096456,
+        "sharpe": -5.1486,
+        "sortino": -6.9756,
+        "max_drawdown": 0.540338,
+        "annual_turnover": 504.0,
+        "cost_drag": 0.595442,
+        "avg_exposure": 0.9231,
+        "trades": 748
+      },
+      "validation": {
+        "bars": 6500,
+        "total_return": -0.439114,
+        "cagr": -0.441703,
+        "annual_vol": 0.15016,
+        "sharpe": -3.8066,
+        "sortino": -5.1212,
+        "max_drawdown": 0.443925,
+        "annual_turnover": 504.0,
+        "cost_drag": 0.58599,
+        "avg_exposure": 0.9231,
+        "trades": 500
+      },
+      "holdout": {
+        "sharpe": -5.8,
+        "max_drawdown": 0.5
+      }
+    }
+  },
+  "baselines": {
+    "opening_range_breakout": {
+      "in_sample": {
+        "bars": 9724,
+        "total_return": -0.634167,
+        "cagr": -0.492143,
+        "annual_vol": 0.078437,
+        "sharpe": -8.5986,
+        "sortino": -10.4895,
+        "max_drawdown": 0.634167,
+        "annual_turnover": 649.3899,
+        "cost_drag": 0.784864,
+        "avg_exposure": 0.7036,
+        "trades": 24315
+      },
+      "validation": {
+        "bars": 6500,
+        "total_return": -0.571701,
+        "cagr": -0.574597,
+        "annual_vol": 0.110143,
+        "sharpe": -7.7045,
+        "sortino": -9.0161,
+        "max_drawdown": 0.576475,
+        "annual_turnover": 654.5867,
+        "cost_drag": 0.766188,
+        "avg_exposure": 0.7181,
+        "trades": 16743
+      },
+      "holdout": {
+        "sharpe": -10.8,
+        "max_drawdown": 0.6
+      }
+    }
+  },
+  "champion": null,
+  "gates": [
+    {
+      "gate": "data_not_synthetic",
+      "passed": true,
+      "detail": "alpaca:sip"
+    },
+    {
+      "gate": "executable_timeframe",
+      "passed": false,
+      "detail": "15Min",
+      "promotion_only": true
+    },
+    {
+      "gate": "risk_limits",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "gate": "no_lookahead",
+      "passed": true,
+      "detail": "5 truncated reruns matched"
+    },
+    {
+      "gate": "lookback_sufficient",
+      "passed": true,
+      "detail": "5 40-bar reruns matched"
+    },
+    {
+      "gate": "min_trades_validation",
+      "passed": true,
+      "detail": 6656
+    },
+    {
+      "gate": "max_drawdown_in_sample",
+      "passed": false,
+      "detail": 0.680092
+    },
+    {
+      "gate": "max_vol_in_sample",
+      "passed": true,
+      "detail": 0.051955
+    },
+    {
+      "gate": "max_drawdown_validation",
+      "passed": false,
+      "detail": 0.527411
+    },
+    {
+      "gate": "max_vol_validation",
+      "passed": true,
+      "detail": 0.06993
+    },
+    {
+      "gate": "max_drawdown_holdout",
+      "passed": false,
+      "detail": "hidden"
+    },
+    {
+      "gate": "max_vol_holdout",
+      "passed": true,
+      "detail": "hidden"
+    },
+    {
+      "gate": "min_validation_sharpe",
+      "passed": false,
+      "detail": -10.7672
+    },
+    {
+      "gate": "min_holdout_sharpe",
+      "passed": false,
+      "detail": "hidden"
+    },
+    {
+      "gate": "sharpe_decay",
+      "passed": true,
+      "detail": -3.974
+    },
+    {
+      "gate": "turnover",
+      "passed": true,
+      "detail": 645.3713
+    },
+    {
+      "gate": "robustness",
+      "passed": false,
+      "detail": 0.0
+    },
+    {
+      "gate": "fill_participation",
+      "passed": false,
+      "detail": 0.69033
+    },
+    {
+      "gate": "cost_stress",
+      "passed": false,
+      "detail": "2.0x costs: validation Sharpe -18.392"
+    },
+    {
+      "gate": "latency_robustness",
+      "passed": false,
+      "detail": "fills 1 bar late: validation Sharpe -10.609"
+    },
+    {
+      "gate": "order_budget",
+      "passed": true,
+      "detail": "peak 10 orders in one bar (limit 30/min), peak 31 a day (limit 500)"
+    }
+  ],
+  "deflated_sharpe": {
+    "trials": 26,
+    "probability": 0.0,
+    "benchmark_annual_sharpe": 0.397
+  },
+  "passed_gates": false,
+  "beats_champion": true,
+  "promote": false
+}
