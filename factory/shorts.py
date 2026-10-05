@@ -3,6 +3,8 @@
 Both are free and keyless. The session network blocks FINRA, so `probe` runs in Actions
 (.github/workflows/probe.yml) and reports what each source returns.
 
+Panels: short_volume_ratio (daily file) and short_interest_days (days to cover from short interest).
+
 Availability rules (no look-ahead):
 - A daily short-volume file for trade date D is published that evening, so it is usable from the
   first bar after D: on daily bars, row D+1 onwards.
@@ -130,6 +132,84 @@ def panel(md_index, symbols: list[str], source: str) -> pd.DataFrame:
     out = short_volume_ratio_panel(load(symbols, start, "latest"), idx, symbols)
     if out.iloc[-1].isna().all():
         raise DataError("no FINRA short volume for the latest bar")
+    return out
+
+
+SI_FIELDS = ["symbol", "settlement", "days_to_cover"]
+SI_MAX_AGE_DAYS = 45         # settlements are twice a month; older than this at the last bar means the feed broke
+
+
+def parse_short_interest(recs: list[dict]) -> pd.DataFrame:
+    """API records -> rows (symbol, settlement, days_to_cover). Pure; unit-tested offline."""
+    rows = [(r.get("symbolCode"), r.get("settlementDate"), r.get("daysToCoverQuantity")) for r in recs]
+    df = pd.DataFrame(rows, columns=SI_FIELDS).dropna()
+    df["settlement"] = pd.to_datetime(df["settlement"])
+    df["days_to_cover"] = df["days_to_cover"].astype(float)
+    return df.sort_values(["symbol", "settlement"]).drop_duplicates(["symbol", "settlement"], keep="last")
+
+
+def fetch_short_interest(symbols: list[str], pause: float = 0.2) -> pd.DataFrame:
+    """Every settlement for `symbols`. Any failed request raises DataError (fail closed)."""
+    frames = []
+    for sym in symbols:
+        body = {"limit": 5000, "compareFilters": [{"compareType": "equal", "fieldName": "symbolCode",
+                                                   "fieldValue": sym}]}
+        r = None
+        for attempt in range(4):
+            try:
+                r = _post(SHORT_INTEREST_URL, json=body, headers={"Accept": "application/json"})
+            except Exception:
+                r = None
+            if r is not None and r.status_code not in (429, 500, 502, 503, 504):
+                break
+            time.sleep(2 ** attempt)
+        if r is None or r.status_code != 200:
+            raise DataError(f"FINRA short interest for {sym}: {getattr(r, 'status_code', 'no response')}")
+        frames.append(parse_short_interest(r.json() if r.text.strip() else []))
+        time.sleep(pause)
+    return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame(columns=SI_FIELDS)
+
+
+def load_short_interest(symbols: list[str], use_cache: bool = True) -> pd.DataFrame:
+    """Short interest rows, cached per UTC day (a settlement can be revised, so old caches are not reused)."""
+    import hashlib
+    key = hashlib.sha256(",".join(sorted(symbols)).encode()).hexdigest()[:10]
+    path = CACHE_DIR / f"short_interest_{dt.datetime.now(dt.timezone.utc):%Y-%m-%d}_{key}.csv.gz"
+    if use_cache and path.exists():
+        return pd.read_csv(path, parse_dates=["settlement"])
+    df = fetch_short_interest(symbols)
+    if use_cache:
+        CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        df.to_csv(path, index=False)
+    return df
+
+
+def days_to_cover_panel(rows: pd.DataFrame, index: pd.DatetimeIndex, symbols: list[str]) -> pd.DataFrame:
+    """Daily-bar panel of days to cover; a settlement is usable only after its publication lag."""
+    rows = rows[rows["symbol"].isin(symbols)]
+    rows = rows.assign(usable=available_from(rows["settlement"], PUBLICATION_LAG_BDAYS))
+    wide = rows.pivot_table(index="usable", columns="symbol", values="days_to_cover", aggfunc="last").sort_index()
+    return wide.reindex(columns=symbols).reindex(index.union(wide.index)).ffill().reindex(index)
+
+
+def short_interest_panel(md_index, symbols: list[str], source: str) -> pd.DataFrame:
+    """The short_interest_days panel; synthetic data gets deterministic fake values that step twice a month."""
+    import numpy as np
+    idx = pd.DatetimeIndex(md_index)
+    if source == "synthetic":
+        rng = np.random.default_rng(23)
+        settle = pd.date_range(idx[0] - pd.Timedelta(days=40), idx[-1], freq="SMS")
+        vals = np.clip(rng.uniform(1, 4, len(symbols)) + rng.normal(0, 0.5, (len(settle), len(symbols))), 0.1, None)
+        rows = pd.DataFrame(vals, index=settle, columns=symbols).stack().rename("days_to_cover").reset_index()
+        rows.columns = ["settlement", "symbol", "days_to_cover"]
+        return days_to_cover_panel(rows, idx, symbols)
+    rows = load_short_interest(symbols)
+    out = days_to_cover_panel(rows, idx, symbols)
+    if out.iloc[-1].isna().all():
+        raise DataError("no FINRA short interest for the latest bar")
+    latest = rows["settlement"].max()
+    if (idx[-1] - latest).days > SI_MAX_AGE_DAYS:
+        raise DataError(f"FINRA short interest is stale: latest settlement {latest:%Y-%m-%d}")
     return out
 
 

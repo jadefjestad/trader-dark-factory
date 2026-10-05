@@ -1,6 +1,7 @@
 import datetime as dt
 
 import pandas as pd
+import pytest
 
 from factory import shorts
 
@@ -105,3 +106,52 @@ def test_real_panel_fails_closed_without_a_latest_value(monkeypatch):
     except shorts.DataError:
         return
     raise AssertionError("expected DataError")
+
+
+SI_RECS = [
+    {"symbolCode": "AAPL", "settlementDate": "2026-09-15", "daysToCoverQuantity": 1.5},
+    {"symbolCode": "AAPL", "settlementDate": "2026-08-31", "daysToCoverQuantity": 2.0},
+    {"symbolCode": "AAPL", "settlementDate": "2026-09-15", "daysToCoverQuantity": 1.7},   # revision wins
+    {"symbolCode": "MSFT", "settlementDate": "2026-09-15", "daysToCoverQuantity": None},
+]
+
+
+def test_parse_short_interest_sorts_and_keeps_revisions():
+    rows = shorts.parse_short_interest(SI_RECS)
+    assert list(rows["days_to_cover"]) == [2.0, 1.7] and set(rows["symbol"]) == {"AAPL"}
+
+
+def test_days_to_cover_waits_for_publication_lag():
+    rows = shorts.parse_short_interest(SI_RECS)
+    idx = pd.bdate_range("2026-09-01", "2026-10-02")
+    p = shorts.days_to_cover_panel(rows, idx, ["AAPL", "MSFT"])
+    # 2026-08-31 settles; +7 bdays = 2026-09-09, usable from 2026-09-10
+    assert pd.isna(p.loc["2026-09-09", "AAPL"]) and p.loc["2026-09-10", "AAPL"] == 2.0
+    # 2026-09-15 settles; +7 bdays = 2026-09-24, usable from 2026-09-25
+    assert p.loc["2026-09-24", "AAPL"] == 2.0 and p.loc["2026-09-25", "AAPL"] == 1.7
+    assert p["MSFT"].isna().all()
+
+
+def test_short_interest_fails_closed(monkeypatch, tmp_path):
+    monkeypatch.setattr(shorts, "CACHE_DIR", tmp_path)
+    monkeypatch.setattr(shorts.time, "sleep", lambda s: None)
+    monkeypatch.setattr(shorts, "_post", lambda *a, **k: _Resp(400))
+    with pytest.raises(shorts.DataError):
+        shorts.short_interest_panel(pd.bdate_range("2026-09-01", "2026-10-02"), ["AAPL"], "alpaca")
+
+
+def test_short_interest_stale_fails_closed(monkeypatch):
+    monkeypatch.setattr(shorts, "load_short_interest", lambda s: shorts.parse_short_interest(SI_RECS))
+    with pytest.raises(shorts.DataError):
+        shorts.short_interest_panel(pd.bdate_range("2026-11-01", "2026-12-31"), ["AAPL"], "alpaca")
+    p = shorts.short_interest_panel(pd.bdate_range("2026-09-01", "2026-10-02"), ["AAPL"], "alpaca")
+    assert p.iloc[-1, 0] == 1.7
+
+
+def test_short_interest_synthetic_panel():
+    from factory import extras
+    from factory.data import synthetic
+    md = extras.attach(synthetic(["AAA", "BBB"], start="2024-01-01", end="2024-06-01"), ["short_interest_days"], "synthetic")
+    p = md.extra["short_interest_days"]
+    assert p.shape[1] == 2 and p.notna().all().all() and (p > 0).all().all()
+    assert p["AAA"].nunique() > 5          # steps twice a month, not daily noise
