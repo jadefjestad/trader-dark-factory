@@ -1,0 +1,21 @@
+{
+  "kind": "rule_change",
+  "commit": "e5cf321918d7393dc4a31994d2bdbd30b0c65766",
+  "previous": "f9f51fafd878f600033f1637cd8ff00e414a2d8e",
+  "changed_at": "2026-10-05T02:28:20+00:00",
+  "reason": "execute.yml and readme.yml need the per-fund secrets, execute.yml's timeout rises from 20 to 45 minutes for up to nine sequential fund runs, and agent/ROUTINE.md tells research runs they may reassign funds. No risk limit, benchmark or evaluation rule changes.",
+  "files": [
+    {
+      "file": ".github/workflows/execute.yml",
+      "change": "M"
+    },
+    {
+      "file": ".github/workflows/readme.yml",
+      "change": "M"
+    },
+    {
+      "file": "agent/ROUTINE.md",
+      "change": "M"
+    }
+  ]
+}
