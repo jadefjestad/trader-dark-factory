@@ -5,13 +5,13 @@
 # ALPACA_API_SECRET_KEY). A fund without keys is skipped; a failure in one fund never stops another.
 funds:
   1:
-    name: "The Empire Strikes Black"
-    emoji: "⬛"
+    name: "Darth Trader"
+    emoji: "💀"
     # the promoted champion; follows state/champion.json
     strategy: champion
   2:
-    name: "Darth Trader"
-    emoji: "💀"
+    name: "The Empire Strikes Black"
+    emoji: "⬛"
     # passed gates, best validation Sharpe (0.99); first fallback
     strategy:
       name: "residual_momentum_announcement_blend"
@@ -21,8 +21,8 @@ funds:
       experiment_id: "pr90-8040a1f-residual_momentum_announcement_blend-r37243483853-1"
       params: {"lookback": 252, "skip": 21, "top_n": 8, "rebalance_every": 21, "vol_target": 0.1, "vol_window": 60, "window_start": 45, "window_end": 70, "min_slots": 8, "premium_share": 0.5, "blend_every": 5}
   3:
-    name: "Back to the Futures"
-    emoji: "🕰️"
+    name: "Live Long and Profit"
+    emoji: "🖖"
     # passed gates (validation Sharpe 0.97); SEC 8-K signal
     strategy:
       name: "earnings_announcement_premium"
@@ -43,8 +43,8 @@ funds:
       experiment_id: "pr19-6b2e162-vol_target_momentum_10-r37182506562-1"
       params: {"lookback": 252, "skip": 21, "top_n": 8, "rebalance_every": 21, "vol_target": 0.1, "vol_window": 60}
   5:
-    name: "Wizard of Odds"
-    emoji: "🧙"
+    name: "Back to the Futures"
+    emoji: "🕰️"
     # passed gates (0.81); promoted before the current champion
     strategy:
       name: "blend_ew_vol_momentum"
@@ -54,8 +54,8 @@ funds:
       experiment_id: "pr22-8a0a8cc-blend_ew_vol_momentum-r37183047587-1"
       params: {"lookback": 252, "skip": 21, "top_n": 8, "rebalance_every": 21, "vol_target": 0.1, "vol_window": 60, "ew_share": 0.5}
   6:
-    name: "Jon Dough"
-    emoji: "🐺"
+    name: "Wizard of Odds"
+    emoji: "🧙"
     # passed gates (0.79); risk-parity mix of sleeves
     strategy:
       name: "risk_parity_ensemble_v2"
@@ -65,8 +65,8 @@ funds:
       experiment_id: "pr63-a5d265f-risk_parity_ensemble_v2-r37210938706-1"
       params: {"lookback": 252, "skip": 21, "top_n": 8, "vol_target": 0.1, "vol_window": 60, "risk_window": 60, "rebalance_every": 21}
   7:
-    name: "Live Long and Profit"
-    emoji: "🖖"
+    name: "Frodough Baggins"
+    emoji: "💍"
     # passed gates (0.69); per-stock trend that can sit in cash
     strategy:
       name: "ts_trend_invvol"
@@ -76,8 +76,8 @@ funds:
       experiment_id: "pr57-099edbb-ts_trend_invvol-r37210248410-1"
       params: {"lookback": 252, "skip": 21, "vol_window": 60, "vol_target": 0.1, "rebalance_every": 21}
   8:
-    name: "Game of Loans"
-    emoji: "👑"
+    name: "Jon Dough"
+    emoji: "🐺"
     # baseline that passed gates (0.85); 50/200-day trend filter
     strategy:
       name: "sma_trend"
@@ -87,8 +87,8 @@ funds:
       experiment_id: "20261004T230757-sma_trend"
       params: {"fast": 50, "slow": 200}
   9:
-    name: "Frodough Baggins"
-    emoji: "💍"
+    name: "Game of Loans"
+    emoji: "👑"
     # benchmark: equal-weight buy and hold of the universe
     strategy:
       name: "equal_weight_buy_hold"

@@ -146,9 +146,10 @@ def run(dry_run: bool, record: dict, fund=None, creds=None, shared=None) -> None
 
     start = (today - pd.Timedelta(days=int(meta["lookback"] * 1.6) + 30)).strftime("%Y-%m-%d")
     d = cfg["data"]
-    if start not in md_cache:   # funds share bars within one run; a failed load is not cached
+    if start not in md_cache:   # each fund fetches with its own keys; bars are shared once loaded, failures are not
         md_cache[start] = load_alpaca(symbols, start, "latest", "1Day", feed=d["historical_feed"],
-                                      fallback_feed=d.get("fallback_feed"), adjustment=d["adjustment"], use_cache=False)
+                                      fallback_feed=d.get("fallback_feed"), adjustment=d["adjustment"], use_cache=False,
+                                      creds=creds)
     md = md_cache[start]
     md = md.slice(None, prev_session)                     # completed sessions only, no partial bar
     validate(md, symbols)
