@@ -1,0 +1,16 @@
+{
+  "started_at": "2026-10-05T06:14:36+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": true,
+  "status": "NO ORDERS: DataError: newest completed bar 2026-10-02 15:45:00-04:00 ended 3495 minutes ago",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  }
+}
