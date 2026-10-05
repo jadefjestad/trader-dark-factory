@@ -9,10 +9,19 @@ real broker or the network.
 Simplification: the simulated position changes at the decision tick, while its price comes from the
 later quote; with latencies of a second or two this only matters to strategies that re-trade a symbol
 within that window, which the order throttle already forbids (30 s per symbol).
+
+    python -m factory.stream.replay --day 2026-10-02 --symbols AAPL,MSFT,NVDA --start 10:00 --end 11:00
+
+runs in Actions (.github/workflows/stream-replay.yml) because the session network blocks Alpaca. With
+--strategy probe it holds 5% of each name for the first half of the window and nothing after, which
+measures what real buys and sells cost against the last trade seen at decision time.
 """
 from __future__ import annotations
 
+import argparse
 import datetime as dt
+import json
+import sys
 
 import pandas as pd
 
@@ -32,6 +41,7 @@ class SimBroker:
         self.unfilled: list[dict] = []
 
     def submit_order(self, symbol, qty, side, client_order_id):
+        ref = self.last.get(symbol)        # last trade the engine had seen when it decided
         fills, left = fill_order(self.quotes, symbol, side, qty, self.now, self.latency, **self.fill_kw)
         sign = 1 if side == "buy" else -1
         for f in fills:
@@ -41,7 +51,7 @@ class SimBroker:
             self.positions[symbol] = self.positions.get(symbol, 0) + sign * q
             self.cash -= sign * q * f.price
             self.fills.append({"decided_at": self.now, "time": f.quote_at, "symbol": symbol, "side": side,
-                               "qty": q, "price": f.price, "client_order_id": client_order_id})
+                               "qty": q, "price": f.price, "ref_price": ref, "client_order_id": client_order_id})
         if left > 0:
             self.unfilled.append({"decided_at": self.now, "symbol": symbol, "side": side, "qty": left})
 
@@ -83,3 +93,68 @@ def replay(trades: pd.DataFrame, quotes: pd.DataFrame, decide, symbols: list[str
         t += step
     return {"equity": pd.Series(curve), "fills": pd.DataFrame(broker.fills),
             "unfilled": pd.DataFrame(broker.unfilled), "log": log}
+
+
+def probe_strategy(symbols: list[str], half: pd.Timestamp, weight: float = 0.05):
+    return lambda md: {s: (weight if md.close.index.max() < half else 0.0) for s in symbols}
+
+
+def cost_bps(fills: pd.DataFrame) -> pd.Series:
+    """Signed cost of each fill against the reference price, in bps (positive = paid more than the ref)."""
+    if fills.empty:
+        return pd.Series(dtype=float)
+    f = fills.dropna(subset=["ref_price"])
+    sign = f["side"].map({"buy": 1, "sell": -1})
+    return sign * (f["price"] / f["ref_price"] - 1) * 1e4
+
+
+def summarize(out: dict, cash: float) -> dict:
+    c = cost_bps(out["fills"])
+    q = lambda x: round(float(c.quantile(x)), 2) if len(c) else None
+    return {"fills": int(len(out["fills"])), "unfilled_orders": int(len(out["unfilled"])),
+            "pnl": round(float(out["equity"].iloc[-1] - cash), 2) if len(out["equity"]) else 0.0,
+            "cost_bps_median": q(0.5), "cost_bps_p90": q(0.9),
+            "orders_rejected": sum(1 for r in out["log"] if r.get("event") in ("no_orders", "order_skipped"))}
+
+
+def main(argv=None) -> int:
+    from factory import config
+    from factory.stream import history
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--day", required=True)
+    ap.add_argument("--symbols", default="AAPL,MSFT,NVDA")
+    ap.add_argument("--start", default="10:00")
+    ap.add_argument("--end", default="11:00")
+    ap.add_argument("--seconds", type=int, default=60)
+    ap.add_argument("--latency-ms", type=int, default=1000)
+    ap.add_argument("--feed", default="iex")          # what the live streamer sees
+    ap.add_argument("--strategy", choices=["probe", "champion"], default="probe")
+    ap.add_argument("--out")
+    a = ap.parse_args(argv)
+    symbols = a.symbols.split(",")
+    t0, t1 = (pd.Timestamp(f"{a.day} {t}", tz=history.NY) for t in (a.start, a.end))
+    try:
+        trades = history.fetch("trades", symbols, t0, t1, a.feed)
+        quotes = history.fetch("quotes", symbols, t0, t1, a.feed)
+    except Exception as e:  # no data means no result, never a guess
+        print(f"::error title=stream replay::{type(e).__name__}: {str(e)[:300]}")
+        return 1
+    if a.strategy == "champion":
+        from factory.stream.app import load_strategy
+        _, decide = load_strategy()
+    else:
+        decide = probe_strategy(symbols, t0 + (t1 - t0) / 2)
+    limits = {**config.risk_limits(), "trading_enabled": True}   # simulated broker only
+    out = replay(trades, quotes, decide, symbols, a.seconds, limits, limits["stream"],
+                 latency=dt.timedelta(milliseconds=a.latency_ms))
+    res = {"day": a.day, "window": f"{a.start}-{a.end}", "feed": a.feed, "symbols": symbols,
+           "trades": len(trades), "quotes": len(quotes), **summarize(out, 100_000.0)}
+    text = json.dumps(res, default=str)
+    print(f"::notice title=stream replay {a.day}::{text}")
+    if a.out:
+        open(a.out, "w").write(text)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
