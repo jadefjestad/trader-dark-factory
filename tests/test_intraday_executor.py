@@ -175,3 +175,19 @@ def test_next_decision_waits_for_the_bar_to_complete():
     assert intraday.next_decision(t, 15, 45) == pd.Timestamp(f"{DAY} 10:15:45", tz="America/New_York")
     t = pd.Timestamp(f"{DAY} 10:15:20", tz="America/New_York")
     assert intraday.next_decision(t, 15, 45) == pd.Timestamp(f"{DAY} 10:15:45", tz="America/New_York")
+
+
+@pytest.mark.parametrize("fund", [f for f in funds.load() if not f.benchmark and funds.timeframe_of(f) != "1Day"],
+                         ids=lambda f: f"fund{f.number}")
+def test_every_assigned_intraday_strategy_runs_through_the_intraday_executor(monkeypatch, tmp_path, fund):
+    md = _md()
+    for hhmm in ("10:00", "11:15", "13:00", "15:45"):
+        broker = FakeBroker(md)
+        _patch(monkeypatch, broker, md)
+        assert intraday.run_fund(fund, ("k", "s"), True, tmp_path, {}, _now(hhmm)) == 0
+
+
+def test_daily_executor_skips_intraday_funds():
+    from factory import execute
+    daily = [f.number for f in funds.load() if not f.benchmark and funds.timeframe_of(f, execute.CHAMPION) == "1Day"]
+    assert set(daily) | {f.number for f in intraday.intraday_funds()} == {f.number for f in funds.load() if not f.benchmark}
