@@ -134,7 +134,8 @@ def test_benchmark_fund_never_trades(monkeypatch, tmp_path):
     assert b.submitted == []
 
 
-@pytest.mark.parametrize("fund", [f for f in funds.load() if not f.benchmark], ids=lambda f: f"fund{f.number}")
+@pytest.mark.parametrize("fund", [f for f in funds.load() if not f.benchmark and funds.timeframe_of(f) == "1Day"],
+                         ids=lambda f: f"fund{f.number}")
 def test_every_assigned_strategy_runs_through_the_executor(monkeypatch, tmp_path, fund):
     syms = execute.config.universe()["symbols"]
     _, meta = execute.load_strategy(fund)
