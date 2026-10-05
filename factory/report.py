@@ -83,7 +83,7 @@ def execution_quality(ledger: Path, broker, days: int = 7) -> list[str]:
             f"vs {assumed:.0f} bps assumed per side{flag}"]
 
 
-def build(ledger: Path, broker=None, usage_table: str = "", hours: int = 24) -> str:
+def build(ledger: Path, broker=None, usage_table: str = "", hours: int = 24, fund_brokers: dict | None = None) -> str:
     now = dt.datetime.now(dt.timezone.utc)
     since = now - dt.timedelta(hours=hours)
     champ = json.loads((ROOT / "state" / "champion.json").read_text())
@@ -99,6 +99,11 @@ def build(ledger: Path, broker=None, usage_table: str = "", hours: int = 24) -> 
         except Exception as e:  # report must still go out
             lines.append(f"- could not read account: {type(e).__name__}: {e}")
 
+    if fund_brokers is not None:
+        from factory import readme
+        lines += [""] + ["## Funds" if x == "### Fund leaderboard" else x
+                         for x in readme.fund_section(readme.executions(ledger), fund_brokers)]
+
     if broker is not None:
         lines += ["", "## Execution quality (fills vs decision prices)"]
         try:
@@ -108,7 +113,8 @@ def build(ledger: Path, broker=None, usage_table: str = "", hours: int = 24) -> 
 
     ex = _since(_jsonl(ledger / "executions" / "index.jsonl"), "started_at", since)
     lines += ["", f"## Execution runs (last {hours}h): {len(ex)}"]
-    lines += [f"- {r.get('started_at', '')[:16]} {r.get('status')}" for r in ex[-10:]] or ["- none"]
+    lines += [f"- {r.get('started_at', '')[:16]} {'fund ' + str(r['fund']) + ': ' if r.get('fund') else ''}{r.get('status')}"
+              for r in ex[-20:]] or ["- none"]
 
     exp = _since(_jsonl(ledger / "experiments" / "index.jsonl"), "evaluated_at", since)
     lines += ["", f"## Experiments evaluated (last {hours}h): {len(exp)}"]
@@ -131,13 +137,21 @@ def main(argv=None) -> int:
     ap.add_argument("--usage-issue", type=int, help="read usage events from this GitHub issue (e.g. 2)")
     ap.add_argument("--no-broker", action="store_true")
     a = ap.parse_args(argv)
-    broker = None
+    broker, brokers = None, None
     if not a.no_broker:
+        from factory import funds
         from factory.broker import PaperBroker
         try:
             broker = PaperBroker()
         except Exception as e:
             print(f"broker unavailable: {e}", file=sys.stderr)
+        brokers = {}
+        for n in range(1, funds.MAX_FUNDS + 1):
+            if creds := funds.credentials(n):
+                try:
+                    brokers[n] = PaperBroker(*creds)
+                except Exception as e:
+                    print(f"fund {n} broker unavailable: {e}", file=sys.stderr)
     usage = Path(a.usage_table).read_text() if a.usage_table and Path(a.usage_table).exists() else ""
     if not usage and a.usage_issue:
         import yaml
@@ -146,7 +160,7 @@ def main(argv=None) -> int:
             usage = u.report(u._read_issue(a.usage_issue), yaml.safe_load(u.POLICY.read_text()))
         except Exception as e:
             usage = f"usage log unavailable: {e}"
-    text = build(Path(a.ledger), broker, usage)
+    text = build(Path(a.ledger), broker, usage, fund_brokers=brokers)
     Path(a.out).write_text(text)
     print(text)
     return 0

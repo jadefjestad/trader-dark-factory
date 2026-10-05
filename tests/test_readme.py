@@ -66,3 +66,39 @@ def test_main_appends_a_block_to_a_file_without_markers(tmp_path):
     readme.main(["--ledger", str(tmp_path), "--readme", str(out), "--no-broker"])
     text = out.read_text()
     assert text.startswith("# Results page") and readme.RESULTS_START in text and text.rstrip().endswith(readme.RESULTS_END)
+
+
+def test_fund_leaderboard_ranks_funded_accounts_and_counts_trades(tmp_path):
+    class Up(Broker):
+        def account(self):
+            return {"equity": "105000", "last_equity": "104000", "cash": "0"}
+
+    class Down(Broker):
+        def portfolio_history(self):
+            return {"equity": [110000, 101000]}
+
+    class Broken:
+        def account(self):
+            raise RuntimeError("401")
+
+    led = _ledger(tmp_path)
+    (led / "executions" / "r2.json").write_text(json.dumps({
+        "started_at": "2026-10-06T15:00:00+00:00", "fund": 4, "status": "submitted 1 orders", "submitted": [{"symbol": "KO"}]}))
+    import pandas as pd
+    closes = pd.Series([400.0, 404.0, 412.0, 416.0], index=pd.to_datetime(["2026-10-01", "2026-10-02", "2026-10-05", "2026-10-06"]))
+    readme_prices = lambda sym, start: closes
+    orig = readme.fund_section
+    readme.fund_section = lambda runs, brokers: orig(runs, brokers, readme_prices)
+    try:
+        text = readme.section(led, Broker(), fund_brokers={1: Down(), 4: Up(), 6: Broken()})
+    finally:
+        readme.fund_section = orig
+    rows = [line for line in text.splitlines() if line.startswith("| ") and "Darth" not in line[:4]]
+    board = [r for r in rows if r.split("|")[1].strip().isdigit()]
+    # best total first (SPY from the 2026-10-02 close: 404 -> 416 is +2.97%), then broken, then unfunded
+    assert [r.split("|")[1].strip() for r in board][:4] == ["4", "10", "1", "6"]
+    assert "| 10 | 🕷️ Spyder-man | SPY buy and hold since 2026-10-02 (benchmark) | $102,970 | +990 (+0.97%) | +2,970 (+2.97%) | n/a |" in board[1]
+    assert "| 4 | 🛹 Marty McBuy |" in board[0] and "$105,000 | +1,000 (+0.96%) | +5,000 (+5.00%) | 1 |" in board[0]
+    assert "(champion)" in board[2] and "-9,000 (-8.18%) | 2 |" in board[2]
+    assert "unavailable (RuntimeError)" in board[3]
+    assert sum("not funded yet" in r for r in board) == 6

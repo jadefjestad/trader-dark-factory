@@ -8,6 +8,18 @@ Repo → Settings → Secrets and variables → Actions → **New repository sec
 | `ALPACA_API_KEY_ID` | your **paper** API key id |
 | `ALPACA_API_SECRET_KEY` | your **paper** API secret |
 
+### Paper funds 2-9
+Each fund in `state/funds.yaml` is its own Alpaca **paper** account. The pair above is fund 1. For fund N
+(2 to 9) create a separate paper account, generate its paper keys and add:
+
+| Name | Value |
+|---|---|
+| `ALPACA_FUND_<N>_KEY_ID` | that account's **paper** key id, e.g. `ALPACA_FUND_2_KEY_ID` |
+| `ALPACA_FUND_<N>_SECRET_KEY` | that account's **paper** secret, e.g. `ALPACA_FUND_2_SECRET_KEY` |
+
+Add them in any order, whenever you like. A fund without both secrets is skipped; two funds with the
+same account are refused. `ALPACA_FUND_1_*` is optional and overrides the pair above for fund 1.
+
 Never put keys in files. The executor refuses accounts whose number does not start with `PA`.
 
 Optional variable (same page, **Variables** tab): `AUTO_PROMOTE` = `true` lets a PR that passes the

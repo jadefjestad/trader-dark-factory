@@ -22,7 +22,7 @@ attempt_append() {
     if [ -e "$dest" ]; then echo "ledger already has $subdir/$(basename "$f"); refusing to overwrite" >&2; return 2; fi
     cp "$f" "$dest"
     if [[ "$f" == *.json ]]; then
-      python3 -c "import json,sys; r=json.load(open(sys.argv[1])); print(json.dumps({k:r.get(k) for k in ('experiment_id','evaluated_at','passed_gates','beats_champion','promote','status','started_at','kind','commit','changed_at','reason')}|({'strategy':r['strategy']['name']} if 'strategy' in r else {})))" "$f" >> "$work/$subdir/index.jsonl"
+      python3 -c "import json,sys; r=json.load(open(sys.argv[1])); print(json.dumps({k:r.get(k) for k in ('experiment_id','evaluated_at','passed_gates','beats_champion','promote','status','started_at','kind','commit','changed_at','reason','fund')}|({'strategy':r['strategy']['name']} if 'strategy' in r else {})))" "$f" >> "$work/$subdir/index.jsonl"
     fi
   done
   git -C "$work" config user.name "github-actions[bot]"
