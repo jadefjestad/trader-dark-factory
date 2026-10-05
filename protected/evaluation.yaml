@@ -63,6 +63,12 @@ gates:
     timeframes: ["15Min", "5Min"]
     multiple: 2.0               # every per-side cost doubled
     min_validation_sharpe: 0.0
+  latency_robustness:           # an intraday edge must survive filling a bar late (issue #76): cron and
+    timeframes: ["15Min", "5Min"]   # container restarts can delay a decision by minutes
+    delay_bars: 1
+    min_validation_sharpe: 0.0
+  order_budget:                 # peak orders per bar and per day within risk_limits.yaml stream: limits (#76)
+    timeframes: ["15Min", "5Min"]
 
 promotion:
   # Score = mean of validation and holdout Sharpe, both net of costs. Used internally, never published,

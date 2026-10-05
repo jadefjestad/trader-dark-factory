@@ -119,6 +119,23 @@ def cost_stress_sharpe(w, md, cfg, pers) -> float:
     return metrics.summarize(res, *pers["validation"]).get("sharpe", 0.0)
 
 
+def latency_sharpe(w, md, cfg, pers) -> float:
+    """Validation Sharpe when every decision fills `delay_bars` later than modelled (issue #76)."""
+    lr = cfg["gates"]["latency_robustness"]
+    res = backtest_weights(w.shift(lr["delay_bars"]), md, cfg)
+    return metrics.summarize(res, *pers["validation"]).get("sharpe", 0.0)
+
+
+def order_budget(res, stream: dict) -> tuple[bool, str]:
+    """Orders at one bar open all go out in the same minute; check them and each day against the stream limits."""
+    peak = int(res.fills.max()) if len(res.fills) else 0
+    daily = res.fills.groupby(res.fills.index.date).sum()
+    day_peak = int(daily.max()) if len(daily) else 0
+    ok = peak <= stream["max_orders_per_minute"] and day_peak <= stream["max_orders_per_day"]
+    return ok, (f"peak {peak} orders in one bar (limit {stream['max_orders_per_minute']}/min), "
+                f"peak {day_peak} a day (limit {stream['max_orders_per_day']})")
+
+
 def period_metrics(res, pers):
     return {name: metrics.summarize(res, a, b) for name, (a, b) in pers.items()}
 
@@ -223,6 +240,14 @@ def evaluate(ref: str, source: str = "synthetic", experiment_id: str | None = No
     if cs and tf in cs["timeframes"]:
         stressed = cost_stress_sharpe(w, md, cfg, pers)
         gate("cost_stress", stressed >= cs["min_validation_sharpe"], f"{cs['multiple']}x costs: validation Sharpe {round(stressed, 3)}")
+    lr = gates.get("latency_robustness")
+    if lr and tf in lr["timeframes"]:
+        late = latency_sharpe(w, md, cfg, pers)
+        gate("latency_robustness", late >= lr["min_validation_sharpe"],
+             f"fills {lr['delay_bars']} bar late: validation Sharpe {round(late, 3)}")
+    ob = gates.get("order_budget")
+    if ob and tf in ob["timeframes"]:
+        gate("order_budget", *order_budget(res, limits["stream"]))
 
     passed = all(x["passed"] for x in g if not x.get("promotion_only"))
     executable = all(x["passed"] for x in g if x.get("promotion_only"))
