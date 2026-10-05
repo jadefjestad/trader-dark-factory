@@ -1,0 +1,9 @@
+{
+  "started_at": "2026-10-05T02:43:05+00:00",
+  "fund": 1,
+  "fund_name": "\u2b1b The Empire Strikes Black",
+  "dry_run": true,
+  "status": "NO ORDERS: BrokerError: GET /v2/account -> 401: {\"message\": \"unauthorized.\"}\n",
+  "orders": [],
+  "submitted": []
+}

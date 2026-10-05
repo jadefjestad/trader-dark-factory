@@ -1,0 +1,15 @@
+{
+  "started_at": "2026-10-05T02:43:07+00:00",
+  "fund": 5,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "dry_run": true,
+  "status": "NO ORDERS: DataError: alpaca bars 401: <html>\r\n<head><title>401 Authorization Required</title></head>\r\n<body>\r\n<center><h1>401 Authorization Required</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "blend_ew_vol_momentum",
+    "ref": "strategies/candidates/blend_ew_vol_momentum.py",
+    "experiment_id": "pr22-8a0a8cc-blend_ew_vol_momentum-r37183047587-1"
+  }
+}

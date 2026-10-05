@@ -1,0 +1,15 @@
+{
+  "started_at": "2026-10-05T02:43:06+00:00",
+  "fund": 3,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "dry_run": true,
+  "status": "NO ORDERS: DataError: alpaca bars 401: <html>\r\n<head><title>401 Authorization Required</title></head>\r\n<body>\r\n<center><h1>401 Authorization Required</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "earnings_announcement_premium",
+    "ref": "strategies/candidates/earnings_announcement_premium.py",
+    "experiment_id": "pr87-6530167-earnings_announcement_premium-r37243169062-1"
+  }
+}

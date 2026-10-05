@@ -1,0 +1,15 @@
+{
+  "started_at": "2026-10-05T02:43:07+00:00",
+  "fund": 4,
+  "fund_name": "\ud83d\udef9 Marty McBuy",
+  "dry_run": true,
+  "status": "NO ORDERS: DataError: alpaca bars 401: <html>\r\n<head><title>401 Authorization Required</title></head>\r\n<body>\r\n<center><h1>401 Authorization Required</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "vol_target_momentum_10",
+    "ref": "strategies/candidates/vol_target_momentum_10.py",
+    "experiment_id": "pr19-6b2e162-vol_target_momentum_10-r37182506562-1"
+  }
+}
