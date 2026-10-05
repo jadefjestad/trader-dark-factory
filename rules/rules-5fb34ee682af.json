@@ -1,0 +1,41 @@
+{
+  "kind": "rule_change",
+  "commit": "5fb34ee682af7baac703333bff93d4e31b247ba5",
+  "previous": "013e0dafb9bbe019d66a06cdfd207093387109c3",
+  "changed_at": "2026-10-05T04:09:08+00:00",
+  "reason": "issue #76 gates; they only add failure modes for 15Min/5Min candidates, no threshold loosened.",
+  "files": [
+    {
+      "file": "protected/evaluation.yaml",
+      "change": "M",
+      "values": [
+        {
+          "key": "gates.latency_robustness.delay_bars",
+          "before": null,
+          "after": 1
+        },
+        {
+          "key": "gates.latency_robustness.min_validation_sharpe",
+          "before": null,
+          "after": 0.0
+        },
+        {
+          "key": "gates.latency_robustness.timeframes",
+          "before": null,
+          "after": [
+            "15Min",
+            "5Min"
+          ]
+        },
+        {
+          "key": "gates.order_budget.timeframes",
+          "before": null,
+          "after": [
+            "15Min",
+            "5Min"
+          ]
+        }
+      ]
+    }
+  ]
+}
