@@ -237,6 +237,7 @@ def main(argv=None) -> int:
         all_funds, err = [], f"{type(e).__name__}: {e}"
     else:
         err = None if all_funds else f"no fund numbered {a.fund}"
+    all_funds = [f for f in all_funds if not f.benchmark]   # benchmark funds are tracked, never traded
     keyed = [(f, funds.credentials(f.number)) for f in all_funds]
     if err is None and not any(c for _, c in keyed):
         err = "no fund has Alpaca paper keys"

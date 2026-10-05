@@ -97,3 +97,11 @@ funds:
       code_sha256: null
       experiment_id: "20261004T230755-equal_weight_buy_hold"
       params: {"rebalance_every": 21}
+  10:
+    name: "Spyder-man"
+    emoji: "🕷️"
+    # the S&P 500 benchmark: $100,000 in SPY at the close before the funds' first trading day, held. No account, no orders.
+    benchmark:
+      symbol: "SPY"
+      start: "2026-10-02"
+      capital: 100000

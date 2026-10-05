@@ -10,15 +10,16 @@ from factory.data import synthetic
 from tests.test_risk_and_execute import FakeBroker
 
 NAMES = ["The Empire Strikes Black", "Darth Trader", "Back to the Futures", "Marty McBuy", "Wizard of Odds",
-         "Jon Dough", "Live Long and Profit", "Game of Loans", "Frodough Baggins"]
+         "Jon Dough", "Live Long and Profit", "Game of Loans", "Frodough Baggins", "Spyder-man"]
 
 
 def test_config_has_the_nine_funds_and_valid_strategies():
     fs = funds.load()
-    assert [f.number for f in fs] == list(range(1, 10))
+    assert [f.number for f in fs] == list(range(1, 11))
     assert [f.name for f in fs] == NAMES
     assert all(f.emoji for f in fs)
-    for f in fs:
+    assert fs[9].benchmark["symbol"] == "SPY" and fs[9].strategy is None
+    for f in fs[:9]:
         s = funds.strategy(f)   # raises on a missing file or hash mismatch
         assert s["name"] and s["ref"]
 
@@ -35,7 +36,7 @@ def test_credentials_fall_back_to_the_original_account_for_fund_1_only():
 
 def test_bad_fund_numbers_are_rejected(tmp_path):
     p = tmp_path / "funds.yaml"
-    p.write_text("funds:\n  10:\n    name: x\n    emoji: y\n    strategy: champion\n")
+    p.write_text("funds:\n  11:\n    name: x\n    emoji: y\n    strategy: champion\n")
     with pytest.raises(funds.FundError):
         funds.load(p)
 
@@ -48,7 +49,7 @@ def _fresh(syms, bars=400):
 
 def _setup(monkeypatch, tmp_path, keyed: dict, assignments: dict | None = None):
     """keyed: {fund number: FakeBroker}. Only those funds get keys."""
-    for n in range(1, 10):
+    for n in range(1, 11):
         for part in ("KEY_ID", "SECRET_KEY"):
             monkeypatch.delenv(f"ALPACA_FUND_{n}_{part}", raising=False)
     monkeypatch.delenv("ALPACA_API_KEY_ID", raising=False)
@@ -105,7 +106,17 @@ def test_no_keys_anywhere_fails_visibly(monkeypatch, tmp_path):
     assert execute.main(["--out", str(tmp_path / "out")]) == 2
 
 
-@pytest.mark.parametrize("fund", funds.load(), ids=lambda f: f"fund{f.number}")
+def test_benchmark_fund_never_trades(monkeypatch, tmp_path):
+    syms = execute.config.universe()["symbols"]
+    md = _fresh(syms)
+    monkeypatch.setattr(execute, "load_alpaca", lambda *a, **k: md)
+    b = _broker(md)
+    _setup(monkeypatch, tmp_path, {10: b})                 # even with keys, fund 10 is not run
+    assert execute.main(["--out", str(tmp_path / "out")]) == 2   # no tradable fund has keys
+    assert b.submitted == []
+
+
+@pytest.mark.parametrize("fund", [f for f in funds.load() if not f.benchmark], ids=lambda f: f"fund{f.number}")
 def test_every_assigned_strategy_runs_through_the_executor(monkeypatch, tmp_path, fund):
     syms = execute.config.universe()["symbols"]
     _, meta = execute.load_strategy(fund)
