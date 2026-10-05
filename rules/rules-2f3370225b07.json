@@ -1,0 +1,13 @@
+{
+  "kind": "rule_change",
+  "commit": "2f3370225b07855efc2aa9f239c630a58634f30e",
+  "previous": "7d36aef11c3ec575a892ce8f758b3b0051664aef",
+  "changed_at": "2026-10-05T12:08:51+00:00",
+  "reason": "new manual stream-replay workflow reads history with paper data keys, never orders; no limit changes.",
+  "files": [
+    {
+      "file": ".github/workflows/stream-replay.yml",
+      "change": "A"
+    }
+  ]
+}
