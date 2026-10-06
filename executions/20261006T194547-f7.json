@@ -1,0 +1,77 @@
+{
+  "started_at": "2026-10-06T19:45:46+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 25,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 59,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610061545-AVGO-sell",
+      "id": "2232c060-111a-4f51-b994-0308754af068",
+      "symbol": "AVGO",
+      "qty": 25,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610061545-MSFT-sell",
+      "id": "b554c4cd-8057-4700-aa00-8968182fcda1",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610061545-V-sell",
+      "id": "e9843366-8971-463c-b1a2-3e8e94ce7429",
+      "symbol": "V",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610061545-XOM-sell",
+      "id": "b28e49b1-56c0-45a8-a43d-d784d2813036",
+      "symbol": "XOM",
+      "qty": 59,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0002,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99984.15,
+  "targets": {},
+  "prices": {
+    "MSFT": 531.035,
+    "AVGO": 377.71,
+    "V": 370.555,
+    "XOM": 164.815
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-06T19:45:47+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 25,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 82,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 47,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 91,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610061545-AMZN-sell",
+      "id": "eccd6514-11de-4ea6-aa3b-bc2dbd1f2e32",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610061545-AVGO-sell",
+      "id": "897fef74-868a-4490-b5f2-4f5e58ed78b0",
+      "symbol": "AVGO",
+      "qty": 25,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610061545-CSCO-sell",
+      "id": "d52723ee-c72a-49c2-b529-f2079f35805d",
+      "symbol": "CSCO",
+      "qty": 82,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610061545-CVX-sell",
+      "id": "68c39e5d-e933-4422-933b-4f8a123534f7",
+      "symbol": "CVX",
+      "qty": 47,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610061545-WMT-sell",
+      "id": "f60c4bc7-0046-414c-9c8d-18b211947067",
+      "symbol": "WMT",
+      "qty": 91,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99997.68,
+  "targets": {},
+  "prices": {
+    "AMZN": 256.5,
+    "AVGO": 377.71,
+    "CVX": 208.015,
+    "WMT": 107.395,
+    "CSCO": 118.22
+  }
+}

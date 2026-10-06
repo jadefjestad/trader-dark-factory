@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-06T19:00:55+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 25,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 83,
+      "side": "buy"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 47,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 59,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610061445-AMZN-buy",
+      "id": "3f956cb8-004d-42b9-915d-c526370713ac",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610061445-AVGO-buy",
+      "id": "c42923ef-f900-444a-aecb-5de3d51737ce",
+      "symbol": "AVGO",
+      "qty": 25,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610061445-CSCO-buy",
+      "id": "9287e351-45c3-428e-b17c-2de6a117a574",
+      "symbol": "CSCO",
+      "qty": 83,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610061445-CVX-buy",
+      "id": "e68aca06-3949-4f58-9db7-25858efb7117",
+      "symbol": "CVX",
+      "qty": 47,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610061445-XOM-buy",
+      "id": "1ec1abf7-3835-4111-83a4-759144c38d92",
+      "symbol": "XOM",
+      "qty": 59,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0002,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-06 14:45:00-04:00",
+  "hold_day": false,
+  "equity": 99981.93,
+  "targets": {
+    "AMZN": 0.1,
+    "AVGO": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "AMZN": 256.05,
+    "AVGO": 379.01,
+    "XOM": 165.15,
+    "CVX": 208.375,
+    "CSCO": 117.49
+  }
+}

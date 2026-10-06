@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-06T19:00:52+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "symbol": "KO",
+      "qty": 112,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 77,
+      "side": "buy"
+    },
+    {
+      "symbol": "PG",
+      "qty": 65,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610061445-HD-buy",
+      "id": "2621a8f8-42d0-476b-8ee1-a0fcbd74ac87",
+      "symbol": "HD",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610061445-KO-buy",
+      "id": "b65d458e-2047-4e8d-821f-0209106b3d88",
+      "symbol": "KO",
+      "qty": 112,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610061445-LLY-buy",
+      "id": "4b983f98-b8b5-44cc-8253-3a386c34cd65",
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610061445-PEP-buy",
+      "id": "79f3ca8b-0d50-4bf6-a5b3-9d16192d32f3",
+      "symbol": "PEP",
+      "qty": 77,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610061445-PG-buy",
+      "id": "3d7ed001-f95a-4ae1-9bb7-8e624025fc37",
+      "symbol": "PG",
+      "qty": 65,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-06 14:45:00-04:00",
+  "hold_day": true,
+  "equity": 100008.95,
+  "targets": {
+    "LLY": 0.1,
+    "PG": 0.1,
+    "KO": 0.1,
+    "PEP": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "LLY": 1158.85,
+    "PG": 148.96,
+    "KO": 86.825,
+    "PEP": 125.83,
+    "HD": 285.83
+  }
+}

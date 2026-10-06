@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-06T19:45:45+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 112,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 77,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 65,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610061545-HD-sell",
+      "id": "eade12d2-20a7-43af-bc1b-f60bb58e6acc",
+      "symbol": "HD",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610061545-KO-sell",
+      "id": "854dcda0-01c6-4c4b-81f1-ff12b1a91e29",
+      "symbol": "KO",
+      "qty": 112,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610061545-LLY-sell",
+      "id": "b8fad771-eb0f-4271-9c44-376163b1a27c",
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610061545-PEP-sell",
+      "id": "a8f595f0-32a7-4e3e-b371-da479d380fe9",
+      "symbol": "PEP",
+      "qty": 77,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610061545-PG-sell",
+      "id": "292c43ba-b0e2-411e-a92b-bd6833c8d67b",
+      "symbol": "PG",
+      "qty": 65,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0008,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99931.42,
+  "targets": {},
+  "prices": {
+    "LLY": 1159.3,
+    "PG": 148.99,
+    "KO": 86.365,
+    "PEP": 125.52,
+    "HD": 285.86
+  }
+}
