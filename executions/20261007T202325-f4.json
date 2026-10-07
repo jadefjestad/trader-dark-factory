@@ -1,0 +1,10 @@
+{
+  "started_at": "2026-10-07T20:23:25+00:00",
+  "fund": 4,
+  "fund_name": "\ud83d\udef9 Marty McBuy",
+  "dry_run": false,
+  "status": "skipped: market closed",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0
+}

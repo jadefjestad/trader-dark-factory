@@ -1,0 +1,10 @@
+{
+  "started_at": "2026-10-07T20:23:25+00:00",
+  "fund": 9,
+  "fund_name": "\ud83d\udc51 Game of Loans",
+  "dry_run": false,
+  "status": "skipped: market closed",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0006
+}
