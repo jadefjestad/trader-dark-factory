@@ -23,7 +23,7 @@ class LowCorrelation(Strategy):
         rets = c.pct_change()
         mkt = rets.mean(axis=1)
         L = int(p["corr_window"])
-        score = rets.rolling(L, min_periods=L).cov(mkt).div(mkt.rolling(L, min_periods=L).var(), axis=0)
+        score = rets.rolling(L, min_periods=L).corr(mkt)
         rank = score.rank(axis=1, ascending=True, method="first")
         n = int(p["top_n"])
         w = equal_weight((rank <= n) & score.notna(), slots=n)
