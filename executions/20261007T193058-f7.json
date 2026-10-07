@@ -1,0 +1,81 @@
+{
+  "started_at": "2026-10-07T19:30:57+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 83,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "buy"
+    },
+    {
+      "symbol": "V",
+      "qty": 26,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610071515-CSCO-buy",
+      "id": "8e19cbdd-116f-4297-b7ac-bbd637f9cd27",
+      "symbol": "CSCO",
+      "qty": 83,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610071515-LLY-buy",
+      "id": "b7a6de00-184e-40b6-a9f9-4d1ea861c088",
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610071515-MRK-buy",
+      "id": "5a890b83-2f1d-4a83-9dea-d0d7b220ddf2",
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610071515-V-buy",
+      "id": "6c2126c8-3d75-4382-b0d8-00e27f587e4f",
+      "symbol": "V",
+      "qty": 26,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0002,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-07 15:15:00-04:00",
+  "hold_day": false,
+  "equity": 99982.35,
+  "targets": {
+    "V": 0.1,
+    "LLY": 0.1,
+    "MRK": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "V": 373.23,
+    "LLY": 1187.57,
+    "MRK": 142.6,
+    "CSCO": 117.8
+  }
+}

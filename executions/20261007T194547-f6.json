@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-07T19:45:46+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 113,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 78,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 90,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610071545-HD-sell",
+      "id": "9aec5f1f-43e6-4158-bc7c-a62a3737347f",
+      "symbol": "HD",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610071545-KO-sell",
+      "id": "7c18ff0a-20de-42af-b9db-3516078571ed",
+      "symbol": "KO",
+      "qty": 113,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610071545-MRK-sell",
+      "id": "72fd1e26-707c-4602-86e0-4169f251399a",
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610071545-PEP-sell",
+      "id": "638c3970-bac7-4017-a05a-9ee5be4f703f",
+      "symbol": "PEP",
+      "qty": 78,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610071545-WMT-sell",
+      "id": "7803648f-6bb2-4176-98d2-6553a3111405",
+      "symbol": "WMT",
+      "qty": 90,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0013,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99882.44,
+  "targets": {},
+  "prices": {
+    "MRK": 142.36,
+    "KO": 85.88,
+    "PEP": 123.72,
+    "WMT": 108.045,
+    "HD": 285.56
+  }
+}

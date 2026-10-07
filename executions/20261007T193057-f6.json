@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-07T19:30:55+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "symbol": "KO",
+      "qty": 113,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 78,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 90,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610071515-HD-buy",
+      "id": "fb93c33d-f238-4ae7-87e8-53af3a3800fb",
+      "symbol": "HD",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610071515-KO-buy",
+      "id": "8f309137-55b5-4f0f-9022-d6d9250c8e7f",
+      "symbol": "KO",
+      "qty": 113,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610071515-MRK-buy",
+      "id": "3c326922-f6ff-45a7-8ae6-972315c48eb7",
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610071515-PEP-buy",
+      "id": "c4aca0c9-44f6-4ad4-91bd-5e0370c34b30",
+      "symbol": "PEP",
+      "qty": 78,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610071515-WMT-buy",
+      "id": "901664b4-3b1c-4a14-b88a-9f15c88e949b",
+      "symbol": "WMT",
+      "qty": 90,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0008,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-07 15:15:00-04:00",
+  "hold_day": true,
+  "equity": 99926.56,
+  "targets": {
+    "MRK": 0.1,
+    "KO": 0.1,
+    "PEP": 0.1,
+    "WMT": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "MRK": 142.6,
+    "KO": 85.915,
+    "PEP": 123.97,
+    "WMT": 108.095,
+    "HD": 285.49
+  }
+}

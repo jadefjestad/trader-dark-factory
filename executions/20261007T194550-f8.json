@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-07T19:45:49+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610071545-AAPL-sell",
+      "id": "e521dad2-2d45-4179-ac30-cf552e04edd5",
+      "symbol": "AAPL",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610071545-AMZN-sell",
+      "id": "94bb26f4-07ad-46ec-a670-fd8e5fc2b0d5",
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610071545-AVGO-sell",
+      "id": "e4dc5b4e-118d-4cc6-8253-e7a2b1363c83",
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610071545-GOOGL-sell",
+      "id": "eccde8ac-68db-4a05-bb74-d3b008e90263",
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610071545-JPM-sell",
+      "id": "cbc8e6dc-7b4f-420b-ae18-7f8a52f46c06",
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 100057.28,
+  "targets": {},
+  "prices": {
+    "AAPL": 336.12,
+    "AMZN": 259.75,
+    "GOOGL": 350.48,
+    "AVGO": 375.05,
+    "JPM": 329.565
+  }
+}

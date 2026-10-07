@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-07T19:30:58+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610071515-AAPL-buy",
+      "id": "6ef82e2e-8b61-49d1-8251-566ff771202a",
+      "symbol": "AAPL",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610071515-AMZN-buy",
+      "id": "f36f8414-0b14-4d3b-ac4c-f4a566135551",
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610071515-AVGO-buy",
+      "id": "3d45a3b8-0bf8-409e-a228-95f3a985d58c",
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610071515-GOOGL-buy",
+      "id": "a247402c-3d98-494d-8a94-9c5f10ac7f32",
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610071515-JPM-buy",
+      "id": "f96741c1-2449-4994-a372-146e87155893",
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0001,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-07 15:15:00-04:00",
+  "hold_day": false,
+  "equity": 99992.87,
+  "targets": {
+    "AAPL": 0.1,
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "AVGO": 0.1,
+    "JPM": 0.1
+  },
+  "prices": {
+    "AAPL": 336.385,
+    "AMZN": 259.355,
+    "GOOGL": 349.46,
+    "AVGO": 374.025,
+    "JPM": 329.46
+  }
+}

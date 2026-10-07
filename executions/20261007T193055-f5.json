@@ -1,0 +1,81 @@
+{
+  "started_at": "2026-10-07T19:30:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 47,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 79,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610071515-CVX-buy",
+      "id": "8cdcfd9c-44e0-4b7d-b5fb-b1f61572296b",
+      "symbol": "CVX",
+      "qty": 47,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610071515-LLY-buy",
+      "id": "7485896f-d39f-4c0b-a42b-7fe3193a7350",
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610071515-PEP-buy",
+      "id": "96974f51-1454-42f4-beb1-09101bee469b",
+      "symbol": "PEP",
+      "qty": 79,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610071515-UNH-buy",
+      "id": "ec33bfd9-1694-42aa-a423-9e6132ad39c3",
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0007,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-07 15:15:00-04:00",
+  "hold_day": false,
+  "equity": 99997.18,
+  "targets": {
+    "UNH": 0.1,
+    "LLY": 0.1,
+    "CVX": 0.1,
+    "PEP": 0.1
+  },
+  "prices": {
+    "UNH": 376.15,
+    "LLY": 1187.57,
+    "CVX": 205.75,
+    "PEP": 123.97
+  }
+}

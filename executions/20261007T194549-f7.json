@@ -1,0 +1,77 @@
+{
+  "started_at": "2026-10-07T19:45:47+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 83,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 26,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610071545-CSCO-sell",
+      "id": "99708c59-e8b2-4f47-9b07-d0c56473ba74",
+      "symbol": "CSCO",
+      "qty": 83,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610071545-LLY-sell",
+      "id": "b0d8e097-48e7-48b3-8d44-d89276783580",
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610071545-MRK-sell",
+      "id": "e239b1ea-fff6-4a75-b42d-389ec855313d",
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610071545-V-sell",
+      "id": "8f48375a-4048-4250-95ba-28ef56c4b9e7",
+      "symbol": "V",
+      "qty": 26,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0008,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99920.89,
+  "targets": {},
+  "prices": {
+    "V": 372.59,
+    "LLY": 1186.44,
+    "MRK": 142.36,
+    "CSCO": 117.76
+  }
+}

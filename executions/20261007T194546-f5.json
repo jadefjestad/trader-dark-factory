@@ -1,0 +1,77 @@
+{
+  "started_at": "2026-10-07T19:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 47,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 79,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610071545-CVX-sell",
+      "id": "cfb46af7-3e55-4105-98fb-0f85632b9a24",
+      "symbol": "CVX",
+      "qty": 47,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610071545-LLY-sell",
+      "id": "7a3b7d84-bae3-4f2b-9bfb-2397e210a7f2",
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610071545-PEP-sell",
+      "id": "9d4aa50d-9a2f-4112-9a30-87d6d2574d24",
+      "symbol": "PEP",
+      "qty": 79,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610071545-UNH-sell",
+      "id": "fb94794b-75ba-48c1-b135-0685e071f7bb",
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0016,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99904.98,
+  "targets": {},
+  "prices": {
+    "UNH": 374.105,
+    "LLY": 1186.44,
+    "CVX": 205.96,
+    "PEP": 123.72
+  }
+}
