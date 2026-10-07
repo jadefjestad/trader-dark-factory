@@ -1,16 +1,18 @@
 {
-  "ref": "strategies/candidates/residual_vol_momentum.py",
+  "ref": "strategies/candidates/residual_lowcorr_blend.py",
   "params": {
     "lookback": 252,
     "skip": 21,
+    "corr_window": 252,
     "top_n": 8,
     "rebalance_every": 21,
     "vol_target": 0.1,
-    "vol_window": 60
+    "vol_window": 60,
+    "low_corr_share": 0.5
   },
-  "name": "residual_vol_momentum",
+  "name": "residual_lowcorr_blend",
   "timeframe": "1Day",
-  "code_sha256": "ce712cd81638dbb5c6e529961dd3dfa2651a77dbea8039964e407468179fd9ab",
-  "experiment_id": "pr23-58f2c52-residual_vol_momentum-r37183165888-1",
-  "promoted_at": "2026-10-04T06:34:46+00:00"
+  "code_sha256": "b5782f56f1640d092d2da76f5910d60e1f2ba16ece2bfd01b2874e2f4a42ad5d",
+  "experiment_id": "pr132-79817f4-residual_lowcorr_blend-r37579564898-1",
+  "promoted_at": "2026-10-07T06:05:51+00:00"
 }
