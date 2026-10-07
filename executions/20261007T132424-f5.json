@@ -1,0 +1,45 @@
+{
+  "started_at": "2026-10-07T13:24:18+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": true,
+  "status": "dry run: no orders submitted",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 40,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 77,
+      "side": "buy"
+    }
+  ],
+  "submitted": [],
+  "drawdown": 0.0007,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-06 15:45:00-04:00",
+  "hold_day": false,
+  "equity": 99997.18,
+  "targets": {
+    "NVDA": 0.1,
+    "PEP": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "NVDA": 239.22,
+    "PEP": 125.72,
+    "ADBE": 238.085
+  }
+}
