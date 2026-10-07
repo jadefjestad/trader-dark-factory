@@ -1,0 +1,41 @@
+## Experiment `pr135-0e9dd65-overnight_lowcorr_blend-r37618646187-1`: **PASSED GATES, did not beat champion**
+
+Strategy `overnight_lowcorr_blend` (1Day), params `{"window": 252, "corr_window": 252, "top_n": 8, "rebalance_every": 21, "vol_target": 0.1, "vol_window": 60, "low_corr_share": 0.5}`
+Data `alpaca:sip` 2016-01-04 to 2026-10-06, fingerprint `a02241d089b64dc6`, rules `e077534dd4d52fe1`
+
+Beats champion `residual_lowcorr_blend` (validation + holdout Sharpe, margin per rules): **no**
+
+| Period | Sharpe | CAGR | Vol | Max DD | Turnover/yr | Trades |
+|---|---|---|---|---|---|---|
+| in_sample | 1.1498 | 0.130024 | 0.111826 | 0.191035 | 2.6066 | 916 |
+| validation | 1.0671 | 0.096045 | 0.089847 | 0.06974 | 2.1105 | 323 |
+| holdout | 1.4 |  |  | 0.1 |  |  |
+
+Validation Sharpe vs others: benchmark SPY 0.1826
+- equal_weight_buy_hold: 0.6686
+- sma_trend: 0.8542
+- cross_sectional_momentum: 0.9106
+- short_term_reversal: 0.4746
+
+Selection-bias check (report only): after 47 experiments, probability the validation Sharpe beats luck is 0.2283 (luck benchmark 1.598 annual).
+
+| Gate | Result | Detail |
+|---|---|---|
+| data_not_synthetic | pass | alpaca:sip |
+| executable_timeframe (promotion only) | pass | 1Day |
+| risk_limits | pass | ok |
+| no_lookahead | pass | 5 truncated reruns matched |
+| lookback_sufficient | pass | 5 520-bar reruns matched |
+| min_trades_validation | pass | 323 |
+| max_drawdown_in_sample | pass | 0.191035 |
+| max_vol_in_sample | pass | 0.111826 |
+| max_drawdown_validation | pass | 0.06974 |
+| max_vol_validation | pass | 0.089847 |
+| max_drawdown_holdout | pass | hidden |
+| max_vol_holdout | pass | hidden |
+| min_validation_sharpe | pass | 1.0671 |
+| min_holdout_sharpe | pass | hidden |
+| sharpe_decay | pass | 0.083 |
+| turnover | pass | 2.1105 |
+| robustness | pass | 1.008 |
+| fill_participation | pass | 4e-05 |
