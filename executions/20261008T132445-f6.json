@@ -1,0 +1,59 @@
+{
+  "started_at": "2026-10-08T13:24:44+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": true,
+  "status": "dry run: no orders submitted",
+  "orders": [
+    {
+      "symbol": "COST",
+      "qty": 10,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "buy"
+    }
+  ],
+  "submitted": [],
+  "drawdown": 0.0013,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-07 15:45:00-04:00",
+  "hold_day": true,
+  "equity": 99878.15,
+  "targets": {
+    "META": 0.1,
+    "UNH": 0.1,
+    "LLY": 0.1,
+    "JNJ": 0.1,
+    "COST": 0.1
+  },
+  "prices": {
+    "META": 719.8,
+    "UNH": 375.815,
+    "LLY": 1188.3,
+    "JNJ": 258.495,
+    "COST": 942.16
+  }
+}

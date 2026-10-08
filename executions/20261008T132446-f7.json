@@ -1,0 +1,52 @@
+{
+  "started_at": "2026-10-08T13:24:45+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": true,
+  "status": "dry run: no orders submitted",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 83,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "buy"
+    },
+    {
+      "symbol": "V",
+      "qty": 26,
+      "side": "buy"
+    }
+  ],
+  "submitted": [],
+  "drawdown": 0.0009,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-07 15:45:00-04:00",
+  "hold_day": false,
+  "equity": 99913.57,
+  "targets": {
+    "V": 0.1,
+    "LLY": 0.1,
+    "MRK": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "V": 372.03,
+    "LLY": 1188.3,
+    "MRK": 142.73,
+    "CSCO": 117.38
+  }
+}

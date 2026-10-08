@@ -1,0 +1,52 @@
+{
+  "started_at": "2026-10-08T13:24:39+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": true,
+  "status": "dry run: no orders submitted",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 47,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 79,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "buy"
+    }
+  ],
+  "submitted": [],
+  "drawdown": 0.0016,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-07 15:45:00-04:00",
+  "hold_day": false,
+  "equity": 99900.82,
+  "targets": {
+    "UNH": 0.1,
+    "LLY": 0.1,
+    "CVX": 0.1,
+    "PEP": 0.1
+  },
+  "prices": {
+    "UNH": 375.815,
+    "LLY": 1188.3,
+    "CVX": 205.17,
+    "PEP": 123.63
+  }
+}
