@@ -109,10 +109,17 @@ PREFIX = "usage-event "
 
 def _read_issue(issue: int) -> list[dict]:
     import subprocess
-    # REST, not `gh issue view`: GraphQL is unavailable from Claude Code cloud sessions
-    out = subprocess.run(["gh", "api", "--paginate", f"repos/{{owner}}/{{repo}}/issues/{issue}/comments?per_page=100",
-                          "--jq", ".[] | {body}"], capture_output=True, text=True, check=True).stdout
-    return parse_comments(json.loads(line)["body"] for line in out.splitlines() if line.strip())
+    # REST, not `gh issue view`: GraphQL is unavailable from Claude Code cloud sessions. Pages are
+    # requested by number: `--paginate` follows numeric-ID links, which the cloud proxy refuses.
+    bodies, page = [], 1
+    while True:
+        out = subprocess.run(["gh", "api", f"repos/{{owner}}/{{repo}}/issues/{issue}/comments?per_page=100&page={page}",
+                              "--jq", ".[] | {body}"], capture_output=True, text=True, check=True).stdout
+        lines = [line for line in out.splitlines() if line.strip()]
+        bodies += [json.loads(line)["body"] for line in lines]
+        if len(lines) < 100:
+            return parse_comments(bodies)
+        page += 1
 
 
 EVENT = re.compile(r"^" + re.escape(PREFIX) + r"`(\{.*?\})`", re.M)
