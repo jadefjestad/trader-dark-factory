@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-08T19:30:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 85,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 42,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610081515-AVGO-buy",
+      "id": "71dde017-aa0b-4371-9e53-4c356d50f505",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610081515-CSCO-buy",
+      "id": "70cf71d2-8fdc-423d-ab02-d21a9af71e8d",
+      "symbol": "CSCO",
+      "qty": 85,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610081515-GOOGL-buy",
+      "id": "6edc08d6-56df-4583-ad61-c234513403a1",
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610081515-MSFT-buy",
+      "id": "af6ecc51-14f7-4538-b7d3-cd09cd0ebc2d",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610081515-NVDA-buy",
+      "id": "e8f560d2-3944-414c-8910-6d23e58b4990",
+      "symbol": "NVDA",
+      "qty": 42,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0016,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-08 15:15:00-04:00",
+  "hold_day": false,
+  "equity": 99900.82,
+  "targets": {
+    "MSFT": 0.1,
+    "NVDA": 0.1,
+    "GOOGL": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 522.025,
+    "NVDA": 230.44,
+    "GOOGL": 347.515,
+    "AVGO": 358.41,
+    "CSCO": 115.17
+  }
+}

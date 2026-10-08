@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-08T19:45:46+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 42,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610081545-AMZN-sell",
+      "id": "3c09db54-c3ee-46c3-8c5e-cc41eef21afb",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610081545-AVGO-sell",
+      "id": "adf3b6c9-7ef2-4ba3-99c3-44b897d14418",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610081545-GOOGL-sell",
+      "id": "8265551b-c093-4a8f-bd23-01aeb353c0a4",
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610081545-MSFT-sell",
+      "id": "1f13bfd6-0f6d-4255-82b6-db7c05a71568",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610081545-NVDA-sell",
+      "id": "65089fc2-544e-43a3-86f3-6669b8d6ebfc",
+      "symbol": "NVDA",
+      "qty": 42,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0008,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99931.56,
+  "targets": {},
+  "prices": {
+    "MSFT": 522.67,
+    "NVDA": 230.72,
+    "AMZN": 254.9,
+    "GOOGL": 348.185,
+    "AVGO": 358.47
+  }
+}

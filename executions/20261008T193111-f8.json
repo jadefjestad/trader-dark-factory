@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-08T19:31:09+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 33,
+      "side": "buy"
+    },
+    {
+      "symbol": "KO",
+      "qty": 111,
+      "side": "buy"
+    },
+    {
+      "symbol": "PG",
+      "qty": 65,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 88,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610081515-ADBE-buy",
+      "id": "5dc48c3a-e4a6-449b-a739-a2d4bb386764",
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610081515-HD-buy",
+      "id": "ee5b666b-51c5-4e49-baf4-8623f8148ee6",
+      "symbol": "HD",
+      "qty": 33,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610081515-KO-buy",
+      "id": "43b267d1-8f42-4794-8d43-55abe5d2b5b4",
+      "symbol": "KO",
+      "qty": 111,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610081515-PG-buy",
+      "id": "4b8f8aba-f4dd-40f1-b001-fa41b1aa90b4",
+      "symbol": "PG",
+      "qty": 65,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610081515-WMT-buy",
+      "id": "f05d81b0-6d4b-40f9-8728-972adb0ac290",
+      "symbol": "WMT",
+      "qty": 88,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-08 15:15:00-04:00",
+  "hold_day": false,
+  "equity": 100053.52,
+  "targets": {
+    "PG": 0.1,
+    "KO": 0.1,
+    "WMT": 0.1,
+    "HD": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "PG": 150.49,
+    "KO": 87.86,
+    "WMT": 110.875,
+    "HD": 294.105,
+    "ADBE": 239.085
+  }
+}
