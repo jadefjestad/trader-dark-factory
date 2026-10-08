@@ -1,0 +1,139 @@
+{
+  "started_at": "2026-10-08T15:18:32+00:00",
+  "fund": 1,
+  "fund_name": "\ud83d\udc80 Darth Trader",
+  "dry_run": true,
+  "status": "dry run: no orders submitted",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 56,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 22,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 11,
+      "side": "buy"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 60,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 11,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 9,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 17,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 58,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 37,
+      "side": "buy"
+    }
+  ],
+  "submitted": [],
+  "drawdown": 0.0024,
+  "strategy": {
+    "name": "residual_lowcorr_reversal",
+    "ref": "strategies/candidates/residual_lowcorr_reversal.py",
+    "experiment_id": "pr137-d3f6f37-residual_lowcorr_reversal-r37649416447-1"
+  },
+  "champion": {
+    "name": "residual_lowcorr_reversal",
+    "ref": "strategies/candidates/residual_lowcorr_reversal.py",
+    "experiment_id": "pr137-d3f6f37-residual_lowcorr_reversal-r37649416447-1"
+  },
+  "signal_bar": "2026-10-07",
+  "hold_day": true,
+  "equity": 100775.1,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.0,
+    "MSFT": 0.0,
+    "NVDA": 0.041666666666666664,
+    "AMZN": 0.0,
+    "GOOGL": 0.032112168353078015,
+    "META": 0.0,
+    "AVGO": 0.041666666666666664,
+    "JPM": 0.032256475996954456,
+    "V": 0.0,
+    "MA": 0.0,
+    "UNH": 0.0,
+    "LLY": 0.032112168353078015,
+    "JNJ": 0.10603531101669915,
+    "MRK": 0.06436864435003248,
+    "XOM": 0.07377883501974468,
+    "CVX": 0.10603531101669915,
+    "PG": 0.0,
+    "KO": 0.07377883501974468,
+    "PEP": 0.07392314266362111,
+    "COST": 0.0,
+    "WMT": 0.041666666666666664,
+    "HD": 0.032256475996954456,
+    "BAC": 0.032256475996954456,
+    "ADBE": 0.032256475996954456,
+    "CSCO": 0.032112168353078015
+  },
+  "prices": {
+    "AAPL": 337.52,
+    "MSFT": 530.25,
+    "NVDA": 236.08,
+    "AMZN": 258.99,
+    "GOOGL": 350.815,
+    "META": 721.29,
+    "AVGO": 371.72,
+    "JPM": 326.295,
+    "V": 374.79,
+    "MA": 574.6,
+    "UNH": 370.34,
+    "LLY": 1143.2,
+    "JNJ": 252.8,
+    "MRK": 139.76,
+    "XOM": 168.42,
+    "CVX": 210.9,
+    "PG": 148.45,
+    "KO": 86.79,
+    "PEP": 124.64,
+    "COST": 944.97,
+    "WMT": 109.82,
+    "HD": 287.94,
+    "BAC": 52.33,
+    "ADBE": 233.01,
+    "CSCO": 116.255
+  }
+}
