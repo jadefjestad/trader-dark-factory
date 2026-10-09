@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-09T19:45:47+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 46,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 37,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 57,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610091545-CVX-sell",
+      "id": "cbec0454-afa8-4580-82b0-950705b6b190",
+      "symbol": "CVX",
+      "qty": 46,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610091545-GOOGL-sell",
+      "id": "a25c0fe8-0a69-456a-9766-ad825233d49c",
+      "symbol": "GOOGL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610091545-JNJ-sell",
+      "id": "df72778e-e42c-4be2-8eda-53b576608045",
+      "symbol": "JNJ",
+      "qty": 37,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610091545-LLY-sell",
+      "id": "c1cf7311-5a6e-4f94-b86b-1c15245d8f8d",
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610091545-XOM-sell",
+      "id": "5083bd31-16d2-47cc-b755-2fccc2bdfba0",
+      "symbol": "XOM",
+      "qty": 57,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.001,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99904.53,
+  "targets": {},
+  "prices": {
+    "GOOGL": 351.77,
+    "LLY": 1175.92,
+    "JNJ": 260.89,
+    "XOM": 168.73,
+    "CVX": 211.66
+  }
+}

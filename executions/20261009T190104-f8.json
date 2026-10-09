@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-09T19:01:02+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 67,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610091445-AAPL-buy",
+      "id": "aaaa286f-00fe-4adb-89b5-77f612c582a9",
+      "symbol": "AAPL",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610091445-AMZN-buy",
+      "id": "2ee2bc0a-5976-4f60-9cf7-59914a2780a4",
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610091445-JNJ-buy",
+      "id": "82b9655d-c835-4cd8-9de1-acacf1e32af7",
+      "symbol": "JNJ",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610091445-MRK-buy",
+      "id": "158f4bae-3da3-46b7-955c-e6c7988fd714",
+      "symbol": "MRK",
+      "qty": 67,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610091445-MSFT-buy",
+      "id": "57e1850f-2b97-4070-8dcc-a374beb1eba9",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-09 14:45:00-04:00",
+  "hold_day": false,
+  "equity": 100104.53,
+  "targets": {
+    "AAPL": 0.1,
+    "MSFT": 0.1,
+    "AMZN": 0.1,
+    "JNJ": 0.1,
+    "MRK": 0.1
+  },
+  "prices": {
+    "AAPL": 337.865,
+    "MSFT": 535.91,
+    "AMZN": 261.3,
+    "JNJ": 260.14,
+    "MRK": 146.24
+  }
+}
