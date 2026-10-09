@@ -1,0 +1,59 @@
+{
+  "started_at": "2026-10-09T13:24:53+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": true,
+  "status": "dry run: no orders submitted",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 85,
+      "side": "buy"
+    },
+    {
+      "symbol": "MA",
+      "qty": 17,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 25,
+      "side": "buy"
+    },
+    {
+      "symbol": "V",
+      "qty": 26,
+      "side": "buy"
+    }
+  ],
+  "submitted": [],
+  "drawdown": 0.0008,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-08 15:45:00-04:00",
+  "hold_day": true,
+  "equity": 99925.86,
+  "targets": {
+    "AVGO": 0.1,
+    "V": 0.1,
+    "MA": 0.1,
+    "UNH": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "AVGO": 360.045,
+    "V": 375.07,
+    "MA": 574.73,
+    "UNH": 379.11,
+    "CSCO": 114.89
+  }
+}
