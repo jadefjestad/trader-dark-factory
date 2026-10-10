@@ -1,5 +1,5 @@
 {
-  "ref": "strategies/candidates/residual_lowcorr_reversal.py",
+  "ref": "strategies/candidates/champion_volwin20.py",
   "params": {
     "lookback": 252,
     "skip": 21,
@@ -7,13 +7,13 @@
     "top_n": 8,
     "rebalance_every": 21,
     "vol_target": 0.1,
-    "vol_window": 60,
+    "vol_window": 20,
     "reversal_window": 21,
     "reversal_every": 5
   },
-  "name": "residual_lowcorr_reversal",
+  "name": "champion_volwin20",
   "timeframe": "1Day",
-  "code_sha256": "f679bfcd659b8aa8d61f83e2637664213c9393a74788ebacdaa6ee5302111715",
-  "experiment_id": "pr137-d3f6f37-residual_lowcorr_reversal-r37649416447-1",
-  "promoted_at": "2026-10-07T16:07:41+00:00"
+  "code_sha256": "f9e86144711da8ae032fe556ce546c8465465fa03537428beb8f669eeab5578a",
+  "experiment_id": "pr178-a10db37-champion_volwin20-r38074285783-1",
+  "promoted_at": "2026-10-10T18:05:22+00:00"
 }
