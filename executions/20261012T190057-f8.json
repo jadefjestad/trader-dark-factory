@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-12T19:00:53+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 86,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610121445-META-sell",
+      "id": "a53f1380-48c6-4ad5-adca-0b59b60f1219",
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610121445-WMT-buy",
+      "id": "9db4863e-1eef-45ed-bfd6-4e58d6c53acc",
+      "symbol": "WMT",
+      "qty": 86,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0026,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-12 14:45:00-04:00",
+  "hold_day": false,
+  "equity": 99848.74,
+  "targets": {
+    "V": 0.1,
+    "MA": 0.1,
+    "PG": 0.1,
+    "COST": 0.1,
+    "WMT": 0.1
+  },
+  "prices": {
+    "META": 745.36,
+    "V": 390.66,
+    "MA": 597.82,
+    "PG": 152.815,
+    "COST": 958.785,
+    "WMT": 112.815
+  }
+}

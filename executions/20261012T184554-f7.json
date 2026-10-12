@@ -1,0 +1,84 @@
+{
+  "started_at": "2026-10-12T18:45:51+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 45,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 77,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 57,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610121430-AAPL-sell",
+      "id": "5550d508-e273-4bc0-bfe8-f1656f4fea98",
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610121430-CVX-buy",
+      "id": "557b1dd5-ea4a-40d1-8da1-a38f95fad2c7",
+      "symbol": "CVX",
+      "qty": 45,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610121430-PEP-buy",
+      "id": "2ef3c667-c57c-4906-943e-f3fa26ca2b1f",
+      "symbol": "PEP",
+      "qty": 77,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610121430-XOM-buy",
+      "id": "f3ca9789-0a85-4649-bdd6-8c3beac5bb4c",
+      "symbol": "XOM",
+      "qty": 57,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-12 14:30:00-04:00",
+  "hold_day": false,
+  "equity": 100006.87,
+  "targets": {
+    "MSFT": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1,
+    "PG": 0.1,
+    "PEP": 0.1
+  },
+  "prices": {
+    "AAPL": 339.665,
+    "MSFT": 539.66,
+    "XOM": 171.82,
+    "CVX": 215.18,
+    "PG": 152.82,
+    "PEP": 126.53
+  }
+}

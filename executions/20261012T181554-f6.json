@@ -1,0 +1,110 @@
+{
+  "started_at": "2026-10-12T18:15:49+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 6 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 77,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610121400-AMZN-sell",
+      "id": "289c89ff-edcb-4277-8106-fdb454f30801",
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610121400-LLY-sell",
+      "id": "d965a4d8-90f2-47a2-bf6f-cdf039726e4f",
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610121400-META-sell",
+      "id": "8ffc4778-5406-4f95-bda9-76678df38aeb",
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610121400-AVGO-buy",
+      "id": "1ad2d22c-3f27-4523-9fef-8eae66f746db",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610121400-PEP-buy",
+      "id": "d37017cb-e323-451d-9153-e51b89690e26",
+      "symbol": "PEP",
+      "qty": 77,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610121400-UNH-buy",
+      "id": "5a804bac-9c9e-4737-bf21-66b8b7ff3df9",
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-12 14:00:00-04:00",
+  "hold_day": false,
+  "equity": 100047.67,
+  "targets": {
+    "GOOGL": 0.1,
+    "AVGO": 0.1,
+    "UNH": 0.1,
+    "PEP": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "AMZN": 259.835,
+    "GOOGL": 351.755,
+    "META": 746.75,
+    "AVGO": 355.17,
+    "UNH": 376.37,
+    "LLY": 1179.88,
+    "PEP": 126.59,
+    "ADBE": 237.71
+  }
+}

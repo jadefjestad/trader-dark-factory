@@ -1,0 +1,58 @@
+{
+  "started_at": "2026-10-12T17:30:51+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610121315-LLY-sell",
+      "id": "9ccb9a7c-d1a2-4fd1-bd03-f4aa3b853d4e",
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610121315-BAC-buy",
+      "id": "58f99ed4-0064-4983-9dda-dc6efa2aae97",
+      "symbol": "BAC",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-12 13:15:00-04:00",
+  "hold_day": false,
+  "equity": 100013.55,
+  "targets": {
+    "AAPL": 0.1,
+    "MSFT": 0.1,
+    "META": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "AAPL": 339.28,
+    "MSFT": 540.375,
+    "META": 749.38,
+    "LLY": 1178.96,
+    "BAC": 54.42
+  }
+}

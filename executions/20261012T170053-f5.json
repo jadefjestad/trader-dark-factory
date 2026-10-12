@@ -1,0 +1,56 @@
+{
+  "started_at": "2026-10-12T17:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 85,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610121245-CSCO-sell",
+      "id": "9ff3e94f-d7cc-488a-be4b-6efed68883c2",
+      "symbol": "CSCO",
+      "qty": 85,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610121245-META-buy",
+      "id": "f5971c30-ecae-4574-80e7-3e5fb0757cf3",
+      "symbol": "META",
+      "qty": 13,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0008,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-12 12:45:00-04:00",
+  "hold_day": false,
+  "equity": 99983.47,
+  "targets": {
+    "AMZN": 0.1,
+    "META": 0.1,
+    "LLY": 0.1
+  },
+  "prices": {
+    "AMZN": 259.52,
+    "META": 740.27,
+    "LLY": 1174.64,
+    "CSCO": 115.38
+  }
+}
