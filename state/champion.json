@@ -1,5 +1,5 @@
 {
-  "ref": "strategies/candidates/champion_volwin20.py",
+  "ref": "strategies/candidates/volwin20_downside_corr.py",
   "params": {
     "lookback": 252,
     "skip": 21,
@@ -11,9 +11,9 @@
     "reversal_window": 21,
     "reversal_every": 5
   },
-  "name": "champion_volwin20",
+  "name": "volwin20_downside_corr",
   "timeframe": "1Day",
-  "code_sha256": "f9e86144711da8ae032fe556ce546c8465465fa03537428beb8f669eeab5578a",
-  "experiment_id": "pr178-a10db37-champion_volwin20-r38074285783-1",
-  "promoted_at": "2026-10-10T18:05:22+00:00"
+  "code_sha256": "6a879a82a4a65082f99927005ff5b0baac5bb265799fcb57818f382664f12245",
+  "experiment_id": "pr193-1ab31fd-volwin20_downside_corr-r38186618129-1",
+  "promoted_at": "2026-10-12T00:05:27+00:00"
 }
