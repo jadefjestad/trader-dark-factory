@@ -1,0 +1,11 @@
+{
+  "started_at": "2026-10-13T20:00:46+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "skipped: market closed",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0039
+}
