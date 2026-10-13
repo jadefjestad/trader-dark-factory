@@ -1,19 +1,19 @@
 {
-  "ref": "strategies/candidates/downside_corr_severe.py",
+  "ref": "strategies/candidates/downside_severe_top7.py",
   "params": {
     "lookback": 252,
     "skip": 21,
     "corr_window": 252,
-    "top_n": 8,
+    "top_n": 7,
     "rebalance_every": 21,
     "vol_target": 0.1,
     "vol_window": 20,
     "reversal_window": 21,
     "reversal_every": 5
   },
-  "name": "downside_corr_severe",
+  "name": "downside_severe_top7",
   "timeframe": "1Day",
-  "code_sha256": "97e027791b4c46c46413001894706a714515b0a6d33a706b089d5d1e8247ff15",
-  "experiment_id": "pr196-d90230e-downside_corr_severe-r38210822558-1",
-  "promoted_at": "2026-10-12T06:06:08+00:00"
+  "code_sha256": "b358d6545abeee7b7b68912917fe8572742254dd6153942f10e139792b2010ed",
+  "experiment_id": "pr210-91f274f-downside_severe_top7-r38366887291-1",
+  "promoted_at": "2026-10-13T08:06:37+00:00"
 }
