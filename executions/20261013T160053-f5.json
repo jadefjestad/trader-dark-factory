@@ -1,0 +1,71 @@
+{
+  "started_at": "2026-10-13T16:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 86,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610131145-CSCO-sell",
+      "id": "4f3e2b9d-95c2-478f-8c80-d697cc7568b6",
+      "symbol": "CSCO",
+      "qty": 86,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610131145-UNH-sell",
+      "id": "fc52106d-4792-4862-96f2-7c827579df96",
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610131145-MSFT-buy",
+      "id": "3f199562-08be-4637-ae80-aeef24c671db",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-13 11:45:00-04:00",
+  "hold_day": false,
+  "equity": 100392.28,
+  "targets": {
+    "MSFT": 0.1,
+    "JNJ": 0.1,
+    "MRK": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "MSFT": 545.04,
+    "UNH": 382.245,
+    "JNJ": 248.29,
+    "MRK": 143.41,
+    "ADBE": 236.22,
+    "CSCO": 114.58
+  }
+}

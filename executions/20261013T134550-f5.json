@@ -1,0 +1,63 @@
+{
+  "started_at": "2026-10-13T13:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 27,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610130930-AMZN-sell",
+      "id": "14327455-c780-4a2b-b035-e8ada7f7cf63",
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610130930-AVGO-sell",
+      "id": "25277960-b452-4c8b-bfec-094bf39f0678",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610130930-GOOGL-sell",
+      "id": "fa115c0b-fd06-465c-8c8d-9ddfaa055de0",
+      "symbol": "GOOGL",
+      "qty": 27,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-13 09:30:00-04:00",
+  "hold_day": false,
+  "equity": 100278.4,
+  "targets": {},
+  "prices": {
+    "AMZN": 261.74,
+    "GOOGL": 354.18,
+    "AVGO": 355.55
+  }
+}

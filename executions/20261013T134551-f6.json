@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-10-13T13:45:50+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 77,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610130930-ADBE-sell",
+      "id": "d68084fb-77f6-412e-ba86-6e223a8bb1f6",
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610130930-AVGO-sell",
+      "id": "b0e9d32f-4f38-491e-a3a2-7c76138e9a0a",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610130930-GOOGL-sell",
+      "id": "2bed3a0b-3f72-4d3c-be89-40597c16aa68",
+      "symbol": "GOOGL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610130930-PEP-sell",
+      "id": "879109bd-8b02-43d6-8079-fdfae20daf01",
+      "symbol": "PEP",
+      "qty": 77,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610130930-UNH-sell",
+      "id": "77978dff-40e6-4de0-96ee-59c08e759243",
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-13 09:30:00-04:00",
+  "hold_day": false,
+  "equity": 100415.4,
+  "targets": {},
+  "prices": {
+    "GOOGL": 354.15,
+    "AVGO": 355.42,
+    "UNH": 384.08,
+    "PEP": 126.5,
+    "ADBE": 240.16
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-10-13T17:15:51+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "META",
+      "qty": 12,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 45,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610131300-META-sell",
+      "id": "fc098c9b-e613-444b-95b9-773a56eac288",
+      "symbol": "META",
+      "qty": 12,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610131300-CVX-buy",
+      "id": "20529cde-84d2-4012-8f6b-d37adcfacc6a",
+      "symbol": "CVX",
+      "qty": 45,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610131300-MSFT-buy",
+      "id": "ab8d5c37-4e42-478a-87d9-a7b65c4d6ee6",
+      "symbol": "MSFT",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-13 13:00:00-04:00",
+  "hold_day": false,
+  "equity": 100200.05,
+  "targets": {
+    "AAPL": 0.1,
+    "MSFT": 0.1,
+    "JPM": 0.1,
+    "CVX": 0.1,
+    "WMT": 0.1
+  },
+  "prices": {
+    "AAPL": 343.425,
+    "MSFT": 545.425,
+    "META": 763.38,
+    "JPM": 334.75,
+    "CVX": 217.545,
+    "WMT": 113.095
+  }
+}

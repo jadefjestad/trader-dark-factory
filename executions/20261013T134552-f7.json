@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-10-13T13:45:51+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 45,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 77,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 64,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 57,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610130930-CVX-sell",
+      "id": "30aff7a7-90ff-4978-92a4-04d4e5c8b155",
+      "symbol": "CVX",
+      "qty": 45,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610130930-MSFT-sell",
+      "id": "4b41e897-da6e-404e-8100-70540d0c78bd",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610130930-PEP-sell",
+      "id": "c4b5a307-2dc4-466d-8efc-bf94555a7aa0",
+      "symbol": "PEP",
+      "qty": 77,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610130930-PG-sell",
+      "id": "cd97e042-49f3-44f8-b089-44654bccbf43",
+      "symbol": "PG",
+      "qty": 64,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610130930-XOM-sell",
+      "id": "9e2971d7-bd26-4dc2-81b9-99866e743736",
+      "symbol": "XOM",
+      "qty": 57,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-13 09:30:00-04:00",
+  "hold_day": false,
+  "equity": 100304.85,
+  "targets": {},
+  "prices": {
+    "MSFT": 548.81,
+    "XOM": 173.53,
+    "CVX": 216.87,
+    "PG": 152.34,
+    "PEP": 126.5
+  }
+}

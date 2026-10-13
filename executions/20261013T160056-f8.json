@@ -1,0 +1,46 @@
+{
+  "started_at": "2026-10-13T16:00:55+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610131145-AAPL-sell",
+      "id": "1ee24ed5-0a70-4a35-8e8e-919e7adeb19f",
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0032,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-13 11:45:00-04:00",
+  "hold_day": false,
+  "equity": 99788.99,
+  "targets": {
+    "GOOGL": 0.1,
+    "META": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1
+  },
+  "prices": {
+    "AAPL": 344.54,
+    "GOOGL": 355.52,
+    "META": 761.41,
+    "XOM": 174.345,
+    "CVX": 218.11
+  }
+}

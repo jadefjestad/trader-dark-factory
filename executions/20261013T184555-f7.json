@@ -1,0 +1,55 @@
+{
+  "started_at": "2026-10-13T18:45:54+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 45,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 25,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610131430-CVX-sell",
+      "id": "fd0bd12d-5c2e-47d9-ba5a-0abaefe0ec67",
+      "symbol": "CVX",
+      "qty": 45,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610131430-V-sell",
+      "id": "ab96270f-f2cb-4b02-8e23-bbf03d5dc168",
+      "symbol": "V",
+      "qty": 25,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-13 14:30:00-04:00",
+  "hold_day": false,
+  "equity": 100238.26,
+  "targets": {
+    "AAPL": 0.1,
+    "JPM": 0.1
+  },
+  "prices": {
+    "AAPL": 342.13,
+    "JPM": 334.95,
+    "V": 393.0,
+    "CVX": 218.025
+  }
+}

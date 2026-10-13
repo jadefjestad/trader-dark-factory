@@ -1,0 +1,67 @@
+{
+  "started_at": "2026-10-13T14:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "GOOGL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 39,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610131000-GOOGL-buy",
+      "id": "d5c18ea2-cc64-482e-8d67-77495220a547",
+      "symbol": "GOOGL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610131000-JNJ-buy",
+      "id": "f44f1f2e-f4e1-4fc5-830a-3466185e3bb3",
+      "symbol": "JNJ",
+      "qty": 39,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610131000-UNH-buy",
+      "id": "f311c657-cc73-435a-beb8-a85681327a68",
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-13 10:00:00-04:00",
+  "hold_day": false,
+  "equity": 100268.48,
+  "targets": {
+    "GOOGL": 0.1,
+    "UNH": 0.1,
+    "JNJ": 0.1
+  },
+  "prices": {
+    "GOOGL": 352.77,
+    "UNH": 375.745,
+    "JNJ": 250.9
+  }
+}

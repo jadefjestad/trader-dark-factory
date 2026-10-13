@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-10-13T18:00:55+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "V",
+      "qty": 25,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610131345-V-buy",
+      "id": "c257855f-ac07-4381-9b29-c7bad933400b",
+      "symbol": "V",
+      "qty": 25,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-13 13:45:00-04:00",
+  "hold_day": false,
+  "equity": 100177.26,
+  "targets": {
+    "AAPL": 0.1,
+    "JPM": 0.1,
+    "V": 0.1,
+    "CVX": 0.1,
+    "WMT": 0.1
+  },
+  "prices": {
+    "AAPL": 342.52,
+    "JPM": 333.77,
+    "V": 392.33,
+    "CVX": 217.865,
+    "WMT": 113.075
+  }
+}

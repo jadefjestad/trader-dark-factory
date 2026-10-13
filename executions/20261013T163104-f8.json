@@ -1,0 +1,94 @@
+{
+  "started_at": "2026-10-13T16:30:55+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "GOOGL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 12,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 56,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 42,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610131215-GOOGL-sell",
+      "id": "d139e9ae-441b-4e66-be35-e64ac6fd9317",
+      "symbol": "GOOGL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610131215-META-sell",
+      "id": "7b543ed2-37c3-45fd-a033-aa77bdcbb764",
+      "symbol": "META",
+      "qty": 12,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610131215-XOM-sell",
+      "id": "c47f403a-3046-4cdd-ba6a-f44317d62215",
+      "symbol": "XOM",
+      "qty": 56,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610131215-AVGO-buy",
+      "id": "aa895136-8181-4646-b261-0efc0792fbd7",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610131215-NVDA-buy",
+      "id": "b0f7137f-daec-46ce-946f-1141ac1af7c8",
+      "symbol": "NVDA",
+      "qty": 42,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0044,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-13 12:15:00-04:00",
+  "hold_day": false,
+  "equity": 99670.49,
+  "targets": {
+    "NVDA": 0.1,
+    "AVGO": 0.1,
+    "CVX": 0.1
+  },
+  "prices": {
+    "NVDA": 227.295,
+    "GOOGL": 354.125,
+    "META": 759.345,
+    "AVGO": 356.45,
+    "XOM": 173.65,
+    "CVX": 217.62
+  }
+}
