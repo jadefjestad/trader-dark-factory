@@ -1,0 +1,64 @@
+{
+  "started_at": "2026-10-14T19:45:47+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "symbol": "MA",
+      "qty": 16,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 55,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610141545-LLY-sell",
+      "id": "b4806cc0-fa61-4a66-a106-7de27fadfe48",
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610141545-MA-sell",
+      "id": "7a96d6e5-7771-46b1-859c-6e02127f7740",
+      "symbol": "MA",
+      "qty": 16,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610141545-XOM-sell",
+      "id": "f6eb2174-e0fa-4e21-a41d-f33930e28545",
+      "symbol": "XOM",
+      "qty": 55,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 100275.72,
+  "targets": {},
+  "prices": {
+    "MA": 601.385,
+    "LLY": 1208.69,
+    "XOM": 177.255
+  }
+}

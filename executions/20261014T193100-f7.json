@@ -1,0 +1,56 @@
+{
+  "started_at": "2026-10-14T19:30:56+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 55,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610141515-CVX-sell",
+      "id": "57d75023-5357-4c44-9a19-ada798861009",
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610141515-XOM-buy",
+      "id": "3a728224-b222-4e3b-8550-df3244b679f5",
+      "symbol": "XOM",
+      "qty": 55,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-14 15:15:00-04:00",
+  "hold_day": false,
+  "equity": 100276.33,
+  "targets": {
+    "MA": 0.1,
+    "LLY": 0.1,
+    "XOM": 0.1
+  },
+  "prices": {
+    "MA": 602.3,
+    "LLY": 1209.5,
+    "XOM": 176.8,
+    "CVX": 221.975
+  }
+}

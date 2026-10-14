@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-14T19:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610141545-AMZN-sell",
+      "id": "ea72869b-5eeb-4690-8823-55db9ad7dc99",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610141545-GOOGL-sell",
+      "id": "48377459-7591-4f86-a13a-b48e6fb1e553",
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610141545-META-sell",
+      "id": "6811b8df-dd63-4b38-b5fd-f74b38e1297a",
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610141545-MSFT-sell",
+      "id": "a2052ae8-200e-4c02-9629-4e302ed47e2f",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610141545-NVDA-sell",
+      "id": "d2c3cb42-7db4-42d5-8c18-cf5d2a54607a",
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 100621.86,
+  "targets": {},
+  "prices": {
+    "MSFT": 533.77,
+    "NVDA": 220.75,
+    "AMZN": 252.855,
+    "GOOGL": 347.665,
+    "META": 736.965
+  }
+}

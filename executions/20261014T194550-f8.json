@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-14T19:45:49+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 189,
+      "side": "sell"
+    },
+    {
+      "symbol": "COST",
+      "qty": 9,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 66,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610141545-BAC-sell",
+      "id": "254540cb-b1cc-49f3-901a-74d17424117f",
+      "symbol": "BAC",
+      "qty": 189,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610141545-COST-sell",
+      "id": "f95eae71-a9d7-4ab5-a050-3a0925ea009d",
+      "symbol": "COST",
+      "qty": 9,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610141545-JNJ-sell",
+      "id": "a6e15056-bc97-456a-b563-daee087cb24e",
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610141545-JPM-sell",
+      "id": "fa9898c3-95af-49a1-996d-7e3259e535f6",
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610141545-MRK-sell",
+      "id": "305f4170-5057-460d-822e-d22e054c20e0",
+      "symbol": "MRK",
+      "qty": 66,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0057,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99541.28,
+  "targets": {},
+  "prices": {
+    "JPM": 334.65,
+    "JNJ": 252.56,
+    "MRK": 147.11,
+    "COST": 978.4,
+    "BAC": 51.265
+  }
+}
