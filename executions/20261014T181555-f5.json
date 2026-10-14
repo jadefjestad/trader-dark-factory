@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-14T18:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610141400-ADBE-sell",
+      "id": "3df75e2d-c805-4a65-ab75-659985cf0b49",
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610141400-GOOGL-buy",
+      "id": "378db6a8-cfbd-4225-a52a-bdd573096134",
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-14 14:00:00-04:00",
+  "hold_day": false,
+  "equity": 100685.0,
+  "targets": {
+    "MSFT": 0.1,
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "META": 0.1
+  },
+  "prices": {
+    "MSFT": 534.47,
+    "NVDA": 220.84,
+    "AMZN": 253.69,
+    "GOOGL": 347.88,
+    "META": 737.2,
+    "ADBE": 239.02
+  }
+}

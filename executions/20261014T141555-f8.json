@@ -1,0 +1,53 @@
+{
+  "started_at": "2026-10-14T14:15:54+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 83,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610141000-CSCO-buy",
+      "id": "7f2b4ac3-e8fb-4604-8add-cfde9fd58c34",
+      "symbol": "CSCO",
+      "qty": 83,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610141000-JPM-buy",
+      "id": "eb6dc31d-193a-46f4-bf6e-bb9cd73f3ff9",
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0087,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-14 10:00:00-04:00",
+  "hold_day": false,
+  "equity": 99239.32,
+  "targets": {
+    "JPM": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "JPM": 332.39,
+    "CSCO": 116.14
+  }
+}

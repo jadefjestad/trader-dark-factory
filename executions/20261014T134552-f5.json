@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-10-14T13:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 69,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610140930-AMZN-sell",
+      "id": "f0e544dd-01c1-48c0-8ed5-6a10e1861a55",
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610140930-JNJ-sell",
+      "id": "583ac5ba-b1f9-4d19-ad7a-05e581e651bb",
+      "symbol": "JNJ",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610140930-LLY-sell",
+      "id": "37c3373a-d321-4909-a6c0-e302923b7776",
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610140930-MRK-sell",
+      "id": "35176c0f-93b9-43aa-98ef-f5ea7900df72",
+      "symbol": "MRK",
+      "qty": 69,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610140930-MSFT-sell",
+      "id": "403fa0df-15b1-4e82-8d73-a2cc8ba9d387",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-14 09:30:00-04:00",
+  "hold_day": false,
+  "equity": 100939.54,
+  "targets": {},
+  "prices": {
+    "MSFT": 542.94,
+    "AMZN": 259.45,
+    "LLY": 1207.2,
+    "JNJ": 250.78,
+    "MRK": 144.425
+  }
+}

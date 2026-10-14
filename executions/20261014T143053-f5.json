@@ -1,0 +1,57 @@
+{
+  "started_at": "2026-10-14T14:30:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 25,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610141015-HD-sell",
+      "id": "a0545349-704c-482e-891a-8cc7990eda77",
+      "symbol": "HD",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610141015-UNH-buy",
+      "id": "28b3e12d-4abc-4cd1-a420-eba550cf3ecd",
+      "symbol": "UNH",
+      "qty": 25,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-14 10:15:00-04:00",
+  "hold_day": false,
+  "equity": 100922.54,
+  "targets": {
+    "AMZN": 0.1,
+    "META": 0.1,
+    "UNH": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "AMZN": 256.48,
+    "META": 744.29,
+    "UNH": 388.33,
+    "HD": 291.295
+  }
+}

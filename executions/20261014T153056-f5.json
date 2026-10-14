@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-14T15:30:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "UNH",
+      "qty": 25,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610141115-UNH-sell",
+      "id": "71e84bf5-b0f8-4e34-9600-92ab649d6885",
+      "symbol": "UNH",
+      "qty": 25,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610141115-NVDA-buy",
+      "id": "883604fc-917c-4691-a3ea-7884da9234ea",
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-14 11:15:00-04:00",
+  "hold_day": false,
+  "equity": 100938.25,
+  "targets": {
+    "MSFT": 0.1,
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "META": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "MSFT": 537.66,
+    "NVDA": 223.03,
+    "AMZN": 256.22,
+    "META": 742.49,
+    "UNH": 390.13,
+    "ADBE": 237.24
+  }
+}

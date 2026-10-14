@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-10-14T14:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610141030-HD-sell",
+      "id": "9ec91957-47c4-4004-b5f0-06e674afa37e",
+      "symbol": "HD",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610141030-ADBE-buy",
+      "id": "a9a571a6-7cfd-4f11-be33-8b4e5b6f51ac",
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610141030-MSFT-buy",
+      "id": "3ed324b6-a448-4e43-8e02-77216e6c3ef0",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-14 10:30:00-04:00",
+  "hold_day": false,
+  "equity": 100958.57,
+  "targets": {
+    "MSFT": 0.1,
+    "AMZN": 0.1,
+    "META": 0.1,
+    "UNH": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "MSFT": 538.27,
+    "AMZN": 256.335,
+    "META": 746.465,
+    "UNH": 387.93,
+    "HD": 291.67,
+    "ADBE": 237.205
+  }
+}

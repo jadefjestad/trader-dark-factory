@@ -1,0 +1,59 @@
+{
+  "started_at": "2026-10-14T18:00:55+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610141345-BAC-sell",
+      "id": "745ed66c-e58e-47ac-b8a2-570b50051dc5",
+      "symbol": "BAC",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610141345-MRK-buy",
+      "id": "613cdede-893e-4a82-90b8-8c485cb22807",
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0065,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-14 13:45:00-04:00",
+  "hold_day": false,
+  "equity": 99457.6,
+  "targets": {
+    "JPM": 0.1,
+    "JNJ": 0.1,
+    "MRK": 0.1,
+    "COST": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "JPM": 333.235,
+    "JNJ": 253.045,
+    "MRK": 147.435,
+    "COST": 976.4,
+    "BAC": 50.845
+  }
+}

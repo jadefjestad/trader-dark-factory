@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-14T15:15:51+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 25,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610141100-ADBE-buy",
+      "id": "91d3cf73-6d21-4819-8a9f-850eaf344e43",
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610141100-AMZN-buy",
+      "id": "4baed7fa-f39e-4d65-bd4d-33a5e4da0184",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610141100-GOOGL-buy",
+      "id": "9ba8e61c-4fe7-41d1-a578-181b2ea65e5d",
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610141100-META-buy",
+      "id": "836b1eea-928e-4f42-ac3f-ec007cba8785",
+      "symbol": "META",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610141100-UNH-buy",
+      "id": "2a0f88ce-faae-4177-812a-b80d4b17c9bb",
+      "symbol": "UNH",
+      "qty": 25,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-14 11:00:00-04:00",
+  "hold_day": false,
+  "equity": 101383.59,
+  "targets": {
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "META": 0.1,
+    "UNH": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "AMZN": 255.3,
+    "GOOGL": 354.1,
+    "META": 743.2,
+    "UNH": 387.68,
+    "ADBE": 237.06
+  }
+}

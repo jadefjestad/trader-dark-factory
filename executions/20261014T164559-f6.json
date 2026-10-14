@@ -1,0 +1,110 @@
+{
+  "started_at": "2026-10-14T16:45:54+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 6 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "sell"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 25,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 86,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610141230-ADBE-sell",
+      "id": "fc2bf7e2-628f-4f23-8c80-092ff902c646",
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610141230-AMZN-sell",
+      "id": "93be1e16-2fba-4b7f-ac33-89e34c517b02",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610141230-UNH-sell",
+      "id": "25fa6d06-cac3-4a27-9811-6651193dc5e2",
+      "symbol": "UNH",
+      "qty": 25,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610141230-AVGO-buy",
+      "id": "a7798003-0fa4-4fd6-ada1-536e9472eec9",
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610141230-CSCO-buy",
+      "id": "c903cd17-d77a-44af-99a2-d434beac0cca",
+      "symbol": "CSCO",
+      "qty": 86,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610141230-NVDA-buy",
+      "id": "863cbe1c-c9b0-47b2-8c8b-38e19d578c26",
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-14 12:30:00-04:00",
+  "hold_day": false,
+  "equity": 101274.76,
+  "targets": {
+    "NVDA": 0.1,
+    "GOOGL": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 222.28,
+    "AMZN": 254.85,
+    "GOOGL": 351.45,
+    "META": 739.175,
+    "AVGO": 348.335,
+    "UNH": 388.16,
+    "ADBE": 237.46,
+    "CSCO": 114.71
+  }
+}

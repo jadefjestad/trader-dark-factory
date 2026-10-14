@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-14T18:15:55+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610141400-META-sell",
+      "id": "835abe11-7ef4-4c0e-bc99-962bd69ab8ea",
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610141400-AMZN-buy",
+      "id": "a1762951-4e24-4399-b409-ad00a707bb40",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-14 14:00:00-04:00",
+  "hold_day": false,
+  "equity": 100940.23,
+  "targets": {
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 220.79,
+    "AMZN": 253.69,
+    "GOOGL": 347.88,
+    "META": 737.2,
+    "AVGO": 345.7,
+    "CSCO": 113.98
+  }
+}

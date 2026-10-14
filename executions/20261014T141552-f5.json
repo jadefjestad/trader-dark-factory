@@ -1,0 +1,67 @@
+{
+  "started_at": "2026-10-14T14:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610141000-AMZN-buy",
+      "id": "64d2e7c5-bb91-49bb-8273-d60a6cf01c77",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610141000-HD-buy",
+      "id": "eef706eb-1ae5-4a65-823f-8ef1a0130687",
+      "symbol": "HD",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610141000-META-buy",
+      "id": "b50ee566-2779-420d-bf4f-c15681c76123",
+      "symbol": "META",
+      "qty": 13,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-14 10:00:00-04:00",
+  "hold_day": false,
+  "equity": 100924.33,
+  "targets": {
+    "AMZN": 0.1,
+    "META": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "AMZN": 256.705,
+    "META": 747.07,
+    "HD": 290.01
+  }
+}
