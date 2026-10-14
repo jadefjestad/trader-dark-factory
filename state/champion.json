@@ -1,5 +1,5 @@
 {
-  "ref": "strategies/candidates/downside_severe_top7.py",
+  "ref": "strategies/candidates/w206020_minsevere63.py",
   "params": {
     "lookback": 252,
     "skip": 21,
@@ -11,9 +11,9 @@
     "reversal_window": 21,
     "reversal_every": 5
   },
-  "name": "downside_severe_top7",
+  "name": "w206020_minsevere63",
   "timeframe": "1Day",
-  "code_sha256": "b358d6545abeee7b7b68912917fe8572742254dd6153942f10e139792b2010ed",
-  "experiment_id": "pr210-91f274f-downside_severe_top7-r38366887291-1",
-  "promoted_at": "2026-10-13T08:06:37+00:00"
+  "code_sha256": "08a8b6629c47cae0f9191edb0afc2f4a883db757038da44683f94f67dc650a33",
+  "experiment_id": "pr222-71f714d-w206020_minsevere63-r38520079070-1",
+  "promoted_at": "2026-10-14T06:05:36+00:00"
 }
