@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-15T19:45:50+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610151545-AMZN-sell",
+      "id": "67c911cd-b4e0-4070-a275-cc35389a615f",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610151545-AVGO-sell",
+      "id": "52c1783e-9f1f-487b-a595-ec417154e89a",
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610151545-LLY-sell",
+      "id": "fd45b3d9-aff2-48a5-9c50-17602d8aa861",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610151545-MSFT-sell",
+      "id": "c0ab3d2a-5ad0-4627-bc80-a61503b5072c",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610151545-NVDA-sell",
+      "id": "900f9019-a925-4302-8a6f-0342c72fe042",
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0075,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99362.7,
+  "targets": {},
+  "prices": {
+    "MSFT": 540.62,
+    "NVDA": 217.48,
+    "AMZN": 255.09,
+    "AVGO": 344.12,
+    "LLY": 1257.81
+  }
+}

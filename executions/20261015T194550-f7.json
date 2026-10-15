@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-15T19:45:48+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 106,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 66,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 76,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610151545-JNJ-sell",
+      "id": "bbd19bda-6421-4140-81b2-66843632f1c1",
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610151545-KO-sell",
+      "id": "22cf5160-a1dc-43c7-932a-560469d687bf",
+      "symbol": "KO",
+      "qty": 106,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610151545-MRK-sell",
+      "id": "f008cfdd-e60a-4fa0-a79a-00f9d198d9fe",
+      "symbol": "MRK",
+      "qty": 66,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610151545-PEP-sell",
+      "id": "27a6f0d2-16b0-425d-a3f4-fe245776880f",
+      "symbol": "PEP",
+      "qty": 76,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610151545-UNH-sell",
+      "id": "3f45d0d5-4853-43ce-b6e3-eac85ccaa27a",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0061,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99659.83,
+  "targets": {},
+  "prices": {
+    "UNH": 409.915,
+    "JNJ": 253.71,
+    "MRK": 146.82,
+    "KO": 91.95,
+    "PEP": 128.41
+  }
+}

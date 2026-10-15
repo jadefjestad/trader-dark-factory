@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-15T19:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "COST",
+      "qty": 9,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 66,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 76,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 83,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610151545-COST-sell",
+      "id": "ce0de984-197f-47a4-b649-db3d98ba4512",
+      "symbol": "COST",
+      "qty": 9,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610151545-JNJ-sell",
+      "id": "16a68fcb-3eef-49a7-8dca-4641aca87f33",
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610151545-MRK-sell",
+      "id": "6f068cdb-5a30-4c05-b0ae-c6de47c2cc6a",
+      "symbol": "MRK",
+      "qty": 66,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610151545-PEP-sell",
+      "id": "2c35241f-aced-47c2-9ced-c1883c34a3fd",
+      "symbol": "PEP",
+      "qty": 76,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610151545-WMT-sell",
+      "id": "cbe51248-30e2-4161-94c6-231cd5adacd8",
+      "symbol": "WMT",
+      "qty": 83,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0054,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 100073.08,
+  "targets": {},
+  "prices": {
+    "JNJ": 253.71,
+    "MRK": 146.82,
+    "PEP": 128.41,
+    "COST": 981.19,
+    "WMT": 117.98
+  }
+}

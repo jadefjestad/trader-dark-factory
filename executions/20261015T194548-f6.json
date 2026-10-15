@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-15T19:45:47+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 66,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 62,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 83,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610151545-JNJ-sell",
+      "id": "947ef70d-b430-429c-b49e-1b0825bcc333",
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610151545-MRK-sell",
+      "id": "5dddf673-fb9e-49ef-a59a-02d72bcec1f3",
+      "symbol": "MRK",
+      "qty": 66,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610151545-PG-sell",
+      "id": "1fede01b-f5db-4736-9d82-f626b5919a6c",
+      "symbol": "PG",
+      "qty": 62,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610151545-UNH-sell",
+      "id": "b8163416-0567-4064-9d94-6137ba117a52",
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610151545-WMT-sell",
+      "id": "c18f4be6-44de-4c0c-b90c-901e8d661335",
+      "symbol": "WMT",
+      "qty": 83,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0047,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 100371.09,
+  "targets": {},
+  "prices": {
+    "UNH": 409.915,
+    "JNJ": 253.71,
+    "MRK": 146.82,
+    "PG": 157.105,
+    "WMT": 117.98
+  }
+}

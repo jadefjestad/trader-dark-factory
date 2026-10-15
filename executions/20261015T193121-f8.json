@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-15T19:31:14+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610151515-UNH-sell",
+      "id": "9e84b5fe-15cb-4d89-b3a4-2ba1e2dd5918",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610151515-AVGO-buy",
+      "id": "91b20656-ceeb-49b8-bdfe-8721b5c8d6a2",
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0072,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-15 15:15:00-04:00",
+  "hold_day": false,
+  "equity": 99392.39,
+  "targets": {
+    "MSFT": 0.1,
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "AVGO": 0.1,
+    "LLY": 0.1
+  },
+  "prices": {
+    "MSFT": 540.23,
+    "NVDA": 217.78,
+    "AMZN": 255.13,
+    "AVGO": 343.57,
+    "UNH": 408.88,
+    "LLY": 1263.26
+  }
+}
