@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-15T14:15:56+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 31,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610151000-ADBE-buy",
+      "id": "be26a93f-e797-4830-bb13-d4b14f7c62fe",
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610151000-AMZN-buy",
+      "id": "d03261dd-95e0-424e-87f1-ae85b6dcda62",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610151000-GOOGL-buy",
+      "id": "37d555c4-3eaf-4aff-b184-28a0ca6e4d28",
+      "symbol": "GOOGL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610151000-HD-buy",
+      "id": "adf3dce9-4277-42e5-8079-c6ab5ff1080d",
+      "symbol": "HD",
+      "qty": 31,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610151000-LLY-buy",
+      "id": "1c4f810f-f1ea-4936-a4c5-1a3f3a15d7ba",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0058,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-15 10:00:00-04:00",
+  "hold_day": false,
+  "equity": 99535.14,
+  "targets": {
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "LLY": 0.1,
+    "HD": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "AMZN": 252.37,
+    "GOOGL": 351.345,
+    "LLY": 1256.26,
+    "HD": 308.6,
+    "ADBE": 253.25
+  }
+}

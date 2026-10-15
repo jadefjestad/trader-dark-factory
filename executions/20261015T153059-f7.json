@@ -1,0 +1,83 @@
+{
+  "started_at": "2026-10-15T15:30:58+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "symbol": "KO",
+      "qty": 105,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 75,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610151115-AAPL-buy",
+      "id": "2a8b3d53-9e00-4990-83f7-78efd54334b5",
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610151115-JNJ-buy",
+      "id": "9a8390b8-98e4-4a5a-9046-37decaecaad8",
+      "symbol": "JNJ",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610151115-KO-buy",
+      "id": "966229d5-54ed-422e-91c1-016efb05226e",
+      "symbol": "KO",
+      "qty": 105,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610151115-PEP-buy",
+      "id": "68c8c4fe-0bbc-4c28-9504-446abcf917c5",
+      "symbol": "PEP",
+      "qty": 75,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-15 11:15:00-04:00",
+  "hold_day": false,
+  "equity": 100302.55,
+  "targets": {
+    "AAPL": 0.1,
+    "JNJ": 0.1,
+    "KO": 0.1,
+    "PEP": 0.1,
+    "COST": 0.1
+  },
+  "prices": {
+    "AAPL": 344.24,
+    "JNJ": 258.96,
+    "KO": 92.895,
+    "PEP": 130.82,
+    "COST": 987.695
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "started_at": "2026-10-15T18:30:55+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 6 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "HD",
+      "qty": 32,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 62,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 83,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610151415-ADBE-sell",
+      "id": "ee98f8c5-afcb-45db-a560-d8b58846141a",
+      "symbol": "ADBE",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610151415-AVGO-sell",
+      "id": "f79b8094-1896-483e-a400-f5e9f472cc5a",
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610151415-HD-sell",
+      "id": "919d365b-eb0b-472d-b680-fe721c4e88b5",
+      "symbol": "HD",
+      "qty": 32,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610151415-PG-buy",
+      "id": "54cd0bb4-f5de-4c3e-8f9c-00bfda1a07ea",
+      "symbol": "PG",
+      "qty": 62,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610151415-UNH-buy",
+      "id": "e6b97252-f1cb-4ccb-8a10-b43adaea82b5",
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610151415-WMT-buy",
+      "id": "a1efb993-f893-4978-a65e-a503ac81cfd4",
+      "symbol": "WMT",
+      "qty": 83,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0036,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-15 14:15:00-04:00",
+  "hold_day": true,
+  "equity": 100486.18,
+  "targets": {
+    "UNH": 0.1,
+    "JNJ": 0.1,
+    "MRK": 0.1,
+    "PG": 0.1,
+    "WMT": 0.1
+  },
+  "prices": {
+    "AVGO": 338.295,
+    "UNH": 410.0,
+    "JNJ": 253.54,
+    "MRK": 147.195,
+    "PG": 157.355,
+    "WMT": 118.49,
+    "HD": 306.065,
+    "ADBE": 250.19
+  }
+}

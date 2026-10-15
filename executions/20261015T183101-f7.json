@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-10-15T18:30:58+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 32,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610151415-HD-sell",
+      "id": "610852a7-1080-46b0-bd86-257b1c4f0042",
+      "symbol": "HD",
+      "qty": 32,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610151415-MRK-buy",
+      "id": "af7fc021-1252-4d1f-908e-03330dce1a4f",
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610151415-UNH-buy",
+      "id": "a6b57a77-8543-4b9a-a90a-8835b4e23eb7",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0041,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-15 14:15:00-04:00",
+  "hold_day": false,
+  "equity": 99860.5,
+  "targets": {
+    "UNH": 0.1,
+    "JNJ": 0.1,
+    "MRK": 0.1,
+    "KO": 0.1,
+    "PEP": 0.1
+  },
+  "prices": {
+    "UNH": 410.195,
+    "JNJ": 253.785,
+    "MRK": 147.195,
+    "KO": 92.24,
+    "PEP": 129.98,
+    "HD": 306.065
+  }
+}

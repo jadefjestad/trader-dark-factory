@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-15T15:15:54+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "COST",
+      "qty": 10,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 90,
+      "side": "buy"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 56,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610151100-COST-buy",
+      "id": "e46cd040-cd51-4c0a-8d69-8f761489bab1",
+      "symbol": "COST",
+      "qty": 10,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610151100-CSCO-buy",
+      "id": "45eb5b9a-7ffa-4de2-b1f9-f7a8acb281f7",
+      "symbol": "CSCO",
+      "qty": 90,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610151100-CVX-buy",
+      "id": "4a63732a-720e-4f4c-b567-3c1a653cdfe6",
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610151100-JNJ-buy",
+      "id": "12b81584-c2b6-45f6-8a77-ce6f2d3c8414",
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610151100-XOM-buy",
+      "id": "c422349a-eb4b-48f3-8f01-a7d48f54d03f",
+      "symbol": "XOM",
+      "qty": 56,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-15 11:00:00-04:00",
+  "hold_day": false,
+  "equity": 100850.02,
+  "targets": {
+    "JNJ": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1,
+    "COST": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "JNJ": 258.045,
+    "XOM": 174.545,
+    "CVX": 220.985,
+    "COST": 985.18,
+    "CSCO": 109.125
+  }
+}

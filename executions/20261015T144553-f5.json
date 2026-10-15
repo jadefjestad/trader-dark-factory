@@ -1,0 +1,55 @@
+{
+  "started_at": "2026-10-15T14:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "COST",
+      "qty": 9,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 82,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610151030-COST-buy",
+      "id": "c0825b90-dfdc-4fc1-82c3-cf0e7f3a7460",
+      "symbol": "COST",
+      "qty": 9,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610151030-WMT-buy",
+      "id": "e5b02570-69b9-478e-9051-8406391b926f",
+      "symbol": "WMT",
+      "qty": 82,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0005,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-15 10:30:00-04:00",
+  "hold_day": false,
+  "equity": 100568.66,
+  "targets": {
+    "COST": 0.1,
+    "WMT": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "COST": 989.55,
+    "WMT": 119.26,
+    "CSCO": 109.385
+  }
+}

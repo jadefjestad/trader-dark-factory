@@ -1,0 +1,84 @@
+{
+  "started_at": "2026-10-15T16:45:55+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "HD",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "symbol": "KO",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610151230-AAPL-sell",
+      "id": "616171e6-9379-48c8-b458-3abf42bbd462",
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610151230-HD-buy",
+      "id": "6c7c6b2d-b7cd-4dfd-8b5c-e5a753a97e78",
+      "symbol": "HD",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610151230-KO-buy",
+      "id": "a91a25f2-259f-48f6-9458-94846b0ff727",
+      "symbol": "KO",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610151230-MRK-buy",
+      "id": "9fd32054-a639-42dd-8ff9-1c832b7bf261",
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0013,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-15 12:30:00-04:00",
+  "hold_day": false,
+  "equity": 100138.61,
+  "targets": {
+    "JNJ": 0.1,
+    "MRK": 0.1,
+    "KO": 0.1,
+    "PEP": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "AAPL": 344.365,
+    "JNJ": 256.35,
+    "MRK": 149.515,
+    "KO": 92.505,
+    "PEP": 130.575,
+    "HD": 305.28
+  }
+}

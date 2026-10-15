@@ -1,0 +1,19 @@
+{
+  "started_at": "2026-10-15T18:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "NO ORDERS: DataError: latest trade for JNJ is 80 minutes old",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0034,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-15 14:00:00-04:00",
+  "hold_day": false,
+  "equity": 100275.07
+}

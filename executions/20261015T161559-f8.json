@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-15T16:15:55+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "GOOGL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610151200-GOOGL-sell",
+      "id": "c1e4e707-efdd-48f2-87cd-3d6f74743512",
+      "symbol": "GOOGL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610151200-MSFT-buy",
+      "id": "699e234f-0610-4a76-8147-921ed6278ac4",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0072,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-15 12:00:00-04:00",
+  "hold_day": false,
+  "equity": 99393.26,
+  "targets": {
+    "MSFT": 0.1,
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "UNH": 0.1,
+    "LLY": 0.1
+  },
+  "prices": {
+    "MSFT": 539.3,
+    "NVDA": 217.19,
+    "AMZN": 253.345,
+    "GOOGL": 348.45,
+    "UNH": 411.28,
+    "LLY": 1269.26
+  }
+}

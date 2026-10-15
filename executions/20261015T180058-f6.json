@@ -1,0 +1,16 @@
+{
+  "started_at": "2026-10-15T18:00:58+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "NO ORDERS: DataError: newest completed bar 2026-10-15 12:45:00-04:00 ended 61 minutes ago",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0018,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  }
+}
