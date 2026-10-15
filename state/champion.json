@@ -1,5 +1,5 @@
 {
-  "ref": "strategies/candidates/w206020_minsevere63.py",
+  "ref": "strategies/candidates/ms63_lowcorr_every63.py",
   "params": {
     "lookback": 252,
     "skip": 21,
@@ -11,9 +11,9 @@
     "reversal_window": 21,
     "reversal_every": 5
   },
-  "name": "w206020_minsevere63",
+  "name": "ms63_lowcorr_every63",
   "timeframe": "1Day",
-  "code_sha256": "08a8b6629c47cae0f9191edb0afc2f4a883db757038da44683f94f67dc650a33",
-  "experiment_id": "pr222-71f714d-w206020_minsevere63-r38520079070-1",
-  "promoted_at": "2026-10-14T06:05:36+00:00"
+  "code_sha256": "0366da7f2e2aa9da5616d7107734c3035d644eaf362d1e6f8acfc9a98500ef5a",
+  "experiment_id": "pr241-069e488-ms63_lowcorr_every63-r38782691446-1",
+  "promoted_at": "2026-10-15T18:06:28+00:00"
 }
