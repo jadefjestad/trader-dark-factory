@@ -1,0 +1,71 @@
+{
+  "started_at": "2026-10-16T15:15:59+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 30,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 74,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610161100-HD-buy",
+      "id": "62dcf919-0947-4755-973b-8f66f3793a70",
+      "symbol": "HD",
+      "qty": 30,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610161100-LLY-buy",
+      "id": "d93643c2-911a-463e-ac70-c07f0d105044",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610161100-PEP-buy",
+      "id": "859d9775-cd43-467b-a132-9f9ab1bd342b",
+      "symbol": "PEP",
+      "qty": 74,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0081,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-16 11:00:00-04:00",
+  "hold_day": false,
+  "equity": 99300.51,
+  "targets": {
+    "NVDA": 0.1,
+    "LLY": 0.1,
+    "PEP": 0.1,
+    "HD": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "NVDA": 216.74,
+    "LLY": 1272.74,
+    "PEP": 131.09,
+    "HD": 314.24,
+    "BAC": 52.495
+  }
+}

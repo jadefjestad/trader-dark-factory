@@ -1,0 +1,58 @@
+{
+  "started_at": "2026-10-16T14:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 82,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610161030-GOOGL-sell",
+      "id": "209b899c-e66d-4327-9ef8-45e6b7ebd2a4",
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610161030-WMT-buy",
+      "id": "2930760b-1870-4595-bb0b-2ea00abe098c",
+      "symbol": "WMT",
+      "qty": 82,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0057,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-16 10:30:00-04:00",
+  "hold_day": false,
+  "equity": 100037.89,
+  "targets": {
+    "META": 0.1,
+    "UNH": 0.1,
+    "WMT": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "GOOGL": 346.675,
+    "META": 723.51,
+    "UNH": 398.695,
+    "WMT": 118.41,
+    "ADBE": 247.66
+  }
+}

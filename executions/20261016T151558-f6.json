@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-16T15:15:56+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 40,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610161100-ADBE-buy",
+      "id": "22f7b3b1-2d64-4e3c-b0f9-35078d8ca7b0",
+      "symbol": "ADBE",
+      "qty": 40,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610161100-AVGO-buy",
+      "id": "3e0aa024-baf9-4bd6-9fc9-1132d62d2ff2",
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610161100-GOOGL-buy",
+      "id": "96a7d4d3-2a0b-454f-a633-ac8b0c5cf7d4",
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610161100-META-buy",
+      "id": "3cab71c8-a15b-4bbf-a0be-6d8b752d0d9b",
+      "symbol": "META",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610161100-MSFT-buy",
+      "id": "447530df-1247-49cf-beb4-42f853b2ab61",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0049,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-16 11:00:00-04:00",
+  "hold_day": false,
+  "equity": 100360.56,
+  "targets": {
+    "MSFT": 0.1,
+    "GOOGL": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "MSFT": 531.8,
+    "GOOGL": 344.04,
+    "META": 720.0,
+    "AVGO": 336.55,
+    "ADBE": 245.83
+  }
+}

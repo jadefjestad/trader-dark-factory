@@ -1,0 +1,110 @@
+{
+  "started_at": "2026-10-16T18:15:59+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 6 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 31,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 45,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610161400-HD-sell",
+      "id": "dee1ff2a-89d9-433e-89c2-be037c8a9923",
+      "symbol": "HD",
+      "qty": 31,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610161400-JPM-sell",
+      "id": "4bb010a3-ab41-4ef6-aceb-f5af4178a589",
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610161400-LLY-sell",
+      "id": "7f4a1345-5974-4272-b764-9e262430fd9b",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610161400-AVGO-buy",
+      "id": "fbefe4eb-a847-4b83-a1c1-2137f5e80d84",
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610161400-META-buy",
+      "id": "ff121af0-8833-40e3-bb3b-0e00062d29f6",
+      "symbol": "META",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610161400-NVDA-buy",
+      "id": "43bd2392-d293-4544-b577-edd04d93d1df",
+      "symbol": "NVDA",
+      "qty": 45,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0096,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-16 14:00:00-04:00",
+  "hold_day": false,
+  "equity": 99881.77,
+  "targets": {
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "NVDA": 215.155,
+    "AMZN": 249.13,
+    "META": 706.945,
+    "AVGO": 330.59,
+    "JPM": 338.875,
+    "LLY": 1255.97,
+    "HD": 309.97,
+    "BAC": 51.545
+  }
+}

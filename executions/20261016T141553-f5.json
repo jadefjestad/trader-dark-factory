@@ -1,0 +1,81 @@
+{
+  "started_at": "2026-10-16T14:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 39,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610161000-ADBE-buy",
+      "id": "3d2ead29-e8d3-4ca5-9e1a-a36e07eadd6b",
+      "symbol": "ADBE",
+      "qty": 39,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610161000-GOOGL-buy",
+      "id": "9440ec2f-0248-4a06-9813-9244c064d897",
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610161000-META-buy",
+      "id": "fb75b3fe-5440-4c12-aabf-f3ec55d64724",
+      "symbol": "META",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610161000-UNH-buy",
+      "id": "c2a08feb-3f03-44db-bd15-dfcc06b5c8de",
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0055,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-16 10:00:00-04:00",
+  "hold_day": false,
+  "equity": 100062.75,
+  "targets": {
+    "GOOGL": 0.1,
+    "META": 0.1,
+    "UNH": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "GOOGL": 344.75,
+    "META": 724.255,
+    "UNH": 398.91,
+    "ADBE": 248.8
+  }
+}

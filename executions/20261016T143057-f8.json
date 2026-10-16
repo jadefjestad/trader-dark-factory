@@ -1,0 +1,53 @@
+{
+  "started_at": "2026-10-16T14:30:55+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 185,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610161015-BAC-buy",
+      "id": "f658eb50-64fd-4105-9eb8-ab594b24b9a2",
+      "symbol": "BAC",
+      "qty": 185,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610161015-NVDA-buy",
+      "id": "70ff04c3-2d84-4de3-904f-8c13df470096",
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0076,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-16 10:15:00-04:00",
+  "hold_day": false,
+  "equity": 99352.97,
+  "targets": {
+    "NVDA": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "NVDA": 217.57,
+    "BAC": 52.59
+  }
+}
