@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-16T19:45:46+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 189,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 45,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610161545-AMZN-sell",
+      "id": "6a3423c1-4eb6-4579-acf0-5863b15bda5e",
+      "symbol": "AMZN",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610161545-AVGO-sell",
+      "id": "e3a54583-bc7b-44b7-92dc-9b0bd2edf34f",
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610161545-BAC-sell",
+      "id": "419790aa-eb6e-44e0-8b2d-7871b28f8884",
+      "symbol": "BAC",
+      "qty": 189,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610161545-META-sell",
+      "id": "cab4d4d5-b18b-4a81-b69a-1698132429be",
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610161545-NVDA-sell",
+      "id": "d43ab113-84c8-480a-afcf-61087d0d133d",
+      "symbol": "NVDA",
+      "qty": 45,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0114,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99702.7,
+  "targets": {},
+  "prices": {
+    "NVDA": 214.17,
+    "AMZN": 249.38,
+    "META": 703.215,
+    "AVGO": 329.28,
+    "BAC": 51.25
+  }
+}

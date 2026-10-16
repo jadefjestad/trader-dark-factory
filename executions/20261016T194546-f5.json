@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-16T19:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 190,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610161545-ADBE-sell",
+      "id": "d2f9bcc7-0955-4813-8a0f-0369dd6916a9",
+      "symbol": "ADBE",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610161545-BAC-sell",
+      "id": "8900dcb5-ff57-4038-afb9-18cd07613d75",
+      "symbol": "BAC",
+      "qty": 190,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610161545-GOOGL-sell",
+      "id": "d5997404-11ef-490e-a25c-b756b6dbde70",
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610161545-META-sell",
+      "id": "af244f5a-c359-479a-9ac8-45c6e4dc1d89",
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610161545-MSFT-sell",
+      "id": "e97044f0-aed6-47f3-9ac1-681e973034ee",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0118,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99428.53,
+  "targets": {},
+  "prices": {
+    "MSFT": 525.92,
+    "GOOGL": 339.82,
+    "META": 703.12,
+    "BAC": 51.25,
+    "ADBE": 244.4
+  }
+}
