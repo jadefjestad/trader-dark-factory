@@ -1,5 +1,5 @@
 {
-  "ref": "strategies/candidates/e63_lowcorr_every126.py",
+  "ref": "strategies/candidates/e126_wts_15_70_15.py",
   "params": {
     "lookback": 252,
     "skip": 21,
@@ -11,9 +11,9 @@
     "reversal_window": 21,
     "reversal_every": 5
   },
-  "name": "e63_lowcorr_every126",
+  "name": "e126_wts_15_70_15",
   "timeframe": "1Day",
-  "code_sha256": "a1d638bc9c8fd782d8fb7e33ce13eab193457a309082d488ab259a98b7791d1a",
-  "experiment_id": "pr242-8ad4355-e63_lowcorr_every126-r38799115214-1",
-  "promoted_at": "2026-10-15T20:06:41+00:00"
+  "code_sha256": "d6f176330dd2c82af5fe55866e4733ca270ce81059971dec12fdad42839f0a72",
+  "experiment_id": "pr283-33a2f9d-e126_wts_15_70_15-r39188234700-1",
+  "promoted_at": "2026-10-19T02:05:49+00:00"
 }
