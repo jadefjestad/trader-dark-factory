@@ -1,0 +1,77 @@
+{
+  "started_at": "2026-10-19T19:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 193,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 67,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610191545-AVGO-sell",
+      "id": "a3f526af-9bd3-439f-bbe8-695eb86828e5",
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610191545-BAC-sell",
+      "id": "9c89832d-0aa2-4def-8c04-d56bb96e3f77",
+      "symbol": "BAC",
+      "qty": 193,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610191545-JPM-sell",
+      "id": "363d9c4a-65b4-4160-90d7-c7ca1e71ff03",
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610191545-MRK-sell",
+      "id": "f5fa98d8-412d-441b-8587-f478b57ce4d8",
+      "symbol": "MRK",
+      "qty": 67,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0113,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99475.6,
+  "targets": {},
+  "prices": {
+    "AVGO": 335.91,
+    "JPM": 333.735,
+    "MRK": 143.995,
+    "BAC": 50.275
+  }
+}
