@@ -1,0 +1,19 @@
+{
+  "started_at": "2026-10-19T15:11:43+00:00",
+  "fund": 3,
+  "fund_name": "\ud83d\udd96 Live Long and Profit",
+  "dry_run": false,
+  "status": "NO ORDERS: RiskError: buys $35,089 exceed cash $3,337 plus sells $8,357",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0021,
+  "strategy": {
+    "name": "earnings_announcement_premium",
+    "ref": "strategies/candidates/earnings_announcement_premium.py",
+    "experiment_id": "pr87-6530167-earnings_announcement_premium-r37243169062-1"
+  },
+  "signal_bar": "2026-10-16",
+  "hold_day": true,
+  "equity": 102903.56,
+  "data_source": "alpaca:sip"
+}
