@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-10-19T16:00:55+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610191145-AMZN-buy",
+      "id": "7d8e921f-61b8-4a5b-8cde-9b06b7d38c89",
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0083,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-19 11:45:00-04:00",
+  "hold_day": false,
+  "equity": 99284.97,
+  "targets": {
+    "MSFT": 0.1,
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "PEP": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "MSFT": 534.405,
+    "AMZN": 262.905,
+    "GOOGL": 345.75,
+    "PEP": 132.29,
+    "HD": 309.44
+  }
+}

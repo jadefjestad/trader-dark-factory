@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-10-19T16:30:59+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610191215-MSFT-sell",
+      "id": "dd728978-494f-4fbd-b598-e76f6272b969",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610191215-AMZN-buy",
+      "id": "9eec4145-7117-42d2-b3c4-1943d38e5b63",
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610191215-NVDA-buy",
+      "id": "f4e9bb95-d466-470b-b76c-1e2ee515e7b2",
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0084,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-19 12:15:00-04:00",
+  "hold_day": false,
+  "equity": 99266.35,
+  "targets": {
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "PEP": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "MSFT": 533.17,
+    "NVDA": 218.01,
+    "AMZN": 262.86,
+    "GOOGL": 345.355,
+    "PEP": 132.49,
+    "HD": 309.205
+  }
+}

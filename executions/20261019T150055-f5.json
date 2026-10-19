@@ -1,0 +1,55 @@
+{
+  "started_at": "2026-10-19T15:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610191045-JNJ-buy",
+      "id": "1cf985db-836b-4fa8-95ef-efb021304898",
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610191045-UNH-buy",
+      "id": "937c6f1d-755f-4f81-ae1e-c97c783a294d",
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0117,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-19 10:45:00-04:00",
+  "hold_day": false,
+  "equity": 99439.89,
+  "targets": {
+    "UNH": 0.1,
+    "JNJ": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "UNH": 402.34,
+    "JNJ": 252.005,
+    "CSCO": 106.95
+  }
+}

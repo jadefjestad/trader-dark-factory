@@ -1,0 +1,46 @@
+{
+  "started_at": "2026-10-19T18:00:56+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610191345-MSFT-sell",
+      "id": "a2ba50b2-a63f-4451-a7c1-3c8e7fb7d23e",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0089,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-19 13:45:00-04:00",
+  "hold_day": false,
+  "equity": 99378.98,
+  "targets": {
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "AVGO": 0.1
+  },
+  "prices": {
+    "MSFT": 533.635,
+    "NVDA": 217.475,
+    "AMZN": 262.46,
+    "GOOGL": 344.09,
+    "AVGO": 335.085
+  }
+}

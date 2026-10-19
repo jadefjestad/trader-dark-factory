@@ -1,0 +1,46 @@
+{
+  "started_at": "2026-10-19T18:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610191400-AAPL-sell",
+      "id": "995a1e93-d9ab-47b3-88ca-65bf25225bdc",
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0104,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-19 14:00:00-04:00",
+  "hold_day": false,
+  "equity": 99567.66,
+  "targets": {
+    "AVGO": 0.1,
+    "JPM": 0.1,
+    "MRK": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "AAPL": 343.53,
+    "AVGO": 335.115,
+    "JPM": 334.98,
+    "MRK": 144.47,
+    "BAC": 50.5
+  }
+}

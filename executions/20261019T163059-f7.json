@@ -1,0 +1,54 @@
+{
+  "started_at": "2026-10-19T16:30:57+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "XOM",
+      "qty": 54,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610191215-XOM-sell",
+      "id": "5810019c-4794-42e9-8aee-4d9c415b06cd",
+      "symbol": "XOM",
+      "qty": 54,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610191215-MSFT-buy",
+      "id": "65197f60-76f8-4a7f-9ca0-b6366f27c19f",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0081,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-19 12:15:00-04:00",
+  "hold_day": false,
+  "equity": 99462.62,
+  "targets": {
+    "MSFT": 0.1,
+    "KO": 0.1
+  },
+  "prices": {
+    "MSFT": 533.17,
+    "XOM": 177.99,
+    "KO": 93.48
+  }
+}

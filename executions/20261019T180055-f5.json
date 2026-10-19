@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-10-19T18:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610191345-UNH-sell",
+      "id": "a1edbf5c-3a49-44ec-8ff0-4e67c768d4d4",
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610191345-AVGO-buy",
+      "id": "ef80000d-a1b6-4dee-b124-9db106117054",
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610191345-JPM-buy",
+      "id": "156f87eb-a0a9-4cf7-918d-216d564d8c08",
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0106,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-19 13:45:00-04:00",
+  "hold_day": false,
+  "equity": 99546.23,
+  "targets": {
+    "AAPL": 0.1,
+    "AVGO": 0.1,
+    "JPM": 0.1,
+    "MRK": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "AAPL": 342.625,
+    "AVGO": 335.085,
+    "JPM": 335.28,
+    "UNH": 403.69,
+    "MRK": 144.57,
+    "BAC": 50.415
+  }
+}
