@@ -1,0 +1,104 @@
+{
+  "started_at": "2026-10-20T18:52:34+00:00",
+  "fund": 1,
+  "fund_name": "\ud83d\udc80 Darth Trader",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f1-20261020-39478505932-1-CVX-sell",
+      "id": "9112509d-be52-45ae-ac8e-0640dc1a97c7",
+      "symbol": "CVX",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261020-39478505932-1-MRK-sell",
+      "id": "5dc93fb4-e2be-4568-8313-e3c1398e4a9f",
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "e126_wts_15_70_15",
+    "ref": "strategies/candidates/e126_wts_15_70_15.py",
+    "experiment_id": "pr283-33a2f9d-e126_wts_15_70_15-r39188234700-1"
+  },
+  "champion": {
+    "name": "e126_wts_15_70_15",
+    "ref": "strategies/candidates/e126_wts_15_70_15.py",
+    "experiment_id": "pr283-33a2f9d-e126_wts_15_70_15-r39188234700-1"
+  },
+  "signal_bar": "2026-10-19",
+  "hold_day": false,
+  "equity": 103802.37,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.0,
+    "MSFT": 0.0,
+    "NVDA": 0.018076777705298263,
+    "AMZN": 0.0,
+    "GOOGL": 0.018076777705298263,
+    "META": 0.0,
+    "AVGO": 0.018076777705298263,
+    "JPM": 0.018076777705298263,
+    "V": 0.0,
+    "MA": 0.0,
+    "UNH": 0.0,
+    "LLY": 0.019767281669806052,
+    "JNJ": 0.037844059375104315,
+    "MRK": 0.037844059375104315,
+    "XOM": 0.019767281669806052,
+    "CVX": 0.019767281669806052,
+    "PG": 0.0,
+    "KO": 0.019767281669806052,
+    "PEP": 0.0,
+    "COST": 0.0,
+    "WMT": 0.0,
+    "HD": 0.0,
+    "BAC": 0.018076777705298263,
+    "ADBE": 0.0,
+    "CSCO": 0.019767281669806052
+  },
+  "prices": {
+    "AAPL": 340.06,
+    "MSFT": 532.04,
+    "NVDA": 216.665,
+    "AMZN": 262.66,
+    "GOOGL": 340.07,
+    "META": 689.465,
+    "AVGO": 335.075,
+    "JPM": 335.255,
+    "V": 407.13,
+    "MA": 621.89,
+    "UNH": 419.78,
+    "LLY": 1281.69,
+    "JNJ": 258.71,
+    "MRK": 148.34,
+    "XOM": 177.27,
+    "CVX": 224.76,
+    "PG": 158.585,
+    "KO": 92.935,
+    "PEP": 134.43,
+    "COST": 994.33,
+    "WMT": 118.155,
+    "HD": 316.19,
+    "BAC": 50.545,
+    "ADBE": 255.105,
+    "CSCO": 106.6
+  }
+}
