@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-20T19:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 193,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 82,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610201545-BAC-sell",
+      "id": "4f75c9f4-c3a9-4b89-af58-8b4c97bdca6b",
+      "symbol": "BAC",
+      "qty": 193,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610201545-GOOGL-sell",
+      "id": "4b8df242-a4f4-4e69-b75a-0575794b095f",
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610201545-JPM-sell",
+      "id": "8013b2df-165b-41a2-a4c2-0fc61e77770e",
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610201545-LLY-sell",
+      "id": "dedc05db-eb90-4ba8-8989-475ae9b660e3",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610201545-WMT-sell",
+      "id": "ad6bfeed-a5a0-4030-ae6a-d9e48243cb2f",
+      "symbol": "WMT",
+      "qty": 82,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0102,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99585.97,
+  "targets": {},
+  "prices": {
+    "GOOGL": 338.8,
+    "JPM": 335.27,
+    "LLY": 1286.73,
+    "WMT": 117.965,
+    "BAC": 50.555
+  }
+}

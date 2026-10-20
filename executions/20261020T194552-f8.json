@@ -1,0 +1,77 @@
+{
+  "started_at": "2026-10-20T19:45:50+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 91,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610201545-ADBE-sell",
+      "id": "41776f31-1308-4e95-9cd2-75d4aecf14af",
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610201545-CSCO-sell",
+      "id": "9885f587-1faa-47a1-9aa1-3da97bc594a6",
+      "symbol": "CSCO",
+      "qty": 91,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610201545-NVDA-sell",
+      "id": "aeaa4579-cbe7-4f4f-8707-b3e4d4f3d57f",
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610201545-UNH-sell",
+      "id": "db266012-72a0-4492-985c-78468df418e3",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0096,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99148.39,
+  "targets": {},
+  "prices": {
+    "NVDA": 216.63,
+    "UNH": 419.81,
+    "ADBE": 255.405,
+    "CSCO": 106.67
+  }
+}

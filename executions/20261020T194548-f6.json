@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-20T19:45:47+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 192,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 105,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610201545-BAC-sell",
+      "id": "6608f93c-7bf0-4dc1-8449-e800c4e1dfb7",
+      "symbol": "BAC",
+      "qty": 192,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610201545-GOOGL-sell",
+      "id": "98765226-e321-48a7-808b-d89c81ad92d6",
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610201545-KO-sell",
+      "id": "b7c942ff-6c05-4679-9b15-191af4462e72",
+      "symbol": "KO",
+      "qty": 105,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610201545-LLY-sell",
+      "id": "3ac3c262-6a95-4787-bf8c-0a57f8d3f933",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610201545-UNH-sell",
+      "id": "380b8c31-540e-47a7-a6a7-c05f4e87c58e",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0104,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99802.36,
+  "targets": {},
+  "prices": {
+    "GOOGL": 338.73,
+    "UNH": 419.81,
+    "LLY": 1286.73,
+    "KO": 93.2,
+    "BAC": 50.61
+  }
+}

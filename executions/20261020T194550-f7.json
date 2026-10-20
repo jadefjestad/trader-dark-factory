@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-20T19:45:48+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 192,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610201545-ADBE-sell",
+      "id": "8ad60d95-df97-42c3-8357-dea74d200f68",
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610201545-BAC-sell",
+      "id": "73fc8a89-2148-4bd5-8364-411fb9f5dd6b",
+      "symbol": "BAC",
+      "qty": 192,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610201545-LLY-sell",
+      "id": "39de0826-e3b6-4441-a988-0fb077b62c03",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610201545-MRK-sell",
+      "id": "60d9561d-ac42-4393-9f01-88de32ea8118",
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610201545-UNH-sell",
+      "id": "f6a5e565-2730-45ff-9169-becc6b91ff12",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0081,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99462.49,
+  "targets": {},
+  "prices": {
+    "UNH": 419.81,
+    "LLY": 1286.73,
+    "MRK": 148.23,
+    "BAC": 50.595,
+    "ADBE": 255.405
+  }
+}
