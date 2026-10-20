@@ -1,0 +1,56 @@
+{
+  "started_at": "2026-10-20T17:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 43,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610201245-CVX-sell",
+      "id": "7b67834c-a45b-47c9-aff0-512f180394cb",
+      "symbol": "CVX",
+      "qty": 43,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610201245-JPM-buy",
+      "id": "67af4ac7-4048-4357-bb19-9d8201001f9b",
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0097,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-20 12:45:00-04:00",
+  "hold_day": false,
+  "equity": 99634.59,
+  "targets": {
+    "JPM": 0.1,
+    "KO": 0.1,
+    "WMT": 0.1
+  },
+  "prices": {
+    "JPM": 334.91,
+    "CVX": 224.32,
+    "KO": 92.855,
+    "WMT": 118.13
+  }
+}

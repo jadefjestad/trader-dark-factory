@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-20T14:15:56+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 191,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 91,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610201000-AVGO-buy",
+      "id": "2dad5fbd-d4ca-47b0-b5af-f77cbcd2ec71",
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610201000-BAC-buy",
+      "id": "b996c1dd-2fc8-44da-af3d-41fa7331f7db",
+      "symbol": "BAC",
+      "qty": 191,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610201000-CSCO-buy",
+      "id": "14964567-ef02-45e0-893b-c9f94825487f",
+      "symbol": "CSCO",
+      "qty": 91,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610201000-LLY-buy",
+      "id": "23e8f551-a3c3-4779-a07b-3c82f4648876",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610201000-NVDA-buy",
+      "id": "ba2f2847-30b4-469b-b534-eda98e3814cf",
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0078,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-20 10:00:00-04:00",
+  "hold_day": false,
+  "equity": 99326.01,
+  "targets": {
+    "NVDA": 0.1,
+    "AVGO": 0.1,
+    "LLY": 0.1,
+    "BAC": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 216.98,
+    "AVGO": 338.52,
+    "LLY": 1300.2,
+    "BAC": 50.835,
+    "CSCO": 106.57
+  }
+}

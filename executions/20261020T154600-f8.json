@@ -1,0 +1,44 @@
+{
+  "started_at": "2026-10-20T15:45:58+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 91,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610201130-CSCO-sell",
+      "id": "65dad7c8-b96e-47e2-8bb3-e75c781a61a3",
+      "symbol": "CSCO",
+      "qty": 91,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.009,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-20 11:30:00-04:00",
+  "hold_day": false,
+  "equity": 99210.17,
+  "targets": {
+    "NVDA": 0.1,
+    "UNH": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "NVDA": 216.795,
+    "UNH": 420.46,
+    "BAC": 51.05,
+    "CSCO": 106.16
+  }
+}

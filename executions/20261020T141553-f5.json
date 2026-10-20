@@ -1,0 +1,53 @@
+{
+  "started_at": "2026-10-20T14:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 31,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 82,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610201000-HD-buy",
+      "id": "66c191ec-d488-4a60-8012-717329394077",
+      "symbol": "HD",
+      "qty": 31,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610201000-WMT-buy",
+      "id": "f96be0ad-7f4f-4eb3-b6a9-9d2d80acc302",
+      "symbol": "WMT",
+      "qty": 82,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0114,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-20 10:00:00-04:00",
+  "hold_day": false,
+  "equity": 99469.77,
+  "targets": {
+    "WMT": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "WMT": 118.825,
+    "HD": 313.81
+  }
+}

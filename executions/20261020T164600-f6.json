@@ -1,0 +1,135 @@
+{
+  "started_at": "2026-10-20T16:45:53+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 8 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 43,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 105,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 66,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 55,
+      "side": "sell"
+    },
+    {
+      "symbol": "COST",
+      "qty": 9,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 73,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610201230-CVX-sell",
+      "id": "18e91b7c-009c-4218-9093-1b7b690a0a66",
+      "symbol": "CVX",
+      "qty": 43,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610201230-KO-sell",
+      "id": "ba5e587c-fac4-426d-9f82-f861e39eab01",
+      "symbol": "KO",
+      "qty": 105,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610201230-MRK-sell",
+      "id": "f1ab516f-4c4b-4a96-9558-7f619cff1a80",
+      "symbol": "MRK",
+      "qty": 66,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610201230-XOM-sell",
+      "id": "e141458a-bd66-441e-af01-0ca346d9c0e9",
+      "symbol": "XOM",
+      "qty": 55,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610201230-COST-buy",
+      "id": "8f09559d-0c71-4012-b9df-cb2b8b4767fe",
+      "symbol": "COST",
+      "qty": 9,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610201230-GOOGL-buy",
+      "id": "35afc4d2-a2e9-45fd-919e-dd3f31f85a0b",
+      "symbol": "GOOGL",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610201230-JPM-buy",
+      "id": "b1ba25ce-926f-4dce-a24a-79d98cebaf60",
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610201230-PEP-buy",
+      "id": "e5b694ce-8b27-47fe-a016-7c64b00f0cca",
+      "symbol": "PEP",
+      "qty": 73,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0095,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-20 12:30:00-04:00",
+  "hold_day": false,
+  "equity": 99892.58,
+  "targets": {
+    "GOOGL": 0.1,
+    "JPM": 0.1,
+    "PEP": 0.1,
+    "COST": 0.1,
+    "WMT": 0.1
+  },
+  "prices": {
+    "GOOGL": 341.49,
+    "JPM": 335.505,
+    "MRK": 147.985,
+    "XOM": 176.885,
+    "CVX": 224.0,
+    "KO": 92.885,
+    "PEP": 134.06,
+    "COST": 993.94,
+    "WMT": 118.16
+  }
+}

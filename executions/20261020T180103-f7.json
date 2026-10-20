@@ -1,0 +1,44 @@
+{
+  "started_at": "2026-10-20T18:01:01+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610201345-MRK-sell",
+      "id": "bf84ca14-5105-4a3b-8d3e-dd0956da87dd",
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0077,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-20 13:45:00-04:00",
+  "hold_day": false,
+  "equity": 99501.59,
+  "targets": {
+    "JPM": 0.1,
+    "V": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "JPM": 335.52,
+    "V": 406.795,
+    "MRK": 148.34,
+    "HD": 315.69
+  }
+}

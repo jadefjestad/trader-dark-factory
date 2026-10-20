@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-10-20T14:30:58+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610201015-BAC-sell",
+      "id": "bf123c45-f4e9-4d79-9218-4d36118aeade",
+      "symbol": "BAC",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0055,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-20 10:15:00-04:00",
+  "hold_day": false,
+  "equity": 99562.64,
+  "targets": {
+    "NVDA": 0.1,
+    "AVGO": 0.1,
+    "LLY": 0.1,
+    "BAC": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 218.245,
+    "AVGO": 340.42,
+    "LLY": 1303.62,
+    "BAC": 51.28,
+    "CSCO": 107.03
+  }
+}

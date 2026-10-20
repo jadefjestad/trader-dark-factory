@@ -1,0 +1,45 @@
+{
+  "started_at": "2026-10-20T16:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "KO",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610201145-KO-buy",
+      "id": "54af841b-1e3b-41b1-ad97-285e404c3d3c",
+      "symbol": "KO",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0102,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-20 11:45:00-04:00",
+  "hold_day": false,
+  "equity": 99593.49,
+  "targets": {
+    "XOM": 0.1,
+    "CVX": 0.1,
+    "KO": 0.1,
+    "WMT": 0.1
+  },
+  "prices": {
+    "XOM": 176.07,
+    "CVX": 223.175,
+    "KO": 92.92,
+    "WMT": 118.24
+  }
+}
