@@ -1,0 +1,85 @@
+{
+  "started_at": "2026-10-21T19:31:00+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "symbol": "MA",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 64,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 43,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610211515-AMZN-sell",
+      "id": "739798b2-b6e4-4de8-bc4c-842eae143598",
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610211515-MA-sell",
+      "id": "f8045cd7-66f7-4dfb-8b43-36792c3791b1",
+      "symbol": "MA",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610211515-MRK-buy",
+      "id": "4ab2f479-c216-4a74-bf35-26b11115d872",
+      "symbol": "MRK",
+      "qty": 64,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610211515-NVDA-buy",
+      "id": "8eb6d0d6-66ec-4d6d-afad-7496131096db",
+      "symbol": "NVDA",
+      "qty": 43,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0137,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-21 15:15:00-04:00",
+  "hold_day": false,
+  "equity": 98735.5,
+  "targets": {
+    "AAPL": 0.1,
+    "NVDA": 0.1,
+    "MRK": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1
+  },
+  "prices": {
+    "AAPL": 344.255,
+    "NVDA": 221.13,
+    "AMZN": 262.69,
+    "MA": 621.74,
+    "MRK": 149.245,
+    "XOM": 177.98,
+    "CVX": 226.93
+  }
+}

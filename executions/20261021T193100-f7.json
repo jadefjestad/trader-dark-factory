@@ -1,0 +1,33 @@
+{
+  "started_at": "2026-10-21T19:30:58+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 0 orders",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0097,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-21 15:15:00-04:00",
+  "hold_day": false,
+  "equity": 99293.56,
+  "targets": {
+    "MSFT": 0.1,
+    "META": 0.1,
+    "PEP": 0.1,
+    "BAC": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "MSFT": 532.05,
+    "META": 702.91,
+    "PEP": 134.24,
+    "BAC": 50.85,
+    "ADBE": 254.8
+  }
+}

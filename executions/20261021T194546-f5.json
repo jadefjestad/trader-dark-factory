@@ -1,0 +1,64 @@
+{
+  "started_at": "2026-10-21T19:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "HD",
+      "qty": 31,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610211545-ADBE-sell",
+      "id": "e75d3a8f-cbdf-4b25-9495-966474f3c7ee",
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610211545-HD-sell",
+      "id": "a6aca703-8403-4bb0-b856-9c7add2bdf9b",
+      "symbol": "HD",
+      "qty": 31,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610211545-META-sell",
+      "id": "a8ff0ca1-79b1-4926-b489-a3f847e7b81c",
+      "symbol": "META",
+      "qty": 13,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0072,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99890.15,
+  "targets": {},
+  "prices": {
+    "META": 703.11,
+    "HD": 312.69,
+    "ADBE": 254.95
+  }
+}

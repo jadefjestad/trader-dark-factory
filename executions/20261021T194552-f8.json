@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-21T19:45:50+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 64,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 43,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 54,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610211545-AAPL-sell",
+      "id": "b9cd2929-bed5-4630-9988-0c0c246fabd6",
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610211545-CVX-sell",
+      "id": "73c47994-8a8b-4a36-a6c6-e2d634b671e3",
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610211545-MRK-sell",
+      "id": "517360bd-5353-4005-a54e-9baf24063171",
+      "symbol": "MRK",
+      "qty": 64,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610211545-NVDA-sell",
+      "id": "a0faa223-a364-4c23-ba85-0cc55edcf7e1",
+      "symbol": "NVDA",
+      "qty": 43,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610211545-XOM-sell",
+      "id": "8b36d883-9cd2-4479-8abb-cfc1428aacef",
+      "symbol": "XOM",
+      "qty": 54,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0138,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 98732.87,
+  "targets": {},
+  "prices": {
+    "AAPL": 344.325,
+    "NVDA": 221.14,
+    "MRK": 149.565,
+    "XOM": 177.755,
+    "CVX": 226.62
+  }
+}
