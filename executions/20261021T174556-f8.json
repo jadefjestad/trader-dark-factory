@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-21T17:45:54+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "PEP",
+      "qty": 71,
+      "side": "sell"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610211330-PEP-sell",
+      "id": "9cf77974-a5e7-4acc-8e3e-b09ee059fc61",
+      "symbol": "PEP",
+      "qty": 71,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610211330-AMZN-buy",
+      "id": "93a2222c-396b-4285-8930-333ea3e1db98",
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0108,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-21 13:30:00-04:00",
+  "hold_day": false,
+  "equity": 99031.81,
+  "targets": {
+    "AAPL": 0.1,
+    "AMZN": 0.1,
+    "META": 0.1,
+    "V": 0.1,
+    "MA": 0.1
+  },
+  "prices": {
+    "AAPL": 344.72,
+    "AMZN": 264.0,
+    "META": 707.52,
+    "V": 408.76,
+    "MA": 623.27,
+    "PEP": 134.35
+  }
+}

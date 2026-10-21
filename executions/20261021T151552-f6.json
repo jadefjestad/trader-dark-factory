@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-21T15:15:51+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 31,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610211100-HD-buy",
+      "id": "a5f61cd6-ebac-4971-abaf-c9501782f129",
+      "symbol": "HD",
+      "qty": 31,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610211100-JNJ-buy",
+      "id": "e162d6b3-c776-47cc-ae95-08b9b65e0d99",
+      "symbol": "JNJ",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610211100-JPM-buy",
+      "id": "b2fb17ec-ed71-4ca8-acf7-ad344bd7dd7f",
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610211100-LLY-buy",
+      "id": "36c52d12-c907-4925-b267-72999e984a3a",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610211100-UNH-buy",
+      "id": "b9760d4d-d655-40f8-b165-1f2dff47fc0a",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0104,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-21 11:00:00-04:00",
+  "hold_day": false,
+  "equity": 99801.34,
+  "targets": {
+    "JPM": 0.1,
+    "UNH": 0.1,
+    "LLY": 0.1,
+    "JNJ": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "JPM": 333.585,
+    "UNH": 415.95,
+    "LLY": 1266.16,
+    "JNJ": 254.91,
+    "HD": 313.11
+  }
+}

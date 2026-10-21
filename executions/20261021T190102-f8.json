@@ -1,0 +1,85 @@
+{
+  "started_at": "2026-10-21T19:00:58+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 54,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610211445-AVGO-sell",
+      "id": "2034cfb7-0555-48a8-a931-c371de2c2a8a",
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610211445-V-sell",
+      "id": "312433f5-1f23-4401-871c-cca4f0f2adeb",
+      "symbol": "V",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610211445-CVX-buy",
+      "id": "24f3d57d-76ad-493e-8e9f-b8f0e5dc9662",
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610211445-XOM-buy",
+      "id": "92482b07-4835-4e67-9ec2-964f75f7a6a6",
+      "symbol": "XOM",
+      "qty": 54,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0131,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-21 14:45:00-04:00",
+  "hold_day": false,
+  "equity": 98800.29,
+  "targets": {
+    "AAPL": 0.1,
+    "AMZN": 0.1,
+    "MA": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1
+  },
+  "prices": {
+    "AAPL": 343.75,
+    "AMZN": 262.01,
+    "AVGO": 335.86,
+    "V": 407.585,
+    "MA": 622.215,
+    "XOM": 178.8,
+    "CVX": 228.035
+  }
+}

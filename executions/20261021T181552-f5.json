@@ -1,0 +1,50 @@
+{
+  "started_at": "2026-10-21T18:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 91,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610211400-CSCO-sell",
+      "id": "eed46970-c256-4689-904f-8949b1ce766d",
+      "symbol": "CSCO",
+      "qty": 91,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610211400-UNH-sell",
+      "id": "1eb69a79-81b7-49ca-b3d3-40c3735a36fb",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0073,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-21 14:00:00-04:00",
+  "hold_day": false,
+  "equity": 99883.97,
+  "targets": {},
+  "prices": {
+    "UNH": 417.11,
+    "CSCO": 107.545
+  }
+}

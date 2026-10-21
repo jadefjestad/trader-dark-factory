@@ -1,0 +1,39 @@
+{
+  "started_at": "2026-10-21T19:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610211445-ADBE-buy",
+      "id": "22037d6c-8af0-402a-a2a9-a2a4bb8104af",
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0073,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-21 14:45:00-04:00",
+  "hold_day": false,
+  "equity": 99881.77,
+  "targets": {
+    "ADBE": 0.1
+  },
+  "prices": {
+    "ADBE": 254.405
+  }
+}
