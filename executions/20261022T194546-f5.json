@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-22T19:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 46,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610221545-AMZN-sell",
+      "id": "bbe13a89-0dce-4e43-8059-18a2ad8c68f0",
+      "symbol": "AMZN",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610221545-AVGO-sell",
+      "id": "74f9a303-bb45-4f9d-8c89-e33198dbdad1",
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610221545-GOOGL-sell",
+      "id": "d8e36b64-9894-48f7-a3ff-c004468bd19b",
+      "symbol": "GOOGL",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610221545-META-sell",
+      "id": "5cb7651c-ad2e-4968-8152-17f061346640",
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610221545-NVDA-sell",
+      "id": "bf686a70-6328-40b9-8195-41275e86f3bc",
+      "symbol": "NVDA",
+      "qty": 46,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0073,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99883.77,
+  "targets": {},
+  "prices": {
+    "NVDA": 211.8,
+    "AMZN": 249.08,
+    "GOOGL": 322.34,
+    "META": 643.71,
+    "AVGO": 321.345
+  }
+}

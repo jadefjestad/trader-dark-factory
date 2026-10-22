@@ -1,0 +1,33 @@
+{
+  "started_at": "2026-10-22T19:31:01+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 0 orders",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0072,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-22 15:15:00-04:00",
+  "hold_day": true,
+  "equity": 100121.55,
+  "targets": {
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "META": 0.1,
+    "PG": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "AMZN": 249.57,
+    "GOOGL": 323.415,
+    "META": 643.315,
+    "PG": 166.19,
+    "ADBE": 271.985
+  }
+}
