@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-10-22T14:30:58+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "MRK",
+      "qty": 63,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "symbol": "COST",
+      "qty": 9,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610221015-MRK-sell",
+      "id": "e60b7345-754d-430b-8eea-d870e9d81698",
+      "symbol": "MRK",
+      "qty": 63,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610221015-ADBE-buy",
+      "id": "19ae8343-1116-4065-9e51-99f454e50b3b",
+      "symbol": "ADBE",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610221015-COST-buy",
+      "id": "43970a85-ed5e-4a6d-8deb-cccea76b636b",
+      "symbol": "COST",
+      "qty": 9,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0136,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-22 10:15:00-04:00",
+  "hold_day": false,
+  "equity": 98754.43,
+  "targets": {
+    "LLY": 0.1,
+    "PEP": 0.1,
+    "COST": 0.1,
+    "HD": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "LLY": 1305.54,
+    "MRK": 152.58,
+    "PEP": 137.505,
+    "COST": 1009.335,
+    "HD": 323.15,
+    "ADBE": 262.13
+  }
+}

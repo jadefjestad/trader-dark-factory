@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-22T18:45:55+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610221430-LLY-sell",
+      "id": "21212020-f9df-4d44-b3eb-befab35da7e7",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610221430-JNJ-buy",
+      "id": "96b37f6c-1b36-45ce-8184-0e8c036d435a",
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0092,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-22 14:30:00-04:00",
+  "hold_day": false,
+  "equity": 99189.1,
+  "targets": {
+    "JNJ": 0.1,
+    "PEP": 0.1,
+    "COST": 0.1,
+    "HD": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "LLY": 1305.99,
+    "JNJ": 268.79,
+    "PEP": 138.48,
+    "COST": 1013.355,
+    "HD": 325.69,
+    "ADBE": 269.565
+  }
+}

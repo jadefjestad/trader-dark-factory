@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-10-22T19:00:56+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610221445-ADBE-sell",
+      "id": "4531f8f6-4437-4c78-9ce1-6dc85eb63706",
+      "symbol": "ADBE",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0085,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-22 14:45:00-04:00",
+  "hold_day": false,
+  "equity": 99264.63,
+  "targets": {
+    "JNJ": 0.1,
+    "PEP": 0.1,
+    "COST": 0.1,
+    "HD": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "JNJ": 269.06,
+    "PEP": 138.63,
+    "COST": 1013.74,
+    "HD": 326.04,
+    "ADBE": 270.745
+  }
+}

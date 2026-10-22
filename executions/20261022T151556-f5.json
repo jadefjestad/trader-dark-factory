@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-22T15:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610221100-MSFT-sell",
+      "id": "71557425-ac6d-456c-b72a-4a72c4f60d9c",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610221100-AVGO-buy",
+      "id": "4515d6fe-88fb-4864-a392-84a19b1fe414",
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0085,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-22 11:00:00-04:00",
+  "hold_day": false,
+  "equity": 99761.05,
+  "targets": {
+    "NVDA": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1,
+    "XOM": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 526.55,
+    "NVDA": 213.12,
+    "META": 654.665,
+    "AVGO": 323.215,
+    "XOM": 175.725,
+    "CSCO": 104.06
+  }
+}

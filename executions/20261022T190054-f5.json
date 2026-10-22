@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-10-22T19:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610221445-MRK-sell",
+      "id": "d5760b4d-3e15-4aa8-b391-6c70470846ce",
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0071,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-22 14:45:00-04:00",
+  "hold_day": false,
+  "equity": 99901.81,
+  "targets": {
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1,
+    "MRK": 0.1
+  },
+  "prices": {
+    "NVDA": 211.51,
+    "AMZN": 249.0,
+    "META": 641.06,
+    "AVGO": 323.03,
+    "MRK": 148.42
+  }
+}

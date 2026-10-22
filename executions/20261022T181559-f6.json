@@ -1,0 +1,135 @@
+{
+  "started_at": "2026-10-22T18:15:54+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 8 orders",
+  "orders": [
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 67,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 46,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 39,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 30,
+      "side": "buy"
+    },
+    {
+      "symbol": "PG",
+      "qty": 59,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610221400-LLY-sell",
+      "id": "d638653c-1d20-4cf5-867f-a3f5f428779f",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610221400-MRK-sell",
+      "id": "14fac521-e8c0-4c0a-b9d7-43f3bb2c01bf",
+      "symbol": "MRK",
+      "qty": 67,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610221400-MSFT-sell",
+      "id": "5223d2ff-a1db-4227-81b8-56c268acf08c",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610221400-NVDA-sell",
+      "id": "b1d70ace-80b2-46cf-80bc-4d663bcac4c0",
+      "symbol": "NVDA",
+      "qty": 46,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610221400-ADBE-buy",
+      "id": "9aaf8012-ee4f-427d-9954-e83bd014827b",
+      "symbol": "ADBE",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610221400-AMZN-buy",
+      "id": "e8ab5451-ab9c-429c-9c16-c7d8f7c7b46a",
+      "symbol": "AMZN",
+      "qty": 39,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610221400-GOOGL-buy",
+      "id": "14272c96-1960-4a49-86b6-62e32547aaa8",
+      "symbol": "GOOGL",
+      "qty": 30,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610221400-PG-buy",
+      "id": "9d15a78f-ce6d-4cae-8d12-5629b1e83d39",
+      "symbol": "PG",
+      "qty": 59,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0071,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-22 14:00:00-04:00",
+  "hold_day": false,
+  "equity": 100138.96,
+  "targets": {
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "META": 0.1,
+    "PG": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "MSFT": 523.71,
+    "NVDA": 212.41,
+    "AMZN": 250.25,
+    "GOOGL": 324.355,
+    "META": 645.12,
+    "LLY": 1310.55,
+    "MRK": 147.94,
+    "PG": 166.265,
+    "ADBE": 269.54
+  }
+}

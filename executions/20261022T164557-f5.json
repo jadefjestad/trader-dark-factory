@@ -1,0 +1,97 @@
+{
+  "started_at": "2026-10-22T16:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 43,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 55,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 67,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610221230-CVX-sell",
+      "id": "5ec4cece-56f7-4a58-83a6-1f08dee27898",
+      "symbol": "CVX",
+      "qty": 43,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610221230-XOM-sell",
+      "id": "7ae61ef5-fee8-4419-80d1-cb8b50341577",
+      "symbol": "XOM",
+      "qty": 55,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610221230-META-buy",
+      "id": "e99bda61-ae74-4f2e-8f81-71e39f288e4a",
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610221230-MRK-buy",
+      "id": "d79af3cc-a2e3-4f9e-9a19-057a9587cf37",
+      "symbol": "MRK",
+      "qty": 67,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610221230-NVDA-buy",
+      "id": "e83f4681-bbea-4c0e-b2bc-006a87d8d66b",
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.006,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-22 12:30:00-04:00",
+  "hold_day": false,
+  "equity": 100006.94,
+  "targets": {
+    "NVDA": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1,
+    "MRK": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 212.66,
+    "META": 646.35,
+    "AVGO": 325.12,
+    "MRK": 145.77,
+    "XOM": 176.965,
+    "CVX": 225.205,
+    "CSCO": 104.32
+  }
+}

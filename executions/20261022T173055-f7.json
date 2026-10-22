@@ -1,0 +1,39 @@
+{
+  "started_at": "2026-10-22T17:30:54+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 36,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610221315-ADBE-buy",
+      "id": "b31f7d95-9bf4-44dd-9cd4-70bc14b5f428",
+      "symbol": "ADBE",
+      "qty": 36,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0083,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-22 13:15:00-04:00",
+  "hold_day": false,
+  "equity": 99434.88,
+  "targets": {
+    "ADBE": 0.1
+  },
+  "prices": {
+    "ADBE": 268.25
+  }
+}
