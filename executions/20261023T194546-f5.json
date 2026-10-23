@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-23T19:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "KO",
+      "qty": 105,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 60,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 81,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610231545-KO-sell",
+      "id": "9f7c9477-8ed0-48d5-9a54-857a78b8f375",
+      "symbol": "KO",
+      "qty": 105,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610231545-LLY-sell",
+      "id": "8a62ce95-60ea-4f19-a5dd-c5ee3d0a4dfe",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610231545-PG-sell",
+      "id": "91795c75-ce6c-4523-9a87-eb294c05c0f1",
+      "symbol": "PG",
+      "qty": 60,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610231545-UNH-sell",
+      "id": "7e7016c9-2a60-4c5e-9f8f-aa516d00a2eb",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610231545-WMT-sell",
+      "id": "e332ca3b-d08a-4b46-b476-7458925c2057",
+      "symbol": "WMT",
+      "qty": 81,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0098,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99634.07,
+  "targets": {},
+  "prices": {
+    "UNH": 417.62,
+    "LLY": 1268.92,
+    "PG": 160.92,
+    "KO": 92.7,
+    "WMT": 119.41
+  }
+}

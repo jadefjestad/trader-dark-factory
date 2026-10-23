@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-23T19:45:46+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 81,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610231545-AMZN-sell",
+      "id": "4cf6d9ab-bda5-412a-8e61-ebe467ee0b8e",
+      "symbol": "AMZN",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610231545-AVGO-sell",
+      "id": "47e2e51d-0333-4692-838c-9205663eaee5",
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610231545-LLY-sell",
+      "id": "a531c181-69ef-49cc-96fc-9706971e395c",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610231545-UNH-sell",
+      "id": "b9288f5c-1748-4c94-b0f2-cabbe70269b7",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610231545-WMT-sell",
+      "id": "bb14856a-aa26-494a-8c14-98d007ad4b92",
+      "symbol": "WMT",
+      "qty": 81,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0107,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99773.82,
+  "targets": {},
+  "prices": {
+    "AMZN": 247.94,
+    "AVGO": 323.0,
+    "UNH": 417.62,
+    "LLY": 1268.92,
+    "WMT": 119.41
+  }
+}

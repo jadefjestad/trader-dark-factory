@@ -1,0 +1,64 @@
+{
+  "started_at": "2026-10-23T19:45:47+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 91,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 41,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610231545-CSCO-sell",
+      "id": "365bed95-4266-4e89-a9e9-52d21c578e76",
+      "symbol": "CSCO",
+      "qty": 91,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610231545-CVX-sell",
+      "id": "a15a08c2-ee4d-4b31-832d-004a0215ca7d",
+      "symbol": "CVX",
+      "qty": 41,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610231545-MSFT-sell",
+      "id": "c1fce210-4d51-4211-9f3b-565514ef7344",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0093,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99176.88,
+  "targets": {},
+  "prices": {
+    "MSFT": 523.665,
+    "CVX": 233.545,
+    "CSCO": 106.72
+  }
+}
