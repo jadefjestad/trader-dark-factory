@@ -1,0 +1,99 @@
+{
+  "started_at": "2026-10-23T18:51:21+00:00",
+  "fund": 4,
+  "fund_name": "\ud83d\udef9 Marty McBuy",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f4-20261023-40006591638-1-CSCO-sell",
+      "id": "bf334c1e-be12-42b6-955c-5a6452d49dc3",
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f4-20261023-40006591638-1-LLY-buy",
+      "id": "b8f7c9cb-5c73-495f-918a-fbc25e4cc5c0",
+      "symbol": "LLY",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0031,
+  "strategy": {
+    "name": "vol_target_momentum_10",
+    "ref": "strategies/candidates/vol_target_momentum_10.py",
+    "experiment_id": "pr19-6b2e162-vol_target_momentum_10-r37182506562-1"
+  },
+  "signal_bar": "2026-10-22",
+  "hold_day": false,
+  "equity": 103341.88,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.10048363573738787,
+    "MSFT": 0.0,
+    "NVDA": 0.0,
+    "AMZN": 0.0,
+    "GOOGL": 0.10048363573738787,
+    "META": 0.0,
+    "AVGO": 0.0,
+    "JPM": 0.0,
+    "V": 0.0,
+    "MA": 0.0,
+    "UNH": 0.0,
+    "LLY": 0.10048363573738787,
+    "JNJ": 0.10048363573738787,
+    "MRK": 0.10048363573738787,
+    "XOM": 0.10048363573738787,
+    "CVX": 0.10048363573738787,
+    "PG": 0.0,
+    "KO": 0.0,
+    "PEP": 0.0,
+    "COST": 0.0,
+    "WMT": 0.0,
+    "HD": 0.0,
+    "BAC": 0.0,
+    "ADBE": 0.0,
+    "CSCO": 0.10048363573738787
+  },
+  "prices": {
+    "AAPL": 346.24,
+    "MSFT": 523.69,
+    "NVDA": 211.82,
+    "AMZN": 248.24,
+    "GOOGL": 321.77,
+    "META": 644.85,
+    "AVGO": 324.48,
+    "JPM": 332.0,
+    "V": 408.96,
+    "MA": 621.71,
+    "UNH": 417.35,
+    "LLY": 1261.3,
+    "JNJ": 263.65,
+    "MRK": 145.08,
+    "XOM": 182.73,
+    "CVX": 232.95,
+    "PG": 161.4,
+    "KO": 92.795,
+    "PEP": 135.48,
+    "COST": 1003.5,
+    "WMT": 119.13,
+    "HD": 318.62,
+    "BAC": 50.72,
+    "ADBE": 264.175,
+    "CSCO": 106.14
+  }
+}

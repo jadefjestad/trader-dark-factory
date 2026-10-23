@@ -1,0 +1,111 @@
+{
+  "started_at": "2026-10-23T18:51:23+00:00",
+  "fund": 9,
+  "fund_name": "\ud83d\udc51 Game of Loans",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f9-20261023-40006591638-1-BAC-sell",
+      "id": "587e3798-b7ba-4829-b0c1-1aef623dfa3f",
+      "symbol": "BAC",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-40006591638-1-MRK-sell",
+      "id": "477be638-4512-4c36-9399-b9fe418d93a8",
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-40006591638-1-WMT-buy",
+      "id": "ab69cb6b-4b28-4379-b413-af5ae76ba043",
+      "symbol": "WMT",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0098,
+  "strategy": {
+    "name": "equal_weight_buy_hold",
+    "ref": "strategies.baselines.buy_hold:EqualWeightBuyHold",
+    "experiment_id": "20261004T230755-equal_weight_buy_hold"
+  },
+  "signal_bar": "2026-10-22",
+  "hold_day": false,
+  "equity": 103505.82,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.04,
+    "MSFT": 0.04,
+    "NVDA": 0.04,
+    "AMZN": 0.04,
+    "GOOGL": 0.04,
+    "META": 0.04,
+    "AVGO": 0.04,
+    "JPM": 0.04,
+    "V": 0.04,
+    "MA": 0.04,
+    "UNH": 0.04,
+    "LLY": 0.04,
+    "JNJ": 0.04,
+    "MRK": 0.04,
+    "XOM": 0.04,
+    "CVX": 0.04,
+    "PG": 0.04,
+    "KO": 0.04,
+    "PEP": 0.04,
+    "COST": 0.04,
+    "WMT": 0.04,
+    "HD": 0.04,
+    "BAC": 0.04,
+    "ADBE": 0.04,
+    "CSCO": 0.04
+  },
+  "prices": {
+    "AAPL": 346.24,
+    "MSFT": 523.69,
+    "NVDA": 211.795,
+    "AMZN": 248.26,
+    "GOOGL": 321.77,
+    "META": 644.85,
+    "AVGO": 324.48,
+    "JPM": 332.0,
+    "V": 408.96,
+    "MA": 621.71,
+    "UNH": 417.35,
+    "LLY": 1261.3,
+    "JNJ": 263.65,
+    "MRK": 145.08,
+    "XOM": 182.73,
+    "CVX": 232.95,
+    "PG": 161.39,
+    "KO": 92.795,
+    "PEP": 135.48,
+    "COST": 1003.5,
+    "WMT": 119.13,
+    "HD": 318.66,
+    "BAC": 50.72,
+    "ADBE": 264.175,
+    "CSCO": 106.14
+  }
+}
