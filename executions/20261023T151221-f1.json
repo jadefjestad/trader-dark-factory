@@ -1,0 +1,152 @@
+{
+  "started_at": "2026-10-23T15:12:14+00:00",
+  "fund": 1,
+  "fund_name": "\ud83d\udc80 Darth Trader",
+  "dry_run": false,
+  "status": "submitted 6 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 3,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 4,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 2,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f1-20261023-39976173770-1-CSCO-sell",
+      "id": "a0050aac-ec3a-4abe-ad1a-d0440853ee00",
+      "symbol": "CSCO",
+      "qty": 3,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261023-39976173770-1-CVX-sell",
+      "id": "338f297a-06f7-4a3d-976e-533b9146b108",
+      "symbol": "CVX",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261023-39976173770-1-JNJ-sell",
+      "id": "a05c5dd3-5c91-4465-a9a3-5c9353bfb476",
+      "symbol": "JNJ",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261023-39976173770-1-KO-sell",
+      "id": "7c67f0cf-dd4f-4f24-b414-094505bdd211",
+      "symbol": "KO",
+      "qty": 4,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261023-39976173770-1-MRK-sell",
+      "id": "76dd6a26-9bd4-4969-b3f7-9800f6bfa527",
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261023-39976173770-1-XOM-sell",
+      "id": "3dd882c3-2842-43db-bc67-1d8b1aa40123",
+      "symbol": "XOM",
+      "qty": 2,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0016,
+  "strategy": {
+    "name": "e126_wts_15_70_15",
+    "ref": "strategies/candidates/e126_wts_15_70_15.py",
+    "experiment_id": "pr283-33a2f9d-e126_wts_15_70_15-r39188234700-1"
+  },
+  "champion": {
+    "name": "e126_wts_15_70_15",
+    "ref": "strategies/candidates/e126_wts_15_70_15.py",
+    "experiment_id": "pr283-33a2f9d-e126_wts_15_70_15-r39188234700-1"
+  },
+  "signal_bar": "2026-10-22",
+  "hold_day": false,
+  "equity": 103718.41,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.0,
+    "MSFT": 0.0,
+    "NVDA": 0.018076777705298263,
+    "AMZN": 0.0,
+    "GOOGL": 0.018076777705298263,
+    "META": 0.0,
+    "AVGO": 0.018076777705298263,
+    "JPM": 0.018076777705298263,
+    "V": 0.0,
+    "MA": 0.0,
+    "UNH": 0.0,
+    "LLY": 0.01638427423934551,
+    "JNJ": 0.03446105194464377,
+    "MRK": 0.03446105194464377,
+    "XOM": 0.01638427423934551,
+    "CVX": 0.01638427423934551,
+    "PG": 0.0,
+    "KO": 0.01638427423934551,
+    "PEP": 0.0,
+    "COST": 0.0,
+    "WMT": 0.0,
+    "HD": 0.0,
+    "BAC": 0.018076777705298263,
+    "ADBE": 0.0,
+    "CSCO": 0.01638427423934551
+  },
+  "prices": {
+    "AAPL": 347.805,
+    "MSFT": 525.09,
+    "NVDA": 212.9,
+    "AMZN": 249.02,
+    "GOOGL": 323.62,
+    "META": 646.62,
+    "AVGO": 326.56,
+    "JPM": 331.94,
+    "V": 409.23,
+    "MA": 623.47,
+    "UNH": 423.785,
+    "LLY": 1282.26,
+    "JNJ": 263.44,
+    "MRK": 144.26,
+    "XOM": 182.95,
+    "CVX": 232.67,
+    "PG": 161.73,
+    "KO": 93.385,
+    "PEP": 135.655,
+    "COST": 1008.105,
+    "WMT": 120.12,
+    "HD": 318.585,
+    "BAC": 50.675,
+    "ADBE": 264.53,
+    "CSCO": 106.015
+  }
+}

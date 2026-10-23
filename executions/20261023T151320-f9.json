@@ -1,0 +1,291 @@
+{
+  "started_at": "2026-10-23T15:13:14+00:00",
+  "fund": 9,
+  "fund_name": "\ud83d\udc51 Game of Loans",
+  "dry_run": false,
+  "status": "submitted 18 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "HD",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 4,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 2,
+      "side": "buy"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 4,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 3,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-ADBE-sell",
+      "id": "8616fad5-0587-4a08-8bdd-ef239676ddc4",
+      "symbol": "ADBE",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-CVX-sell",
+      "id": "5bd67de3-7a7c-4cf9-a314-8245f36e5247",
+      "symbol": "CVX",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-HD-sell",
+      "id": "1fff2cb9-4156-4115-9ef3-353468039c4a",
+      "symbol": "HD",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-KO-sell",
+      "id": "bb012128-ba2b-43ed-a891-e59e8ac1ce3f",
+      "symbol": "KO",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-PEP-sell",
+      "id": "ec64bd11-9a71-4c9a-ad63-bc47d4289bc7",
+      "symbol": "PEP",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-PG-sell",
+      "id": "890619e8-ce05-4c24-a9e1-964500c87ff9",
+      "symbol": "PG",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-UNH-sell",
+      "id": "3d612d08-2539-4781-9e9e-f630d3c2450c",
+      "symbol": "UNH",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-V-sell",
+      "id": "39ae23cb-6c48-4582-92b1-4ff230c8c122",
+      "symbol": "V",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-WMT-sell",
+      "id": "6a4f5267-9d3d-45cb-b024-394a615fb281",
+      "symbol": "WMT",
+      "qty": 4,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-XOM-sell",
+      "id": "2087de12-0cde-487f-92c3-5d2b1b7dc2fe",
+      "symbol": "XOM",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-AMZN-buy",
+      "id": "28e292b5-ef43-434e-b8be-e682e806337a",
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-AVGO-buy",
+      "id": "e582d93f-40c0-4a1e-89f7-3fc6c8de1f08",
+      "symbol": "AVGO",
+      "qty": 2,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-BAC-buy",
+      "id": "1c03cf2e-e010-4218-b20c-dea762086d08",
+      "symbol": "BAC",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-CSCO-buy",
+      "id": "df100ccd-0b1e-45ae-b6b6-cb59a76dba40",
+      "symbol": "CSCO",
+      "qty": 4,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-GOOGL-buy",
+      "id": "21e879a2-45bf-4088-8ae7-47ffbc465e98",
+      "symbol": "GOOGL",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-JPM-buy",
+      "id": "b46fb36c-3ad0-4090-a2c3-3bf6b35db765",
+      "symbol": "JPM",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-META-buy",
+      "id": "b4711677-2859-434c-8fac-8854d56b2c11",
+      "symbol": "META",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f9-20261023-39976173770-1-NVDA-buy",
+      "id": "b2243ea9-ed51-4089-a428-28d88ff03743",
+      "symbol": "NVDA",
+      "qty": 3,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0069,
+  "strategy": {
+    "name": "equal_weight_buy_hold",
+    "ref": "strategies.baselines.buy_hold:EqualWeightBuyHold",
+    "experiment_id": "20261004T230755-equal_weight_buy_hold"
+  },
+  "signal_bar": "2026-10-22",
+  "hold_day": false,
+  "equity": 103811.02,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.04,
+    "MSFT": 0.04,
+    "NVDA": 0.04,
+    "AMZN": 0.04,
+    "GOOGL": 0.04,
+    "META": 0.04,
+    "AVGO": 0.04,
+    "JPM": 0.04,
+    "V": 0.04,
+    "MA": 0.04,
+    "UNH": 0.04,
+    "LLY": 0.04,
+    "JNJ": 0.04,
+    "MRK": 0.04,
+    "XOM": 0.04,
+    "CVX": 0.04,
+    "PG": 0.04,
+    "KO": 0.04,
+    "PEP": 0.04,
+    "COST": 0.04,
+    "WMT": 0.04,
+    "HD": 0.04,
+    "BAC": 0.04,
+    "ADBE": 0.04,
+    "CSCO": 0.04
+  },
+  "prices": {
+    "AAPL": 347.935,
+    "MSFT": 524.95,
+    "NVDA": 212.73,
+    "AMZN": 249.0,
+    "GOOGL": 323.515,
+    "META": 646.13,
+    "AVGO": 326.2,
+    "JPM": 332.09,
+    "V": 409.115,
+    "MA": 623.7,
+    "UNH": 423.895,
+    "LLY": 1282.26,
+    "JNJ": 263.23,
+    "MRK": 144.3,
+    "XOM": 183.0,
+    "CVX": 232.775,
+    "PG": 161.82,
+    "KO": 93.425,
+    "PEP": 135.655,
+    "COST": 1008.105,
+    "WMT": 120.08,
+    "HD": 319.01,
+    "BAC": 50.7,
+    "ADBE": 264.69,
+    "CSCO": 105.96
+  }
+}

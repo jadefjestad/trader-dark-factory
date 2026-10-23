@@ -1,0 +1,183 @@
+{
+  "started_at": "2026-10-23T15:13:10+00:00",
+  "fund": 4,
+  "fund_name": "\ud83d\udef9 Marty McBuy",
+  "dry_run": false,
+  "status": "submitted 9 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 109,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "symbol": "AAPL",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 4,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 3,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f4-20261023-39976173770-1-CVX-sell",
+      "id": "84056277-293b-4d95-930b-ab20fc07bae9",
+      "symbol": "CVX",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f4-20261023-39976173770-1-KO-sell",
+      "id": "53ac63fe-353d-420d-8668-104b226673c5",
+      "symbol": "KO",
+      "qty": 109,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f4-20261023-39976173770-1-LLY-sell",
+      "id": "5737c36a-246b-4a0e-8b92-3f85f499ff59",
+      "symbol": "LLY",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f4-20261023-39976173770-1-XOM-sell",
+      "id": "ec54d89d-153a-4211-99a9-de9bbb241797",
+      "symbol": "XOM",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f4-20261023-39976173770-1-AAPL-buy",
+      "id": "3f673b72-46f8-4b75-af60-254b061caf34",
+      "symbol": "AAPL",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f4-20261023-39976173770-1-CSCO-buy",
+      "id": "7800b6b6-b4ea-4298-a243-80afd641e23e",
+      "symbol": "CSCO",
+      "qty": 13,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f4-20261023-39976173770-1-GOOGL-buy",
+      "id": "3be7d2aa-0bc6-4943-9508-858be93664d1",
+      "symbol": "GOOGL",
+      "qty": 4,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f4-20261023-39976173770-1-JNJ-buy",
+      "id": "f75a893e-6412-49d0-8fc4-6dc07bbccfc3",
+      "symbol": "JNJ",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f4-20261023-39976173770-1-MRK-buy",
+      "id": "d5fc4a81-81a5-4199-86de-933cba57c075",
+      "symbol": "MRK",
+      "qty": 3,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0015,
+  "strategy": {
+    "name": "vol_target_momentum_10",
+    "ref": "strategies/candidates/vol_target_momentum_10.py",
+    "experiment_id": "pr19-6b2e162-vol_target_momentum_10-r37182506562-1"
+  },
+  "signal_bar": "2026-10-22",
+  "hold_day": false,
+  "equity": 103506.73,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.10048363573738787,
+    "MSFT": 0.0,
+    "NVDA": 0.0,
+    "AMZN": 0.0,
+    "GOOGL": 0.10048363573738787,
+    "META": 0.0,
+    "AVGO": 0.0,
+    "JPM": 0.0,
+    "V": 0.0,
+    "MA": 0.0,
+    "UNH": 0.0,
+    "LLY": 0.10048363573738787,
+    "JNJ": 0.10048363573738787,
+    "MRK": 0.10048363573738787,
+    "XOM": 0.10048363573738787,
+    "CVX": 0.10048363573738787,
+    "PG": 0.0,
+    "KO": 0.0,
+    "PEP": 0.0,
+    "COST": 0.0,
+    "WMT": 0.0,
+    "HD": 0.0,
+    "BAC": 0.0,
+    "ADBE": 0.0,
+    "CSCO": 0.10048363573738787
+  },
+  "prices": {
+    "AAPL": 347.83,
+    "MSFT": 524.875,
+    "NVDA": 212.7,
+    "AMZN": 249.0,
+    "GOOGL": 323.515,
+    "META": 646.43,
+    "AVGO": 326.2,
+    "JPM": 332.09,
+    "V": 409.135,
+    "MA": 623.7,
+    "UNH": 423.87,
+    "LLY": 1282.26,
+    "JNJ": 263.23,
+    "MRK": 144.3,
+    "XOM": 182.99,
+    "CVX": 232.775,
+    "PG": 161.82,
+    "KO": 93.425,
+    "PEP": 135.655,
+    "COST": 1008.105,
+    "WMT": 120.08,
+    "HD": 319.11,
+    "BAC": 50.7,
+    "ADBE": 264.585,
+    "CSCO": 105.96
+  }
+}
