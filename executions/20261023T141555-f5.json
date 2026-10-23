@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-23T14:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 30,
+      "side": "buy"
+    },
+    {
+      "symbol": "KO",
+      "qty": 104,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "symbol": "PG",
+      "qty": 60,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 81,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610231000-HD-buy",
+      "id": "4229f455-cc36-4eff-ad38-5b47e3baea7a",
+      "symbol": "HD",
+      "qty": 30,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610231000-KO-buy",
+      "id": "e99abb3e-c3c5-4da0-95ce-ad5c884ddfdb",
+      "symbol": "KO",
+      "qty": 104,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610231000-LLY-buy",
+      "id": "c4b4027a-1c8f-4e30-8521-b48caf0a85fa",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610231000-PG-buy",
+      "id": "c34a1d42-aa24-4628-9b32-fd6e10ba49fb",
+      "symbol": "PG",
+      "qty": 60,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610231000-WMT-buy",
+      "id": "7ed3f002-1032-4bf5-ac63-bd303e9d9e5c",
+      "symbol": "WMT",
+      "qty": 81,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0073,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-23 10:00:00-04:00",
+  "hold_day": false,
+  "equity": 99880.68,
+  "targets": {
+    "LLY": 0.1,
+    "PG": 0.1,
+    "KO": 0.1,
+    "WMT": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "LLY": 1278.13,
+    "PG": 162.035,
+    "KO": 93.25,
+    "WMT": 120.245,
+    "HD": 318.96
+  }
+}

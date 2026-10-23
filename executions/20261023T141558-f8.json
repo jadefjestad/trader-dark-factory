@@ -1,0 +1,67 @@
+{
+  "started_at": "2026-10-23T14:15:57+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "GOOGL",
+      "qty": 30,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610231000-GOOGL-buy",
+      "id": "853fb088-530b-4e30-b815-75c13a14046c",
+      "symbol": "GOOGL",
+      "qty": 30,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610231000-META-buy",
+      "id": "fe4a9090-6d00-4e86-aab8-ef2111a22b0b",
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610231000-MSFT-buy",
+      "id": "79780aef-cd2d-44e7-8617-0a540a208487",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0078,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-23 10:00:00-04:00",
+  "hold_day": false,
+  "equity": 99325.47,
+  "targets": {
+    "MSFT": 0.1,
+    "GOOGL": 0.1,
+    "META": 0.1
+  },
+  "prices": {
+    "MSFT": 522.49,
+    "GOOGL": 323.92,
+    "META": 644.82
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "started_at": "2026-10-23T16:45:54+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 6 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 37,
+      "side": "sell"
+    },
+    {
+      "symbol": "HD",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 105,
+      "side": "sell"
+    },
+    {
+      "symbol": "COST",
+      "qty": 9,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 46,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610231230-ADBE-sell",
+      "id": "9eca9df2-b433-4a57-a43b-782ddcace19a",
+      "symbol": "ADBE",
+      "qty": 37,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610231230-HD-sell",
+      "id": "bcb7bb5b-e7d8-4beb-97ca-e1dce7366c2b",
+      "symbol": "HD",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610231230-KO-sell",
+      "id": "c2acd16f-33e7-4ed8-9783-6b586a8a4d6f",
+      "symbol": "KO",
+      "qty": 105,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610231230-COST-buy",
+      "id": "1d8aa3cf-3cc2-407c-821e-f2e9eb0cd5ab",
+      "symbol": "COST",
+      "qty": 9,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610231230-LLY-buy",
+      "id": "586189b6-9ef2-4e60-94ee-28ff992bdfc0",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610231230-NVDA-buy",
+      "id": "23635fe8-4ef3-4e5d-954d-2187fe920cd7",
+      "symbol": "NVDA",
+      "qty": 46,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0095,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-23 12:30:00-04:00",
+  "hold_day": false,
+  "equity": 99892.01,
+  "targets": {
+    "NVDA": 0.1,
+    "LLY": 0.1,
+    "PG": 0.1,
+    "PEP": 0.1,
+    "COST": 0.1
+  },
+  "prices": {
+    "NVDA": 212.21,
+    "LLY": 1277.84,
+    "PG": 161.04,
+    "KO": 93.105,
+    "PEP": 134.82,
+    "COST": 1005.02,
+    "HD": 318.54,
+    "ADBE": 265.03
+  }
+}

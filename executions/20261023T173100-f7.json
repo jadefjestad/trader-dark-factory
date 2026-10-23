@@ -1,0 +1,45 @@
+{
+  "started_at": "2026-10-23T17:30:59+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 91,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610231315-CSCO-buy",
+      "id": "4ed70bf9-4e9e-412a-b027-51ae13ae7dfa",
+      "symbol": "CSCO",
+      "qty": 91,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0082,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-23 13:15:00-04:00",
+  "hold_day": false,
+  "equity": 99448.28,
+  "targets": {
+    "AVGO": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "AVGO": 324.1,
+    "XOM": 182.245,
+    "CVX": 232.33,
+    "CSCO": 106.26
+  }
+}

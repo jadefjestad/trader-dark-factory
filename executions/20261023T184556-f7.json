@@ -1,0 +1,44 @@
+{
+  "started_at": "2026-10-23T18:45:55+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 41,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610231430-CVX-sell",
+      "id": "3fc2d6a3-b0d8-4c39-a9df-947459ca8304",
+      "symbol": "CVX",
+      "qty": 41,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0079,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-23 14:30:00-04:00",
+  "hold_day": false,
+  "equity": 99478.16,
+  "targets": {
+    "AVGO": 0.1,
+    "XOM": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "AVGO": 324.43,
+    "XOM": 182.475,
+    "CVX": 232.58,
+    "CSCO": 106.135
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "started_at": "2026-10-23T19:00:59+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610231445-AVGO-sell",
+      "id": "c3064a52-9430-4436-baa1-c5ff43536383",
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610231445-XOM-sell",
+      "id": "a4fd63e5-aed8-4aed-ac36-743f25742658",
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.008,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-23 14:45:00-04:00",
+  "hold_day": false,
+  "equity": 99469.88,
+  "targets": {
+    "CSCO": 0.1
+  },
+  "prices": {
+    "AVGO": 323.985,
+    "XOM": 182.87,
+    "CSCO": 106.1
+  }
+}

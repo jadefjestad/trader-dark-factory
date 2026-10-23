@@ -1,0 +1,135 @@
+{
+  "started_at": "2026-10-23T18:15:56+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 8 orders",
+  "orders": [
+    {
+      "symbol": "COST",
+      "qty": 9,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 46,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 72,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 60,
+      "side": "sell"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 39,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 81,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610231400-COST-sell",
+      "id": "b3b5b01e-58f4-4a6f-bc2b-b1de86838727",
+      "symbol": "COST",
+      "qty": 9,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610231400-NVDA-sell",
+      "id": "d1a200ae-bebc-4cb9-ba41-89c0028fe550",
+      "symbol": "NVDA",
+      "qty": 46,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610231400-PEP-sell",
+      "id": "c1bb9dab-c190-4f37-a25d-91fd5a2e387a",
+      "symbol": "PEP",
+      "qty": 72,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610231400-PG-sell",
+      "id": "da7528ee-8d8c-442e-b0e4-303ed424d4d6",
+      "symbol": "PG",
+      "qty": 60,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610231400-AMZN-buy",
+      "id": "250e1f68-fa7e-4f04-8c93-df84edcf3028",
+      "symbol": "AMZN",
+      "qty": 39,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610231400-AVGO-buy",
+      "id": "e13a4b6f-4ed9-4238-8790-eef17dbfaf87",
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610231400-UNH-buy",
+      "id": "25f00131-79a3-44e0-9f93-de628d91c559",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610231400-WMT-buy",
+      "id": "47cd8798-a735-45f5-b0e7-ff79961a8370",
+      "symbol": "WMT",
+      "qty": 81,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0101,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-23 14:00:00-04:00",
+  "hold_day": false,
+  "equity": 99830.39,
+  "targets": {
+    "AMZN": 0.1,
+    "AVGO": 0.1,
+    "UNH": 0.1,
+    "LLY": 0.1,
+    "WMT": 0.1
+  },
+  "prices": {
+    "NVDA": 211.7,
+    "AMZN": 248.68,
+    "AVGO": 324.385,
+    "UNH": 417.93,
+    "LLY": 1264.735,
+    "PG": 161.32,
+    "PEP": 135.48,
+    "COST": 1005.57,
+    "WMT": 119.355
+  }
+}
