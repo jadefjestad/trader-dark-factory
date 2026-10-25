@@ -1,0 +1,362 @@
+{
+  "experiment_id": "pr360-9821888-w157015_rev_uptrend-r40153054281-1",
+  "strategy": {
+    "name": "w157015_rev_uptrend",
+    "ref": "strategies/candidates/w157015_rev_uptrend.py",
+    "params": {
+      "lookback": 252,
+      "skip": 21,
+      "corr_window": 252,
+      "top_n": 7,
+      "rebalance_every": 21,
+      "vol_target": 0.1,
+      "vol_window": 20,
+      "reversal_window": 21,
+      "reversal_every": 5
+    },
+    "timeframe": "1Day",
+    "code_sha256": "3012d80db2cae1c564bc9fe9d4b0e330310d9dd363be6273e60cb4c00ecd848c"
+  },
+  "data": {
+    "source": "alpaca:sip",
+    "fingerprint": "3ac64cdf2a1bb119",
+    "first_bar": "2016-01-04 00:00:00",
+    "last_bar": "2026-10-23 00:00:00"
+  },
+  "protected_fingerprint": "e077534dd4d52fe1",
+  "evaluated_at": "2026-10-25T02:05:51+00:00",
+  "metrics": {
+    "in_sample": {
+      "bars": 1259,
+      "total_return": 0.186742,
+      "cagr": 0.034864,
+      "annual_vol": 0.038344,
+      "sharpe": 0.913,
+      "sortino": 1.0104,
+      "max_drawdown": 0.042675,
+      "annual_turnover": 5.2161,
+      "cost_drag": 0.003729,
+      "avg_exposure": 0.2269,
+      "trades": 2678
+    },
+    "validation": {
+      "bars": 501,
+      "total_return": 0.318712,
+      "cagr": 0.149303,
+      "annual_vol": 0.074415,
+      "sharpe": 1.9114,
+      "sortino": 3.0065,
+      "max_drawdown": 0.050126,
+      "annual_turnover": 5.31,
+      "cost_drag": 0.003793,
+      "avg_exposure": 0.476,
+      "trades": 1320
+    },
+    "holdout": {
+      "sharpe": 2.3,
+      "max_drawdown": 0.0
+    }
+  },
+  "benchmark": {
+    "symbol": "SPY",
+    "metrics": {
+      "in_sample": {
+        "bars": 1259,
+        "total_return": 1.299068,
+        "cagr": 0.181321,
+        "annual_vol": 0.172338,
+        "sharpe": 1.0557,
+        "sortino": 1.1433,
+        "max_drawdown": 0.320494,
+        "annual_turnover": 0.0,
+        "cost_drag": 0.0,
+        "avg_exposure": 1.0,
+        "trades": 0
+      },
+      "validation": {
+        "bars": 501,
+        "total_return": 0.032078,
+        "cagr": 0.016009,
+        "annual_vol": 0.195422,
+        "sharpe": 0.1826,
+        "sortino": 0.2678,
+        "max_drawdown": 0.262868,
+        "annual_turnover": 0.0,
+        "cost_drag": 0.0,
+        "avg_exposure": 1.0,
+        "trades": 0
+      },
+      "holdout": {
+        "sharpe": 1.2,
+        "max_drawdown": 0.2
+      }
+    }
+  },
+  "baselines": {
+    "equal_weight_buy_hold": {
+      "in_sample": {
+        "bars": 1259,
+        "total_return": 2.239385,
+        "cagr": 0.265242,
+        "annual_vol": 0.174739,
+        "sharpe": 1.433,
+        "sortino": 1.5956,
+        "max_drawdown": 0.285282,
+        "annual_turnover": 0.4994,
+        "cost_drag": 0.000357,
+        "avg_exposure": 1.0,
+        "trades": 1204
+      },
+      "validation": {
+        "bars": 501,
+        "total_return": 0.236404,
+        "cagr": 0.112644,
+        "annual_vol": 0.1839,
+        "sharpe": 0.6686,
+        "sortino": 0.9715,
+        "max_drawdown": 0.208715,
+        "annual_turnover": 0.6467,
+        "cost_drag": 0.000462,
+        "avg_exposure": 1.0002,
+        "trades": 523
+      },
+      "holdout": {
+        "sharpe": 1.6,
+        "max_drawdown": 0.2
+      }
+    },
+    "sma_trend": {
+      "in_sample": {
+        "bars": 1259,
+        "total_return": 1.368004,
+        "cagr": 0.188327,
+        "annual_vol": 0.140482,
+        "sharpe": 1.2972,
+        "sortino": 1.373,
+        "max_drawdown": 0.243304,
+        "annual_turnover": 2.4883,
+        "cost_drag": 0.00178,
+        "avg_exposure": 0.8075,
+        "trades": 7211
+      },
+      "validation": {
+        "bars": 501,
+        "total_return": 0.17072,
+        "cagr": 0.082509,
+        "annual_vol": 0.098064,
+        "sharpe": 0.8542,
+        "sortino": 1.1615,
+        "max_drawdown": 0.084742,
+        "annual_turnover": 2.6069,
+        "cost_drag": 0.001866,
+        "avg_exposure": 0.6126,
+        "trades": 2585
+      },
+      "holdout": {
+        "sharpe": 1.5,
+        "max_drawdown": 0.1
+      }
+    },
+    "cross_sectional_momentum": {
+      "in_sample": {
+        "bars": 1259,
+        "total_return": 2.500163,
+        "cagr": 0.285003,
+        "annual_vol": 0.229173,
+        "sharpe": 1.21,
+        "sortino": 1.4338,
+        "max_drawdown": 0.311391,
+        "annual_turnover": 5.1237,
+        "cost_drag": 0.00366,
+        "avg_exposure": 0.9873,
+        "trades": 541
+      },
+      "validation": {
+        "bars": 501,
+        "total_return": 0.368256,
+        "cagr": 0.170823,
+        "annual_vol": 0.195494,
+        "sharpe": 0.9106,
+        "sortino": 1.3536,
+        "max_drawdown": 0.163741,
+        "annual_turnover": 5.5103,
+        "cost_drag": 0.00394,
+        "avg_exposure": 1.0001,
+        "trades": 228
+      },
+      "holdout": {
+        "sharpe": 1.4,
+        "max_drawdown": 0.3
+      }
+    },
+    "short_term_reversal": {
+      "in_sample": {
+        "bars": 1259,
+        "total_return": 1.858395,
+        "cagr": 0.233948,
+        "annual_vol": 0.183038,
+        "sharpe": 1.239,
+        "sortino": 1.4739,
+        "max_drawdown": 0.254452,
+        "annual_turnover": 62.0962,
+        "cost_drag": 0.044399,
+        "avg_exposure": 0.9915,
+        "trades": 3171
+      },
+      "validation": {
+        "bars": 501,
+        "total_return": 0.145886,
+        "cagr": 0.070897,
+        "annual_vol": 0.17432,
+        "sharpe": 0.4747,
+        "sortino": 0.6542,
+        "max_drawdown": 0.223672,
+        "annual_turnover": 46.5463,
+        "cost_drag": 0.033281,
+        "avg_exposure": 0.9794,
+        "trades": 1119
+      },
+      "holdout": {
+        "sharpe": 0.6,
+        "max_drawdown": 0.3
+      }
+    }
+  },
+  "champion": {
+    "ref": "strategies/candidates/e126_wts_15_70_15.py",
+    "name": "e126_wts_15_70_15",
+    "metrics": {
+      "in_sample": {
+        "bars": 1259,
+        "total_return": 0.206056,
+        "cagr": 0.038213,
+        "annual_vol": 0.037991,
+        "sharpe": 1.0062,
+        "sortino": 1.1118,
+        "max_drawdown": 0.047197,
+        "annual_turnover": 5.075,
+        "cost_drag": 0.003629,
+        "avg_exposure": 0.2249,
+        "trades": 2703
+      },
+      "validation": {
+        "bars": 501,
+        "total_return": 0.332167,
+        "cagr": 0.155187,
+        "annual_vol": 0.072799,
+        "sharpe": 2.0213,
+        "sortino": 3.2463,
+        "max_drawdown": 0.04445,
+        "annual_turnover": 5.1029,
+        "cost_drag": 0.003645,
+        "avg_exposure": 0.4642,
+        "trades": 1392
+      },
+      "holdout": {
+        "sharpe": 2.5,
+        "max_drawdown": 0.0
+      }
+    }
+  },
+  "gates": [
+    {
+      "gate": "data_not_synthetic",
+      "passed": true,
+      "detail": "alpaca:sip"
+    },
+    {
+      "gate": "executable_timeframe",
+      "passed": true,
+      "detail": "1Day",
+      "promotion_only": true
+    },
+    {
+      "gate": "risk_limits",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "gate": "no_lookahead",
+      "passed": true,
+      "detail": "5 truncated reruns matched"
+    },
+    {
+      "gate": "lookback_sufficient",
+      "passed": true,
+      "detail": "5 545-bar reruns matched"
+    },
+    {
+      "gate": "min_trades_validation",
+      "passed": true,
+      "detail": 1320
+    },
+    {
+      "gate": "max_drawdown_in_sample",
+      "passed": true,
+      "detail": 0.042675
+    },
+    {
+      "gate": "max_vol_in_sample",
+      "passed": true,
+      "detail": 0.038344
+    },
+    {
+      "gate": "max_drawdown_validation",
+      "passed": true,
+      "detail": 0.050126
+    },
+    {
+      "gate": "max_vol_validation",
+      "passed": true,
+      "detail": 0.074415
+    },
+    {
+      "gate": "max_drawdown_holdout",
+      "passed": true,
+      "detail": "hidden"
+    },
+    {
+      "gate": "max_vol_holdout",
+      "passed": true,
+      "detail": "hidden"
+    },
+    {
+      "gate": "min_validation_sharpe",
+      "passed": true,
+      "detail": 1.9114
+    },
+    {
+      "gate": "min_holdout_sharpe",
+      "passed": true,
+      "detail": "hidden"
+    },
+    {
+      "gate": "sharpe_decay",
+      "passed": true,
+      "detail": -0.998
+    },
+    {
+      "gate": "turnover",
+      "passed": true,
+      "detail": 5.31
+    },
+    {
+      "gate": "robustness",
+      "passed": true,
+      "detail": 0.995
+    },
+    {
+      "gate": "fill_participation",
+      "passed": true,
+      "detail": 2e-05
+    }
+  ],
+  "deflated_sharpe": {
+    "trials": 63,
+    "probability": 0.6299,
+    "benchmark_annual_sharpe": 1.676
+  },
+  "passed_gates": true,
+  "beats_champion": false,
+  "promote": false
+}
