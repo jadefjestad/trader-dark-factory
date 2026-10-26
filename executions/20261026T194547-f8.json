@@ -1,0 +1,77 @@
+{
+  "started_at": "2026-10-26T19:45:47+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 87,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 52,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610261545-AVGO-sell",
+      "id": "1b4a4485-d5d3-4b9b-9263-7e5c7085fd07",
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610261545-CSCO-sell",
+      "id": "53f5b1d2-bfe3-4e05-adc8-76ccbedbad56",
+      "symbol": "CSCO",
+      "qty": 87,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610261545-MSFT-sell",
+      "id": "ec98c1f9-783d-48f8-b30f-9f5b1bceeb15",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610261545-XOM-sell",
+      "id": "1a89990f-36d8-4ad9-8802-1f3046c0cebc",
+      "symbol": "XOM",
+      "qty": 52,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0113,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 98982.58,
+  "targets": {},
+  "prices": {
+    "MSFT": 532.4,
+    "AVGO": 330.84,
+    "XOM": 183.945,
+    "CSCO": 110.215
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-26T19:45:45+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 61,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 81,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610261545-HD-sell",
+      "id": "fb349e4a-b7a7-4cf5-915f-8db77f99b732",
+      "symbol": "HD",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610261545-META-sell",
+      "id": "2ae622e0-ee49-4af5-87a9-6f28b8b31080",
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610261545-PG-sell",
+      "id": "cc02d13c-18e1-4c27-886d-f52ade013cfa",
+      "symbol": "PG",
+      "qty": 61,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610261545-UNH-sell",
+      "id": "bc78ca29-f480-4158-9b7b-38cdecc4fab9",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610261545-WMT-sell",
+      "id": "dfc3d626-ca37-4ad6-a129-cb907d83471f",
+      "symbol": "WMT",
+      "qty": 81,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0136,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99479.16,
+  "targets": {},
+  "prices": {
+    "META": 633.26,
+    "UNH": 409.28,
+    "PG": 159.67,
+    "WMT": 120.03,
+    "HD": 319.05
+  }
+}

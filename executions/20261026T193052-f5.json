@@ -1,0 +1,33 @@
+{
+  "started_at": "2026-10-26T19:30:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 0 orders",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0151,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-26 15:15:00-04:00",
+  "hold_day": false,
+  "equity": 99100.23,
+  "targets": {
+    "UNH": 0.1,
+    "JNJ": 0.1,
+    "MRK": 0.1,
+    "PEP": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "UNH": 409.4,
+    "JNJ": 265.89,
+    "MRK": 140.38,
+    "PEP": 135.3,
+    "ADBE": 255.275
+  }
+}

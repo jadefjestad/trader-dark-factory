@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-26T19:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 69,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 71,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610261545-ADBE-sell",
+      "id": "f28f02e9-3221-4456-8b5c-1a26b221b568",
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610261545-JNJ-sell",
+      "id": "3ad5283b-37fb-4e01-8a05-8416a44d0352",
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610261545-MRK-sell",
+      "id": "c55d84cd-ece2-46ff-b61c-4ccf7ea548c1",
+      "symbol": "MRK",
+      "qty": 69,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610261545-PEP-sell",
+      "id": "b6574597-5561-4df4-b289-9c3f2b9dbdfa",
+      "symbol": "PEP",
+      "qty": 71,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610261545-UNH-sell",
+      "id": "7703cb6c-7983-44a9-80c7-4d3ae78d44ec",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0148,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99124.73,
+  "targets": {},
+  "prices": {
+    "UNH": 409.28,
+    "JNJ": 266.085,
+    "MRK": 140.225,
+    "PEP": 135.145,
+    "ADBE": 256.65
+  }
+}
