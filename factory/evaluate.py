@@ -162,8 +162,9 @@ def evaluate(ref: str, source: str = "synthetic", experiment_id: str | None = No
     md, bench = load_data(tf, source, cfg)
     md = extras.attach(md, meta.get("extra_data"), source)
     if CHAMPION.exists():   # the champion is re-scored on the same data, so give it its panels too
-        ch_ref = json.loads(CHAMPION.read_text()).get("ref")
-        if ch_ref and ch_ref != ref:
+        ch_meta = json.loads(CHAMPION.read_text())
+        ch_ref = ch_meta.get("ref")
+        if ch_ref and ch_ref != ref and ch_meta.get("timeframe", "1Day") == tf:   # only same-timeframe champions are re-scored
             need = [x for x in runner.describe(ch_ref).get("extra_data", []) if x not in md.extra]
             md = extras.attach(md, need, source)
     pers = periods(tf, cfg, md.index)

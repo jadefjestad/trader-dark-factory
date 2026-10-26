@@ -1,5 +1,5 @@
 {
-  "ref": "strategies/candidates/e126_wts_15_70_15.py",
+  "ref": "strategies/candidates/gpfilter_wts_10_80_10.py",
   "params": {
     "lookback": 252,
     "skip": 21,
@@ -11,9 +11,9 @@
     "reversal_window": 21,
     "reversal_every": 5
   },
-  "name": "e126_wts_15_70_15",
+  "name": "gpfilter_wts_10_80_10",
   "timeframe": "1Day",
-  "code_sha256": "d6f176330dd2c82af5fe55866e4733ca270ce81059971dec12fdad42839f0a72",
-  "experiment_id": "pr283-33a2f9d-e126_wts_15_70_15-r39188234700-1",
-  "promoted_at": "2026-10-19T02:05:49+00:00"
+  "code_sha256": "e11b5c780bf96d8751f5ad00cfab1958d7325cb2f0899acffc11ca4ed3862e02",
+  "experiment_id": "pr373-dc013f1-gpfilter_wts_10_80_10-r40267155130-1",
+  "promoted_at": "2026-10-26T04:06:23+00:00"
 }

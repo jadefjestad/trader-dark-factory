@@ -14,5 +14,7 @@ def test_current_champion_places_orders(monkeypatch, tmp_path):
     start = prev - pd.tseries.offsets.BDay(int(meta["lookback"] * 1.5) + 30)
     md = synthetic(syms, start.strftime("%Y-%m-%d"), prev.strftime("%Y-%m-%d"))
     broker = _patch(monkeypatch, md)
+    attach = execute.extras.attach   # the bars are synthetic, so its data panels must be too
+    monkeypatch.setattr(execute.extras, "attach", lambda md, names, source: attach(md, names, "synthetic"))
     assert execute.main(["--out", str(tmp_path)]) == 0
     assert broker.submitted, "champion produced no orders from a flat account"
