@@ -1,0 +1,55 @@
+{
+  "started_at": "2026-10-26T15:30:51+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 71,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610261115-JPM-buy",
+      "id": "27f4df32-6ae1-4e0e-9afc-0a4635135b7c",
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610261115-PEP-buy",
+      "id": "701b3355-c875-45b7-9c48-5ff9e736e8d8",
+      "symbol": "PEP",
+      "qty": 71,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0078,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-26 11:15:00-04:00",
+  "hold_day": false,
+  "equity": 99489.22,
+  "targets": {
+    "JPM": 0.1,
+    "JNJ": 0.1,
+    "PEP": 0.1
+  },
+  "prices": {
+    "JPM": 334.31,
+    "JNJ": 265.8,
+    "PEP": 136.04
+  }
+}

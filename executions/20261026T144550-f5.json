@@ -1,0 +1,53 @@
+{
+  "started_at": "2026-10-26T14:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610261030-JNJ-buy",
+      "id": "1f06c3ce-6a8a-463d-894f-4c851d95a3c3",
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610261030-MRK-buy",
+      "id": "822effa9-8c59-487d-8220-a2349bd2569f",
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0099,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-26 10:30:00-04:00",
+  "hold_day": false,
+  "equity": 99624.06,
+  "targets": {
+    "JNJ": 0.1,
+    "MRK": 0.1
+  },
+  "prices": {
+    "JNJ": 268.18,
+    "MRK": 143.41
+  }
+}

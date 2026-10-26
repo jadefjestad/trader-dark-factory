@@ -1,0 +1,39 @@
+{
+  "started_at": "2026-10-26T15:15:51+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610261100-JNJ-buy",
+      "id": "9e343aca-775d-4210-a762-3f02a2f3f04c",
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0075,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-26 11:00:00-04:00",
+  "hold_day": false,
+  "equity": 99514.06,
+  "targets": {
+    "JNJ": 0.1
+  },
+  "prices": {
+    "JNJ": 266.56
+  }
+}

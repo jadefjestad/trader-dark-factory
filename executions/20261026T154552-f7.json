@@ -1,0 +1,59 @@
+{
+  "started_at": "2026-10-26T15:45:50+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 191,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 81,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610261130-BAC-buy",
+      "id": "17516468-8ab8-438f-9d5f-21f69ae3530c",
+      "symbol": "BAC",
+      "qty": 191,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610261130-WMT-buy",
+      "id": "bd30b31c-3fb8-4198-93e3-96155a01fb67",
+      "symbol": "WMT",
+      "qty": 81,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0077,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-26 11:30:00-04:00",
+  "hold_day": false,
+  "equity": 99497.68,
+  "targets": {
+    "JPM": 0.1,
+    "JNJ": 0.1,
+    "PEP": 0.1,
+    "WMT": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "JPM": 334.16,
+    "JNJ": 266.03,
+    "PEP": 136.125,
+    "WMT": 120.36,
+    "BAC": 50.97
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-26T16:30:52+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "WMT",
+      "qty": 80,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 45,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610261215-WMT-sell",
+      "id": "b67d83e7-1cd6-41de-b454-80e081817668",
+      "symbol": "WMT",
+      "qty": 80,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610261215-NVDA-buy",
+      "id": "b64add39-aa1c-4fd1-853b-3668365e5870",
+      "symbol": "NVDA",
+      "qty": 45,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0081,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-26 12:15:00-04:00",
+  "hold_day": false,
+  "equity": 99454.15,
+  "targets": {
+    "NVDA": 0.1,
+    "JPM": 0.1,
+    "JNJ": 0.1,
+    "PEP": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "NVDA": 215.69,
+    "JPM": 334.51,
+    "JNJ": 265.67,
+    "PEP": 135.48,
+    "WMT": 120.515,
+    "BAC": 50.925
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-26T15:15:50+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "symbol": "MA",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610261100-ADBE-buy",
+      "id": "cf0d182b-5462-41a1-a13c-4ab604b2efbf",
+      "symbol": "ADBE",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610261100-JNJ-buy",
+      "id": "6c962886-4551-4516-8519-a76f2b67eb84",
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610261100-MA-buy",
+      "id": "e310e709-3e32-4145-a453-209a9f622ee4",
+      "symbol": "MA",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610261100-MRK-buy",
+      "id": "7f407929-bc85-4d90-962e-7440d0e0e128",
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610261100-UNH-buy",
+      "id": "34c3b782-be40-4447-bff1-f95bcf560d69",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0108,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-26 11:00:00-04:00",
+  "hold_day": false,
+  "equity": 99763.95,
+  "targets": {
+    "MA": 0.1,
+    "UNH": 0.1,
+    "JNJ": 0.1,
+    "MRK": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "MA": 614.74,
+    "UNH": 413.355,
+    "JNJ": 266.56,
+    "MRK": 141.735,
+    "ADBE": 259.16
+  }
+}

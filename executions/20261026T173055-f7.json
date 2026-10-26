@@ -1,0 +1,57 @@
+{
+  "started_at": "2026-10-26T17:30:54+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 191,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 45,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610261315-BAC-sell",
+      "id": "c88cb43e-9625-433d-98c5-72d0be193523",
+      "symbol": "BAC",
+      "qty": 191,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610261315-NVDA-sell",
+      "id": "6edf3af7-789d-4d3f-b609-9954d57dc295",
+      "symbol": "NVDA",
+      "qty": 45,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0085,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-26 13:15:00-04:00",
+  "hold_day": false,
+  "equity": 99420.21,
+  "targets": {
+    "AVGO": 0.1,
+    "JNJ": 0.1,
+    "PEP": 0.1
+  },
+  "prices": {
+    "NVDA": 216.04,
+    "AVGO": 330.15,
+    "JNJ": 265.105,
+    "PEP": 135.26,
+    "BAC": 50.9
+  }
+}

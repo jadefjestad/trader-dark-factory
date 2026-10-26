@@ -1,0 +1,59 @@
+{
+  "started_at": "2026-10-26T14:30:52+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 89,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610261015-CSCO-buy",
+      "id": "eab7b809-96ff-4f0f-9c01-61ba641b9494",
+      "symbol": "CSCO",
+      "qty": 89,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610261015-MSFT-buy",
+      "id": "ef6882c9-7c81-4cb9-b718-b4c4a4e63a0c",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.01,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-26 10:15:00-04:00",
+  "hold_day": false,
+  "equity": 99111.44,
+  "targets": {
+    "MSFT": 0.1,
+    "AMZN": 0.1,
+    "COST": 0.1,
+    "WMT": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 527.35,
+    "AMZN": 250.0,
+    "COST": 1011.18,
+    "WMT": 121.465,
+    "CSCO": 108.96
+  }
+}
