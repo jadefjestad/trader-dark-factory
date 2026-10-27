@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-27T15:15:50+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 192,
+      "side": "buy"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610271100-AVGO-buy",
+      "id": "8e83b9a2-b38c-46bc-984f-eb68f7561692",
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610271100-BAC-buy",
+      "id": "c077e8a6-8a5e-4374-8554-b6c633017fe7",
+      "symbol": "BAC",
+      "qty": 192,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610271100-CVX-buy",
+      "id": "7992b780-fbeb-483a-b518-5319b4320e2e",
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610271100-LLY-buy",
+      "id": "d0e08f62-ae94-44df-84da-d8833f9276ec",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610271100-XOM-buy",
+      "id": "982b3291-4080-48c9-a367-a2eb8b72fff8",
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0137,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-27 11:00:00-04:00",
+  "hold_day": false,
+  "equity": 99472.74,
+  "targets": {
+    "AVGO": 0.1,
+    "LLY": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "AVGO": 340.39,
+    "LLY": 1293.56,
+    "XOM": 181.58,
+    "CVX": 229.155,
+    "BAC": 50.63
+  }
+}

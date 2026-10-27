@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-27T17:15:54+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 30,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610271300-AAPL-sell",
+      "id": "53cc8266-31de-4ad5-865d-5c277a52f017",
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610271300-GOOGL-buy",
+      "id": "69ce9f77-17ea-46ec-b5c8-4ee4a89fe6d2",
+      "symbol": "GOOGL",
+      "qty": 30,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.011,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-27 13:00:00-04:00",
+  "hold_day": false,
+  "equity": 99008.89,
+  "targets": {
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "MRK": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "AAPL": 345.52,
+    "NVDA": 218.28,
+    "AMZN": 253.565,
+    "GOOGL": 321.085,
+    "MRK": 141.965,
+    "CSCO": 112.07
+  }
+}

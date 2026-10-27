@@ -1,0 +1,83 @@
+{
+  "started_at": "2026-10-27T15:00:55+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 87,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610271045-AAPL-sell",
+      "id": "60d4ccbc-fa86-4a65-af2d-cc0b3609c0b2",
+      "symbol": "AAPL",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610271045-AMZN-buy",
+      "id": "81a2eb12-00ef-4159-81a2-7593134f98e2",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610271045-CSCO-buy",
+      "id": "eb051623-f7ba-44e9-9e89-9d45900ab126",
+      "symbol": "CSCO",
+      "qty": 87,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610271045-MRK-buy",
+      "id": "1227a3cb-28f8-48c0-befb-b8e781b49397",
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0114,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-27 10:45:00-04:00",
+  "hold_day": false,
+  "equity": 98969.79,
+  "targets": {
+    "AAPL": 0.1,
+    "AMZN": 0.1,
+    "JNJ": 0.1,
+    "MRK": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "AAPL": 346.73,
+    "AMZN": 252.05,
+    "JNJ": 268.285,
+    "MRK": 141.99,
+    "CSCO": 111.44
+  }
+}

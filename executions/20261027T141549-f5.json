@@ -1,0 +1,67 @@
+{
+  "started_at": "2026-10-27T14:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610271000-AVGO-buy",
+      "id": "cabdded9-07fc-4710-82b2-dfe4fc56dcc7",
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610271000-NVDA-buy",
+      "id": "bda2d024-c51b-4807-998e-66565ea1907d",
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610271000-XOM-buy",
+      "id": "96fb7492-3394-4de6-a1a2-8735f5ade8d3",
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0149,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-27 10:00:00-04:00",
+  "hold_day": false,
+  "equity": 99118.43,
+  "targets": {
+    "NVDA": 0.1,
+    "AVGO": 0.1,
+    "XOM": 0.1
+  },
+  "prices": {
+    "NVDA": 216.05,
+    "AVGO": 337.875,
+    "XOM": 182.735
+  }
+}

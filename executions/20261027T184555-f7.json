@@ -1,0 +1,42 @@
+{
+  "started_at": "2026-10-27T18:45:54+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610271430-AAPL-sell",
+      "id": "b1d8ca3b-fc80-4f0e-840a-4e3ab3417437",
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0079,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-27 14:30:00-04:00",
+  "hold_day": false,
+  "equity": 99482.54,
+  "targets": {
+    "MSFT": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "AAPL": 345.95,
+    "MSFT": 531.16,
+    "CSCO": 111.395
+  }
+}

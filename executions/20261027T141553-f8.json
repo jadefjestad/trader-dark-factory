@@ -1,0 +1,39 @@
+{
+  "started_at": "2026-10-27T14:15:52+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "KO",
+      "qty": 104,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610271000-KO-buy",
+      "id": "49b18639-c46d-4d83-a731-16519cd9e33e",
+      "symbol": "KO",
+      "qty": 104,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0113,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-27 10:00:00-04:00",
+  "hold_day": false,
+  "equity": 98977.09,
+  "targets": {
+    "KO": 0.1
+  },
+  "prices": {
+    "KO": 92.56
+  }
+}

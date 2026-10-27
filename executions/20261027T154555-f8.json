@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-27T15:45:52+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610271130-JNJ-sell",
+      "id": "5e0ea2e9-1dc1-4fe0-b0d5-e03386aaba4c",
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610271130-NVDA-buy",
+      "id": "3f79bcd3-1abe-40c1-b1b0-79b2cf29c088",
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0104,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-27 11:30:00-04:00",
+  "hold_day": false,
+  "equity": 99066.17,
+  "targets": {
+    "AAPL": 0.1,
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "MRK": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "AAPL": 347.45,
+    "NVDA": 218.57,
+    "AMZN": 252.36,
+    "JNJ": 267.79,
+    "MRK": 142.31,
+    "CSCO": 112.23
+  }
+}

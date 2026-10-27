@@ -1,0 +1,57 @@
+{
+  "started_at": "2026-10-27T17:45:51+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610271330-HD-sell",
+      "id": "6c402117-4207-4c07-8061-3d719bedfb11",
+      "symbol": "HD",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610271330-JNJ-sell",
+      "id": "f0b78133-30bd-41bf-9642-7ab68b6ae69f",
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0074,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-27 13:30:00-04:00",
+  "hold_day": false,
+  "equity": 99524.45,
+  "targets": {
+    "AAPL": 0.1,
+    "MSFT": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "AAPL": 345.93,
+    "MSFT": 532.27,
+    "JNJ": 268.31,
+    "HD": 318.94,
+    "CSCO": 111.625
+  }
+}
