@@ -1,0 +1,99 @@
+{
+  "started_at": "2026-10-27T19:48:34+00:00",
+  "fund": 3,
+  "fund_name": "\ud83d\udd96 Live Long and Profit",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "KO",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f3-20261027-40572255791-1-KO-buy",
+      "id": "8dfca8ce-d7da-4f48-94c2-318683a602fa",
+      "symbol": "KO",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f3-20261027-40572255791-1-WMT-buy",
+      "id": "dc174c69-59ba-4bf0-89d7-9a8504891842",
+      "symbol": "WMT",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.013,
+  "strategy": {
+    "name": "earnings_announcement_premium",
+    "ref": "strategies/candidates/earnings_announcement_premium.py",
+    "experiment_id": "pr87-6530167-earnings_announcement_premium-r37243169062-1"
+  },
+  "signal_bar": "2026-10-26",
+  "hold_day": false,
+  "equity": 102140.05,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.07142857142857142,
+    "MSFT": 0.07142857142857142,
+    "NVDA": 0.0,
+    "AMZN": 0.07142857142857142,
+    "GOOGL": 0.07142857142857142,
+    "META": 0.0,
+    "AVGO": 0.0,
+    "JPM": 0.0,
+    "V": 0.07142857142857142,
+    "MA": 0.07142857142857142,
+    "UNH": 0.0,
+    "LLY": 0.07142857142857142,
+    "JNJ": 0.0,
+    "MRK": 0.07142857142857142,
+    "XOM": 0.07142857142857142,
+    "CVX": 0.07142857142857142,
+    "PG": 0.0,
+    "KO": 0.07142857142857142,
+    "PEP": 0.0,
+    "COST": 0.0,
+    "WMT": 0.07142857142857142,
+    "HD": 0.07142857142857142,
+    "BAC": 0.0,
+    "ADBE": 0.0,
+    "CSCO": 0.07142857142857142
+  },
+  "prices": {
+    "AAPL": 347.29,
+    "MSFT": 532.245,
+    "NVDA": 218.17,
+    "AMZN": 254.02,
+    "GOOGL": 322.34,
+    "META": 620.54,
+    "AVGO": 344.18,
+    "JPM": 336.14,
+    "V": 400.125,
+    "MA": 609.49,
+    "UNH": 409.735,
+    "LLY": 1282.26,
+    "JNJ": 268.67,
+    "MRK": 141.82,
+    "XOM": 180.275,
+    "CVX": 228.815,
+    "PG": 159.12,
+    "KO": 91.44,
+    "PEP": 133.06,
+    "COST": 991.18,
+    "WMT": 119.095,
+    "HD": 319.045,
+    "BAC": 50.665,
+    "ADBE": 248.015,
+    "CSCO": 111.495
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "started_at": "2026-10-27T19:48:31+00:00",
+  "fund": 2,
+  "fund_name": "\u2b1b The Empire Strikes Black",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "KO",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f2-20261027-40572255791-1-KO-buy",
+      "id": "179245e5-5287-4bae-95cf-866afe0ba7fa",
+      "symbol": "KO",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.007,
+  "strategy": {
+    "name": "residual_momentum_announcement_blend",
+    "ref": "strategies/candidates/residual_momentum_announcement_blend.py",
+    "experiment_id": "pr90-8040a1f-residual_momentum_announcement_blend-r37243483853-1"
+  },
+  "signal_bar": "2026-10-26",
+  "hold_day": false,
+  "equity": 102845.41,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.03571428571428571,
+    "MSFT": 0.03571428571428571,
+    "NVDA": 0.0,
+    "AMZN": 0.03571428571428571,
+    "GOOGL": 0.08533613617453409,
+    "META": 0.0,
+    "AVGO": 0.0,
+    "JPM": 0.0,
+    "V": 0.03571428571428571,
+    "MA": 0.03571428571428571,
+    "UNH": 0.0,
+    "LLY": 0.08533613617453409,
+    "JNJ": 0.049621850460248376,
+    "MRK": 0.08533613617453409,
+    "XOM": 0.08533613617453409,
+    "CVX": 0.08533613617453409,
+    "PG": 0.0,
+    "KO": 0.08533613617453409,
+    "PEP": 0.0,
+    "COST": 0.0,
+    "WMT": 0.03571428571428571,
+    "HD": 0.03571428571428571,
+    "BAC": 0.0,
+    "ADBE": 0.0,
+    "CSCO": 0.08533613617453409
+  },
+  "prices": {
+    "AAPL": 347.27,
+    "MSFT": 532.245,
+    "NVDA": 218.18,
+    "AMZN": 254.03,
+    "GOOGL": 322.34,
+    "META": 620.54,
+    "AVGO": 344.2,
+    "JPM": 336.14,
+    "V": 400.125,
+    "MA": 609.49,
+    "UNH": 409.845,
+    "LLY": 1282.26,
+    "JNJ": 268.67,
+    "MRK": 141.82,
+    "XOM": 180.275,
+    "CVX": 228.815,
+    "PG": 159.11,
+    "KO": 91.455,
+    "PEP": 133.06,
+    "COST": 991.18,
+    "WMT": 119.095,
+    "HD": 319.045,
+    "BAC": 50.665,
+    "ADBE": 248.015,
+    "CSCO": 111.495
+  }
+}
