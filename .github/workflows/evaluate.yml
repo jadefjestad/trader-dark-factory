@@ -275,12 +275,15 @@ jobs:
           gh label create rejected --color d73a4a --force >/dev/null
           gh label create experiment --color 5319e7 --force >/dev/null
           gh pr comment "$PR" --body-file verdict.md
+          # labels are cosmetic: the verdict is already on the ledger and in the comment, and a re-run
+          # cannot pass once the ledger holds this run's record, so a label API blip only warns
+          label() { gh pr edit "$PR" "$@" || echo "::warning::gh pr edit $* failed"; }
           if [ -n "$CANDIDATES" ]; then
-            gh pr edit "$PR" --add-label experiment
+            label --add-label experiment
             if [ "$PROMOTE" = "True" ]; then
-              gh pr edit "$PR" --add-label promote; gh pr edit "$PR" --remove-label rejected || true
+              label --add-label promote; gh pr edit "$PR" --remove-label rejected || true
             else
-              gh pr edit "$PR" --add-label rejected; gh pr edit "$PR" --remove-label promote || true
+              label --add-label rejected; gh pr edit "$PR" --remove-label promote || true
             fi
           fi
       - name: Auto-merge verified promotions
