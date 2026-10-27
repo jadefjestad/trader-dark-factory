@@ -1,0 +1,77 @@
+{
+  "started_at": "2026-10-27T19:45:47+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 192,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 87,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610271545-BAC-sell",
+      "id": "7354eafb-f694-48a5-9f2a-446b1d6b4f24",
+      "symbol": "BAC",
+      "qty": 192,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610271545-CSCO-sell",
+      "id": "802f5617-da77-41a1-82dd-d70ad9f84d14",
+      "symbol": "CSCO",
+      "qty": 87,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610271545-JPM-sell",
+      "id": "12010223-b13e-414c-910e-810bdf9892a5",
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610271545-NVDA-sell",
+      "id": "c00c9ae4-e13f-4700-a360-2d639acfcb57",
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0073,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99534.24,
+  "targets": {},
+  "prices": {
+    "NVDA": 218.34,
+    "JPM": 336.235,
+    "BAC": 50.655,
+    "CSCO": 111.495
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-27T19:45:46+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 87,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 106,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 73,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610271545-ADBE-sell",
+      "id": "85fcd00c-cd41-4f14-8295-f7c1d36ce20b",
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610271545-AVGO-sell",
+      "id": "df9e53a1-3d65-4393-879f-8d691d692cd6",
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610271545-CSCO-sell",
+      "id": "e122a811-81e2-4187-8f5e-314b8528ac30",
+      "symbol": "CSCO",
+      "qty": 87,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610271545-KO-sell",
+      "id": "fac22e8d-1910-436f-97ca-d489322c1a6e",
+      "symbol": "KO",
+      "qty": 106,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610271545-PEP-sell",
+      "id": "f099c34f-958a-4c95-8557-9224511a0197",
+      "symbol": "PEP",
+      "qty": 73,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0156,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99272.56,
+  "targets": {},
+  "prices": {
+    "AVGO": 344.355,
+    "KO": 91.325,
+    "PEP": 132.915,
+    "ADBE": 248.11,
+    "CSCO": 111.495
+  }
+}
