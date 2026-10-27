@@ -1,0 +1,207 @@
+{
+  "started_at": "2026-10-27T15:12:10+00:00",
+  "fund": 3,
+  "fund_name": "\ud83d\udd96 Live Long and Profit",
+  "dry_run": false,
+  "status": "submitted 11 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 3,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 10,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 45,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 22,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 2,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 59,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f3-20261027-40528434215-1-AAPL-sell",
+      "id": "1714ef1a-fa96-411d-8a1c-84c7a8539147",
+      "symbol": "AAPL",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261027-40528434215-1-CSCO-sell",
+      "id": "418e8a27-131e-4402-994b-9ec49bd7f756",
+      "symbol": "CSCO",
+      "qty": 3,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261027-40528434215-1-CVX-sell",
+      "id": "1b00a880-d808-405a-b804-b12bb958c78d",
+      "symbol": "CVX",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261027-40528434215-1-META-sell",
+      "id": "dadff615-be41-4c11-a0d2-f6860d202cb3",
+      "symbol": "META",
+      "qty": 10,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261027-40528434215-1-PG-sell",
+      "id": "2bcf6505-d294-4ce2-a8cf-e2e6b8b9647b",
+      "symbol": "PG",
+      "qty": 45,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261027-40528434215-1-XOM-sell",
+      "id": "6d5c38da-90af-4f31-be39-f6b43a71c883",
+      "symbol": "XOM",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261027-40528434215-1-AMZN-buy",
+      "id": "8833063c-49e9-407f-87fa-6c83559808fd",
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f3-20261027-40528434215-1-GOOGL-buy",
+      "id": "7ff8e3ef-c480-42a1-b54c-1271ce6308c4",
+      "symbol": "GOOGL",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f3-20261027-40528434215-1-HD-buy",
+      "id": "583b1ac1-81ef-44cf-9070-ba5d828c790e",
+      "symbol": "HD",
+      "qty": 22,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f3-20261027-40528434215-1-MRK-buy",
+      "id": "14bf3886-4a2f-432f-9207-0b403e881dfe",
+      "symbol": "MRK",
+      "qty": 2,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f3-20261027-40528434215-1-WMT-buy",
+      "id": "352318dd-3a91-46ab-bd67-5e644998e677",
+      "symbol": "WMT",
+      "qty": 59,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0115,
+  "strategy": {
+    "name": "earnings_announcement_premium",
+    "ref": "strategies/candidates/earnings_announcement_premium.py",
+    "experiment_id": "pr87-6530167-earnings_announcement_premium-r37243169062-1"
+  },
+  "signal_bar": "2026-10-26",
+  "hold_day": false,
+  "equity": 102289.32,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.07142857142857142,
+    "MSFT": 0.07142857142857142,
+    "NVDA": 0.0,
+    "AMZN": 0.07142857142857142,
+    "GOOGL": 0.07142857142857142,
+    "META": 0.0,
+    "AVGO": 0.0,
+    "JPM": 0.0,
+    "V": 0.07142857142857142,
+    "MA": 0.07142857142857142,
+    "UNH": 0.0,
+    "LLY": 0.07142857142857142,
+    "JNJ": 0.0,
+    "MRK": 0.07142857142857142,
+    "XOM": 0.07142857142857142,
+    "CVX": 0.07142857142857142,
+    "PG": 0.0,
+    "KO": 0.07142857142857142,
+    "PEP": 0.0,
+    "COST": 0.0,
+    "WMT": 0.07142857142857142,
+    "HD": 0.07142857142857142,
+    "BAC": 0.0,
+    "ADBE": 0.0,
+    "CSCO": 0.07142857142857142
+  },
+  "prices": {
+    "AAPL": 347.265,
+    "MSFT": 532.97,
+    "NVDA": 217.58,
+    "AMZN": 251.66,
+    "GOOGL": 319.665,
+    "META": 625.39,
+    "AVGO": 340.38,
+    "JPM": 335.39,
+    "V": 401.315,
+    "MA": 610.9,
+    "UNH": 411.84,
+    "LLY": 1289.02,
+    "JNJ": 268.3,
+    "MRK": 142.24,
+    "XOM": 181.82,
+    "CVX": 229.37,
+    "PG": 159.02,
+    "KO": 92.41,
+    "PEP": 134.27,
+    "COST": 997.35,
+    "WMT": 119.5,
+    "HD": 318.69,
+    "BAC": 50.585,
+    "ADBE": 252.42,
+    "CSCO": 111.575
+  }
+}
