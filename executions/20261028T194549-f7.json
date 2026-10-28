@@ -1,0 +1,64 @@
+{
+  "started_at": "2026-10-28T19:45:48+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 192,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610281545-BAC-sell",
+      "id": "75884587-2e4c-41f9-9c05-4d3265f1fc83",
+      "symbol": "BAC",
+      "qty": 192,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610281545-JPM-sell",
+      "id": "cb22efae-20a5-4204-84c1-ec05d4cb59f2",
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610281545-XOM-sell",
+      "id": "211018d8-94de-4ec7-ba83-6d347b3de11c",
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0064,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99629.95,
+  "targets": {},
+  "prices": {
+    "JPM": 339.075,
+    "XOM": 182.55,
+    "BAC": 50.92
+  }
+}

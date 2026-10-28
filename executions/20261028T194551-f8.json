@@ -1,0 +1,77 @@
+{
+  "started_at": "2026-10-28T19:45:49+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610281545-AVGO-sell",
+      "id": "c3184ae2-fd2e-441d-aa54-cab87d67982b",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610281545-CVX-sell",
+      "id": "7ecc2abd-e2d3-4f3b-ac91-5c53c1799038",
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610281545-JPM-sell",
+      "id": "fda2c51f-d8f6-46cc-b24e-1f4bb99fb036",
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610281545-LLY-sell",
+      "id": "26315651-e92b-4cd6-914f-45bfb22e67bf",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0132,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 98788.81,
+  "targets": {},
+  "prices": {
+    "AVGO": 350.33,
+    "JPM": 339.075,
+    "LLY": 1294.7,
+    "CVX": 229.87
+  }
+}

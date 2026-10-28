@@ -1,0 +1,45 @@
+{
+  "started_at": "2026-10-28T19:31:02+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610281515-LLY-buy",
+      "id": "eb5cc183-a5c1-482c-bfed-7832e6365c5f",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0131,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-28 15:15:00-04:00",
+  "hold_day": false,
+  "equity": 98797.9,
+  "targets": {
+    "AVGO": 0.1,
+    "JPM": 0.1,
+    "LLY": 0.1,
+    "CVX": 0.1
+  },
+  "prices": {
+    "AVGO": 349.72,
+    "JPM": 339.2,
+    "LLY": 1295.69,
+    "CVX": 230.21
+  }
+}

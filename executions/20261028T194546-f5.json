@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-28T19:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 45,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610281545-HD-sell",
+      "id": "f81001bf-43b3-4932-abd1-175639f56e65",
+      "symbol": "HD",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610281545-META-sell",
+      "id": "4bda23a9-96d4-4cc9-b96a-79d0a0106298",
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610281545-MRK-sell",
+      "id": "ab3ab35f-95ce-4481-be7b-5a23762ad9f7",
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610281545-NVDA-sell",
+      "id": "73d50c77-b670-48f8-9e6f-7244a9fb560d",
+      "symbol": "NVDA",
+      "qty": 45,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610281545-UNH-sell",
+      "id": "f3be52c8-38f2-4c5b-888f-faf2e5957890",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0156,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99043.59,
+  "targets": {},
+  "prices": {
+    "NVDA": 214.83,
+    "META": 611.71,
+    "UNH": 407.31,
+    "MRK": 140.775,
+    "HD": 317.78
+  }
+}
