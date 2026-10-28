@@ -1,0 +1,121 @@
+{
+  "started_at": "2026-10-28T16:31:00+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 7 orders",
+  "orders": [
+    {
+      "symbol": "JNJ",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "symbol": "MA",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 190,
+      "side": "buy"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610281215-JNJ-sell",
+      "id": "16d327a3-4b9c-403a-bb19-489bc0a8f5dd",
+      "symbol": "JNJ",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610281215-LLY-sell",
+      "id": "b456790c-7c45-496e-8977-468273392152",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610281215-MA-sell",
+      "id": "90ac9b06-a5ac-4f79-950a-744730775592",
+      "symbol": "MA",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610281215-UNH-sell",
+      "id": "6d6b69b2-c10c-4f38-b171-3de267383cc7",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610281215-BAC-buy",
+      "id": "7c929a8a-46a1-47b0-9c0a-3a8a515b5f23",
+      "symbol": "BAC",
+      "qty": 190,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610281215-CVX-buy",
+      "id": "3e8bb3c9-d964-4f91-a930-f038c7fc4403",
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610281215-JPM-buy",
+      "id": "393c37b7-c58f-4985-9927-2a581b32ca6c",
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0105,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-28 12:15:00-04:00",
+  "hold_day": false,
+  "equity": 99061.89,
+  "targets": {
+    "JPM": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "JPM": 340.0,
+    "MA": 612.97,
+    "UNH": 412.58,
+    "LLY": 1287.49,
+    "JNJ": 270.38,
+    "XOM": 183.56,
+    "CVX": 231.14,
+    "BAC": 51.09
+  }
+}

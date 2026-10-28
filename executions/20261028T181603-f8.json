@@ -1,0 +1,59 @@
+{
+  "started_at": "2026-10-28T18:16:01+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 81,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610281400-CVX-sell",
+      "id": "1750c740-a72f-4ac4-a9a2-a7d3d12737d5",
+      "symbol": "CVX",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610281400-WMT-buy",
+      "id": "5e3be9fd-f541-406a-8e40-0e3272bf8526",
+      "symbol": "WMT",
+      "qty": 81,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0115,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-28 14:00:00-04:00",
+  "hold_day": false,
+  "equity": 98964.93,
+  "targets": {
+    "JPM": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1,
+    "WMT": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "JPM": 339.57,
+    "XOM": 182.88,
+    "CVX": 231.0,
+    "WMT": 119.19,
+    "BAC": 50.92
+  }
+}

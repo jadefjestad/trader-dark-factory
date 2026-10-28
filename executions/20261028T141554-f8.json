@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-28T14:15:53+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "symbol": "MA",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610281000-JNJ-buy",
+      "id": "973c1cbb-effe-4f6d-88b4-a8c7763311c2",
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610281000-LLY-buy",
+      "id": "203dfc15-02b1-4a9c-be24-eca009586ae5",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610281000-MA-buy",
+      "id": "4fe1eeba-fa15-485b-a05c-b489035b6b70",
+      "symbol": "MA",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610281000-UNH-buy",
+      "id": "f62702bd-c928-44cd-9fda-49014e128819",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610281000-XOM-buy",
+      "id": "464d2045-fc7b-4f39-96f9-b90c9be24dc7",
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0107,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-28 10:00:00-04:00",
+  "hold_day": false,
+  "equity": 99038.4,
+  "targets": {
+    "MA": 0.1,
+    "UNH": 0.1,
+    "LLY": 0.1,
+    "JNJ": 0.1,
+    "XOM": 0.1
+  },
+  "prices": {
+    "MA": 613.65,
+    "UNH": 414.94,
+    "LLY": 1290.61,
+    "JNJ": 269.485,
+    "XOM": 181.8
+  }
+}

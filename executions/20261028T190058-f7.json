@@ -1,0 +1,45 @@
+{
+  "started_at": "2026-10-28T19:00:57+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610281445-BAC-buy",
+      "id": "3ed08206-2a2e-4bb2-92ac-74104622b52f",
+      "symbol": "BAC",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0068,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-28 14:45:00-04:00",
+  "hold_day": false,
+  "equity": 99584.24,
+  "targets": {
+    "JPM": 0.1,
+    "XOM": 0.1,
+    "KO": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "JPM": 338.94,
+    "XOM": 182.55,
+    "KO": 91.655,
+    "BAC": 50.795
+  }
+}

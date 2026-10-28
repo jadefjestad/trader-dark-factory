@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-28T15:15:53+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 88,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610281100-AMZN-buy",
+      "id": "8a5319d3-18c4-45e0-bf09-ac7d461bd097",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610281100-AVGO-buy",
+      "id": "65807e14-60b5-443e-b4f8-7017325a2f08",
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610281100-CSCO-buy",
+      "id": "5bcace81-066d-4ca1-b934-69efa1a0c9b3",
+      "symbol": "CSCO",
+      "qty": 88,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610281100-META-buy",
+      "id": "686c9f50-1a68-4207-a87e-9428a19e6ca9",
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610281100-MSFT-buy",
+      "id": "87f9a6f4-0fe5-4493-8db8-a9025c84f0b9",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0157,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-28 11:00:00-04:00",
+  "hold_day": false,
+  "equity": 99264.01,
+  "targets": {
+    "MSFT": 0.1,
+    "AMZN": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 528.225,
+    "AMZN": 252.43,
+    "META": 612.67,
+    "AVGO": 345.505,
+    "CSCO": 109.965
+  }
+}

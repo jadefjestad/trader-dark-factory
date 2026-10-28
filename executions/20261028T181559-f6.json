@@ -1,0 +1,135 @@
+{
+  "started_at": "2026-10-28T18:15:53+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 8 orders",
+  "orders": [
+    {
+      "symbol": "KO",
+      "qty": 105,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 69,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 39,
+      "side": "buy"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 190,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 30,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610281400-KO-sell",
+      "id": "5e178b83-6ad2-4cc0-98fc-0931e98bbbc4",
+      "symbol": "KO",
+      "qty": 105,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610281400-LLY-sell",
+      "id": "bfd25bc8-6dc7-4ceb-98eb-70386205d631",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610281400-MRK-sell",
+      "id": "35e32e04-57f8-4869-8981-18b39bf1d014",
+      "symbol": "MRK",
+      "qty": 69,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610281400-NVDA-sell",
+      "id": "fa2a8069-aee0-4e3a-b13d-982e45e664d7",
+      "symbol": "NVDA",
+      "qty": 44,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610281400-ADBE-buy",
+      "id": "c319dc35-5a8c-445b-881d-7f1729127a27",
+      "symbol": "ADBE",
+      "qty": 39,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610281400-BAC-buy",
+      "id": "4f950543-6fdb-429e-960c-e615d141925f",
+      "symbol": "BAC",
+      "qty": 190,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610281400-HD-buy",
+      "id": "c6dfc3da-a1d3-4026-a6f8-434140b9688b",
+      "symbol": "HD",
+      "qty": 30,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610281400-META-buy",
+      "id": "b76f0231-cd7e-4633-9ed8-8fc5b7aea067",
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0169,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-28 14:00:00-04:00",
+  "hold_day": false,
+  "equity": 99144.84,
+  "targets": {
+    "META": 0.1,
+    "UNH": 0.1,
+    "HD": 0.1,
+    "BAC": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "NVDA": 216.59,
+    "META": 610.4,
+    "UNH": 408.96,
+    "LLY": 1288.86,
+    "MRK": 140.465,
+    "KO": 91.74,
+    "HD": 317.95,
+    "BAC": 50.92,
+    "ADBE": 246.94
+  }
+}

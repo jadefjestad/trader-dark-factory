@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-10-28T16:15:57+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "XOM",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610281200-XOM-sell",
+      "id": "d7f33b1c-a540-4ef2-beac-e1f256379683",
+      "symbol": "XOM",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.01,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-28 12:00:00-04:00",
+  "hold_day": false,
+  "equity": 99108.99,
+  "targets": {
+    "MA": 0.1,
+    "UNH": 0.1,
+    "LLY": 0.1,
+    "JNJ": 0.1,
+    "XOM": 0.1
+  },
+  "prices": {
+    "MA": 613.895,
+    "UNH": 413.53,
+    "LLY": 1290.12,
+    "JNJ": 270.92,
+    "XOM": 183.405
+  }
+}

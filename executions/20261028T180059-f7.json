@@ -1,0 +1,107 @@
+{
+  "started_at": "2026-10-28T18:00:54+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 6 orders",
+  "orders": [
+    {
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "symbol": "MA",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 24,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610281345-JNJ-sell",
+      "id": "deacf9ce-c7fb-4ed1-9ede-02c816c7098a",
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610281345-LLY-sell",
+      "id": "e4175c6f-7d87-47c5-9966-51234661c027",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610281345-MA-sell",
+      "id": "4bcdd428-cd19-4bcc-ada6-22b8f9e87c9e",
+      "symbol": "MA",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610281345-V-sell",
+      "id": "de9d9478-41a1-4e32-980d-088bc98218d2",
+      "symbol": "V",
+      "qty": 24,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610281345-CVX-buy",
+      "id": "56ad7a3a-a97e-4af9-ba10-3b6058a9abe1",
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610281345-XOM-buy",
+      "id": "81c4a18c-5c0d-4b62-b20d-342407f3da99",
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0068,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-28 13:45:00-04:00",
+  "hold_day": false,
+  "equity": 99588.6,
+  "targets": {
+    "XOM": 0.1,
+    "CVX": 0.1,
+    "KO": 0.1
+  },
+  "prices": {
+    "V": 402.235,
+    "MA": 613.155,
+    "LLY": 1292.45,
+    "JNJ": 271.115,
+    "XOM": 182.475,
+    "CVX": 230.59,
+    "KO": 91.66
+  }
+}

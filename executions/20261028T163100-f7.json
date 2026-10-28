@@ -1,0 +1,66 @@
+{
+  "started_at": "2026-10-28T16:30:55+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610281215-AMZN-sell",
+      "id": "8f1af460-8514-4d33-a52b-e580e4871838",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610281215-JNJ-buy",
+      "id": "6e7fcdbf-d218-4a3e-bf03-c10e3ca12c1f",
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610281215-LLY-buy",
+      "id": "e8f708c1-b0cb-4c44-83dc-3a98bc78d192",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0072,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-28 12:15:00-04:00",
+  "hold_day": false,
+  "equity": 99544.9,
+  "targets": {
+    "LLY": 0.1,
+    "JNJ": 0.1
+  },
+  "prices": {
+    "AMZN": 252.695,
+    "LLY": 1287.49,
+    "JNJ": 270.34
+  }
+}

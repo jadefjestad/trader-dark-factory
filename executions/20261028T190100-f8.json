@@ -1,0 +1,57 @@
+{
+  "started_at": "2026-10-28T19:00:58+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 190,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 81,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610281445-BAC-sell",
+      "id": "de846fc1-3f31-4812-876c-91da4c91d117",
+      "symbol": "BAC",
+      "qty": 190,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610281445-WMT-sell",
+      "id": "f40f4b45-7e71-4864-aec4-01cd0299641f",
+      "symbol": "WMT",
+      "qty": 81,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0127,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-28 14:45:00-04:00",
+  "hold_day": false,
+  "equity": 98836.0,
+  "targets": {
+    "AVGO": 0.1,
+    "JPM": 0.1,
+    "CVX": 0.1
+  },
+  "prices": {
+    "AVGO": 350.425,
+    "JPM": 338.94,
+    "CVX": 230.38,
+    "WMT": 118.52,
+    "BAC": 50.795
+  }
+}
