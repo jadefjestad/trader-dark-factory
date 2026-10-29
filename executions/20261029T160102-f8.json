@@ -1,0 +1,97 @@
+{
+  "started_at": "2026-10-29T16:00:57+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 186,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 79,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610291145-BAC-sell",
+      "id": "36a57e44-2774-4b2d-828c-d3ee505bcde6",
+      "symbol": "BAC",
+      "qty": 186,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610291145-V-sell",
+      "id": "5fdb1e53-c439-40cc-8017-61e71f56dc4a",
+      "symbol": "V",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610291145-AMZN-buy",
+      "id": "2f4ccb49-a76b-43bc-8554-f8efa1bc7c88",
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610291145-AVGO-buy",
+      "id": "9caaac02-ceb9-4bbc-ba25-9a20835007cf",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610291145-WMT-buy",
+      "id": "244263f5-8696-4395-9c36-2b2b4ac24c45",
+      "symbol": "WMT",
+      "qty": 79,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0148,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-29 11:45:00-04:00",
+  "hold_day": false,
+  "equity": 98624.69,
+  "targets": {
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1,
+    "WMT": 0.1
+  },
+  "prices": {
+    "AMZN": 247.335,
+    "GOOGL": 287.06,
+    "META": 631.18,
+    "AVGO": 346.055,
+    "V": 409.61,
+    "WMT": 121.01,
+    "BAC": 51.74
+  }
+}

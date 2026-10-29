@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-29T15:15:53+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 89,
+      "side": "buy"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610291100-CSCO-buy",
+      "id": "f7d632cd-e223-45f6-bd2c-f192925525a8",
+      "symbol": "CSCO",
+      "qty": 89,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610291100-CVX-buy",
+      "id": "9d9022eb-ca0f-4280-8a9d-da526bffa99f",
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610291100-LLY-buy",
+      "id": "8b3f8cc9-b7ba-42a9-90d7-da91c36f29ab",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610291100-MSFT-buy",
+      "id": "668c1bab-cb97-4573-9b5d-ec3a2d21450e",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610291100-XOM-buy",
+      "id": "f7866df6-3eea-42e8-9c46-2e2497d35171",
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0168,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-29 11:00:00-04:00",
+  "hold_day": false,
+  "equity": 99154.13,
+  "targets": {
+    "MSFT": 0.1,
+    "LLY": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 524.42,
+    "LLY": 1374.4,
+    "XOM": 181.595,
+    "CVX": 229.43,
+    "CSCO": 108.915
+  }
+}

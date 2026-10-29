@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-10-29T18:30:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610291415-BAC-buy",
+      "id": "e7571c68-7454-4078-a355-b401eb15103a",
+      "symbol": "BAC",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.016,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-29 14:15:00-04:00",
+  "hold_day": false,
+  "equity": 99009.78,
+  "targets": {
+    "GOOGL": 0.1,
+    "LLY": 0.1,
+    "XOM": 0.1,
+    "BAC": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "GOOGL": 281.86,
+    "LLY": 1364.46,
+    "XOM": 182.33,
+    "BAC": 51.32,
+    "CSCO": 108.64
+  }
+}

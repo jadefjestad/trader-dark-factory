@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-10-29T16:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610291145-CSCO-sell",
+      "id": "8fb992a6-f859-4a13-83f6-8c99b22dc055",
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0165,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-29 11:45:00-04:00",
+  "hold_day": false,
+  "equity": 98952.09,
+  "targets": {
+    "MSFT": 0.1,
+    "LLY": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 523.71,
+    "LLY": 1365.74,
+    "XOM": 181.9,
+    "CVX": 230.075,
+    "CSCO": 109.22
+  }
+}

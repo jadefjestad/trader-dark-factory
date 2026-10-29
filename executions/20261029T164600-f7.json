@@ -1,0 +1,44 @@
+{
+  "started_at": "2026-10-29T16:45:59+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "KO",
+      "qty": 105,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610291230-KO-sell",
+      "id": "1e48e41e-f68e-4d37-a317-ca13b8884020",
+      "symbol": "KO",
+      "qty": 105,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.006,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-29 12:30:00-04:00",
+  "hold_day": false,
+  "equity": 99665.87,
+  "targets": {
+    "JPM": 0.1,
+    "PEP": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "JPM": 343.39,
+    "KO": 92.35,
+    "PEP": 132.855,
+    "BAC": 51.62
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "started_at": "2026-10-29T18:01:09+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610291345-META-sell",
+      "id": "edebbd97-f23b-47a8-9a4c-4c175fb0e36a",
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0171,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-29 13:45:00-04:00",
+  "hold_day": false,
+  "equity": 98401.18,
+  "targets": {
+    "AVGO": 0.1,
+    "WMT": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "META": 626.99,
+    "AVGO": 344.95,
+    "WMT": 120.97,
+    "ADBE": 247.505
+  }
+}

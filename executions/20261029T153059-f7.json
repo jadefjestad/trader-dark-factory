@@ -1,0 +1,67 @@
+{
+  "started_at": "2026-10-29T15:30:58+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "KO",
+      "qty": 105,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610291115-AAPL-buy",
+      "id": "9bab9947-6d78-4dd1-bd6b-698a1d938a20",
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610291115-KO-buy",
+      "id": "91862530-0e8b-4155-a21a-cf0ad5d1c6b8",
+      "symbol": "KO",
+      "qty": 105,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202610291115-LLY-buy",
+      "id": "b8254e11-c23f-4c02-928a-3bfa4a7d6936",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0065,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-29 11:15:00-04:00",
+  "hold_day": false,
+  "equity": 99622.12,
+  "targets": {
+    "AAPL": 0.1,
+    "LLY": 0.1,
+    "KO": 0.1
+  },
+  "prices": {
+    "AAPL": 348.925,
+    "LLY": 1371.09,
+    "KO": 92.135
+  }
+}

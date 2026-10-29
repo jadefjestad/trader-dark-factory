@@ -1,0 +1,59 @@
+{
+  "started_at": "2026-10-29T15:00:59+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 185,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610291045-BAC-buy",
+      "id": "8ecc1f13-a32a-44f3-b6a1-46e2ab0f32d0",
+      "symbol": "BAC",
+      "qty": 185,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610291045-META-buy",
+      "id": "c0b76bd2-5a2b-4124-938e-2129dcf635bd",
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.015,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-29 10:45:00-04:00",
+  "hold_day": false,
+  "equity": 98613.56,
+  "targets": {
+    "AMZN": 0.1,
+    "META": 0.1,
+    "V": 0.1,
+    "MA": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "AMZN": 246.245,
+    "META": 626.985,
+    "V": 410.14,
+    "MA": 638.51,
+    "BAC": 51.98
+  }
+}

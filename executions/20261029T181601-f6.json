@@ -1,0 +1,110 @@
+{
+  "started_at": "2026-10-29T18:15:57+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 6 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 188,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "MA",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610291400-BAC-sell",
+      "id": "4ee2ebe7-52c2-4db7-a78e-481663fb1153",
+      "symbol": "BAC",
+      "qty": 188,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610291400-JPM-sell",
+      "id": "13c6001f-6049-480e-ad85-d6c38ddb46cb",
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610291400-MA-sell",
+      "id": "af84c1fa-84f3-4c96-b6ad-492c6d742e98",
+      "symbol": "MA",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610291400-META-buy",
+      "id": "2f2700fe-0dec-4d1d-a762-ef420847fdb3",
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610291400-MRK-buy",
+      "id": "72750da2-c4ca-482e-b46e-d362df60efd1",
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610291400-UNH-buy",
+      "id": "7d4da7c4-8562-40cc-873b-15988cc0d4f3",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0187,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-29 14:00:00-04:00",
+  "hold_day": false,
+  "equity": 98961.68,
+  "targets": {
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "META": 0.1,
+    "UNH": 0.1,
+    "MRK": 0.1
+  },
+  "prices": {
+    "AMZN": 244.83,
+    "GOOGL": 282.065,
+    "META": 627.585,
+    "JPM": 342.675,
+    "MA": 635.97,
+    "UNH": 405.19,
+    "MRK": 147.02,
+    "BAC": 51.395
+  }
+}

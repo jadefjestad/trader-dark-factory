@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-10-29T15:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610291100-CVX-buy",
+      "id": "296de3fd-e39e-405e-9d95-4348aef1a1ab",
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0164,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-29 11:00:00-04:00",
+  "hold_day": false,
+  "equity": 98967.19,
+  "targets": {
+    "MSFT": 0.1,
+    "LLY": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 524.42,
+    "LLY": 1374.4,
+    "XOM": 181.595,
+    "CVX": 229.43,
+    "CSCO": 108.915
+  }
+}

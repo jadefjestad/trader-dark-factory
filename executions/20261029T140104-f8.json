@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-10-29T14:01:03+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 0 orders",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0133,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-29 09:45:00-04:00",
+  "hold_day": false,
+  "equity": 98782.27,
+  "targets": {},
+  "prices": {}
+}

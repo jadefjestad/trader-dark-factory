@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-29T18:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610291345-CVX-sell",
+      "id": "8410ac05-8aeb-4464-8968-7e492c367e49",
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610291345-GOOGL-buy",
+      "id": "908d29b4-e795-4215-977c-d68510bea997",
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0157,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-29 13:45:00-04:00",
+  "hold_day": false,
+  "equity": 99038.79,
+  "targets": {
+    "MSFT": 0.1,
+    "GOOGL": 0.1,
+    "LLY": 0.1,
+    "XOM": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 526.49,
+    "GOOGL": 282.505,
+    "LLY": 1369.165,
+    "XOM": 182.43,
+    "CVX": 230.8,
+    "CSCO": 108.59
+  }
+}

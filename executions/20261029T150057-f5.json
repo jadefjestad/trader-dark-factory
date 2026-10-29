@@ -1,0 +1,69 @@
+{
+  "started_at": "2026-10-29T15:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 89,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610291045-CSCO-buy",
+      "id": "586bc57b-b406-485f-bf13-9cef822cd79f",
+      "symbol": "CSCO",
+      "qty": 89,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610291045-LLY-buy",
+      "id": "564a202c-fa86-4b68-8ffb-0907134cc284",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610291045-XOM-buy",
+      "id": "63d792d6-a8c8-425d-8bc4-928860528807",
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0162,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-29 10:45:00-04:00",
+  "hold_day": false,
+  "equity": 98985.7,
+  "targets": {
+    "MSFT": 0.1,
+    "LLY": 0.1,
+    "XOM": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 523.44,
+    "LLY": 1371.12,
+    "XOM": 182.02,
+    "CSCO": 108.925
+  }
+}
