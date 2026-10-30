@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-30T17:45:56+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "XOM",
+      "qty": 51,
+      "side": "sell"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 40,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610301330-XOM-sell",
+      "id": "c456ab34-6be1-4350-b1f7-4db2c44cf6d4",
+      "symbol": "XOM",
+      "qty": 51,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610301330-AMZN-buy",
+      "id": "6bdc27c6-0da1-4893-bb98-9fb19f239270",
+      "symbol": "AMZN",
+      "qty": 40,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0105,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-30 13:30:00-04:00",
+  "hold_day": false,
+  "equity": 99061.89,
+  "targets": {
+    "AMZN": 0.1,
+    "MRK": 0.1,
+    "PEP": 0.1,
+    "COST": 0.1,
+    "WMT": 0.1
+  },
+  "prices": {
+    "AMZN": 239.165,
+    "MRK": 150.31,
+    "XOM": 186.49,
+    "PEP": 138.27,
+    "COST": 1019.525,
+    "WMT": 123.68
+  }
+}

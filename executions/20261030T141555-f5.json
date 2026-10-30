@@ -1,0 +1,81 @@
+{
+  "started_at": "2026-10-30T14:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 93,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 64,
+      "side": "buy"
+    },
+    {
+      "symbol": "PG",
+      "qty": 59,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610301000-CSCO-buy",
+      "id": "be0c18e5-69a9-466e-b332-14559d78ad1c",
+      "symbol": "CSCO",
+      "qty": 93,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610301000-HD-buy",
+      "id": "750066d1-6152-4ec7-a366-36d6b09a82c6",
+      "symbol": "HD",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610301000-MRK-buy",
+      "id": "d5809581-b0fe-46e2-8f46-724bf096489e",
+      "symbol": "MRK",
+      "qty": 64,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202610301000-PG-buy",
+      "id": "d4355891-4af3-4f89-9596-aa3cffd4b2bd",
+      "symbol": "PG",
+      "qty": 59,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0168,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-30 10:00:00-04:00",
+  "hold_day": false,
+  "equity": 98924.43,
+  "targets": {
+    "MRK": 0.1,
+    "PG": 0.1,
+    "HD": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MRK": 149.25,
+    "PG": 163.345,
+    "HD": 328.945,
+    "CSCO": 104.1
+  }
+}

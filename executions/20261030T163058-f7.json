@@ -1,0 +1,55 @@
+{
+  "started_at": "2026-10-30T16:30:57+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 52,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610301215-UNH-sell",
+      "id": "7287a618-b9f4-4aa4-90f9-552f734e9709",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610301215-XOM-sell",
+      "id": "75e72d5e-99ae-415b-8f41-dddeb0d69bc2",
+      "symbol": "XOM",
+      "qty": 52,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0088,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-10-30 12:15:00-04:00",
+  "hold_day": false,
+  "equity": 99392.3,
+  "targets": {
+    "JNJ": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "UNH": 407.3,
+    "JNJ": 275.57,
+    "XOM": 185.96,
+    "ADBE": 252.17
+  }
+}

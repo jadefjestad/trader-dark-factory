@@ -1,0 +1,135 @@
+{
+  "started_at": "2026-10-30T18:15:54+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 8 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 93,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610301400-ADBE-sell",
+      "id": "ff5318c8-1023-4cd4-81b0-591414571eb8",
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301400-GOOGL-sell",
+      "id": "75f5f0a2-bad5-43c3-ac87-68aa14c2d7d6",
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301400-JNJ-sell",
+      "id": "5ce09171-56d1-46e5-a7c9-6489813af0f0",
+      "symbol": "JNJ",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301400-LLY-sell",
+      "id": "a732ae7d-a20c-4feb-8c79-97b7a6011c3a",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301400-AAPL-buy",
+      "id": "e3b16d17-13fd-4816-baae-ca7a4becba14",
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301400-AVGO-buy",
+      "id": "9dc26c7b-74b7-4319-aed4-ed05e3b18978",
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301400-CSCO-buy",
+      "id": "95d188eb-87dd-4c88-8cb7-dfc059584f18",
+      "symbol": "CSCO",
+      "qty": 93,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301400-META-buy",
+      "id": "568dff9a-f8de-48ad-af91-5d3bf190ace9",
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0211,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-30 14:00:00-04:00",
+  "hold_day": false,
+  "equity": 98723.95,
+  "targets": {
+    "AAPL": 0.1,
+    "NVDA": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "AAPL": 343.425,
+    "NVDA": 202.44,
+    "GOOGL": 277.97,
+    "META": 615.62,
+    "AVGO": 321.28,
+    "LLY": 1425.46,
+    "JNJ": 275.65,
+    "ADBE": 249.85,
+    "CSCO": 103.755
+  }
+}

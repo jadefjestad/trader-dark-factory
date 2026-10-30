@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-30T17:30:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610301315-UNH-sell",
+      "id": "18dbec56-0629-4b8b-b994-45b72cadbea3",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610301315-ADBE-buy",
+      "id": "ae3c1294-9393-4c9f-ae3f-36dee5d4e0c8",
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0148,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-30 13:15:00-04:00",
+  "hold_day": false,
+  "equity": 99128.34,
+  "targets": {
+    "NVDA": 0.1,
+    "JNJ": 0.1,
+    "PG": 0.1,
+    "HD": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "NVDA": 203.37,
+    "UNH": 408.99,
+    "JNJ": 276.155,
+    "PG": 163.2,
+    "HD": 329.68,
+    "ADBE": 250.425
+  }
+}

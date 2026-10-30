@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-10-30T13:45:54+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610300930-AMZN-sell",
+      "id": "cb248889-4f40-481f-b935-482bc7b05be1",
+      "symbol": "AMZN",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610300930-GOOGL-sell",
+      "id": "c763d5e7-7517-4014-9dce-6084589f2b80",
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610300930-META-sell",
+      "id": "80584a1c-6f0c-473c-9e8f-870d7c83bb09",
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610300930-MRK-sell",
+      "id": "9f017df9-b47d-45fe-a4ba-77d7eaaf05a8",
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610300930-UNH-sell",
+      "id": "ac5627f1-4b66-4f13-a960-26a0ace88815",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0193,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-30 09:30:00-04:00",
+  "hold_day": false,
+  "equity": 98901.85,
+  "targets": {},
+  "prices": {
+    "AMZN": 238.04,
+    "GOOGL": 280.34,
+    "META": 615.58,
+    "UNH": 415.45,
+    "MRK": 150.18
+  }
+}

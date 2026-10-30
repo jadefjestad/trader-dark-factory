@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-30T15:15:57+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "buy"
+    },
+    {
+      "symbol": "PG",
+      "qty": 59,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610301100-HD-buy",
+      "id": "b772c6e2-ca5a-49ab-b4b4-35f47dab5835",
+      "symbol": "HD",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301100-JNJ-buy",
+      "id": "f1ec444d-ceb2-4f9b-aa13-326abe44180c",
+      "symbol": "JNJ",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301100-MRK-buy",
+      "id": "f3659cf6-e00b-4d28-bcb9-fb25642785ef",
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301100-PG-buy",
+      "id": "1e378c7c-06db-4eb1-9435-aa2cd8115dd1",
+      "symbol": "PG",
+      "qty": 59,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301100-UNH-buy",
+      "id": "b2968418-ad07-4df8-a90f-65741e890438",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0195,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-30 11:00:00-04:00",
+  "hold_day": false,
+  "equity": 98885.61,
+  "targets": {
+    "UNH": 0.1,
+    "JNJ": 0.1,
+    "MRK": 0.1,
+    "PG": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "UNH": 408.08,
+    "JNJ": 276.75,
+    "MRK": 148.93,
+    "PG": 162.515,
+    "HD": 328.9
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-10-30T15:45:59+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 41,
+      "side": "sell"
+    },
+    {
+      "symbol": "AAPL",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 70,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610301130-CVX-sell",
+      "id": "4bb8e7d8-e391-432d-ad75-c7c1e64b1c17",
+      "symbol": "CVX",
+      "qty": 41,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610301130-AAPL-buy",
+      "id": "4fb81a6e-0e65-44ee-8c10-94402e9250d3",
+      "symbol": "AAPL",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202610301130-PEP-buy",
+      "id": "bf178ca9-db1b-4120-b91b-45a7130dba80",
+      "symbol": "PEP",
+      "qty": 70,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0089,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-30 11:30:00-04:00",
+  "hold_day": false,
+  "equity": 99217.7,
+  "targets": {
+    "AAPL": 0.1,
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "META": 0.1,
+    "PEP": 0.1
+  },
+  "prices": {
+    "AAPL": 347.125,
+    "AMZN": 239.245,
+    "GOOGL": 281.71,
+    "META": 622.61,
+    "CVX": 235.205,
+    "PEP": 137.94
+  }
+}

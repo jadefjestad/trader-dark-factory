@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-30T17:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "XOM",
+      "qty": 52,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 47,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610301245-XOM-sell",
+      "id": "bc680e46-b28b-4ae5-9eb7-8f636261c011",
+      "symbol": "XOM",
+      "qty": 52,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610301245-NVDA-buy",
+      "id": "513b02d3-01a5-4681-9973-987bb2f53cbb",
+      "symbol": "NVDA",
+      "qty": 47,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0154,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-10-30 12:45:00-04:00",
+  "hold_day": false,
+  "equity": 99061.23,
+  "targets": {
+    "NVDA": 0.1,
+    "UNH": 0.1,
+    "JNJ": 0.1,
+    "PG": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "NVDA": 203.94,
+    "UNH": 406.58,
+    "JNJ": 275.59,
+    "XOM": 186.805,
+    "PG": 163.13,
+    "HD": 329.56
+  }
+}

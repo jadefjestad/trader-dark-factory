@@ -1,0 +1,135 @@
+{
+  "started_at": "2026-10-30T16:45:54+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 8 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 59,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 47,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202610301230-HD-sell",
+      "id": "54db3e32-f7c3-46cf-8f4e-5738f97719d7",
+      "symbol": "HD",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301230-MRK-sell",
+      "id": "9f49516a-f3d5-4523-bfd4-926eb316f66c",
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301230-PG-sell",
+      "id": "33f5a590-bfd6-467d-b61f-0e86eaefe3fe",
+      "symbol": "PG",
+      "qty": 59,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301230-UNH-sell",
+      "id": "4d7cedfa-6633-4b64-bc16-cf2466bc3f84",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301230-ADBE-buy",
+      "id": "1e3d8ba9-d8ce-46f1-b983-6604fcba34c5",
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301230-GOOGL-buy",
+      "id": "37c928c0-9b43-4b0c-b317-808445f0f376",
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301230-LLY-buy",
+      "id": "257eca0e-5d84-4889-a372-4a7da07edd83",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202610301230-NVDA-buy",
+      "id": "37e70213-b718-407b-9d8c-a4573b986c66",
+      "symbol": "NVDA",
+      "qty": 47,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0189,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-10-30 12:30:00-04:00",
+  "hold_day": false,
+  "equity": 98941.28,
+  "targets": {
+    "NVDA": 0.1,
+    "GOOGL": 0.1,
+    "LLY": 0.1,
+    "JNJ": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "NVDA": 204.68,
+    "GOOGL": 280.47,
+    "UNH": 406.575,
+    "LLY": 1420.54,
+    "JNJ": 275.605,
+    "MRK": 150.225,
+    "PG": 163.11,
+    "HD": 330.285,
+    "ADBE": 250.89
+  }
+}
