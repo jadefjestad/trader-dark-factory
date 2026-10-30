@@ -1,0 +1,80 @@
+{
+  "started_at": "2026-10-30T19:31:12+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "COST",
+      "qty": 9,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 64,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 78,
+      "side": "sell"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 40,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202610301515-COST-sell",
+      "id": "17e37b15-3690-486c-b4a3-4fc2784c38e8",
+      "symbol": "COST",
+      "qty": 9,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610301515-MRK-sell",
+      "id": "95c9595d-a86f-4205-b28f-ed865c5a15f5",
+      "symbol": "MRK",
+      "qty": 64,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610301515-WMT-sell",
+      "id": "a68d1fb3-591f-42d2-a127-ceb7653b81ca",
+      "symbol": "WMT",
+      "qty": 78,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202610301515-AMZN-buy",
+      "id": "623fb1d7-a2f8-4eab-832b-1e5ca30094d2",
+      "symbol": "AMZN",
+      "qty": 40,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.012,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-10-30 15:15:00-04:00",
+  "hold_day": false,
+  "equity": 98908.69,
+  "targets": {
+    "AMZN": 0.1,
+    "PEP": 0.1
+  },
+  "prices": {
+    "AMZN": 239.125,
+    "MRK": 149.32,
+    "PEP": 138.105,
+    "COST": 1015.965,
+    "WMT": 123.635
+  }
+}

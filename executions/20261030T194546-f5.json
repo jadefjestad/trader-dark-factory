@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-30T19:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 93,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 47,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 59,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202610301545-ADBE-sell",
+      "id": "6e8e28ff-ce06-4e80-8bcd-70c87daa1d73",
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610301545-CSCO-sell",
+      "id": "769b01c4-ce71-4d26-9b99-549400c1f2b4",
+      "symbol": "CSCO",
+      "qty": 93,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610301545-JNJ-sell",
+      "id": "f4a64619-5ddc-4447-8573-714006e60eeb",
+      "symbol": "JNJ",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610301545-NVDA-sell",
+      "id": "b44232cc-6be0-4578-8b07-9bb5eeb3ba6f",
+      "symbol": "NVDA",
+      "qty": 47,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202610301545-PG-sell",
+      "id": "69982c0d-a67b-45f0-8d03-61efe78ca0b4",
+      "symbol": "PG",
+      "qty": 59,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0165,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 98952.64,
+  "targets": {},
+  "prices": {
+    "NVDA": 203.22,
+    "JNJ": 273.88,
+    "PG": 161.485,
+    "ADBE": 250.74,
+    "CSCO": 103.99
+  }
+}

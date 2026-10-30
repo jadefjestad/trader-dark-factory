@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-30T19:45:48+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "COST",
+      "qty": 9,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 103,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 60,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202610301545-COST-sell",
+      "id": "6e0cd34e-8841-4ce3-963b-8675cdaa5119",
+      "symbol": "COST",
+      "qty": 9,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610301545-KO-sell",
+      "id": "88d30e01-16f6-4ece-aaf7-a2fb7db1e11a",
+      "symbol": "KO",
+      "qty": 103,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610301545-MRK-sell",
+      "id": "4a44e47c-dffe-4db2-afe6-c122ac338ad9",
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610301545-PG-sell",
+      "id": "7e2cfe64-3858-4c01-bf16-d30dcaed4fa1",
+      "symbol": "PG",
+      "qty": 60,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202610301545-V-sell",
+      "id": "491b6463-eda5-46df-95c6-eb1a0b9ef16e",
+      "symbol": "V",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0098,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99283.78,
+  "targets": {},
+  "prices": {
+    "V": 413.53,
+    "MRK": 150.265,
+    "PG": 161.46,
+    "KO": 94.07,
+    "COST": 1015.76
+  }
+}
