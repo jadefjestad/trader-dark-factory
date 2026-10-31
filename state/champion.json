@@ -1,5 +1,5 @@
 {
-  "ref": "strategies/candidates/invvol_calmresid.py",
+  "ref": "strategies/candidates/invvolresid_lcrankwt.py",
   "params": {
     "lookback": 252,
     "skip": 21,
@@ -11,9 +11,9 @@
     "reversal_window": 21,
     "reversal_every": 5
   },
-  "name": "invvol_calmresid",
+  "name": "invvolresid_lcrankwt",
   "timeframe": "1Day",
-  "code_sha256": "d471e065e61b9183f57f63f787b39503d4b2cd12a570bf12938ae764193857a7",
-  "experiment_id": "pr420-8859c71-invvol_calmresid-r40945923892-1",
-  "promoted_at": "2026-10-29T20:07:52+00:00"
+  "code_sha256": "d10c6ce31dd80f38293555800b272259c1e1c4fe9deefe52eebd678418119aac",
+  "experiment_id": "pr443-0639324-invvolresid_lcrankwt-r41208445960-1",
+  "promoted_at": "2026-10-31T14:06:26+00:00"
 }
