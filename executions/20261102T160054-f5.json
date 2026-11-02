@@ -1,0 +1,59 @@
+{
+  "started_at": "2026-11-02T16:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 46,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611021045-GOOGL-buy",
+      "id": "190c73f5-6b7c-405c-ace3-7f9f1ef60289",
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611021045-NVDA-buy",
+      "id": "5753bb49-d361-4549-b5c9-fc1908bbd295",
+      "symbol": "NVDA",
+      "qty": 46,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0169,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-02 10:45:00-05:00",
+  "hold_day": false,
+  "equity": 98910.55,
+  "targets": {
+    "NVDA": 0.1,
+    "GOOGL": 0.1,
+    "UNH": 0.1,
+    "JNJ": 0.1,
+    "MRK": 0.1
+  },
+  "prices": {
+    "NVDA": 207.14,
+    "GOOGL": 283.83,
+    "UNH": 394.345,
+    "JNJ": 268.26,
+    "MRK": 148.055
+  }
+}

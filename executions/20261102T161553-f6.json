@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-02T16:15:52+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 93,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611021100-CSCO-buy",
+      "id": "876fd1f5-d54c-4585-986c-57ad8cc45f58",
+      "symbol": "CSCO",
+      "qty": 93,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611021100-GOOGL-buy",
+      "id": "49c6dadd-69fd-47e7-aeb8-b9878a286c3a",
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611021100-MRK-buy",
+      "id": "367cfb98-55b9-47d8-b74a-4993936944b5",
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611021100-UNH-buy",
+      "id": "4fc3bd87-04cb-4fc7-bb7c-1a2ef4eefcaa",
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611021100-XOM-buy",
+      "id": "dba4a429-2187-4b5a-b5dd-7817e19ecc53",
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0202,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-02 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 98814.12,
+  "targets": {
+    "GOOGL": 0.1,
+    "UNH": 0.1,
+    "MRK": 0.1,
+    "XOM": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "GOOGL": 283.51,
+    "UNH": 396.25,
+    "MRK": 147.73,
+    "XOM": 181.77,
+    "CSCO": 103.53
+  }
+}

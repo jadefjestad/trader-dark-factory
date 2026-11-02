@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-11-02T17:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611021200-JNJ-sell",
+      "id": "18cb90c8-c7ea-40c8-a751-23fa9170199b",
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611021200-AAPL-buy",
+      "id": "190256fa-bf5e-4333-a5a9-2a9860cc2787",
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0157,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-02 12:00:00-05:00",
+  "hold_day": false,
+  "equity": 99032.64,
+  "targets": {
+    "AAPL": 0.1,
+    "NVDA": 0.1,
+    "GOOGL": 0.1,
+    "UNH": 0.1,
+    "XOM": 0.1
+  },
+  "prices": {
+    "AAPL": 338.17,
+    "NVDA": 206.72,
+    "GOOGL": 283.565,
+    "UNH": 397.16,
+    "JNJ": 269.13,
+    "XOM": 182.08
+  }
+}

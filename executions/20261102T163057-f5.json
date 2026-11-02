@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-11-02T16:30:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611021115-MRK-sell",
+      "id": "1d2d3dfd-b161-4e56-ad0e-fac1389ae04a",
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611021115-XOM-buy",
+      "id": "adf997af-9a5d-4b38-9c47-56d4cd3c5144",
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0165,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-02 11:15:00-05:00",
+  "hold_day": false,
+  "equity": 98950.65,
+  "targets": {
+    "NVDA": 0.1,
+    "GOOGL": 0.1,
+    "UNH": 0.1,
+    "JNJ": 0.1,
+    "XOM": 0.1
+  },
+  "prices": {
+    "NVDA": 206.82,
+    "GOOGL": 283.2,
+    "UNH": 396.815,
+    "JNJ": 268.43,
+    "MRK": 148.285,
+    "XOM": 181.32
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-02T15:15:55+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 52,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611021000-AMZN-buy",
+      "id": "21d6fcdd-5a78-4953-815e-ed4ca74ffb4d",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611021000-AVGO-buy",
+      "id": "a27264da-20e8-4fb8-9dee-18131d244f0d",
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611021000-MA-buy",
+      "id": "ec345f3d-c9ae-4178-82fb-a5dfa5b38057",
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611021000-META-buy",
+      "id": "4438b2ca-6744-44a4-911a-07cc9e0b4d91",
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611021000-XOM-buy",
+      "id": "bdf6cd9b-ec6c-4d14-aaf0-158aa6d8f9e9",
+      "symbol": "XOM",
+      "qty": 52,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0121,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-02 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 98898.77,
+  "targets": {
+    "AMZN": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1,
+    "MA": 0.1,
+    "XOM": 0.1
+  },
+  "prices": {
+    "AMZN": 251.59,
+    "META": 619.815,
+    "AVGO": 330.375,
+    "MA": 654.03,
+    "XOM": 183.44
+  }
+}

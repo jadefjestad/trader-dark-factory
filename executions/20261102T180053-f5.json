@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-11-02T18:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611021245-NVDA-sell",
+      "id": "f23f5eff-961d-4ce8-a5d6-7d13059d84ae",
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0166,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-02 12:45:00-05:00",
+  "hold_day": false,
+  "equity": 98942.94,
+  "targets": {
+    "AAPL": 0.1,
+    "NVDA": 0.1,
+    "GOOGL": 0.1,
+    "UNH": 0.1,
+    "XOM": 0.1
+  },
+  "prices": {
+    "AAPL": 338.0,
+    "NVDA": 206.46,
+    "GOOGL": 282.685,
+    "UNH": 396.54,
+    "XOM": 181.54
+  }
+}

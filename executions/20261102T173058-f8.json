@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-11-02T17:30:55+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "COST",
+      "qty": 9,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611021215-AMZN-sell",
+      "id": "3fc1291b-ffae-4b0e-aeac-5f0d74cab692",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611021215-COST-buy",
+      "id": "d7ac9b1b-02b9-4699-9f6b-f55cb892ba09",
+      "symbol": "COST",
+      "qty": 9,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.013,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-02 12:15:00-05:00",
+  "hold_day": false,
+  "equity": 98807.78,
+  "targets": {
+    "AVGO": 0.1,
+    "V": 0.1,
+    "MA": 0.1,
+    "KO": 0.1,
+    "COST": 0.1
+  },
+  "prices": {
+    "AMZN": 250.46,
+    "AVGO": 329.76,
+    "V": 425.93,
+    "MA": 659.755,
+    "KO": 95.395,
+    "COST": 1035.39
+  }
+}
