@@ -1,0 +1,59 @@
+{
+  "started_at": "2026-11-03T16:01:00+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 93,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611031045-CSCO-buy",
+      "id": "2dc223ce-fec3-44f1-9d3b-b53e773edc95",
+      "symbol": "CSCO",
+      "qty": 93,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611031045-UNH-buy",
+      "id": "8bacdc76-fd68-4de6-9fb4-76e02e196daf",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0193,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-03 10:45:00-05:00",
+  "hold_day": false,
+  "equity": 98181.98,
+  "targets": {
+    "MSFT": 0.1,
+    "META": 0.1,
+    "UNH": 0.1,
+    "BAC": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 516.45,
+    "META": 621.11,
+    "UNH": 402.34,
+    "BAC": 49.81,
+    "CSCO": 103.325
+  }
+}

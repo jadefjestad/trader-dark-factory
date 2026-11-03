@@ -1,0 +1,76 @@
+{
+  "started_at": "2026-11-03T14:45:57+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 47,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611030930-AMZN-sell",
+      "id": "5beeb20b-2782-4233-ba20-303e4e16ae14",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611030930-AVGO-sell",
+      "id": "e1861fa9-a134-464b-b31d-07bc83695378",
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611030930-MSFT-sell",
+      "id": "11f5b708-1baf-4c03-b21b-02bd71b27285",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611030930-NVDA-sell",
+      "id": "f6cb836b-619c-4d39-98bd-33d8bc4b1f17",
+      "symbol": "NVDA",
+      "qty": 47,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0122,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-03 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 99050.62,
+  "targets": {},
+  "prices": {
+    "MSFT": 511.01,
+    "NVDA": 208.455,
+    "AMZN": 247.045,
+    "AVGO": 334.67
+  }
+}

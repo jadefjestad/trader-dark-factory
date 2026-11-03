@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-11-03T14:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 47,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611030930-AAPL-sell",
+      "id": "925a7ddb-8827-4725-ab85-c8e844dd0e83",
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611030930-GOOGL-sell",
+      "id": "d8a732dc-e1d7-4943-83fb-52020d60bcaf",
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611030930-NVDA-sell",
+      "id": "679bbdef-d5c3-4288-89d2-d42a6f2d1809",
+      "symbol": "NVDA",
+      "qty": 47,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611030930-UNH-sell",
+      "id": "dbf08dc7-abd4-41e2-9c2d-f957ced1f1fc",
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611030930-XOM-sell",
+      "id": "93e09523-b910-4bfc-ae89-061d4d843019",
+      "symbol": "XOM",
+      "qty": 53,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0192,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-03 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 98680.18,
+  "targets": {},
+  "prices": {
+    "AAPL": 332.16,
+    "NVDA": 208.4,
+    "GOOGL": 279.46,
+    "UNH": 399.51,
+    "XOM": 178.53
+  }
+}

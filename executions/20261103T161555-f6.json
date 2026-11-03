@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-03T16:15:53+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 66,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 54,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611031100-AAPL-buy",
+      "id": "ac340a97-977c-431b-a8e2-b6217e23bc49",
+      "symbol": "AAPL",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611031100-CVX-buy",
+      "id": "a2077bba-97d3-47d0-8c62-08ab2efff20a",
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611031100-LLY-buy",
+      "id": "7846c5c7-0f34-49df-ad61-668d015d872d",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611031100-MRK-buy",
+      "id": "198185c0-87d5-45ef-a5bd-4ddeb8d171cd",
+      "symbol": "MRK",
+      "qty": 66,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611031100-XOM-buy",
+      "id": "f625e32a-c29d-441d-ba44-a55c44a85e53",
+      "symbol": "XOM",
+      "qty": 54,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0217,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-03 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 98660.32,
+  "targets": {
+    "AAPL": 0.1,
+    "LLY": 0.1,
+    "MRK": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1
+  },
+  "prices": {
+    "AAPL": 330.49,
+    "LLY": 1419.08,
+    "MRK": 145.09,
+    "XOM": 177.73,
+    "CVX": 226.09
+  }
+}

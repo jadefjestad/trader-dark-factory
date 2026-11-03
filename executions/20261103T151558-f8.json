@@ -1,0 +1,53 @@
+{
+  "started_at": "2026-11-03T15:15:57+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 193,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611031000-BAC-buy",
+      "id": "abcb5026-ec7e-43f0-9e16-a9f3eff15327",
+      "symbol": "BAC",
+      "qty": 193,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611031000-MSFT-buy",
+      "id": "f38296cc-d4d6-4079-9935-5caafb8131ec",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0203,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-03 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 98075.08,
+  "targets": {
+    "MSFT": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "MSFT": 513.56,
+    "BAC": 49.785
+  }
+}

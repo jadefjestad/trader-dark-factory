@@ -1,0 +1,55 @@
+{
+  "started_at": "2026-11-03T16:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 195,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 29,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611031130-BAC-buy",
+      "id": "827d5507-ac33-4cb1-8963-09257074c795",
+      "symbol": "BAC",
+      "qty": 195,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611031130-HD-buy",
+      "id": "ed4d5445-a73c-45e2-88f9-57b530775e5e",
+      "symbol": "HD",
+      "qty": 29,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0196,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-03 11:30:00-05:00",
+  "hold_day": false,
+  "equity": 98645.5,
+  "targets": {
+    "JPM": 0.1,
+    "HD": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "JPM": 336.085,
+    "HD": 331.77,
+    "BAC": 49.465
+  }
+}

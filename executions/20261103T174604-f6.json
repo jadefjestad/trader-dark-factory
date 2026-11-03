@@ -1,0 +1,160 @@
+{
+  "started_at": "2026-11-03T17:45:56+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 10 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 66,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 54,
+      "side": "sell"
+    },
+    {
+      "symbol": "HD",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "V",
+      "qty": 22,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 77,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611031230-AAPL-sell",
+      "id": "71791fe8-7664-4281-89be-ae0dee21d1fd",
+      "symbol": "AAPL",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611031230-CVX-sell",
+      "id": "43d76f49-ebf5-449f-a114-528c003c99f4",
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611031230-LLY-sell",
+      "id": "3dd7d3a9-1fab-4003-b712-0ef02ef94261",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611031230-MRK-sell",
+      "id": "b63099c5-27f6-47f3-bbeb-e76db3ad998b",
+      "symbol": "MRK",
+      "qty": 66,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611031230-XOM-sell",
+      "id": "ca8ded2b-8def-449e-817a-6362d43e5d15",
+      "symbol": "XOM",
+      "qty": 54,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611031230-HD-buy",
+      "id": "a2458f71-214f-47b7-994f-85195aa56c38",
+      "symbol": "HD",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611031230-JNJ-buy",
+      "id": "9751c141-9aa8-4c94-8e55-17166d2e7185",
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611031230-JPM-buy",
+      "id": "3a86082a-1678-4b02-9da5-ca6bce46f5d0",
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611031230-V-buy",
+      "id": "8886bda1-09b1-48f1-9ad0-ec8bc501e561",
+      "symbol": "V",
+      "qty": 22,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611031230-WMT-buy",
+      "id": "568ee5c7-28d0-4231-9a88-8704e9b12e77",
+      "symbol": "WMT",
+      "qty": 77,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.021,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-03 12:30:00-05:00",
+  "hold_day": false,
+  "equity": 98735.67,
+  "targets": {
+    "JPM": 0.1,
+    "V": 0.1,
+    "JNJ": 0.1,
+    "WMT": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "AAPL": 332.195,
+    "JPM": 336.46,
+    "V": 421.65,
+    "LLY": 1422.635,
+    "JNJ": 267.86,
+    "MRK": 144.71,
+    "XOM": 178.15,
+    "CVX": 226.36,
+    "WMT": 124.71,
+    "HD": 331.04
+  }
+}
