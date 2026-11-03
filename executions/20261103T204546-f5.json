@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-11-03T20:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 67,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 54,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611031545-HD-sell",
+      "id": "b5ac57be-d0d8-442a-ac9a-16ab7c1ce66e",
+      "symbol": "HD",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611031545-JNJ-sell",
+      "id": "a7504a94-a455-4e93-a825-2e1ad2863549",
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611031545-JPM-sell",
+      "id": "2afd9718-29d7-4caf-a126-6b44b6db4d5d",
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611031545-MRK-sell",
+      "id": "ca4b946f-73d8-4963-8aaa-467babb3dfb7",
+      "symbol": "MRK",
+      "qty": 67,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611031545-XOM-sell",
+      "id": "1a3c5f13-26c5-494a-88e5-58b074291782",
+      "symbol": "XOM",
+      "qty": 54,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0203,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 98572.76,
+  "targets": {},
+  "prices": {
+    "JPM": 336.62,
+    "JNJ": 265.645,
+    "MRK": 143.77,
+    "XOM": 177.595,
+    "HD": 332.61
+  }
+}

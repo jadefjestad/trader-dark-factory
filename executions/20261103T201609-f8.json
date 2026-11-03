@@ -1,0 +1,82 @@
+{
+  "started_at": "2026-11-03T20:16:02+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 92,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611031500-CSCO-sell",
+      "id": "96caa0cd-40a9-40ab-bc59-75eca60669b3",
+      "symbol": "CSCO",
+      "qty": 92,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611031500-META-sell",
+      "id": "7c6731ea-5cbf-430b-9af0-a024a26b8153",
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611031500-V-sell",
+      "id": "1388eac7-ae5b-483f-a01c-fe64b470a5a2",
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611031500-AMZN-buy",
+      "id": "50e7ac39-41e9-4f07-b798-ab6c20c23814",
+      "symbol": "AMZN",
+      "qty": 38,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0197,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-03 15:00:00-05:00",
+  "hold_day": false,
+  "equity": 98143.79,
+  "targets": {
+    "MSFT": 0.1,
+    "AMZN": 0.1,
+    "UNH": 0.1
+  },
+  "prices": {
+    "MSFT": 522.57,
+    "AMZN": 251.4,
+    "META": 618.3,
+    "V": 421.19,
+    "UNH": 402.6,
+    "CSCO": 102.87
+  }
+}
