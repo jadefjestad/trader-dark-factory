@@ -1,0 +1,71 @@
+{
+  "started_at": "2026-11-04T18:15:54+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "symbol": "PG",
+      "qty": 58,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611041300-LLY-buy",
+      "id": "87045c59-6695-47e2-b2c3-e96116182164",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202611041300-MA-buy",
+      "id": "4d3e39ab-d9dd-4b41-b61d-eb6dfe00bfa6",
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202611041300-PG-buy",
+      "id": "18966cee-dc31-441f-b6b4-9eff0a715654",
+      "symbol": "PG",
+      "qty": 58,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.013,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-04 13:00:00-05:00",
+  "hold_day": false,
+  "equity": 98970.39,
+  "targets": {
+    "MA": 0.1,
+    "LLY": 0.1,
+    "PG": 0.1,
+    "PEP": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "MA": 668.03,
+    "LLY": 1422.505,
+    "PG": 167.215,
+    "PEP": 142.89,
+    "ADBE": 249.45
+  }
+}

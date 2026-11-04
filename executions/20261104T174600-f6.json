@@ -1,0 +1,135 @@
+{
+  "started_at": "2026-11-04T17:45:56+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 8 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 94,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 47,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 188,
+      "side": "buy"
+    },
+    {
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 57,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611041230-AMZN-sell",
+      "id": "20018e18-6197-4d78-ba98-5a254fb24494",
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611041230-AVGO-sell",
+      "id": "c4417335-ba98-4704-a71e-28b53cd28efe",
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611041230-CSCO-sell",
+      "id": "9bc6202b-7f09-438e-ae7b-0a4f2eed27e0",
+      "symbol": "CSCO",
+      "qty": 94,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611041230-NVDA-sell",
+      "id": "d287e51e-f745-4b48-9853-53cd7d5414d9",
+      "symbol": "NVDA",
+      "qty": 47,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611041230-ADBE-buy",
+      "id": "5c2e4680-8ef0-433b-9665-a84511d61beb",
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611041230-BAC-buy",
+      "id": "b6837bf8-5321-4268-a2a6-95e51cae5d08",
+      "symbol": "BAC",
+      "qty": 188,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611041230-MA-buy",
+      "id": "ed31c3d4-f5ba-428c-9b38-0747b23afaec",
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611041230-XOM-buy",
+      "id": "dc51a707-0450-4dac-9a9b-4383baf316a4",
+      "symbol": "XOM",
+      "qty": 57,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0212,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-04 12:30:00-05:00",
+  "hold_day": false,
+  "equity": 98707.86,
+  "targets": {
+    "MA": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1,
+    "BAC": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "NVDA": 203.18,
+    "AMZN": 269.445,
+    "AVGO": 328.19,
+    "MA": 668.03,
+    "XOM": 167.675,
+    "CVX": 215.075,
+    "BAC": 51.29,
+    "ADBE": 249.88,
+    "CSCO": 102.3
+  }
+}

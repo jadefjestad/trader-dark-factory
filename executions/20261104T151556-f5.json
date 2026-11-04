@@ -1,0 +1,81 @@
+{
+  "started_at": "2026-11-04T15:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611041000-HD-buy",
+      "id": "c3b1dc2e-b810-41e8-aebf-31991fc35f03",
+      "symbol": "HD",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611041000-JNJ-buy",
+      "id": "939095bf-fe8f-4e81-b83e-02fafbd56ce5",
+      "symbol": "JNJ",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611041000-LLY-buy",
+      "id": "1991efdf-0ea3-4955-aa1f-91e1087aae49",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611041000-MRK-buy",
+      "id": "f9ea4221-de89-4e5e-a0a0-b3fce201f29f",
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0204,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-04 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 98566.36,
+  "targets": {
+    "LLY": 0.1,
+    "JNJ": 0.1,
+    "MRK": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "LLY": 1415.17,
+    "JNJ": 268.24,
+    "MRK": 146.44,
+    "HD": 344.265
+  }
+}

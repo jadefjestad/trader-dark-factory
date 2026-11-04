@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-04T16:15:52+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 94,
+      "side": "buy"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 47,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611041100-AMZN-buy",
+      "id": "8434ac7a-ca1e-4933-8dfc-f14d4da08da1",
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611041100-AVGO-buy",
+      "id": "b0f14528-f939-4aac-abc9-da7667e058b1",
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611041100-CSCO-buy",
+      "id": "aa4d4c6b-d001-436f-8b00-895bad4359e8",
+      "symbol": "CSCO",
+      "qty": 94,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611041100-CVX-buy",
+      "id": "c79e10ac-dd84-46cc-ab3d-e205d659111c",
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611041100-NVDA-buy",
+      "id": "7334ccc5-7665-4b5a-a7ed-75916493ea3e",
+      "symbol": "NVDA",
+      "qty": 47,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.021,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-04 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 98728.22,
+  "targets": {
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "AVGO": 0.1,
+    "CVX": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 202.97,
+    "AMZN": 266.58,
+    "AVGO": 325.81,
+    "CVX": 218.39,
+    "CSCO": 102.75
+  }
+}

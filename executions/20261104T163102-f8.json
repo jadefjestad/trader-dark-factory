@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-11-04T16:30:58+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 73,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611041115-AAPL-sell",
+      "id": "ecb8db7a-8cbd-41cf-a79f-03b0f0d2ab49",
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611041115-WMT-buy",
+      "id": "f7d957ce-56d7-4a22-a84d-b6c142c3d94f",
+      "symbol": "WMT",
+      "qty": 73,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0248,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-04 11:15:00-05:00",
+  "hold_day": false,
+  "equity": 97628.27,
+  "targets": {
+    "MSFT": 0.1,
+    "JPM": 0.1,
+    "UNH": 0.1,
+    "PEP": 0.1,
+    "WMT": 0.1
+  },
+  "prices": {
+    "AAPL": 351.24,
+    "MSFT": 552.76,
+    "JPM": 349.33,
+    "UNH": 404.56,
+    "PEP": 143.44,
+    "WMT": 130.01
+  }
+}

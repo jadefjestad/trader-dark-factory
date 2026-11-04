@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-11-04T18:01:00+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "MSFT",
+      "qty": 17,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 34,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611041245-MSFT-sell",
+      "id": "36193ddc-b614-4ee1-a02c-a29c1fa555c7",
+      "symbol": "MSFT",
+      "qty": 17,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611041245-JNJ-buy",
+      "id": "b962aa72-040b-4df0-8c26-47310e712c8b",
+      "symbol": "JNJ",
+      "qty": 34,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0232,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-04 12:45:00-05:00",
+  "hold_day": false,
+  "equity": 97793.02,
+  "targets": {
+    "JPM": 0.1,
+    "UNH": 0.1,
+    "JNJ": 0.1,
+    "PEP": 0.1,
+    "WMT": 0.1
+  },
+  "prices": {
+    "MSFT": 552.745,
+    "JPM": 351.68,
+    "UNH": 408.42,
+    "JNJ": 274.23,
+    "PEP": 143.08,
+    "WMT": 130.08
+  }
+}

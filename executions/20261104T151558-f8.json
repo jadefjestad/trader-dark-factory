@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-04T15:15:57+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 91,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 17,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611041000-AAPL-buy",
+      "id": "26b4aa70-db58-41df-ae24-2a96e4479cdb",
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611041000-ADBE-buy",
+      "id": "f500a137-d8ad-40b7-b4f3-4db73df500d1",
+      "symbol": "ADBE",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611041000-CSCO-buy",
+      "id": "5467a527-a4d2-49b5-ac43-ecf1cbdf89f8",
+      "symbol": "CSCO",
+      "qty": 91,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611041000-GOOGL-buy",
+      "id": "f19c9556-7ec4-4dc6-9c8f-9ff210c4223c",
+      "symbol": "GOOGL",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611041000-MSFT-buy",
+      "id": "ef7f3132-a1fe-4263-aa81-b815f7634951",
+      "symbol": "MSFT",
+      "qty": 17,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0199,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-04 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 98116.64,
+  "targets": {
+    "AAPL": 0.1,
+    "MSFT": 0.1,
+    "GOOGL": 0.1,
+    "ADBE": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "AAPL": 353.495,
+    "MSFT": 554.085,
+    "GOOGL": 295.65,
+    "ADBE": 254.03,
+    "CSCO": 104.795
+  }
+}

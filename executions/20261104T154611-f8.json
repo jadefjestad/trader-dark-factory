@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-11-04T15:46:07+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 91,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 67,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611041030-CSCO-sell",
+      "id": "32a9705e-7068-4cb6-af4e-0814650c86ae",
+      "symbol": "CSCO",
+      "qty": 91,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611041030-PEP-buy",
+      "id": "3b2d1d14-979b-4b63-b215-10bb57957003",
+      "symbol": "PEP",
+      "qty": 67,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0221,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-04 10:30:00-05:00",
+  "hold_day": false,
+  "equity": 97901.38,
+  "targets": {
+    "AAPL": 0.1,
+    "MSFT": 0.1,
+    "GOOGL": 0.1,
+    "PEP": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "AAPL": 353.46,
+    "MSFT": 553.68,
+    "GOOGL": 292.52,
+    "PEP": 142.805,
+    "ADBE": 255.46,
+    "CSCO": 103.225
+  }
+}
