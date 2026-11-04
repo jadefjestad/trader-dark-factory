@@ -1,0 +1,20 @@
+{
+  "kind": "rule_change",
+  "commit": "2756928eccae8583884120e037b23f3a585cecc0",
+  "previous": "d664c8c6339e8eb405c7a5750b831974dcd7542f",
+  "changed_at": "2026-11-04T00:08:07+00:00",
+  "reason": "fund 3 (earnings_announcement_premium) rotates its whole book on rebalance days, which needs up to 2.0x equity in orders (sell one book, buy the next). The 1.0 cap blocked all its orders on 2026-10-20 and twice on 2026-11-03 (run turnover 1.00 and 1.04), so the fund sits on stale positions. 2.0 matches the intraday limit's full-rotation rationale; gross exposure, per-position, per-order, order-count and cash checks are unchanged.",
+  "files": [
+    {
+      "file": "protected/risk_limits.yaml",
+      "change": "M",
+      "values": [
+        {
+          "key": "max_run_turnover",
+          "before": 1.0,
+          "after": 2.0
+        }
+      ]
+    }
+  ]
+}
