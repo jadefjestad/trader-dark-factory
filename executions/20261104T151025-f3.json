@@ -1,0 +1,255 @@
+{
+  "started_at": "2026-11-04T15:10:20+00:00",
+  "fund": 3,
+  "fund_name": "\ud83d\udd96 Live Long and Profit",
+  "dry_run": false,
+  "status": "submitted 15 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 31,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 22,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 78,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 5,
+      "side": "sell"
+    },
+    {
+      "symbol": "MA",
+      "qty": 11,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 50,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 13,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 17,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "symbol": "AAPL",
+      "qty": 16,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 58,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 62,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 39,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f3-20261104-41854767768-1-AMZN-sell",
+      "id": "85278b17-af6b-4b57-8675-48aef4d01990",
+      "symbol": "AMZN",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261104-41854767768-1-CVX-sell",
+      "id": "66e91dfa-1cdd-476f-b257-c15de8dd9e0c",
+      "symbol": "CVX",
+      "qty": 31,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261104-41854767768-1-GOOGL-sell",
+      "id": "e0343922-23f4-4faa-86e3-d4ac1dc24347",
+      "symbol": "GOOGL",
+      "qty": 22,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261104-41854767768-1-KO-sell",
+      "id": "de49c194-3af2-48c5-99d5-3eb57c48df97",
+      "symbol": "KO",
+      "qty": 78,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261104-41854767768-1-LLY-sell",
+      "id": "8cc68e53-67e0-485d-9c14-a39813d789e2",
+      "symbol": "LLY",
+      "qty": 5,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261104-41854767768-1-MA-sell",
+      "id": "57183ba2-e167-49bb-8a20-f0e2ac1038ad",
+      "symbol": "MA",
+      "qty": 11,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261104-41854767768-1-MRK-sell",
+      "id": "f7f082ac-1042-44f2-a9ea-6870c30bfb02",
+      "symbol": "MRK",
+      "qty": 50,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261104-41854767768-1-MSFT-sell",
+      "id": "726ea529-febe-4082-971a-997a4fff636e",
+      "symbol": "MSFT",
+      "qty": 13,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261104-41854767768-1-V-sell",
+      "id": "dd309a1a-bc7e-4d85-bc8d-8b6a6ace53f8",
+      "symbol": "V",
+      "qty": 17,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261104-41854767768-1-XOM-sell",
+      "id": "f1b35e05-b3f4-45e9-95aa-ee849dd83d7d",
+      "symbol": "XOM",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261104-41854767768-1-AAPL-buy",
+      "id": "9f8b5528-a31f-4658-a33e-094f93908e64",
+      "symbol": "AAPL",
+      "qty": 16,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f3-20261104-41854767768-1-CSCO-buy",
+      "id": "98c114d9-5054-42ba-8c78-098b07b96c15",
+      "symbol": "CSCO",
+      "qty": 58,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f3-20261104-41854767768-1-HD-buy",
+      "id": "7f5006ef-3149-4013-a943-0c5ca29be349",
+      "symbol": "HD",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f3-20261104-41854767768-1-NVDA-buy",
+      "id": "4e1978c8-7487-4dc4-a099-2ebae392587e",
+      "symbol": "NVDA",
+      "qty": 62,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f3-20261104-41854767768-1-WMT-buy",
+      "id": "fce4bef2-13e4-458a-80ee-c3748a9ff143",
+      "symbol": "WMT",
+      "qty": 39,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0,
+  "strategy": {
+    "name": "earnings_announcement_premium",
+    "ref": "strategies/candidates/earnings_announcement_premium.py",
+    "experiment_id": "pr87-6530167-earnings_announcement_premium-r37243169062-1"
+  },
+  "signal_bar": "2026-11-03",
+  "hold_day": true,
+  "equity": 104541.36,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.125,
+    "MSFT": 0.0,
+    "NVDA": 0.125,
+    "AMZN": 0.0,
+    "GOOGL": 0.0,
+    "META": 0.0,
+    "AVGO": 0.0,
+    "JPM": 0.0,
+    "V": 0.0,
+    "MA": 0.0,
+    "UNH": 0.0,
+    "LLY": 0.0,
+    "JNJ": 0.0,
+    "MRK": 0.0,
+    "XOM": 0.0,
+    "CVX": 0.0,
+    "PG": 0.0,
+    "KO": 0.0,
+    "PEP": 0.0,
+    "COST": 0.0,
+    "WMT": 0.125,
+    "HD": 0.125,
+    "BAC": 0.0,
+    "ADBE": 0.0,
+    "CSCO": 0.125
+  },
+  "prices": {
+    "AAPL": 351.99,
+    "MSFT": 554.62,
+    "NVDA": 205.455,
+    "AMZN": 270.35,
+    "GOOGL": 293.59,
+    "META": 635.36,
+    "AVGO": 331.56,
+    "JPM": 343.44,
+    "V": 427.08,
+    "MA": 660.27,
+    "UNH": 402.75,
+    "LLY": 1417.17,
+    "JNJ": 268.8,
+    "MRK": 146.55,
+    "XOM": 171.65,
+    "CVX": 219.42,
+    "PG": 166.295,
+    "KO": 94.7,
+    "PEP": 140.69,
+    "COST": 1037.04,
+    "WMT": 128.14,
+    "HD": 343.66,
+    "BAC": 50.78,
+    "ADBE": 253.86,
+    "CSCO": 104.45
+  }
+}
