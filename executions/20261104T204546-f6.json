@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-11-04T20:45:45+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611041545-AMZN-sell",
+      "id": "50fca252-43d4-44fd-995e-7d344d2ebfcf",
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611041545-AVGO-sell",
+      "id": "4d0db32f-6362-455e-91a0-b541c5be6ac0",
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611041545-GOOGL-sell",
+      "id": "f3cbda0c-c79b-465c-b659-7f0ea7d1aeb2",
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611041545-JPM-sell",
+      "id": "2da8a267-e2f7-4066-9086-b9535063061d",
+      "symbol": "JPM",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611041545-META-sell",
+      "id": "94bf3242-e397-491d-86fc-1fd0e80b6a16",
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0204,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 98788.48,
+  "targets": {},
+  "prices": {
+    "AMZN": 267.79,
+    "GOOGL": 290.84,
+    "META": 630.0,
+    "AVGO": 324.93,
+    "JPM": 351.455
+  }
+}

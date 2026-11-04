@@ -1,0 +1,38 @@
+{
+  "started_at": "2026-11-04T20:45:46+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611041545-LLY-sell",
+      "id": "453c0ae7-d6ac-4ff9-a219-5a3d5f55230a",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.012,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 99066.52,
+  "targets": {},
+  "prices": {
+    "LLY": 1422.38
+  }
+}

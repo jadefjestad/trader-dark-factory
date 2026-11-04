@@ -1,0 +1,66 @@
+{
+  "started_at": "2026-11-04T20:31:13+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 57,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611041515-ADBE-sell",
+      "id": "5b50da35-2754-434e-89ca-b4dc76357790",
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611041515-JPM-sell",
+      "id": "bce03661-0750-41fa-a2b3-6c4f3e4dd977",
+      "symbol": "JPM",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611041515-PG-sell",
+      "id": "c9519479-86aa-494f-98de-862351f1cab1",
+      "symbol": "PG",
+      "qty": 57,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.012,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-04 15:15:00-05:00",
+  "hold_day": false,
+  "equity": 99063.64,
+  "targets": {
+    "LLY": 0.1
+  },
+  "prices": {
+    "JPM": 351.15,
+    "LLY": 1421.0,
+    "PG": 167.45,
+    "ADBE": 249.695
+  }
+}
