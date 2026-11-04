@@ -8,7 +8,7 @@ min_price: 5.0
 max_order_notional: 25000
 min_order_notional: 50
 max_orders_per_run: 60
-max_run_turnover: 1.00         # sum |order notional| / equity per run
+max_run_turnover: 2.00         # sum |order notional| / equity per run: a full rotation out of one book into another
 max_drawdown_halt: 0.20        # halt new orders if equity is 20% below its 1-year peak
 max_data_staleness_days: 4     # last completed daily bar must be this recent (calendar days)
 cash_buffer: 0.02              # size targets on 98% of equity to absorb price moves before fills
