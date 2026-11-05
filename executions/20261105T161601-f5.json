@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-11-05T16:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "META",
+      "qty": 16,
+      "side": "sell"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 191,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611051100-META-sell",
+      "id": "8cb38255-567d-4372-8bb0-cf737cee906c",
+      "symbol": "META",
+      "qty": 16,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611051100-BAC-buy",
+      "id": "c9369c0b-870b-43bd-91d9-524d73af641b",
+      "symbol": "BAC",
+      "qty": 191,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0206,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-05 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 98543.9,
+  "targets": {
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "BAC": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 185.095,
+    "AMZN": 257.44,
+    "GOOGL": 282.97,
+    "META": 601.15,
+    "BAC": 50.49,
+    "CSCO": 97.35
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "started_at": "2026-11-05T16:16:04+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 7 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "symbol": "COST",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 98,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 56,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 55,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611051100-ADBE-sell",
+      "id": "2a10b31f-f28a-418d-8606-4b191345302e",
+      "symbol": "ADBE",
+      "qty": 38,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611051100-COST-sell",
+      "id": "7d3d382c-63ad-4331-be0b-bcabcf6c4826",
+      "symbol": "COST",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611051100-KO-sell",
+      "id": "210eb64c-8b2d-48f0-8a79-7ce008e3e361",
+      "symbol": "KO",
+      "qty": 98,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611051100-PEP-sell",
+      "id": "cd8afe54-cc0f-493a-81c9-37e9094336b5",
+      "symbol": "PEP",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611051100-PG-sell",
+      "id": "e646648c-9b9e-42c5-81ca-8ad1ed7d2ec7",
+      "symbol": "PG",
+      "qty": 56,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611051100-CVX-buy",
+      "id": "2fd2a9cb-41ba-4331-b01f-7cfc88c10374",
+      "symbol": "CVX",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611051100-XOM-buy",
+      "id": "b78b94b2-f246-440d-8615-f0a9c43d757e",
+      "symbol": "XOM",
+      "qty": 55,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0267,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-05 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 97439.32,
+  "targets": {
+    "XOM": 0.1,
+    "CVX": 0.1
+  },
+  "prices": {
+    "XOM": 173.24,
+    "CVX": 222.21,
+    "PG": 168.945,
+    "KO": 96.56,
+    "PEP": 144.065,
+    "COST": 1071.56,
+    "ADBE": 248.055
+  }
+}

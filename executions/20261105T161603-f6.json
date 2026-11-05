@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-05T16:16:01+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 191,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 99,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 52,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611051100-AMZN-buy",
+      "id": "47ed20ac-bc8a-4347-bb3a-ce1a7204b8a6",
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611051100-BAC-buy",
+      "id": "c8d33ca2-cf27-4d73-99ba-5be3ef8f015c",
+      "symbol": "BAC",
+      "qty": 191,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611051100-CSCO-buy",
+      "id": "784ea538-d5f8-4586-9dcc-9d8bd7da7456",
+      "symbol": "CSCO",
+      "qty": 99,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611051100-JPM-buy",
+      "id": "84bbb91b-e0a0-42f3-9c1e-25ca28c2f8f8",
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611051100-NVDA-buy",
+      "id": "a0172067-52f8-4fa6-a6da-b4a8fa4c16be",
+      "symbol": "NVDA",
+      "qty": 52,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0205,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-05 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 98781.93,
+  "targets": {
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "JPM": 0.1,
+    "BAC": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 185.08,
+    "AMZN": 257.455,
+    "JPM": 339.015,
+    "BAC": 50.49,
+    "CSCO": 97.35
+  }
+}

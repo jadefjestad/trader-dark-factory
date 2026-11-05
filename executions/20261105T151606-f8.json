@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-05T15:16:04+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "COST",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "KO",
+      "qty": 98,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 66,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611051000-COST-buy",
+      "id": "65fdaf99-192d-4d59-aedd-de495115717c",
+      "symbol": "COST",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611051000-KO-buy",
+      "id": "68b3d4ac-d5a5-46e6-acf6-24985cda3e2c",
+      "symbol": "KO",
+      "qty": 98,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611051000-LLY-buy",
+      "id": "6d251cc7-f095-4a76-bc71-eb173aef0c5f",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611051000-PEP-buy",
+      "id": "d4a1efcd-f2a6-4d78-9eca-97d0cafa6b2e",
+      "symbol": "PEP",
+      "qty": 66,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611051000-UNH-buy",
+      "id": "e2b5199b-fff4-49b8-a019-908cd595e6ce",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0215,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-05 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 97957.24,
+  "targets": {
+    "UNH": 0.1,
+    "LLY": 0.1,
+    "KO": 0.1,
+    "PEP": 0.1,
+    "COST": 0.1
+  },
+  "prices": {
+    "UNH": 414.33,
+    "LLY": 1445.505,
+    "KO": 97.08,
+    "PEP": 144.385,
+    "COST": 1078.28
+  }
+}

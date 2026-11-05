@@ -1,0 +1,84 @@
+{
+  "started_at": "2026-11-05T16:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "sell"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611051130-AMZN-sell",
+      "id": "b83d8a47-e931-4e58-9286-b29a37982698",
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611051130-BAC-buy",
+      "id": "3f11d782-1e8d-4393-9d1d-4c278e481c7d",
+      "symbol": "BAC",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611051130-CSCO-buy",
+      "id": "1dda8182-94bf-4272-9668-c81290d8fb26",
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611051130-UNH-buy",
+      "id": "3ff94016-78cd-4005-8626-03d9c07e6d42",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0192,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-05 11:30:00-05:00",
+  "hold_day": false,
+  "equity": 98683.82,
+  "targets": {
+    "NVDA": 0.1,
+    "UNH": 0.1,
+    "LLY": 0.1,
+    "BAC": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 186.365,
+    "AMZN": 261.07,
+    "UNH": 404.095,
+    "LLY": 1398.78,
+    "BAC": 50.53,
+    "CSCO": 97.355
+  }
+}

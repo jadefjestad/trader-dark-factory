@@ -1,0 +1,57 @@
+{
+  "started_at": "2026-11-05T15:46:03+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611051030-LLY-sell",
+      "id": "c2cd9638-645f-4a04-9bf2-6e59f0370546",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611051030-UNH-sell",
+      "id": "4b52456a-d61a-444d-867d-27c4d3b92f6b",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0231,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-05 10:30:00-05:00",
+  "hold_day": false,
+  "equity": 97799.17,
+  "targets": {
+    "KO": 0.1,
+    "PEP": 0.1,
+    "COST": 0.1
+  },
+  "prices": {
+    "UNH": 411.515,
+    "LLY": 1431.115,
+    "KO": 97.065,
+    "PEP": 144.9,
+    "COST": 1076.27
+  }
+}
