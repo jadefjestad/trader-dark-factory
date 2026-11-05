@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-11-05T20:45:46+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 75,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 56,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611051545-CVX-sell",
+      "id": "b9a1e47e-141a-4cd4-95e4-aa105f8e76d5",
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611051545-LLY-sell",
+      "id": "cc6c5e10-7539-437f-91f4-32bae300a1f2",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611051545-UNH-sell",
+      "id": "20935998-78ab-4eea-bad4-32e29acc739c",
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611051545-WMT-sell",
+      "id": "4f18ae47-278f-4a4e-b2a9-9dc557878865",
+      "symbol": "WMT",
+      "qty": 75,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611051545-XOM-sell",
+      "id": "f63dd786-2b37-4dd6-a88c-126eb5566b30",
+      "symbol": "XOM",
+      "qty": 56,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0293,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 97891.11,
+  "targets": {},
+  "prices": {
+    "UNH": 395.59,
+    "LLY": 1369.5,
+    "XOM": 166.28,
+    "CVX": 213.98,
+    "WMT": 128.08
+  }
+}

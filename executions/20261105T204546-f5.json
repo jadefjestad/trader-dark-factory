@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-11-05T20:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 192,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 100,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 52,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611051545-BAC-sell",
+      "id": "3abf14c7-8c3b-44eb-a642-f90409364d57",
+      "symbol": "BAC",
+      "qty": 192,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611051545-CSCO-sell",
+      "id": "b64443fa-b999-4c99-82a2-264a9ee1c465",
+      "symbol": "CSCO",
+      "qty": 100,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611051545-LLY-sell",
+      "id": "1e2c53d3-c919-432d-9895-5aa0282c87d2",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611051545-NVDA-sell",
+      "id": "8d3a6766-962d-4d82-b987-63e0e0ae07cc",
+      "symbol": "NVDA",
+      "qty": 52,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611051545-UNH-sell",
+      "id": "9be2e852-1294-41c8-a078-ec9023b98fa3",
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0278,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 97821.47,
+  "targets": {},
+  "prices": {
+    "NVDA": 181.955,
+    "UNH": 395.59,
+    "LLY": 1369.5,
+    "BAC": 50.15,
+    "CSCO": 95.64
+  }
+}

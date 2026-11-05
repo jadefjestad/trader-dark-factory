@@ -1,0 +1,64 @@
+{
+  "started_at": "2026-11-05T20:45:48+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 64,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611051545-CVX-sell",
+      "id": "cc840689-13a9-47a7-b473-e2c1e06474ca",
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611051545-JNJ-sell",
+      "id": "a3c32642-bb7e-4491-9f96-bdf3ec7498d9",
+      "symbol": "JNJ",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611051545-MRK-sell",
+      "id": "88b926b8-3dad-4089-8208-2732c1304c8e",
+      "symbol": "MRK",
+      "qty": 64,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0175,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 98517.13,
+  "targets": {},
+  "prices": {
+    "JNJ": 272.73,
+    "MRK": 146.925,
+    "CVX": 213.98
+  }
+}
