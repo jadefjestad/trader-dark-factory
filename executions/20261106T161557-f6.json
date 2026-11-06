@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-06T16:15:55+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 101,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 51,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611061100-AVGO-buy",
+      "id": "749cde9a-4bab-45cb-9d57-e92ca62d712c",
+      "symbol": "AVGO",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061100-CSCO-buy",
+      "id": "3615cc87-a68b-4e23-820d-5e7afae93482",
+      "symbol": "CSCO",
+      "qty": 101,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061100-GOOGL-buy",
+      "id": "92101a2c-e2df-4620-adc5-c2e3ca5b1a05",
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061100-NVDA-buy",
+      "id": "3b755573-00ba-46cf-9ba0-94ab6ee71b57",
+      "symbol": "NVDA",
+      "qty": 51,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061100-UNH-buy",
+      "id": "fcbbf895-d648-403f-adf1-eb342944e1ca",
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0294,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-06 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 97881.95,
+  "targets": {
+    "NVDA": 0.1,
+    "GOOGL": 0.1,
+    "AVGO": 0.1,
+    "UNH": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 187.915,
+    "GOOGL": 287.39,
+    "AVGO": 295.2,
+    "UNH": 390.87,
+    "CSCO": 94.19
+  }
+}

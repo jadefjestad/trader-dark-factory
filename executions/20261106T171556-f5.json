@@ -1,0 +1,45 @@
+{
+  "started_at": "2026-11-06T17:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611061200-GOOGL-buy",
+      "id": "8959da9e-e91a-4f82-a673-36f138043167",
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0304,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-06 12:00:00-05:00",
+  "hold_day": false,
+  "equity": 97556.9,
+  "targets": {
+    "NVDA": 0.1,
+    "GOOGL": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 188.08,
+    "GOOGL": 286.125,
+    "AVGO": 295.39,
+    "CSCO": 94.74
+  }
+}

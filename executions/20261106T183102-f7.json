@@ -1,0 +1,58 @@
+{
+  "started_at": "2026-11-06T18:31:00+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611061315-AAPL-sell",
+      "id": "90e481da-7960-4236-9a5a-e18c6821bade",
+      "symbol": "AAPL",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611061315-MA-buy",
+      "id": "d9e1ddc7-60c8-459f-ba21-a7d851d9d59d",
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0183,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-06 13:15:00-05:00",
+  "hold_day": false,
+  "equity": 98440.3,
+  "targets": {
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "META": 0.1,
+    "MA": 0.1
+  },
+  "prices": {
+    "AAPL": 344.36,
+    "NVDA": 186.34,
+    "AMZN": 262.24,
+    "META": 617.18,
+    "MA": 657.43
+  }
+}

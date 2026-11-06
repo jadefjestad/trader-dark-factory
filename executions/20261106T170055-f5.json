@@ -1,0 +1,44 @@
+{
+  "started_at": "2026-11-06T17:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611061145-UNH-sell",
+      "id": "35b8c701-5e04-497f-85b4-5a0b9b10a5e4",
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0298,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-06 11:45:00-05:00",
+  "hold_day": false,
+  "equity": 97618.56,
+  "targets": {
+    "NVDA": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 188.295,
+    "AVGO": 296.52,
+    "UNH": 394.73,
+    "CSCO": 94.795
+  }
+}

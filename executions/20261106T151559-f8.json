@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-06T15:15:57+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "symbol": "KO",
+      "qty": 99,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 67,
+      "side": "buy"
+    },
+    {
+      "symbol": "PG",
+      "qty": 57,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611061000-HD-buy",
+      "id": "4c1b6e52-5398-4bf8-b419-d4b12ebd45e7",
+      "symbol": "HD",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611061000-JNJ-buy",
+      "id": "a899564a-75de-4e4f-af3c-a969b147538b",
+      "symbol": "JNJ",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611061000-KO-buy",
+      "id": "6987943d-a436-48eb-bb68-7d8ccb7a6851",
+      "symbol": "KO",
+      "qty": 99,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611061000-PEP-buy",
+      "id": "723e1a89-c768-46e3-857b-f221d7581a27",
+      "symbol": "PEP",
+      "qty": 67,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611061000-PG-buy",
+      "id": "90af33b6-5d0d-4c28-b1b6-178e3fd63c43",
+      "symbol": "PG",
+      "qty": 57,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0288,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-06 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 97228.32,
+  "targets": {
+    "JNJ": 0.1,
+    "PG": 0.1,
+    "KO": 0.1,
+    "PEP": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "JNJ": 271.795,
+    "PG": 166.06,
+    "KO": 95.36,
+    "PEP": 141.14,
+    "HD": 344.63
+  }
+}
