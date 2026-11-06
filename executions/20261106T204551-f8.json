@@ -1,0 +1,64 @@
+{
+  "started_at": "2026-11-06T20:45:49+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "JNJ",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 99,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611061545-JNJ-sell",
+      "id": "705cb3db-fe99-414a-a6ab-6411ca7a161d",
+      "symbol": "JNJ",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611061545-KO-sell",
+      "id": "ec5fabdd-1139-4dea-b53f-d71cf383c169",
+      "symbol": "KO",
+      "qty": 99,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611061545-V-sell",
+      "id": "f5d65665-449b-4bf5-989c-0b4cfc80131d",
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0282,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 97290.02,
+  "targets": {},
+  "prices": {
+    "V": 423.395,
+    "JNJ": 275.03,
+    "KO": 95.86
+  }
+}

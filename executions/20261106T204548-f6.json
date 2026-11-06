@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-11-06T20:45:46+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 40,
+      "side": "sell"
+    },
+    {
+      "symbol": "HD",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "symbol": "MA",
+      "qty": 14,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 76,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611061545-ADBE-sell",
+      "id": "f36aaf6b-db8c-4ad3-8266-dbc4e36e8c98",
+      "symbol": "ADBE",
+      "qty": 40,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061545-HD-sell",
+      "id": "25b2647e-f18a-4e40-997c-5aa944485574",
+      "symbol": "HD",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061545-LLY-sell",
+      "id": "dcb1b0c5-2916-4949-bd78-25fec393b554",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061545-MA-sell",
+      "id": "699a3e14-c364-4117-a822-07081aedba83",
+      "symbol": "MA",
+      "qty": 14,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061545-WMT-sell",
+      "id": "e64f217e-48ed-4177-8d6c-9174afc1379a",
+      "symbol": "WMT",
+      "qty": 76,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0303,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 97790.73,
+  "targets": {},
+  "prices": {
+    "MA": 655.5,
+    "LLY": 1362.26,
+    "WMT": 125.71,
+    "HD": 343.5,
+    "ADBE": 239.665
+  }
+}

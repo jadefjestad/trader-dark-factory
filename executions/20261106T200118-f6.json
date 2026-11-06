@@ -1,0 +1,160 @@
+{
+  "started_at": "2026-11-06T20:01:07+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 10 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 32,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 51,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 40,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 76,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611061445-AMZN-sell",
+      "id": "bf9a5e5a-0a38-4802-b0b5-9c5d14d01df5",
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061445-AVGO-sell",
+      "id": "67bbec57-df1c-4713-9a13-2ef972ea057c",
+      "symbol": "AVGO",
+      "qty": 32,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061445-GOOGL-sell",
+      "id": "98697547-494b-40e5-a521-5a64d152825f",
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061445-JPM-sell",
+      "id": "700b88c6-13c4-4cf1-82ad-3cc19d608f6c",
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061445-NVDA-sell",
+      "id": "e61ee97a-01cf-447e-b254-01693f42f1df",
+      "symbol": "NVDA",
+      "qty": 51,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061445-ADBE-buy",
+      "id": "3585e192-169d-4b05-8882-c55b67ffe6d2",
+      "symbol": "ADBE",
+      "qty": 40,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061445-HD-buy",
+      "id": "b695fa30-0611-4add-92e8-17265cc2f637",
+      "symbol": "HD",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061445-LLY-buy",
+      "id": "19095924-5bec-410b-bef6-8273f1136fe0",
+      "symbol": "LLY",
+      "qty": 7,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061445-MA-buy",
+      "id": "c75d3b53-41b7-44c9-873a-529a854338e8",
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611061445-WMT-buy",
+      "id": "38d6a939-2d7f-49d4-8eec-30dc71872516",
+      "symbol": "WMT",
+      "qty": 76,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0304,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-06 14:45:00-05:00",
+  "hold_day": true,
+  "equity": 97786.72,
+  "targets": {
+    "MA": 0.1,
+    "LLY": 0.1,
+    "WMT": 0.1,
+    "HD": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "NVDA": 188.105,
+    "AMZN": 261.445,
+    "GOOGL": 285.37,
+    "AVGO": 292.895,
+    "JPM": 336.66,
+    "MA": 655.495,
+    "LLY": 1363.23,
+    "WMT": 125.53,
+    "HD": 343.54,
+    "ADBE": 239.48
+  }
+}

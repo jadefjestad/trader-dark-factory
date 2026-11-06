@@ -1,0 +1,56 @@
+{
+  "started_at": "2026-11-06T20:01:18+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "NVDA",
+      "qty": 51,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 100,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611061445-NVDA-sell",
+      "id": "9d47d82c-c7ad-42ec-b5c5-a3861ad0c214",
+      "symbol": "NVDA",
+      "qty": 51,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611061445-KO-buy",
+      "id": "84fae54a-a866-445d-a26b-01cc60d31680",
+      "symbol": "KO",
+      "qty": 100,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0178,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-06 14:45:00-05:00",
+  "hold_day": false,
+  "equity": 98490.78,
+  "targets": {
+    "META": 0.1,
+    "MA": 0.1,
+    "KO": 0.1
+  },
+  "prices": {
+    "NVDA": 188.1,
+    "META": 615.3,
+    "MA": 655.495,
+    "KO": 96.0
+  }
+}

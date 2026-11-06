@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-11-06T20:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 32,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 101,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 50,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611061545-AVGO-sell",
+      "id": "8b963a63-e110-4948-8fdd-d450ee829751",
+      "symbol": "AVGO",
+      "qty": 32,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611061545-CSCO-sell",
+      "id": "66a73a13-400a-4524-994b-9fde108501ac",
+      "symbol": "CSCO",
+      "qty": 101,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611061545-GOOGL-sell",
+      "id": "a6ab7e0d-fc80-4927-9abf-b717a9de64c1",
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611061545-JPM-sell",
+      "id": "f2e743e9-d55d-4ff2-8efa-600ffab9235e",
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611061545-NVDA-sell",
+      "id": "121704fb-7d22-454d-9143-7deaa8f398db",
+      "symbol": "NVDA",
+      "qty": 50,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0321,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 97382.2,
+  "targets": {},
+  "prices": {
+    "NVDA": 187.39,
+    "GOOGL": 285.965,
+    "AVGO": 293.26,
+    "JPM": 335.6,
+    "CSCO": 94.28
+  }
+}

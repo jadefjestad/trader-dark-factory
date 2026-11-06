@@ -1,0 +1,64 @@
+{
+  "started_at": "2026-11-06T20:45:48+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "KO",
+      "qty": 100,
+      "side": "sell"
+    },
+    {
+      "symbol": "MA",
+      "qty": 14,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611061545-KO-sell",
+      "id": "8144d447-3103-4a8d-b258-80ec16af13e9",
+      "symbol": "KO",
+      "qty": 100,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611061545-MA-sell",
+      "id": "a50599c2-221e-4a11-99ca-c84e25a0a930",
+      "symbol": "MA",
+      "qty": 14,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611061545-META-sell",
+      "id": "e100c687-8224-4021-97a6-b1c03c1f51f7",
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0179,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 98479.28,
+  "targets": {},
+  "prices": {
+    "META": 615.01,
+    "MA": 655.5,
+    "KO": 95.86
+  }
+}
