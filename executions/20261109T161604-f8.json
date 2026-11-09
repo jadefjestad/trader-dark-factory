@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-11-09T16:16:01+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 53,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 27,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611091100-BAC-sell",
+      "id": "4edb2502-926c-439a-a738-5c80a0e4acdb",
+      "symbol": "BAC",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611091100-NVDA-sell",
+      "id": "7c8335a8-bd00-4344-8ab2-9f640bef4522",
+      "symbol": "NVDA",
+      "qty": 53,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611091100-JPM-buy",
+      "id": "34a0906e-07ec-4fff-bf20-9f6265c3f2a6",
+      "symbol": "JPM",
+      "qty": 27,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0279,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-09 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 97317.69,
+  "targets": {
+    "AVGO": 0.1,
+    "JPM": 0.1,
+    "LLY": 0.1,
+    "BAC": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 175.38,
+    "AVGO": 319.705,
+    "JPM": 341.295,
+    "LLY": 1395.55,
+    "BAC": 50.55,
+    "CSCO": 98.37
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-09T16:15:56+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 40,
+      "side": "buy"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 17,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611091100-ADBE-buy",
+      "id": "99fe19ad-8cdb-496c-a015-01f251b5fffa",
+      "symbol": "ADBE",
+      "qty": 40,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611091100-AMZN-buy",
+      "id": "8bab75b0-88c3-4714-8e0b-14a3af32a907",
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611091100-GOOGL-buy",
+      "id": "a76b34f3-a447-472c-9594-31c1311bfd49",
+      "symbol": "GOOGL",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611091100-MSFT-buy",
+      "id": "2eb2e1b1-7698-4040-982f-318010307ec8",
+      "symbol": "MSFT",
+      "qty": 17,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611091100-UNH-buy",
+      "id": "436d070d-1896-4ed4-a5ea-a6a7f14e0c2f",
+      "symbol": "UNH",
+      "qty": 24,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0304,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-09 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 97781.66,
+  "targets": {
+    "MSFT": 0.1,
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "UNH": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "MSFT": 540.18,
+    "AMZN": 268.36,
+    "GOOGL": 291.5,
+    "UNH": 394.82,
+    "ADBE": 237.49
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "started_at": "2026-11-09T19:00:58+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 67,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611091345-AAPL-sell",
+      "id": "e3ef36b2-27aa-406f-9e34-8b1860d94edd",
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611091345-AMZN-sell",
+      "id": "b63fcb43-324f-4a3f-8888-468ed4737118",
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611091345-PEP-sell",
+      "id": "dc35d142-529b-4d3b-b2fe-2740465ecfd8",
+      "symbol": "PEP",
+      "qty": 67,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0175,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-09 13:45:00-05:00",
+  "hold_day": false,
+  "equity": 98513.54,
+  "targets": {
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "AVGO": 0.1
+  },
+  "prices": {
+    "AAPL": 350.62,
+    "AMZN": 268.215,
+    "GOOGL": 289.87,
+    "AVGO": 319.465,
+    "PEP": 142.94
+  }
+}

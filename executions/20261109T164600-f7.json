@@ -1,0 +1,41 @@
+{
+  "started_at": "2026-11-09T16:45:58+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611091130-AMZN-sell",
+      "id": "bf10dd84-45b0-4c94-9fc6-1f90ef39a242",
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0177,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-09 11:30:00-05:00",
+  "hold_day": false,
+  "equity": 98495.17,
+  "targets": {
+    "AMZN": 0.1,
+    "GOOGL": 0.1
+  },
+  "prices": {
+    "AMZN": 268.755,
+    "GOOGL": 291.58
+  }
+}

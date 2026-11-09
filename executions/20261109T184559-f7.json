@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-11-09T18:45:57+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611091330-AVGO-buy",
+      "id": "8a41ff14-9186-4ca6-96a4-234c36959b2e",
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0179,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-09 13:30:00-05:00",
+  "hold_day": false,
+  "equity": 98476.29,
+  "targets": {
+    "AAPL": 0.1,
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "AVGO": 0.1,
+    "PEP": 0.1
+  },
+  "prices": {
+    "AAPL": 350.07,
+    "AMZN": 268.0,
+    "GOOGL": 289.96,
+    "AVGO": 318.96,
+    "PEP": 142.94
+  }
+}
