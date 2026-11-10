@@ -1,0 +1,64 @@
+{
+  "started_at": "2026-11-10T20:45:47+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "MA",
+      "qty": 14,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 57,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611101545-MA-sell",
+      "id": "21e9b21c-f8fb-42e6-bcf0-85cff76c3aed",
+      "symbol": "MA",
+      "qty": 14,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611101545-PG-sell",
+      "id": "5d4fe7b3-8528-47f9-a86b-c76ecfc81d54",
+      "symbol": "PG",
+      "qty": 57,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611101545-V-sell",
+      "id": "e8832f29-de86-4cfe-a321-a7fa0f7d2616",
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0147,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 98799.22,
+  "targets": {},
+  "prices": {
+    "V": 423.505,
+    "MA": 659.385,
+    "PG": 168.87
+  }
+}

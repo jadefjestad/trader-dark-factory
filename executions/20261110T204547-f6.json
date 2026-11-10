@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-11-10T20:45:46+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 67,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 57,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 76,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611101545-HD-sell",
+      "id": "f98ccc14-fd9b-4e6b-9773-dde6fd1dfded",
+      "symbol": "HD",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611101545-JNJ-sell",
+      "id": "d1b747c2-779a-495e-97d7-3ce919d51a04",
+      "symbol": "JNJ",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611101545-PEP-sell",
+      "id": "ce3ab1b3-fac2-4d34-9060-415fda694270",
+      "symbol": "PEP",
+      "qty": 67,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611101545-PG-sell",
+      "id": "77a337e5-bee8-4465-b073-60d9bcd263f4",
+      "symbol": "PG",
+      "qty": 57,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611101545-WMT-sell",
+      "id": "2c0bd832-af82-44e5-820f-36e27122f3b0",
+      "symbol": "WMT",
+      "qty": 76,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0243,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 98401.5,
+  "targets": {},
+  "prices": {
+    "JNJ": 281.06,
+    "PG": 168.87,
+    "PEP": 143.36,
+    "WMT": 125.44,
+    "HD": 350.72
+  }
+}

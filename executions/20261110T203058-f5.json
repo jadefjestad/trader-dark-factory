@@ -1,0 +1,44 @@
+{
+  "started_at": "2026-11-10T20:30:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611101515-AAPL-sell",
+      "id": "d02ee407-8c6d-486e-a97b-6d11cdad6261",
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.03,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-10 15:15:00-05:00",
+  "hold_day": false,
+  "equity": 97598.15,
+  "targets": {
+    "MSFT": 0.1,
+    "NVDA": 0.1,
+    "GOOGL": 0.1
+  },
+  "prices": {
+    "AAPL": 348.73,
+    "MSFT": 533.21,
+    "NVDA": 168.33,
+    "GOOGL": 287.72
+  }
+}

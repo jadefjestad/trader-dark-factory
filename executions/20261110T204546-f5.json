@@ -1,0 +1,64 @@
+{
+  "started_at": "2026-11-10T20:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 17,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 56,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611101545-GOOGL-sell",
+      "id": "d19e514d-0a54-4f4d-851a-938f92453ade",
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611101545-MSFT-sell",
+      "id": "1a3e6331-0cb6-4af0-8cbf-8fc3b71e768b",
+      "symbol": "MSFT",
+      "qty": 17,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611101545-NVDA-sell",
+      "id": "c1dd9908-e071-4cbc-a803-bb19162d2598",
+      "symbol": "NVDA",
+      "qty": 56,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.03,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 97598.37,
+  "targets": {},
+  "prices": {
+    "MSFT": 534.275,
+    "NVDA": 168.0,
+    "GOOGL": 287.45
+  }
+}

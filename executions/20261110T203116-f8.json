@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-11-10T20:31:12+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "WMT",
+      "qty": 75,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611101515-WMT-sell",
+      "id": "1982a36c-5916-4a30-afba-7015514a7da1",
+      "symbol": "WMT",
+      "qty": 75,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611101515-AVGO-buy",
+      "id": "dee24d84-1396-43a8-be6c-0f6fd835c310",
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.028,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-10 15:15:00-05:00",
+  "hold_day": false,
+  "equity": 97306.41,
+  "targets": {
+    "AVGO": 0.1,
+    "V": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1,
+    "PEP": 0.1
+  },
+  "prices": {
+    "AVGO": 332.405,
+    "V": 422.95,
+    "XOM": 164.615,
+    "CVX": 211.385,
+    "PEP": 142.945,
+    "WMT": 125.58
+  }
+}
