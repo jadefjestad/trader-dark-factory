@@ -1,0 +1,176 @@
+{
+  "started_at": "2026-11-10T15:12:14+00:00",
+  "fund": 1,
+  "fund_name": "\ud83d\udc80 Darth Trader",
+  "dry_run": false,
+  "status": "submitted 8 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 2,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f1-20261110-42841825585-1-BAC-sell",
+      "id": "a58eb308-54c7-4148-82f5-fb3d054d4aca",
+      "symbol": "BAC",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261110-42841825585-1-CSCO-sell",
+      "id": "f881d3ee-0ac2-4f81-9135-4bc0baff4c6a",
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261110-42841825585-1-GOOGL-sell",
+      "id": "6d8efc3f-14dc-433b-9645-f6bda85af2d5",
+      "symbol": "GOOGL",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261110-42841825585-1-KO-sell",
+      "id": "66064ac6-2783-43a8-a897-005251aff13b",
+      "symbol": "KO",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261110-42841825585-1-META-sell",
+      "id": "9bcfab5d-df6a-4e83-a8ec-be0972e34e76",
+      "symbol": "META",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261110-42841825585-1-MSFT-sell",
+      "id": "e578ab08-cd44-4736-98cf-b3337080356a",
+      "symbol": "MSFT",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261110-42841825585-1-ADBE-buy",
+      "id": "e24aba93-4dd9-4503-a3dd-50e9cbc4ab1b",
+      "symbol": "ADBE",
+      "qty": 2,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f1-20261110-42841825585-1-XOM-buy",
+      "id": "a8c12556-e366-4992-a98c-7953900d56ad",
+      "symbol": "XOM",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0036,
+  "strategy": {
+    "name": "invvolresid_lcrankwt",
+    "ref": "strategies/candidates/invvolresid_lcrankwt.py",
+    "experiment_id": "pr443-0639324-invvolresid_lcrankwt-r41208445960-1"
+  },
+  "champion": {
+    "name": "invvolresid_lcrankwt",
+    "ref": "strategies/candidates/invvolresid_lcrankwt.py",
+    "experiment_id": "pr443-0639324-invvolresid_lcrankwt-r41208445960-1"
+  },
+  "signal_bar": "2026-11-09",
+  "hold_day": false,
+  "equity": 103530.43,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.0,
+    "MSFT": 0.0,
+    "NVDA": 0.005128220300326374,
+    "AMZN": 0.0,
+    "GOOGL": 0.005128220300326374,
+    "META": 0.005128220300326374,
+    "AVGO": 0.005128220300326374,
+    "JPM": 0.0,
+    "V": 0.0,
+    "MA": 0.0,
+    "UNH": 0.0,
+    "LLY": 0.0091685394740556,
+    "JNJ": 0.011869033169298805,
+    "MRK": 0.008059623432223318,
+    "XOM": 0.011920061321976526,
+    "CVX": 0.011967717665464528,
+    "PG": 0.0,
+    "KO": 0.015,
+    "PEP": 0.0,
+    "COST": 0.0,
+    "WMT": 0.0,
+    "HD": 0.0,
+    "BAC": 0.005128220300326374,
+    "ADBE": 0.005128220300326374,
+    "CSCO": 0.013513695620475382
+  },
+  "prices": {
+    "AAPL": 347.72,
+    "MSFT": 542.71,
+    "NVDA": 172.84,
+    "AMZN": 272.27,
+    "GOOGL": 290.265,
+    "META": 645.91,
+    "AVGO": 332.735,
+    "JPM": 343.345,
+    "V": 420.0,
+    "MA": 653.285,
+    "UNH": 399.89,
+    "LLY": 1417.99,
+    "JNJ": 281.26,
+    "MRK": 146.87,
+    "XOM": 163.92,
+    "CVX": 209.935,
+    "PG": 167.85,
+    "KO": 96.06,
+    "PEP": 141.32,
+    "COST": 1059.85,
+    "WMT": 125.09,
+    "HD": 351.12,
+    "BAC": 50.87,
+    "ADBE": 235.3,
+    "CSCO": 98.68
+  }
+}
