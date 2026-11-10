@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-10T16:16:01+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 56,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611101100-AAPL-buy",
+      "id": "7099a92d-5a66-4baf-ba10-2f6b79e0ecb8",
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611101100-ADBE-buy",
+      "id": "f93b05b2-6b75-4cff-8428-f6b0f61cd2ac",
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611101100-JPM-buy",
+      "id": "94b128b8-0e5c-4292-8930-8314db7c5326",
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611101100-MRK-buy",
+      "id": "309d857e-ad44-4ef1-9b81-2dbe55297fd0",
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611101100-NVDA-buy",
+      "id": "dedd4d97-bc2f-439e-8b01-01cd701e8c74",
+      "symbol": "NVDA",
+      "qty": 56,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0293,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-10 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 97897.18,
+  "targets": {
+    "AAPL": 0.1,
+    "NVDA": 0.1,
+    "JPM": 0.1,
+    "MRK": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "AAPL": 347.315,
+    "NVDA": 169.88,
+    "JPM": 341.765,
+    "MRK": 145.79,
+    "ADBE": 233.91
+  }
+}

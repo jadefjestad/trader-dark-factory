@@ -1,0 +1,59 @@
+{
+  "started_at": "2026-11-10T18:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "MSFT",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611101245-MSFT-sell",
+      "id": "4377b215-b208-4cf9-9909-f99c3d3dd417",
+      "symbol": "MSFT",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611101245-NVDA-sell",
+      "id": "5cfa76c3-9cd7-4aa4-a755-96042b5edbb0",
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.032,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-10 12:45:00-05:00",
+  "hold_day": false,
+  "equity": 97395.95,
+  "targets": {
+    "AAPL": 0.1,
+    "MSFT": 0.1,
+    "NVDA": 0.1,
+    "GOOGL": 0.1,
+    "AVGO": 0.1
+  },
+  "prices": {
+    "AAPL": 347.54,
+    "MSFT": 530.91,
+    "NVDA": 167.59,
+    "GOOGL": 286.3,
+    "AVGO": 327.3
+  }
+}

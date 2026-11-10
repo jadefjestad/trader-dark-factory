@@ -1,0 +1,37 @@
+{
+  "started_at": "2026-11-10T16:01:02+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "PG",
+      "qty": 57,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611101045-PG-sell",
+      "id": "b27d719d-b873-4c71-82a2-e7f01ceab2c1",
+      "symbol": "PG",
+      "qty": 57,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0151,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-10 10:45:00-05:00",
+  "hold_day": false,
+  "equity": 98759.28,
+  "targets": {},
+  "prices": {
+    "PG": 168.94
+  }
+}

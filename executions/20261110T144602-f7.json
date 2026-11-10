@@ -1,0 +1,63 @@
+{
+  "started_at": "2026-11-10T14:46:00+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611100930-AMZN-sell",
+      "id": "53bd30aa-b528-4989-95bf-06774f9f3bdc",
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611100930-AVGO-sell",
+      "id": "2a89c6c9-4744-445e-ba7d-4c451da21d5e",
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611100930-GOOGL-sell",
+      "id": "630c3396-9098-470e-a2e7-07ef2503f953",
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0158,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-10 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 98691.11,
+  "targets": {},
+  "prices": {
+    "AMZN": 270.145,
+    "GOOGL": 289.18,
+    "AVGO": 324.45
+  }
+}

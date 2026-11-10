@@ -1,0 +1,50 @@
+{
+  "started_at": "2026-11-10T14:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 32,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611100930-AMZN-sell",
+      "id": "fff97e32-bbb7-4d2b-9036-b9dd3254262a",
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611100930-GOOGL-sell",
+      "id": "2cb4293e-bb8a-470c-b7ae-6baaf516c9a5",
+      "symbol": "GOOGL",
+      "qty": 32,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0315,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-10 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 97441.31,
+  "targets": {},
+  "prices": {
+    "AMZN": 270.145,
+    "GOOGL": 288.96
+  }
+}

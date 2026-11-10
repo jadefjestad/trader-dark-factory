@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-10T15:16:00+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 96,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 58,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611101000-AMZN-buy",
+      "id": "1cf5da81-50af-4dde-beec-12db8f02326e",
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611101000-AVGO-buy",
+      "id": "aad37a5e-d75f-439d-a64d-e86830a13b95",
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611101000-CSCO-buy",
+      "id": "3ee40402-adf1-4eec-a067-342857796c4a",
+      "symbol": "CSCO",
+      "qty": 96,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611101000-META-buy",
+      "id": "703779c0-91e2-46fd-afa5-08200db4b6f7",
+      "symbol": "META",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611101000-XOM-buy",
+      "id": "e5a68f6c-2e9a-4e0a-b3f1-76603a963473",
+      "symbol": "XOM",
+      "qty": 58,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0258,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-10 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 97525.02,
+  "targets": {
+    "AMZN": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1,
+    "XOM": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "AMZN": 271.705,
+    "META": 645.005,
+    "AVGO": 332.02,
+    "XOM": 163.78,
+    "CSCO": 98.715
+  }
+}
