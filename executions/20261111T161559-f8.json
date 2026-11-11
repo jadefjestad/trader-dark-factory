@@ -1,0 +1,46 @@
+{
+  "started_at": "2026-11-11T16:15:58+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611111100-CVX-sell",
+      "id": "6b9e0b40-2ff5-4a09-8cd9-e4190be9affe",
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0282,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-11 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 97292.52,
+  "targets": {
+    "NVDA": 0.1,
+    "AVGO": 0.1,
+    "XOM": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 174.85,
+    "AVGO": 352.15,
+    "XOM": 165.91,
+    "CVX": 212.17,
+    "CSCO": 101.46
+  }
+}

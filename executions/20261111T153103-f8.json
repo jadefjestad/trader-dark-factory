@@ -1,0 +1,81 @@
+{
+  "started_at": "2026-11-11T15:31:02+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 94,
+      "side": "buy"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 54,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 57,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611111015-CSCO-buy",
+      "id": "f90675a9-830e-42c6-ae24-149c3ff3d024",
+      "symbol": "CSCO",
+      "qty": 94,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611111015-CVX-buy",
+      "id": "dc2dfb62-8973-4946-9cab-9d07e20fa33b",
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611111015-NVDA-buy",
+      "id": "16053086-4153-4534-8f91-051df63352dd",
+      "symbol": "NVDA",
+      "qty": 54,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611111015-XOM-buy",
+      "id": "f27cfdff-61bf-4e0d-9e35-1e0eaefbfe37",
+      "symbol": "XOM",
+      "qty": 57,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.028,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-11 10:15:00-05:00",
+  "hold_day": false,
+  "equity": 97309.08,
+  "targets": {
+    "NVDA": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 173.95,
+    "XOM": 166.355,
+    "CVX": 213.03,
+    "CSCO": 101.07
+  }
+}

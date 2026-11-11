@@ -1,0 +1,41 @@
+{
+  "started_at": "2026-11-11T18:45:56+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "COST",
+      "qty": 8,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611111330-COST-buy",
+      "id": "7498a056-af74-42c9-a258-8a00fefc86aa",
+      "symbol": "COST",
+      "qty": 8,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0145,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-11 13:30:00-05:00",
+  "hold_day": false,
+  "equity": 98814.73,
+  "targets": {
+    "AVGO": 0.1,
+    "COST": 0.1
+  },
+  "prices": {
+    "AVGO": 353.46,
+    "COST": 1076.02
+  }
+}

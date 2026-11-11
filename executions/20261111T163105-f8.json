@@ -1,0 +1,59 @@
+{
+  "started_at": "2026-11-11T16:31:01+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 40,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611111115-AVGO-sell",
+      "id": "1abe8eb1-9ec8-41b5-a15b-b7f6434d7dff",
+      "symbol": "AVGO",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611111115-ADBE-buy",
+      "id": "b3942d06-3fad-4be1-bb14-84ee326f8a45",
+      "symbol": "ADBE",
+      "qty": 40,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0264,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-11 11:15:00-05:00",
+  "hold_day": false,
+  "equity": 97464.34,
+  "targets": {
+    "NVDA": 0.1,
+    "AVGO": 0.1,
+    "XOM": 0.1,
+    "ADBE": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 176.19,
+    "AVGO": 353.97,
+    "XOM": 166.2,
+    "ADBE": 237.74,
+    "CSCO": 101.79
+  }
+}

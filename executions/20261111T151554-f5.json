@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-11T15:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 76,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611111000-AMZN-buy",
+      "id": "3be5aea9-fbf1-4a68-9fa0-ef0224c94c29",
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611111000-AVGO-buy",
+      "id": "8f10e1c9-b2c6-4bfd-b16b-ef85a100f222",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611111000-META-buy",
+      "id": "320d91e0-5ea0-46f5-a1c0-17e4bd1f0737",
+      "symbol": "META",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611111000-MSFT-buy",
+      "id": "6e6f95b7-7820-4986-aa9a-711ab6f98e20",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611111000-WMT-buy",
+      "id": "8d337078-58a8-4876-9c3d-71094915c57e",
+      "symbol": "WMT",
+      "qty": 76,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.03,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-11 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 97600.67,
+  "targets": {
+    "MSFT": 0.1,
+    "AMZN": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1,
+    "WMT": 0.1
+  },
+  "prices": {
+    "MSFT": 524.02,
+    "AMZN": 268.945,
+    "META": 638.64,
+    "AVGO": 349.4,
+    "WMT": 124.32
+  }
+}
