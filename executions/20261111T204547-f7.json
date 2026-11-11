@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-11-11T20:45:46+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 95,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 32,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 55,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611111545-AAPL-sell",
+      "id": "8b606874-adae-4eba-aa0b-181b706c211d",
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611111545-AVGO-sell",
+      "id": "f4a65b03-fc06-43d4-af72-b6319f89db88",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611111545-CSCO-sell",
+      "id": "d3b91c27-0fb3-4897-97b0-3635879f3be2",
+      "symbol": "CSCO",
+      "qty": 95,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611111545-GOOGL-sell",
+      "id": "ac6e1324-85f8-49b8-86c4-0c3ab2099087",
+      "symbol": "GOOGL",
+      "qty": 32,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611111545-NVDA-sell",
+      "id": "699022f3-28ca-49da-ae9c-cbcd2dedcf27",
+      "symbol": "NVDA",
+      "qty": 55,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0149,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 98779.89,
+  "targets": {},
+  "prices": {
+    "AAPL": 355.34,
+    "NVDA": 175.075,
+    "GOOGL": 294.13,
+    "AVGO": 347.2,
+    "CSCO": 101.295
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "started_at": "2026-11-11T20:16:05+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 6 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 93,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 54,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 39,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 33,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 66,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611111500-AVGO-sell",
+      "id": "58372447-f749-4002-9ab0-a2f4bf892f0f",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611111500-CSCO-sell",
+      "id": "1319c2c7-6656-457b-90cc-c3127093f266",
+      "symbol": "CSCO",
+      "qty": 93,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611111500-NVDA-sell",
+      "id": "47d4e22c-71f7-4b01-8af6-961a6acd2c32",
+      "symbol": "NVDA",
+      "qty": 54,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611111500-ADBE-buy",
+      "id": "8d588a5b-5279-47b6-9cac-e5188ef3ba56",
+      "symbol": "ADBE",
+      "qty": 39,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611111500-JNJ-buy",
+      "id": "ea71fb7e-7433-422b-891b-b62fa202e852",
+      "symbol": "JNJ",
+      "qty": 33,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611111500-PEP-buy",
+      "id": "3a07aee7-e6a5-4cdd-a101-1fee8b8cc0f1",
+      "symbol": "PEP",
+      "qty": 66,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0294,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-11 15:00:00-05:00",
+  "hold_day": false,
+  "equity": 97165.38,
+  "targets": {
+    "GOOGL": 0.1,
+    "JNJ": 0.1,
+    "PEP": 0.1,
+    "HD": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "NVDA": 175.17,
+    "GOOGL": 293.78,
+    "AVGO": 347.245,
+    "JNJ": 280.32,
+    "PEP": 143.04,
+    "HD": 351.03,
+    "ADBE": 239.745,
+    "CSCO": 101.28
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "started_at": "2026-11-11T20:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611111500-AVGO-buy",
+      "id": "94de48e0-8970-4726-b22b-36599445c47f",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611111500-META-buy",
+      "id": "e55a2926-b5a5-4751-a36a-9fa9a763e7be",
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.031,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-11 15:00:00-05:00",
+  "hold_day": false,
+  "equity": 97493.01,
+  "targets": {
+    "MSFT": 0.1,
+    "AMZN": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1
+  },
+  "prices": {
+    "MSFT": 519.69,
+    "AMZN": 266.33,
+    "META": 634.765,
+    "AVGO": 347.3
+  }
+}

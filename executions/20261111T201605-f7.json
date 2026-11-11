@@ -1,0 +1,109 @@
+{
+  "started_at": "2026-11-11T20:15:59+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 6 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 40,
+      "side": "sell"
+    },
+    {
+      "symbol": "COST",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 95,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 55,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611111500-ADBE-sell",
+      "id": "22cd4afd-7a34-46dd-a17f-c378d138f165",
+      "symbol": "ADBE",
+      "qty": 40,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611111500-COST-sell",
+      "id": "2edb856b-c173-4334-b6ab-799044a6ce43",
+      "symbol": "COST",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611111500-AAPL-buy",
+      "id": "3f574e53-3c8c-4f9a-91e2-fa1385b3d6f7",
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202611111500-CSCO-buy",
+      "id": "d7b32e9c-64e0-422b-b790-f5b2d143206a",
+      "symbol": "CSCO",
+      "qty": 95,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202611111500-GOOGL-buy",
+      "id": "2e59a36f-0513-4c41-899a-112a452ef599",
+      "symbol": "GOOGL",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202611111500-NVDA-buy",
+      "id": "9ee39d8d-044a-48dd-aa30-0366c0388df1",
+      "symbol": "NVDA",
+      "qty": 55,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.015,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-11 15:00:00-05:00",
+  "hold_day": false,
+  "equity": 98769.94,
+  "targets": {
+    "AAPL": 0.1,
+    "NVDA": 0.1,
+    "GOOGL": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "AAPL": 354.89,
+    "NVDA": 175.155,
+    "GOOGL": 293.78,
+    "AVGO": 347.315,
+    "COST": 1081.715,
+    "ADBE": 239.85,
+    "CSCO": 101.27
+  }
+}
