@@ -1,0 +1,83 @@
+{
+  "started_at": "2026-11-12T16:46:03+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "GOOGL",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611121130-GOOGL-sell",
+      "id": "e93a78f2-d37f-49e4-b8f2-5a46cdd41d43",
+      "symbol": "GOOGL",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611121130-AVGO-buy",
+      "id": "adeee0fe-dace-49f1-b41b-db1a76c6c004",
+      "symbol": "AVGO",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611121130-CSCO-buy",
+      "id": "4b988666-187a-4ff3-b148-cb685da5dbac",
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611121130-NVDA-buy",
+      "id": "e0e05d15-7c43-4fa2-b499-570f575771ea",
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0286,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-12 11:30:00-05:00",
+  "hold_day": false,
+  "equity": 97245.87,
+  "targets": {
+    "MSFT": 0.1,
+    "NVDA": 0.1,
+    "GOOGL": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 528.11,
+    "NVDA": 163.94,
+    "GOOGL": 299.01,
+    "AVGO": 364.16,
+    "CSCO": 101.245
+  }
+}

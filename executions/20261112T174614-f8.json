@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-11-12T17:46:13+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611121230-NVDA-sell",
+      "id": "62f4af0b-6081-4fb4-adbd-24b49db25257",
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0258,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-12 12:30:00-05:00",
+  "hold_day": false,
+  "equity": 97533.03,
+  "targets": {
+    "MSFT": 0.1,
+    "NVDA": 0.1,
+    "GOOGL": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 528.72,
+    "NVDA": 165.74,
+    "GOOGL": 301.63,
+    "AVGO": 365.34,
+    "CSCO": 101.9
+  }
+}

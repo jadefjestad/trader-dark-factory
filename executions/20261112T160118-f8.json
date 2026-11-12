@@ -1,0 +1,83 @@
+{
+  "started_at": "2026-11-12T16:01:15+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611121045-CSCO-sell",
+      "id": "795f7c3d-b84c-4d38-a28d-fe354e6d9155",
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611121045-AVGO-buy",
+      "id": "afae7280-30b0-4ab8-9103-7725390ba957",
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611121045-GOOGL-buy",
+      "id": "cf032524-c1c9-4558-86da-fcea00dff98c",
+      "symbol": "GOOGL",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611121045-MSFT-buy",
+      "id": "612191f8-e446-48f4-8a56-fac36f504ccb",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0285,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-12 10:45:00-05:00",
+  "hold_day": false,
+  "equity": 97261.38,
+  "targets": {
+    "MSFT": 0.1,
+    "NVDA": 0.1,
+    "GOOGL": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 527.64,
+    "NVDA": 165.585,
+    "GOOGL": 297.05,
+    "AVGO": 363.07,
+    "CSCO": 101.55
+  }
+}

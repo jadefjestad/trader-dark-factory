@@ -1,0 +1,110 @@
+{
+  "started_at": "2026-11-12T17:46:02+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 6 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 67,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 57,
+      "side": "sell"
+    },
+    {
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 58,
+      "side": "buy"
+    },
+    {
+      "symbol": "V",
+      "qty": 22,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611121230-AMZN-sell",
+      "id": "d45c6725-c8b6-4b4a-a676-76ccb7be34b9",
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611121230-PEP-sell",
+      "id": "dc8f8e1f-c193-487a-924a-2abebbe681df",
+      "symbol": "PEP",
+      "qty": 67,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611121230-PG-sell",
+      "id": "ec7bc64f-b46f-46a0-8323-c0b90c9b869d",
+      "symbol": "PG",
+      "qty": 57,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611121230-AAPL-buy",
+      "id": "cf433f69-b614-449b-a1b8-a4dea673f1ce",
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611121230-NVDA-buy",
+      "id": "7e2f20d4-46e1-436e-980f-0bfc2629b9ca",
+      "symbol": "NVDA",
+      "qty": 58,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611121230-V-buy",
+      "id": "e28ac4a2-70ad-4044-90ef-5253a2f3bab4",
+      "symbol": "V",
+      "qty": 22,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0234,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-12 12:30:00-05:00",
+  "hold_day": false,
+  "equity": 98494.8,
+  "targets": {
+    "AAPL": 0.1,
+    "NVDA": 0.1,
+    "V": 0.1,
+    "MA": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "AAPL": 355.36,
+    "NVDA": 165.84,
+    "AMZN": 269.67,
+    "V": 424.62,
+    "MA": 658.34,
+    "PG": 168.78,
+    "PEP": 143.59,
+    "HD": 350.2
+  }
+}

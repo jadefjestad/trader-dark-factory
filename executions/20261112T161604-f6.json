@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-12T16:16:02+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 67,
+      "side": "buy"
+    },
+    {
+      "symbol": "PG",
+      "qty": 57,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611121100-AMZN-buy",
+      "id": "eba7c619-8178-49f8-9737-669781a2f8c5",
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611121100-HD-buy",
+      "id": "8e2be5d9-e167-4b3b-b114-ee44e1f5a532",
+      "symbol": "HD",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611121100-MA-buy",
+      "id": "cfadf156-634f-45e7-8b8b-70abb2feeae0",
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611121100-PEP-buy",
+      "id": "b6d1e3ab-8e22-47f2-98f9-bd2f9fffb1a2",
+      "symbol": "PEP",
+      "qty": 67,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611121100-PG-buy",
+      "id": "a9b2da87-d047-4489-9280-3a37853114f6",
+      "symbol": "PG",
+      "qty": 57,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0227,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-12 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 98563.94,
+  "targets": {
+    "AMZN": 0.1,
+    "MA": 0.1,
+    "PG": 0.1,
+    "PEP": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "AMZN": 270.245,
+    "MA": 660.38,
+    "PG": 168.445,
+    "PEP": 143.45,
+    "HD": 351.31
+  }
+}

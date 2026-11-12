@@ -1,0 +1,45 @@
+{
+  "started_at": "2026-11-12T18:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611121330-LLY-buy",
+      "id": "90b90fbb-580f-4ba7-a8d1-a6c2838997c3",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0312,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-12 13:30:00-05:00",
+  "hold_day": false,
+  "equity": 97480.9,
+  "targets": {
+    "AAPL": 0.1,
+    "AMZN": 0.1,
+    "LLY": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "AAPL": 355.74,
+    "AMZN": 269.18,
+    "LLY": 1438.115,
+    "HD": 349.255
+  }
+}

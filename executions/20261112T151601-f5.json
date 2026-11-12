@@ -1,0 +1,39 @@
+{
+  "started_at": "2026-11-12T15:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611121000-META-buy",
+      "id": "c40621c3-5f91-4945-a03e-32d8941a2cfb",
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0313,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-12 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 97463.95,
+  "targets": {
+    "META": 0.1
+  },
+  "prices": {
+    "META": 620.84
+  }
+}
