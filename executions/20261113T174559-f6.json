@@ -1,0 +1,147 @@
+{
+  "started_at": "2026-11-13T17:45:52+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 9 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 32,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 60,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 33,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 56,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611131230-AMZN-sell",
+      "id": "5dd3cbc7-c070-48ea-90da-5ef0bfbfbdc2",
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611131230-AVGO-sell",
+      "id": "1924d555-5892-4c78-a0b2-bb835fc55e72",
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611131230-GOOGL-sell",
+      "id": "95e9eb02-fb28-4290-b761-c48a3bcfec12",
+      "symbol": "GOOGL",
+      "qty": 32,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611131230-NVDA-sell",
+      "id": "89046477-39e5-4aa3-8153-181978dd27c0",
+      "symbol": "NVDA",
+      "qty": 60,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611131230-CSCO-buy",
+      "id": "8d13cf5a-11d3-4b7f-a018-96ea1e23cd06",
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611131230-JNJ-buy",
+      "id": "bf54c895-cb36-4ca3-9dc2-675dcad3100b",
+      "symbol": "JNJ",
+      "qty": 33,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611131230-JPM-buy",
+      "id": "f4533919-fb31-4abe-9c9e-43715745e82e",
+      "symbol": "JPM",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611131230-UNH-buy",
+      "id": "3df4045e-3917-4b28-90a4-525d971dda47",
+      "symbol": "UNH",
+      "qty": 23,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611131230-XOM-buy",
+      "id": "375b2f08-fc14-410f-9ffd-08fed8fbe418",
+      "symbol": "XOM",
+      "qty": 56,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0251,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-13 12:30:00-05:00",
+  "hold_day": false,
+  "equity": 98316.66,
+  "targets": {
+    "JPM": 0.1,
+    "UNH": 0.1,
+    "JNJ": 0.1,
+    "XOM": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 160.67,
+    "AMZN": 265.675,
+    "GOOGL": 295.07,
+    "AVGO": 345.14,
+    "JPM": 344.22,
+    "UNH": 401.79,
+    "JNJ": 286.41,
+    "XOM": 169.59,
+    "CSCO": 95.605
+  }
+}

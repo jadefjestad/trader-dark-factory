@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-11-13T15:16:04+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "COST",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "symbol": "HD",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611131000-AAPL-sell",
+      "id": "d7ba22e4-08a0-4c85-b2a2-1f0a441d644d",
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611131000-COST-sell",
+      "id": "f99b7bc9-89d3-46f8-a25c-4eeff671a4c5",
+      "symbol": "COST",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611131000-HD-sell",
+      "id": "c35b52a7-bbf6-4268-8d73-d48b4d3a37c1",
+      "symbol": "HD",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611131000-LLY-sell",
+      "id": "d3518d62-ad9e-4202-b446-6289a73fb80a",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611131000-V-sell",
+      "id": "f926e545-109e-42b0-ac93-30bdcea50e22",
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0169,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-13 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 98578.5,
+  "targets": {},
+  "prices": {
+    "AAPL": 358.01,
+    "V": 424.255,
+    "LLY": 1423.37,
+    "COST": 1100.96,
+    "HD": 344.36
+  }
+}

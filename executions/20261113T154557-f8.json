@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-13T15:45:55+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 17,
+      "side": "buy"
+    },
+    {
+      "symbol": "PG",
+      "qty": 55,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611131030-HD-buy",
+      "id": "714b50e0-58aa-4dae-ad93-5b650064401f",
+      "symbol": "HD",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611131030-JNJ-buy",
+      "id": "50efdff4-e19c-4128-9624-0b6ef7c34350",
+      "symbol": "JNJ",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611131030-LLY-buy",
+      "id": "3ecd1a87-3eed-49c1-95e3-f3d313a0ef3b",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611131030-MSFT-buy",
+      "id": "47f9a041-2e40-4ab8-898a-6b94ea1b33ba",
+      "symbol": "MSFT",
+      "qty": 17,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611131030-PG-buy",
+      "id": "4217b8aa-e84c-4f9c-ab2f-b241b7bf0ce1",
+      "symbol": "PG",
+      "qty": 55,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0409,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-13 10:30:00-05:00",
+  "hold_day": false,
+  "equity": 96012.8,
+  "targets": {
+    "MSFT": 0.1,
+    "LLY": 0.1,
+    "JNJ": 0.1,
+    "PG": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "MSFT": 523.5,
+    "LLY": 1436.455,
+    "JNJ": 287.59,
+    "PG": 170.395,
+    "HD": 346.96
+  }
+}

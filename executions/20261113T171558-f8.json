@@ -1,0 +1,57 @@
+{
+  "started_at": "2026-11-13T17:15:56+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "MSFT",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 39,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611131200-MSFT-sell",
+      "id": "4eea6479-d2be-462a-9abb-b31e8cb15a04",
+      "symbol": "MSFT",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611131200-ADBE-buy",
+      "id": "ecf60d81-2909-4b6f-a5b1-4679a1346274",
+      "symbol": "ADBE",
+      "qty": 39,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.041,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-13 12:00:00-05:00",
+  "hold_day": false,
+  "equity": 96006.87,
+  "targets": {
+    "MSFT": 0.1,
+    "LLY": 0.1,
+    "HD": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "MSFT": 523.57,
+    "LLY": 1439.82,
+    "HD": 349.015,
+    "ADBE": 241.23
+  }
+}

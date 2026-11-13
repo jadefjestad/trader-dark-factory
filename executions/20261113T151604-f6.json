@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-11-13T15:16:02+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "HD",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "MA",
+      "qty": 14,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 58,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611131000-AAPL-sell",
+      "id": "aa9eacb1-46c9-4806-8408-fd14f999f2c9",
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611131000-HD-sell",
+      "id": "692ee556-d0fc-4fbc-9266-ef1d35c6f235",
+      "symbol": "HD",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611131000-MA-sell",
+      "id": "cc57126b-e8ad-4fb9-bcad-a5a2e648c289",
+      "symbol": "MA",
+      "qty": 14,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611131000-NVDA-sell",
+      "id": "b1a280ca-2aa0-4df9-a218-23185242d16f",
+      "symbol": "NVDA",
+      "qty": 58,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611131000-V-sell",
+      "id": "65cf45eb-98a5-492f-bb4f-ede9e3465b26",
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0274,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-13 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 98089.46,
+  "targets": {},
+  "prices": {
+    "AAPL": 357.91,
+    "NVDA": 160.65,
+    "V": 424.255,
+    "MA": 658.225,
+    "HD": 344.36
+  }
+}

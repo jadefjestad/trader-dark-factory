@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-11-13T15:16:06+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 93,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 31,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 57,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 55,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611131000-AVGO-sell",
+      "id": "773daae0-feb5-4374-ad66-f8104adf7726",
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611131000-CSCO-sell",
+      "id": "c6474c8d-de92-44e2-a3cd-01c504ea6e5b",
+      "symbol": "CSCO",
+      "qty": 93,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611131000-GOOGL-sell",
+      "id": "50ca4205-4586-4169-9d25-adbd525a697a",
+      "symbol": "GOOGL",
+      "qty": 31,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611131000-NVDA-sell",
+      "id": "b0e5cf16-14a5-4242-aca8-f24827dc43aa",
+      "symbol": "NVDA",
+      "qty": 57,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611131000-XOM-sell",
+      "id": "740cca83-1f42-4618-b0ad-8b30765951e1",
+      "symbol": "XOM",
+      "qty": 55,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0409,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-13 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 96012.46,
+  "targets": {},
+  "prices": {
+    "NVDA": 160.755,
+    "GOOGL": 297.065,
+    "AVGO": 344.015,
+    "XOM": 170.11,
+    "CSCO": 97.105
+  }
+}

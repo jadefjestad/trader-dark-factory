@@ -1,0 +1,56 @@
+{
+  "started_at": "2026-11-13T17:00:56+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "PG",
+      "qty": 55,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611131145-PG-sell",
+      "id": "413ecfc5-0a26-4635-8011-844bfea6875e",
+      "symbol": "PG",
+      "qty": 55,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611131145-MSFT-buy",
+      "id": "52731ef5-6d0c-4477-86ab-47d1ec5db8f3",
+      "symbol": "MSFT",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0412,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-13 11:45:00-05:00",
+  "hold_day": false,
+  "equity": 95982.31,
+  "targets": {
+    "MSFT": 0.1,
+    "LLY": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "MSFT": 522.27,
+    "LLY": 1440.42,
+    "PG": 169.86,
+    "HD": 348.79
+  }
+}

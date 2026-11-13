@@ -1,0 +1,122 @@
+{
+  "started_at": "2026-11-13T15:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 7 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "symbol": "HD",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 98,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 59,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611131000-AAPL-sell",
+      "id": "603b1b9c-0ded-443d-be22-2fcc749ae4d5",
+      "symbol": "AAPL",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611131000-HD-sell",
+      "id": "af72249e-f508-4de0-8a06-de632be92dda",
+      "symbol": "HD",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611131000-LLY-sell",
+      "id": "9132a88f-ba3e-425b-b648-ceeb8ae30794",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611131000-AVGO-buy",
+      "id": "96367bca-85fb-4c29-9bb3-80963669e40b",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611131000-CSCO-buy",
+      "id": "d1b28fc6-056e-49af-a079-6d3c540f4ef8",
+      "symbol": "CSCO",
+      "qty": 98,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611131000-GOOGL-buy",
+      "id": "d0a6f365-d9ee-4ea2-949c-ab6b65069aff",
+      "symbol": "GOOGL",
+      "qty": 32,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611131000-NVDA-buy",
+      "id": "eb5ac9d2-2f68-4b26-9e66-c394e548915a",
+      "symbol": "NVDA",
+      "qty": 59,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0336,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-13 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 97233.98,
+  "targets": {
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "AAPL": 357.91,
+    "NVDA": 160.85,
+    "AMZN": 266.365,
+    "GOOGL": 297.17,
+    "AVGO": 343.99,
+    "LLY": 1423.36,
+    "HD": 344.57,
+    "CSCO": 97.135
+  }
+}
