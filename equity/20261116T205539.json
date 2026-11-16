@@ -1,0 +1,45 @@
+{
+  "taken_at": "2026-11-16T20:55:38+00:00",
+  "funds": {
+    "1": {
+      "equity": 103534.6,
+      "strategy": "invvolresid_lcrankwt"
+    },
+    "2": {
+      "equity": 100718.36,
+      "strategy": "residual_momentum_announcement_blend"
+    },
+    "3": {
+      "equity": 100040.7,
+      "strategy": "earnings_announcement_premium"
+    },
+    "4": {
+      "equity": 101734.64,
+      "strategy": "vol_target_momentum_10"
+    },
+    "5": {
+      "equity": 96833.34,
+      "strategy": "intraday_vwap_reversion"
+    },
+    "6": {
+      "equity": 97944.77,
+      "strategy": "intraday_hourly_reversal"
+    },
+    "7": {
+      "equity": 98385.17,
+      "strategy": "intraday_rsi_pullback"
+    },
+    "8": {
+      "equity": 95894.21,
+      "strategy": "intraday_vwap_trend"
+    },
+    "9": {
+      "equity": 103990.66,
+      "strategy": "equal_weight_buy_hold"
+    },
+    "10": {
+      "price": 739.44,
+      "strategy": "SPY benchmark"
+    }
+  }
+}
