@@ -1,0 +1,39 @@
+{
+  "started_at": "2026-11-16T15:15:52+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "PEP",
+      "qty": 63,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611161000-PEP-buy",
+      "id": "315a81d2-4131-4266-83ce-b78c215e1250",
+      "symbol": "PEP",
+      "qty": 63,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0395,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-16 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 96156.95,
+  "targets": {
+    "PEP": 0.1
+  },
+  "prices": {
+    "PEP": 147.65
+  }
+}

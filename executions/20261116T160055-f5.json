@@ -1,0 +1,105 @@
+{
+  "started_at": "2026-11-16T16:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 6 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 100,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611161045-AMZN-sell",
+      "id": "16300da4-d273-49e1-909c-fac5952b2260",
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611161045-AVGO-sell",
+      "id": "7ef09618-b9c4-4477-87a3-18baf16576fe",
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611161045-GOOGL-sell",
+      "id": "b87e4aaa-0a12-496d-8c80-78370a33d330",
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611161045-META-sell",
+      "id": "d1bff61f-a44d-4909-9c28-9a7f4e007149",
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611161045-CSCO-buy",
+      "id": "2113029f-32b8-400b-9b8f-f7cffb316e1c",
+      "symbol": "CSCO",
+      "qty": 100,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611161045-NVDA-buy",
+      "id": "ec3b7e8b-369b-4835-bdf9-351de8bf0ec3",
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0331,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-16 10:45:00-05:00",
+  "hold_day": false,
+  "equity": 97281.18,
+  "targets": {
+    "NVDA": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 158.85,
+    "AMZN": 261.98,
+    "GOOGL": 288.735,
+    "META": 629.79,
+    "AVGO": 333.6,
+    "CSCO": 94.4
+  }
+}

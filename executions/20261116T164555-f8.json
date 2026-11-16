@@ -1,0 +1,43 @@
+{
+  "started_at": "2026-11-16T16:45:53+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611161130-AVGO-sell",
+      "id": "c69a6394-c623-4752-9852-3a06895dcbe4",
+      "symbol": "AVGO",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0393,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-16 11:30:00-05:00",
+  "hold_day": false,
+  "equity": 96178.48,
+  "targets": {
+    "MSFT": 0.1,
+    "AVGO": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "MSFT": 524.72,
+    "AVGO": 336.72,
+    "ADBE": 250.99
+  }
+}
