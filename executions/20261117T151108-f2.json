@@ -1,0 +1,183 @@
+{
+  "started_at": "2026-11-17T15:11:03+00:00",
+  "fund": 2,
+  "fund_name": "\u2b1b The Empire Strikes Black",
+  "dry_run": false,
+  "status": "submitted 9 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 61,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 4,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f2-20261117-44111139886-1-CSCO-sell",
+      "id": "f87e5106-498d-4d6f-8c80-5e14d279fdaa",
+      "symbol": "CSCO",
+      "qty": 61,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f2-20261117-44111139886-1-CVX-sell",
+      "id": "427b831b-5fbf-433e-bf6a-80946796f2c9",
+      "symbol": "CVX",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f2-20261117-44111139886-1-KO-sell",
+      "id": "982fd2bd-306c-4e23-a66e-25d18fba332d",
+      "symbol": "KO",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f2-20261117-44111139886-1-WMT-sell",
+      "id": "474a9cde-5aee-465b-91ea-dd55cd2d6ca1",
+      "symbol": "WMT",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f2-20261117-44111139886-1-XOM-sell",
+      "id": "51db6fca-ae68-4de1-a964-fb7ab0e7058f",
+      "symbol": "XOM",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f2-20261117-44111139886-1-ADBE-buy",
+      "id": "ecdfbf6f-3198-4571-b19d-f2953a6fffe4",
+      "symbol": "ADBE",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f2-20261117-44111139886-1-GOOGL-buy",
+      "id": "e04a163f-35f0-443e-8344-7566dba32eae",
+      "symbol": "GOOGL",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f2-20261117-44111139886-1-MRK-buy",
+      "id": "93465399-31ef-4e0c-baea-a9a2e0438e92",
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f2-20261117-44111139886-1-NVDA-buy",
+      "id": "6aa110ae-eb95-4112-a4d6-0239668abae6",
+      "symbol": "NVDA",
+      "qty": 4,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0284,
+  "strategy": {
+    "name": "residual_momentum_announcement_blend",
+    "ref": "strategies/candidates/residual_momentum_announcement_blend.py",
+    "experiment_id": "pr90-8040a1f-residual_momentum_announcement_blend-r37243483853-1"
+  },
+  "signal_bar": "2026-11-16",
+  "hold_day": false,
+  "equity": 100663.99,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.0,
+    "MSFT": 0.0,
+    "NVDA": 0.0625,
+    "AMZN": 0.0,
+    "GOOGL": 0.04961877492046033,
+    "META": 0.0,
+    "AVGO": 0.0625,
+    "JPM": 0.0,
+    "V": 0.0,
+    "MA": 0.0,
+    "UNH": 0.0,
+    "LLY": 0.04961877492046033,
+    "JNJ": 0.04961877492046033,
+    "MRK": 0.04961877492046033,
+    "XOM": 0.04961877492046033,
+    "CVX": 0.04961877492046033,
+    "PG": 0.0,
+    "KO": 0.04961877492046033,
+    "PEP": 0.0,
+    "COST": 0.0,
+    "WMT": 0.0625,
+    "HD": 0.0625,
+    "BAC": 0.0,
+    "ADBE": 0.0625,
+    "CSCO": 0.04961877492046033
+  },
+  "prices": {
+    "AAPL": 354.66,
+    "MSFT": 510.12,
+    "NVDA": 154.34,
+    "AMZN": 258.76,
+    "GOOGL": 282.44,
+    "META": 622.66,
+    "AVGO": 338.0,
+    "JPM": 334.46,
+    "V": 422.83,
+    "MA": 653.02,
+    "UNH": 390.56,
+    "LLY": 1427.81,
+    "JNJ": 280.61,
+    "MRK": 143.13,
+    "XOM": 168.35,
+    "CVX": 218.11,
+    "PG": 172.715,
+    "KO": 99.31,
+    "PEP": 143.08,
+    "COST": 1120.37,
+    "WMT": 128.49,
+    "HD": 342.94,
+    "BAC": 49.79,
+    "ADBE": 236.45,
+    "CSCO": 94.83
+  }
+}

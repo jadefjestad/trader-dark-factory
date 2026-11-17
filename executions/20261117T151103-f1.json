@@ -1,0 +1,188 @@
+{
+  "started_at": "2026-11-17T15:10:14+00:00",
+  "fund": 1,
+  "fund_name": "\ud83d\udc80 Darth Trader",
+  "dry_run": false,
+  "status": "submitted 9 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 3,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 2,
+      "side": "buy"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 3,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 4,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f1-20261117-44111139886-1-ADBE-sell",
+      "id": "c2c3deed-69ca-483e-a643-c051941814e8",
+      "symbol": "ADBE",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261117-44111139886-1-AVGO-sell",
+      "id": "7f10067f-09d3-43ce-acfd-f743112dc6f0",
+      "symbol": "AVGO",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261117-44111139886-1-BAC-buy",
+      "id": "9b6f12f0-0500-46a6-9eb4-a5f58be959e4",
+      "symbol": "BAC",
+      "qty": 3,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f1-20261117-44111139886-1-CSCO-buy",
+      "id": "9558379b-8c72-4503-9162-52c57fbe8d27",
+      "symbol": "CSCO",
+      "qty": 2,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f1-20261117-44111139886-1-CVX-buy",
+      "id": "f3f9989a-7ceb-46e1-a52f-0928b3338ee7",
+      "symbol": "CVX",
+      "qty": 3,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f1-20261117-44111139886-1-GOOGL-buy",
+      "id": "9a235935-8250-4e86-9534-71ba59438f6a",
+      "symbol": "GOOGL",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f1-20261117-44111139886-1-META-buy",
+      "id": "1e71bf80-4a59-4503-bcad-624cd83179b5",
+      "symbol": "META",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f1-20261117-44111139886-1-NVDA-buy",
+      "id": "bac44ec4-9b54-4046-a9b0-ea40447907de",
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f1-20261117-44111139886-1-XOM-buy",
+      "id": "b75f6f59-3ad9-4a09-9f5e-eebc378e7afa",
+      "symbol": "XOM",
+      "qty": 4,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0038,
+  "strategy": {
+    "name": "invvolresid_lcrankwt",
+    "ref": "strategies/candidates/invvolresid_lcrankwt.py",
+    "experiment_id": "pr443-0639324-invvolresid_lcrankwt-r41208445960-1"
+  },
+  "champion": {
+    "name": "invvolresid_lcrankwt",
+    "ref": "strategies/candidates/invvolresid_lcrankwt.py",
+    "experiment_id": "pr443-0639324-invvolresid_lcrankwt-r41208445960-1"
+  },
+  "signal_bar": "2026-11-16",
+  "hold_day": false,
+  "equity": 103509.91,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.0,
+    "MSFT": 0.0,
+    "NVDA": 0.006500068507942821,
+    "AMZN": 0.0,
+    "GOOGL": 0.006500068507942821,
+    "META": 0.006500068507942821,
+    "AVGO": 0.0,
+    "JPM": 0.0,
+    "V": 0.0,
+    "MA": 0.0,
+    "UNH": 0.0,
+    "LLY": 0.009168682648371987,
+    "JNJ": 0.011869110993634356,
+    "MRK": 0.008059676278552875,
+    "XOM": 0.018415741181748577,
+    "CVX": 0.018467864644809526,
+    "PG": 0.0,
+    "KO": 0.015,
+    "PEP": 0.0,
+    "COST": 0.0,
+    "WMT": 0.0,
+    "HD": 0.0,
+    "BAC": 0.006500068507942821,
+    "ADBE": 0.0,
+    "CSCO": 0.014885598811007096
+  },
+  "prices": {
+    "AAPL": 354.705,
+    "MSFT": 510.2,
+    "NVDA": 154.3,
+    "AMZN": 258.7,
+    "GOOGL": 282.41,
+    "META": 622.66,
+    "AVGO": 337.835,
+    "JPM": 334.425,
+    "V": 422.83,
+    "MA": 653.02,
+    "UNH": 390.56,
+    "LLY": 1427.32,
+    "JNJ": 280.58,
+    "MRK": 143.1,
+    "XOM": 168.43,
+    "CVX": 218.11,
+    "PG": 172.715,
+    "KO": 99.32,
+    "PEP": 143.08,
+    "COST": 1120.37,
+    "WMT": 128.49,
+    "HD": 342.69,
+    "BAC": 49.79,
+    "ADBE": 236.45,
+    "CSCO": 94.825
+  }
+}
