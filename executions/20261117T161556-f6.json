@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-17T16:15:54+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 40,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 100,
+      "side": "buy"
+    },
+    {
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 19,
+      "side": "buy"
+    },
+    {
+      "symbol": "V",
+      "qty": 22,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611171100-ADBE-buy",
+      "id": "40e8b51a-d761-44c8-9df2-a8444edf6dc7",
+      "symbol": "ADBE",
+      "qty": 40,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611171100-CSCO-buy",
+      "id": "2a62a0ce-ffdd-4dde-a227-a947846b733b",
+      "symbol": "CSCO",
+      "qty": 100,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611171100-MA-buy",
+      "id": "a4cdc80e-a2e1-4e6c-aeab-2ea65b6d4c84",
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611171100-MSFT-buy",
+      "id": "d5c44e31-771b-4d06-8f33-0ac3062ed865",
+      "symbol": "MSFT",
+      "qty": 19,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611171100-V-buy",
+      "id": "8cb24920-c973-4446-9ae0-41dc97e58781",
+      "symbol": "V",
+      "qty": 22,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0308,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-17 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 97738.86,
+  "targets": {
+    "MSFT": 0.1,
+    "V": 0.1,
+    "MA": 0.1,
+    "ADBE": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 500.39,
+    "V": 418.8,
+    "MA": 647.285,
+    "ADBE": 235.625,
+    "CSCO": 94.84
+  }
+}

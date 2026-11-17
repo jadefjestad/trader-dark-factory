@@ -1,0 +1,42 @@
+{
+  "started_at": "2026-11-17T16:00:52+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "JNJ",
+      "qty": 33,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611171045-JNJ-sell",
+      "id": "30b51332-255e-4415-92f9-0fd3fc7e13d6",
+      "symbol": "JNJ",
+      "qty": 33,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0454,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-17 10:45:00-05:00",
+  "hold_day": false,
+  "equity": 95566.72,
+  "targets": {
+    "MRK": 0.1,
+    "PG": 0.1
+  },
+  "prices": {
+    "JNJ": 280.31,
+    "MRK": 144.1,
+    "PG": 172.94
+  }
+}

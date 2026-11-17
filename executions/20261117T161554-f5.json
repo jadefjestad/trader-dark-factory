@@ -1,0 +1,97 @@
+{
+  "started_at": "2026-11-17T16:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 61,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "symbol": "V",
+      "qty": 22,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611171100-AVGO-sell",
+      "id": "7e459a7b-30c4-4d4a-8fd3-be7cd8eed475",
+      "symbol": "AVGO",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611171100-NVDA-sell",
+      "id": "a7cfc511-75cd-459b-ae26-4dca09638c94",
+      "symbol": "NVDA",
+      "qty": 61,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611171100-CSCO-buy",
+      "id": "ad1a7f35-8ebe-4e27-a15d-31423dec6ce5",
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611171100-MA-buy",
+      "id": "bbffc038-2a09-459e-a396-01af422fd3ff",
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611171100-V-buy",
+      "id": "395b9c7f-f9a8-44cd-bea5-856a95abc586",
+      "symbol": "V",
+      "qty": 22,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.038,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-17 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 96794.13,
+  "targets": {
+    "MSFT": 0.1,
+    "V": 0.1,
+    "MA": 0.1,
+    "ADBE": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 500.625,
+    "NVDA": 155.27,
+    "AVGO": 338.935,
+    "V": 418.8,
+    "MA": 647.285,
+    "ADBE": 235.625,
+    "CSCO": 94.81
+  }
+}

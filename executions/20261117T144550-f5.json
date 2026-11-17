@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-11-17T14:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 100,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 95,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 60,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611170930-CSCO-sell",
+      "id": "3c509b4f-2125-468e-b004-1de1795f9244",
+      "symbol": "CSCO",
+      "qty": 100,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611170930-JNJ-sell",
+      "id": "5fe369f9-6036-46ba-8f0a-69dafa53b5bd",
+      "symbol": "JNJ",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611170930-KO-sell",
+      "id": "fca081c9-c2b4-4bca-bcc4-2a882bd2b27f",
+      "symbol": "KO",
+      "qty": 95,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611170930-MRK-sell",
+      "id": "77625dbe-3215-40bf-b459-981e3bf4a4b3",
+      "symbol": "MRK",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611170930-NVDA-sell",
+      "id": "81cce34d-2ea6-4611-8786-34223e5774bb",
+      "symbol": "NVDA",
+      "qty": 60,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0385,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-17 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 96744.18,
+  "targets": {},
+  "prices": {
+    "NVDA": 155.77,
+    "JNJ": 279.48,
+    "MRK": 143.12,
+    "KO": 99.075,
+    "CSCO": 95.905
+  }
+}

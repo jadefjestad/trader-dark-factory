@@ -1,0 +1,85 @@
+{
+  "started_at": "2026-11-17T18:30:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 100,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 56,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611171315-CSCO-sell",
+      "id": "52fb0dac-040c-4fbe-9659-c8255fb0fa38",
+      "symbol": "CSCO",
+      "qty": 100,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611171315-MSFT-sell",
+      "id": "9d93f338-0f6b-4d12-9e21-ba09e03249be",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611171315-JPM-buy",
+      "id": "9443fce4-fd9c-4368-82a0-02b73922b9d4",
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611171315-XOM-buy",
+      "id": "16b5c1d9-7806-4045-ae3b-cd936e427f4a",
+      "symbol": "XOM",
+      "qty": 56,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0361,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-17 13:15:00-05:00",
+  "hold_day": false,
+  "equity": 96981.86,
+  "targets": {
+    "JPM": 0.1,
+    "V": 0.1,
+    "MA": 0.1,
+    "XOM": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "MSFT": 504.25,
+    "JPM": 330.63,
+    "V": 419.71,
+    "MA": 649.345,
+    "XOM": 167.37,
+    "BAC": 49.31,
+    "CSCO": 95.005
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "started_at": "2026-11-17T15:15:52+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "PG",
+      "qty": 54,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611171000-AMZN-buy",
+      "id": "64593943-03dc-4868-bf1c-2131cc59b00a",
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611171000-HD-buy",
+      "id": "39b4589d-3b6e-465a-8781-6caf1b7d35ae",
+      "symbol": "HD",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611171000-PG-buy",
+      "id": "ee9bc900-e71b-4022-bdc9-a0dab4509d45",
+      "symbol": "PG",
+      "qty": 54,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0421,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-17 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 95893.24,
+  "targets": {
+    "AMZN": 0.1,
+    "PG": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "AMZN": 259.465,
+    "PG": 173.09,
+    "HD": 344.22
+  }
+}
