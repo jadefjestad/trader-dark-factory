@@ -1,0 +1,85 @@
+{
+  "started_at": "2026-11-18T17:45:50+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 42,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 58,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611181230-ADBE-sell",
+      "id": "c1202f86-5db2-4ada-8183-55bff0661b5d",
+      "symbol": "ADBE",
+      "qty": 42,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611181230-LLY-sell",
+      "id": "5dafce2d-2298-484a-8f91-790654ee4318",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611181230-AVGO-buy",
+      "id": "d2ca8216-e18a-4ed4-afae-c8e7d00ad460",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611181230-XOM-buy",
+      "id": "21495a32-68ef-48e5-8097-b0b286b5dcb4",
+      "symbol": "XOM",
+      "qty": 58,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0389,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-18 12:30:00-05:00",
+  "hold_day": false,
+  "equity": 96928.46,
+  "targets": {
+    "NVDA": 0.1,
+    "AVGO": 0.1,
+    "UNH": 0.1,
+    "MRK": 0.1,
+    "XOM": 0.1
+  },
+  "prices": {
+    "NVDA": 151.93,
+    "AVGO": 350.8,
+    "UNH": 356.695,
+    "LLY": 1393.64,
+    "MRK": 139.06,
+    "XOM": 161.68,
+    "ADBE": 227.8
+  }
+}

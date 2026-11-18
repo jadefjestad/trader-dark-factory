@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-11-18T14:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 192,
+      "side": "sell"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "MA",
+      "qty": 14,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 56,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611180930-BAC-sell",
+      "id": "349e8533-d2ff-4389-a828-4f5e7b3bda11",
+      "symbol": "BAC",
+      "qty": 192,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611180930-JPM-sell",
+      "id": "7b16052c-c7d7-426f-a953-2031ea0e8c11",
+      "symbol": "JPM",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611180930-MA-sell",
+      "id": "20bf724f-9061-4129-90d1-a4a401d070c7",
+      "symbol": "MA",
+      "qty": 14,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611180930-V-sell",
+      "id": "f57917b0-8dc4-47bc-aea9-24c62227d471",
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611180930-XOM-sell",
+      "id": "91e04366-1ace-44b0-a091-d9b3689f79d0",
+      "symbol": "XOM",
+      "qty": 56,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0404,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-18 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 96549.19,
+  "targets": {},
+  "prices": {
+    "JPM": 329.68,
+    "V": 416.32,
+    "MA": 644.39,
+    "XOM": 162.84,
+    "BAC": 49.375
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "started_at": "2026-11-18T16:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "KO",
+      "qty": 96,
+      "side": "sell"
+    },
+    {
+      "symbol": "MA",
+      "qty": 14,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 58,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611181100-KO-sell",
+      "id": "8f7607e2-b5aa-4b97-b35b-e95d0068d4a5",
+      "symbol": "KO",
+      "qty": 96,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611181100-MA-sell",
+      "id": "5d91ae4f-9f91-4959-a205-ac41b3ed2f7b",
+      "symbol": "MA",
+      "qty": 14,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611181100-ADBE-buy",
+      "id": "451e0bcc-6a67-4451-a9f4-00cf1507d2d8",
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611181100-XOM-buy",
+      "id": "c7fad859-3d19-4634-a766-6b5b13c8f2b8",
+      "symbol": "XOM",
+      "qty": 58,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0418,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-18 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 96406.12,
+  "targets": {
+    "NVDA": 0.1,
+    "UNH": 0.1,
+    "LLY": 0.1,
+    "XOM": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "NVDA": 152.58,
+    "MA": 641.24,
+    "UNH": 365.08,
+    "LLY": 1389.24,
+    "XOM": 162.69,
+    "KO": 98.13,
+    "ADBE": 226.78
+  }
+}

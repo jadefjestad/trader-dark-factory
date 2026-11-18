@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-11-18T18:45:54+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611181330-CSCO-sell",
+      "id": "47bbf017-4726-4750-9506-a8e36ab60eac",
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611181330-PEP-sell",
+      "id": "de08292e-a4b0-4834-8df9-dc9f9cde5d68",
+      "symbol": "PEP",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611181330-AVGO-buy",
+      "id": "186964cd-18ef-4ba6-87f3-220ff43fd68a",
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0483,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-18 13:30:00-05:00",
+  "hold_day": false,
+  "equity": 95271.57,
+  "targets": {
+    "AMZN": 0.1,
+    "AVGO": 0.1,
+    "V": 0.1,
+    "HD": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "AMZN": 267.48,
+    "AVGO": 354.98,
+    "V": 417.13,
+    "PEP": 141.8,
+    "HD": 340.55,
+    "CSCO": 97.41
+  }
+}

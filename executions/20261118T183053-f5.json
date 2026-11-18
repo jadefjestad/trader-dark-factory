@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-11-18T18:30:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 67,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611181315-LLY-sell",
+      "id": "7b3d7a19-5acc-4492-8379-b24580972a7d",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611181315-NVDA-sell",
+      "id": "1d1ac5ed-029d-4e73-a887-bb3e73e297d7",
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611181315-MRK-buy",
+      "id": "423902d4-b7d2-4074-a171-d202fbfd6c57",
+      "symbol": "MRK",
+      "qty": 67,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0448,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-18 13:15:00-05:00",
+  "hold_day": false,
+  "equity": 96107.98,
+  "targets": {
+    "NVDA": 0.1,
+    "UNH": 0.1,
+    "MRK": 0.1,
+    "XOM": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "NVDA": 152.2,
+    "UNH": 355.67,
+    "LLY": 1398.76,
+    "MRK": 138.7,
+    "XOM": 161.44,
+    "ADBE": 226.66
+  }
+}
