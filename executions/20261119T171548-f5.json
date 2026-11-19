@@ -1,0 +1,59 @@
+{
+  "started_at": "2026-11-19T17:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611191200-AMZN-buy",
+      "id": "dcf9b724-04eb-40ec-bf4a-2710f950bee7",
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611191200-NVDA-buy",
+      "id": "2058646c-d18d-4f1b-8e09-9a7edda5daf9",
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0587,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-19 12:00:00-05:00",
+  "hold_day": false,
+  "equity": 94705.94,
+  "targets": {
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "AVGO": 0.1,
+    "JPM": 0.1,
+    "UNH": 0.1
+  },
+  "prices": {
+    "NVDA": 148.89,
+    "AMZN": 263.015,
+    "AVGO": 349.41,
+    "JPM": 318.175,
+    "UNH": 329.65
+  }
+}

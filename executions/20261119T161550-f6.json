@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-19T16:15:49+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 62,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "symbol": "V",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611191100-AVGO-buy",
+      "id": "7f687742-3fd6-4104-b0eb-8812db90c302",
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611191100-MSFT-buy",
+      "id": "7efc866d-7894-4ab4-adee-8d783643d80c",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611191100-NVDA-buy",
+      "id": "94885323-7c8c-4964-8ced-8bf1cd2a407d",
+      "symbol": "NVDA",
+      "qty": 62,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611191100-UNH-buy",
+      "id": "a2f99efe-0b0a-46f4-9bc4-369e41a2657b",
+      "symbol": "UNH",
+      "qty": 28,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611191100-V-buy",
+      "id": "4aeff635-f3ea-4e12-824b-5c22a198f743",
+      "symbol": "V",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.037,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-19 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 97120.08,
+  "targets": {
+    "MSFT": 0.1,
+    "NVDA": 0.1,
+    "AVGO": 0.1,
+    "V": 0.1,
+    "UNH": 0.1
+  },
+  "prices": {
+    "MSFT": 514.71,
+    "NVDA": 152.88,
+    "AVGO": 359.735,
+    "V": 402.91,
+    "UNH": 331.665
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "started_at": "2026-11-19T15:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611191030-ADBE-sell",
+      "id": "6f24261a-cc82-4f7a-adfd-3e74c3ab257f",
+      "symbol": "ADBE",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611191030-UNH-buy",
+      "id": "a7e2d45f-5950-4c51-b767-e47e64a4bc2e",
+      "symbol": "UNH",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0509,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-19 10:30:00-05:00",
+  "hold_day": false,
+  "equity": 95494.16,
+  "targets": {
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "AVGO": 0.1,
+    "UNH": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "NVDA": 152.245,
+    "AMZN": 268.54,
+    "AVGO": 357.25,
+    "UNH": 333.575,
+    "ADBE": 224.34
+  }
+}

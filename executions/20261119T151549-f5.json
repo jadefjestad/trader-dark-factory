@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-19T15:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 60,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611191000-ADBE-buy",
+      "id": "387ff4f2-76f7-43cc-8c40-2da32fe2066f",
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611191000-AMZN-buy",
+      "id": "56adc24f-4a74-40a5-9b52-88011990deee",
+      "symbol": "AMZN",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611191000-AVGO-buy",
+      "id": "51ea43b9-e10d-46d3-98a9-6285edb1235a",
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611191000-NVDA-buy",
+      "id": "82316d77-0fbc-4cc1-bf0d-f1c81976b143",
+      "symbol": "NVDA",
+      "qty": 60,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611191000-UNH-buy",
+      "id": "72f01771-825d-4fc6-a511-064f3790cc9d",
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0469,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-19 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 95899.59,
+  "targets": {
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "AVGO": 0.1,
+    "UNH": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "NVDA": 154.58,
+    "AMZN": 269.94,
+    "AVGO": 359.575,
+    "UNH": 339.92,
+    "ADBE": 224.51
+  }
+}

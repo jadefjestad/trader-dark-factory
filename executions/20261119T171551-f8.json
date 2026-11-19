@@ -1,0 +1,42 @@
+{
+  "started_at": "2026-11-19T17:15:50+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 27,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611191200-HD-sell",
+      "id": "eb270ee0-7038-487f-8ca6-46f6f0d6918d",
+      "symbol": "HD",
+      "qty": 27,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.047,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-19 12:00:00-05:00",
+  "hold_day": false,
+  "equity": 95409.19,
+  "targets": {
+    "PG": 0.1,
+    "WMT": 0.1
+  },
+  "prices": {
+    "PG": 168.19,
+    "WMT": 125.705,
+    "HD": 336.175
+  }
+}

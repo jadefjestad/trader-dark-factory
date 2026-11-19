@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-11-19T14:45:49+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 62,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 58,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611190930-AVGO-sell",
+      "id": "3633db04-3b65-412d-9532-8372c5bc7f3e",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611190930-MRK-sell",
+      "id": "81076ceb-5117-4460-ae5a-ac61693d6d9f",
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611190930-NVDA-sell",
+      "id": "deb3f3c7-7940-4dbc-98f7-c4621c1cb165",
+      "symbol": "NVDA",
+      "qty": 62,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611190930-UNH-sell",
+      "id": "185c3e63-eced-4d29-9a9e-c5554de5ce96",
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611190930-XOM-sell",
+      "id": "d9be0112-5462-421a-b54e-8b6ff9311b4f",
+      "symbol": "XOM",
+      "qty": 58,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0366,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-19 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 97162.84,
+  "targets": {},
+  "prices": {
+    "NVDA": 157.79,
+    "AVGO": 368.83,
+    "UNH": 345.31,
+    "MRK": 135.465,
+    "XOM": 160.65
+  }
+}

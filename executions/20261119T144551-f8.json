@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-11-19T14:45:50+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 95,
+      "side": "sell"
+    },
+    {
+      "symbol": "HD",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611190930-AMZN-sell",
+      "id": "272f2884-cfaf-46ad-ab65-0e10f2a67d59",
+      "symbol": "AMZN",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611190930-AVGO-sell",
+      "id": "4c8a1072-3a5b-46a4-af57-3b4b4c1c711e",
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611190930-CSCO-sell",
+      "id": "c202e346-0c16-4aad-abb0-7c1671ec4f1c",
+      "symbol": "CSCO",
+      "qty": 95,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611190930-HD-sell",
+      "id": "58fa53ac-0b03-4eda-989d-99c4a220044a",
+      "symbol": "HD",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611190930-V-sell",
+      "id": "83f9c5dd-8679-41dd-b66b-050933ba40af",
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0455,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-19 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 95556.97,
+  "targets": {},
+  "prices": {
+    "AMZN": 272.48,
+    "AVGO": 368.42,
+    "V": 410.14,
+    "HD": 333.315,
+    "CSCO": 98.445
+  }
+}

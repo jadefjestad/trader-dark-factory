@@ -1,0 +1,122 @@
+{
+  "started_at": "2026-11-19T17:45:48+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 7 orders",
+  "orders": [
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611191230-MSFT-sell",
+      "id": "7ac293b4-205b-4ace-a56c-17af71822db7",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611191230-UNH-sell",
+      "id": "15e451a6-af9b-4a5f-92fe-7d7d4a27f961",
+      "symbol": "UNH",
+      "qty": 28,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611191230-V-sell",
+      "id": "6b49348f-705e-4086-bbab-b53d12502975",
+      "symbol": "V",
+      "qty": 23,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611191230-AMZN-buy",
+      "id": "ee768808-7a22-463b-8698-1f6191564c30",
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611191230-GOOGL-buy",
+      "id": "d0fa1e9f-1ae8-4d73-8a11-d1ec4c9436b0",
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611191230-META-buy",
+      "id": "4c1e77dd-46cc-405f-96c1-76a87155424f",
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611191230-NVDA-buy",
+      "id": "99b83a95-7032-42ae-99d9-a0f9b97d5c68",
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0431,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-19 12:30:00-05:00",
+  "hold_day": false,
+  "equity": 96502.76,
+  "targets": {
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "GOOGL": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1
+  },
+  "prices": {
+    "MSFT": 508.49,
+    "NVDA": 149.27,
+    "AMZN": 263.605,
+    "GOOGL": 282.875,
+    "META": 608.08,
+    "AVGO": 351.39,
+    "V": 403.355,
+    "UNH": 329.79
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-11-19T14:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 61,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 58,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611190930-ADBE-sell",
+      "id": "eca11dad-d053-4079-97e8-34b3f241a994",
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611190930-MRK-sell",
+      "id": "9c230f12-0523-4301-8d80-590e7e432bec",
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611190930-NVDA-sell",
+      "id": "a8a84412-2570-498d-a18a-44eb1f65122a",
+      "symbol": "NVDA",
+      "qty": 61,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611190930-UNH-sell",
+      "id": "d00c58e1-d64b-4cec-b7df-d8db6c4553e5",
+      "symbol": "UNH",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611190930-XOM-sell",
+      "id": "f44c1328-0611-459e-801b-dbdf4a403261",
+      "symbol": "XOM",
+      "qty": 58,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0465,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-19 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 95933.55,
+  "targets": {},
+  "prices": {
+    "NVDA": 157.775,
+    "UNH": 345.31,
+    "MRK": 135.44,
+    "XOM": 160.65,
+    "ADBE": 227.84
+  }
+}

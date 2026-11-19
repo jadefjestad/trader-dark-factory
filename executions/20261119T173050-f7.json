@@ -1,0 +1,71 @@
+{
+  "started_at": "2026-11-19T17:30:49+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611191215-AMZN-sell",
+      "id": "a0a15b83-b166-4ddc-97f4-de6fa6b63d46",
+      "symbol": "AMZN",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611191215-AVGO-sell",
+      "id": "947b07a1-3070-47db-bbcd-640ede20203c",
+      "symbol": "AVGO",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611191215-CSCO-sell",
+      "id": "ad8c62e2-8569-4abd-a643-03e4ce25ad1d",
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0274,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-19 12:15:00-05:00",
+  "hold_day": false,
+  "equity": 97519.63,
+  "targets": {
+    "MSFT": 0.1,
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 510.305,
+    "NVDA": 150.365,
+    "AMZN": 265.79,
+    "AVGO": 355.04,
+    "CSCO": 96.62
+  }
+}

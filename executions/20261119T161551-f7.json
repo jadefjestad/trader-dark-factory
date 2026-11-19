@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-19T16:15:50+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 98,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 62,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611191100-AMZN-buy",
+      "id": "9e8cf4df-b48f-40cf-99f2-faaaa6a67eac",
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202611191100-AVGO-buy",
+      "id": "e555f83d-0025-4359-98d7-a4bce62aac79",
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202611191100-CSCO-buy",
+      "id": "334c2f08-ca5a-49c1-ad80-be32d08fdccb",
+      "symbol": "CSCO",
+      "qty": 98,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202611191100-MSFT-buy",
+      "id": "4f6fdc88-130b-4a39-a337-185b2d2f29d3",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202611191100-NVDA-buy",
+      "id": "71e85abb-ad70-46bc-a2ee-2a4c36945d1c",
+      "symbol": "NVDA",
+      "qty": 62,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0224,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-19 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 98020.98,
+  "targets": {
+    "MSFT": 0.1,
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 514.71,
+    "NVDA": 152.88,
+    "AMZN": 268.77,
+    "AVGO": 359.735,
+    "CSCO": 97.2
+  }
+}
