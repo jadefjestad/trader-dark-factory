@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-20T16:15:50+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "BAC",
+      "qty": 192,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 16,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 67,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611201100-AVGO-buy",
+      "id": "81a19a0c-8c77-4fce-b965-e6ae8d4343c5",
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611201100-BAC-buy",
+      "id": "8fd95283-08fc-4b31-9dcd-b44598594eca",
+      "symbol": "BAC",
+      "qty": 192,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611201100-JPM-buy",
+      "id": "f92a42db-8e7d-46ac-b1d3-5eb4a582ce4a",
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611201100-META-buy",
+      "id": "cc4aef2c-8159-47f0-b491-bb30f5e28ae9",
+      "symbol": "META",
+      "qty": 16,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611201100-NVDA-buy",
+      "id": "8113673a-728d-433d-bb49-22fa625d662c",
+      "symbol": "NVDA",
+      "qty": 67,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0608,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-20 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 94719.48,
+  "targets": {
+    "NVDA": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1,
+    "JPM": 0.1,
+    "BAC": 0.1
+  },
+  "prices": {
+    "NVDA": 137.825,
+    "META": 576.87,
+    "AVGO": 318.42,
+    "JPM": 317.13,
+    "BAC": 48.19
+  }
+}

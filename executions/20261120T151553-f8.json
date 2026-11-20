@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-20T15:15:51+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "symbol": "COST",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 72,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611201000-ADBE-buy",
+      "id": "a8b6fa97-8c24-4c0c-a0f1-d6935e8c69f9",
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611201000-COST-buy",
+      "id": "6d88cef8-a37a-4cc8-af52-1b401151fa10",
+      "symbol": "COST",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611201000-HD-buy",
+      "id": "cc5c5d8b-227d-46b5-a98b-fb6da6dc0add",
+      "symbol": "HD",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611201000-UNH-buy",
+      "id": "79fdf186-b990-408e-93b4-3da09842ddd5",
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611201000-WMT-buy",
+      "id": "961a1f94-d5f8-41d4-9667-62209a19971d",
+      "symbol": "WMT",
+      "qty": 72,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0393,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-20 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 96175.92,
+  "targets": {
+    "UNH": 0.1,
+    "COST": 0.1,
+    "WMT": 0.1,
+    "HD": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "UNH": 346.42,
+    "COST": 1112.95,
+    "WMT": 129.83,
+    "HD": 346.84,
+    "ADBE": 228.62
+  }
+}

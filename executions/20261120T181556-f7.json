@@ -1,0 +1,97 @@
+{
+  "started_at": "2026-11-20T18:15:51+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 72,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "V",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611201300-HD-sell",
+      "id": "f16e7e5b-6d08-4409-9bfd-ce1a6169c2cc",
+      "symbol": "HD",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611201300-PG-sell",
+      "id": "b016fd61-d027-4c4f-adee-768841edb1bd",
+      "symbol": "PG",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611201300-WMT-sell",
+      "id": "689aa38e-4fd8-40ea-99a2-354141cdbc7b",
+      "symbol": "WMT",
+      "qty": 72,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611201300-UNH-buy",
+      "id": "79fd2995-b4e2-4dbc-ab75-4a07897e8585",
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202611201300-V-buy",
+      "id": "415699d6-3519-4123-9664-904fba3b5dae",
+      "symbol": "V",
+      "qty": 23,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0477,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-20 13:00:00-05:00",
+  "hold_day": false,
+  "equity": 95485.75,
+  "targets": {
+    "V": 0.1,
+    "UNH": 0.1,
+    "MRK": 0.1,
+    "PG": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "V": 405.93,
+    "UNH": 344.43,
+    "MRK": 134.5,
+    "PG": 170.26,
+    "WMT": 129.64,
+    "HD": 343.42,
+    "ADBE": 224.325
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-11-20T18:45:53+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "COST",
+      "qty": 8,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611201330-UNH-sell",
+      "id": "625eb888-3df4-49fc-98d5-9a67f3928a91",
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611201330-COST-buy",
+      "id": "a002d3ce-7e2c-4405-95ab-c00b749e46e3",
+      "symbol": "COST",
+      "qty": 8,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0474,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-20 13:30:00-05:00",
+  "hold_day": false,
+  "equity": 95514.19,
+  "targets": {
+    "V": 0.1,
+    "MRK": 0.1,
+    "PG": 0.1,
+    "COST": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "V": 406.505,
+    "UNH": 346.28,
+    "MRK": 134.42,
+    "PG": 170.29,
+    "COST": 1112.25,
+    "ADBE": 223.66
+  }
+}

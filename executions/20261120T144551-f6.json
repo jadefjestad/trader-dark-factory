@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-11-20T14:45:50+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 63,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611200930-AMZN-sell",
+      "id": "89dc52b9-f61c-4585-b4e2-83a8a078263d",
+      "symbol": "AMZN",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611200930-AVGO-sell",
+      "id": "2456d267-7a45-409e-9685-434145d32cb1",
+      "symbol": "AVGO",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611200930-GOOGL-sell",
+      "id": "bd76e65c-2edf-4984-b0ae-d3ddcb9184b6",
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611200930-META-sell",
+      "id": "180f8a1d-502f-429e-a986-2365cb1af3b2",
+      "symbol": "META",
+      "qty": 15,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611200930-NVDA-sell",
+      "id": "77ff2b40-dd4b-49cb-88de-68c6f139779e",
+      "symbol": "NVDA",
+      "qty": 63,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0607,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-20 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 94728.27,
+  "targets": {},
+  "prices": {
+    "NVDA": 139.95,
+    "AMZN": 254.92,
+    "GOOGL": 279.24,
+    "META": 581.9,
+    "AVGO": 338.31
+  }
+}

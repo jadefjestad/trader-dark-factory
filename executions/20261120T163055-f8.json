@@ -1,0 +1,59 @@
+{
+  "started_at": "2026-11-20T16:30:52+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "PEP",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611201115-PEP-sell",
+      "id": "4ad2dd7f-a670-4938-8155-addaca041735",
+      "symbol": "PEP",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611201115-CVX-buy",
+      "id": "bcb927cc-fb9c-4076-aa8c-cee996264429",
+      "symbol": "CVX",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0405,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-20 11:15:00-05:00",
+  "hold_day": false,
+  "equity": 96056.96,
+  "targets": {
+    "UNH": 0.1,
+    "CVX": 0.1,
+    "PEP": 0.1,
+    "COST": 0.1,
+    "WMT": 0.1
+  },
+  "prices": {
+    "UNH": 346.69,
+    "CVX": 209.08,
+    "PEP": 142.835,
+    "COST": 1120.06,
+    "WMT": 130.09
+  }
+}

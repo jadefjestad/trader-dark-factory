@@ -1,0 +1,71 @@
+{
+  "started_at": "2026-11-20T15:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "CSCO",
+      "qty": 98,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611201030-CSCO-buy",
+      "id": "11c61085-eb25-4841-8310-51e0d3dc5cf1",
+      "symbol": "CSCO",
+      "qty": 98,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611201030-MSFT-buy",
+      "id": "c7a22770-3805-4084-ae4a-7dec8edf00d4",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611201030-NVDA-buy",
+      "id": "2a14e6d5-746a-4ae7-bd9e-e2d06ff5d018",
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0724,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-20 10:30:00-05:00",
+  "hold_day": false,
+  "equity": 93332.22,
+  "targets": {
+    "MSFT": 0.1,
+    "NVDA": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "MSFT": 493.24,
+    "NVDA": 136.0,
+    "META": 576.97,
+    "AVGO": 316.285,
+    "CSCO": 93.17
+  }
+}

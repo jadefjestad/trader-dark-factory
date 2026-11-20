@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-11-20T14:45:51+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 99,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 63,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611200930-AMZN-sell",
+      "id": "82443fbd-5806-4f91-a01f-11986e172659",
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611200930-AVGO-sell",
+      "id": "4aab92d4-7ba7-4075-ba05-ca7f775c2733",
+      "symbol": "AVGO",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611200930-CSCO-sell",
+      "id": "16ab6b9d-bcfc-4a33-81b2-b20837191a46",
+      "symbol": "CSCO",
+      "qty": 99,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611200930-MSFT-sell",
+      "id": "927ea32d-63c6-4c52-93bc-475f373f1ca1",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611200930-NVDA-sell",
+      "id": "acc670c9-b9e3-4056-a216-85f4f0143e5a",
+      "symbol": "NVDA",
+      "qty": 63,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0469,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-20 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 95566.7,
+  "targets": {},
+  "prices": {
+    "MSFT": 497.18,
+    "NVDA": 139.985,
+    "AMZN": 254.945,
+    "AVGO": 338.31,
+    "CSCO": 94.21
+  }
+}
