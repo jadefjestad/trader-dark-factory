@@ -1,0 +1,19 @@
+{
+  "started_at": "2026-11-23T15:11:11+00:00",
+  "fund": 4,
+  "fund_name": "\ud83d\udef9 Marty McBuy",
+  "dry_run": false,
+  "status": "NO ORDERS: DataError: latest trade 165.63 for NVDA is implausible vs last close 125.53",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0466,
+  "strategy": {
+    "name": "vol_target_momentum_10",
+    "ref": "strategies/candidates/vol_target_momentum_10.py",
+    "experiment_id": "pr19-6b2e162-vol_target_momentum_10-r37182506562-1"
+  },
+  "signal_bar": "2026-11-20",
+  "hold_day": false,
+  "equity": 99272.61,
+  "data_source": "alpaca:sip"
+}

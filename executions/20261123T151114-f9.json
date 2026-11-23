@@ -1,0 +1,19 @@
+{
+  "started_at": "2026-11-23T15:11:12+00:00",
+  "fund": 9,
+  "fund_name": "\ud83d\udc51 Game of Loans",
+  "dry_run": false,
+  "status": "NO ORDERS: DataError: latest trade 165.5 for NVDA is implausible vs last close 125.53",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0501,
+  "strategy": {
+    "name": "equal_weight_buy_hold",
+    "ref": "strategies.baselines.buy_hold:EqualWeightBuyHold",
+    "experiment_id": "20261004T230755-equal_weight_buy_hold"
+  },
+  "signal_bar": "2026-11-20",
+  "hold_day": false,
+  "equity": 100203.51,
+  "data_source": "alpaca:sip"
+}

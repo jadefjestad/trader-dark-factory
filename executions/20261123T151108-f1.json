@@ -1,0 +1,24 @@
+{
+  "started_at": "2026-11-23T15:10:28+00:00",
+  "fund": 1,
+  "fund_name": "\ud83d\udc80 Darth Trader",
+  "dry_run": false,
+  "status": "NO ORDERS: DataError: latest trade 165.515 for NVDA is implausible vs last close 125.53",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0068,
+  "strategy": {
+    "name": "invvolresid_lcrankwt",
+    "ref": "strategies/candidates/invvolresid_lcrankwt.py",
+    "experiment_id": "pr443-0639324-invvolresid_lcrankwt-r41208445960-1"
+  },
+  "champion": {
+    "name": "invvolresid_lcrankwt",
+    "ref": "strategies/candidates/invvolresid_lcrankwt.py",
+    "experiment_id": "pr443-0639324-invvolresid_lcrankwt-r41208445960-1"
+  },
+  "signal_bar": "2026-11-20",
+  "hold_day": false,
+  "equity": 103200.17,
+  "data_source": "alpaca:sip"
+}

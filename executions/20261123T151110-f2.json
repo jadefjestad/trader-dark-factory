@@ -1,0 +1,19 @@
+{
+  "started_at": "2026-11-23T15:11:08+00:00",
+  "fund": 2,
+  "fund_name": "\u2b1b The Empire Strikes Black",
+  "dry_run": false,
+  "status": "NO ORDERS: DataError: latest trade 165.63 for NVDA is implausible vs last close 125.53",
+  "orders": [],
+  "submitted": [],
+  "drawdown": 0.0448,
+  "strategy": {
+    "name": "residual_momentum_announcement_blend",
+    "ref": "strategies/candidates/residual_momentum_announcement_blend.py",
+    "experiment_id": "pr90-8040a1f-residual_momentum_announcement_blend-r37243483853-1"
+  },
+  "signal_bar": "2026-11-20",
+  "hold_day": true,
+  "equity": 98960.97,
+  "data_source": "alpaca:sip"
+}
