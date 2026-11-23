@@ -1,0 +1,81 @@
+{
+  "started_at": "2026-11-23T15:15:50+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611231000-ADBE-buy",
+      "id": "a61c2159-d504-4676-acef-dc47d1b32cbf",
+      "symbol": "ADBE",
+      "qty": 42,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611231000-HD-buy",
+      "id": "98c2c592-d2da-4eb2-b5ad-18184e064f96",
+      "symbol": "HD",
+      "qty": 26,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611231000-LLY-buy",
+      "id": "6ba49c6f-53da-43b2-9044-6d309671497b",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611231000-UNH-buy",
+      "id": "67ff218e-dc42-49df-8031-a444f561e85d",
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0515,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-23 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 94960.0,
+  "targets": {
+    "UNH": 0.1,
+    "LLY": 0.1,
+    "HD": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "UNH": 334.875,
+    "LLY": 1372.5,
+    "HD": 345.04,
+    "ADBE": 221.23
+  }
+}

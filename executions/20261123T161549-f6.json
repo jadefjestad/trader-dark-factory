@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-23T16:15:48+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "COST",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 45,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 69,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 59,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611231100-COST-buy",
+      "id": "9109bcb6-cdd2-4539-a33c-43537d2de232",
+      "symbol": "COST",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611231100-CVX-buy",
+      "id": "6f45174e-4c86-4230-91b2-38aff7781e1e",
+      "symbol": "CVX",
+      "qty": 45,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611231100-MRK-buy",
+      "id": "b9cd61b2-9475-4403-a984-3cd69a2e1cb8",
+      "symbol": "MRK",
+      "qty": 69,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611231100-MSFT-buy",
+      "id": "d48466f8-8ab3-4177-b14a-6b9528f4fc6c",
+      "symbol": "MSFT",
+      "qty": 18,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611231100-XOM-buy",
+      "id": "abe3af10-e61a-4fc4-a91d-b2133278fab0",
+      "symbol": "XOM",
+      "qty": 59,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0452,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-23 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 96295.77,
+  "targets": {
+    "MSFT": 0.1,
+    "MRK": 0.1,
+    "XOM": 0.1,
+    "CVX": 0.1,
+    "COST": 0.1
+  },
+  "prices": {
+    "MSFT": 499.11,
+    "MRK": 135.41,
+    "XOM": 158.165,
+    "CVX": 207.29,
+    "COST": 1095.34
+  }
+}

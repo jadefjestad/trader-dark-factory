@@ -1,0 +1,76 @@
+{
+  "started_at": "2026-11-23T14:45:50+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 96,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 58,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611230930-CVX-sell",
+      "id": "e111e7ee-e11c-4f57-a9d2-4025393fb320",
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611230930-KO-sell",
+      "id": "444b3137-dcc3-41ac-98ee-15c084656cc7",
+      "symbol": "KO",
+      "qty": 96,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611230930-UNH-sell",
+      "id": "cfded1bc-4f93-49fc-a939-39fe712350e2",
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611230930-XOM-sell",
+      "id": "fe7b6357-7e6c-4709-b333-234974dfc6e3",
+      "symbol": "XOM",
+      "qty": 58,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0514,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-23 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 94965.32,
+  "targets": {},
+  "prices": {
+    "UNH": 327.27,
+    "XOM": 158.68,
+    "CVX": 207.97,
+    "KO": 96.25
+  }
+}

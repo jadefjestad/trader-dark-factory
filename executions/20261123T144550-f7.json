@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-11-23T14:45:49+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "sell"
+    },
+    {
+      "symbol": "COST",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 69,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 54,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611230930-ADBE-sell",
+      "id": "2c9227ab-2b0f-4c63-8329-0d63e560e071",
+      "symbol": "ADBE",
+      "qty": 41,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611230930-COST-sell",
+      "id": "a35b6997-43b7-4650-a60b-a4df4487035a",
+      "symbol": "COST",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611230930-MRK-sell",
+      "id": "8c17e4b8-cfdc-416b-b0a7-c0d737a9f49a",
+      "symbol": "MRK",
+      "qty": 69,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611230930-PG-sell",
+      "id": "4404ea3b-0405-46f1-889c-29a340c7a77f",
+      "symbol": "PG",
+      "qty": 54,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f7-202611230930-V-sell",
+      "id": "a2e377c9-ceab-4c40-9cc3-235cf38bf266",
+      "symbol": "V",
+      "qty": 23,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0492,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-23 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 95339.26,
+  "targets": {},
+  "prices": {
+    "V": 410.15,
+    "MRK": 135.6,
+    "PG": 169.01,
+    "COST": 1094.75,
+    "ADBE": 220.15
+  }
+}

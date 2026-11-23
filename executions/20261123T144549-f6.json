@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-11-23T14:45:48+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 100,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 67,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611230930-AMZN-sell",
+      "id": "2bb2178d-e867-4852-9d20-da3d740ce2b6",
+      "symbol": "AMZN",
+      "qty": 36,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611230930-AVGO-sell",
+      "id": "893857a8-af66-45c4-b32f-46497aa51c30",
+      "symbol": "AVGO",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611230930-CSCO-sell",
+      "id": "a255032d-b745-4ecc-b1d7-235440198723",
+      "symbol": "CSCO",
+      "qty": 100,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611230930-GOOGL-sell",
+      "id": "436255a0-aa23-4ab4-af8f-9971bf46958b",
+      "symbol": "GOOGL",
+      "qty": 33,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611230930-NVDA-sell",
+      "id": "a9d5636e-4eb5-4f60-86b7-2ecc11a627f2",
+      "symbol": "NVDA",
+      "qty": 67,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0446,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-23 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 96354.29,
+  "targets": {},
+  "prices": {
+    "NVDA": 162.33,
+    "AMZN": 253.065,
+    "GOOGL": 277.78,
+    "AVGO": 308.4,
+    "CSCO": 95.08
+  }
+}

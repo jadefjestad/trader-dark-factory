@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-11-23T17:15:50+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611231200-LLY-sell",
+      "id": "d37c3865-d4fb-49d1-8e60-c751ce70cf43",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611231200-WMT-sell",
+      "id": "f879b393-bf38-4ea2-96b2-585e973919bd",
+      "symbol": "WMT",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611231200-META-buy",
+      "id": "7a36820e-73a7-4575-bbef-5011887c281e",
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0551,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-23 12:00:00-05:00",
+  "hold_day": false,
+  "equity": 94594.25,
+  "targets": {
+    "META": 0.1,
+    "UNH": 0.1,
+    "WMT": 0.1,
+    "HD": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "META": 597.13,
+    "UNH": 335.21,
+    "LLY": 1369.235,
+    "WMT": 128.81,
+    "HD": 346.07,
+    "ADBE": 222.92
+  }
+}

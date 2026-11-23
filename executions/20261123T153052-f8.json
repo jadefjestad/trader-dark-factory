@@ -1,0 +1,71 @@
+{
+  "started_at": "2026-11-23T15:30:50+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 54,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611231015-ADBE-sell",
+      "id": "2b71cd2a-5280-45f4-ab2f-04b67881aa48",
+      "symbol": "ADBE",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611231015-NVDA-buy",
+      "id": "a5031d8d-587d-4d2d-8ca6-69e6ae7ccd80",
+      "symbol": "NVDA",
+      "qty": 54,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611231015-UNH-buy",
+      "id": "96e48c39-213b-4bc2-ad2c-661e487094d5",
+      "symbol": "UNH",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0515,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-23 10:15:00-05:00",
+  "hold_day": false,
+  "equity": 94954.22,
+  "targets": {
+    "NVDA": 0.1,
+    "UNH": 0.1,
+    "LLY": 0.1,
+    "HD": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "NVDA": 170.29,
+    "UNH": 332.25,
+    "LLY": 1374.0,
+    "HD": 346.34,
+    "ADBE": 222.305
+  }
+}
