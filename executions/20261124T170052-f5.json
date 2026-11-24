@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-11-24T17:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611241145-JPM-sell",
+      "id": "c20bc720-1064-4435-a63b-4f3ebebc2bea",
+      "symbol": "JPM",
+      "qty": 29,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611241145-CSCO-buy",
+      "id": "2ec0691d-fa79-4516-a8ae-7961b33fd05f",
+      "symbol": "CSCO",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f5-202611241145-META-buy",
+      "id": "d6617f60-d8a7-4b91-b335-322d380267e3",
+      "symbol": "META",
+      "qty": 15,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0572,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-24 11:45:00-05:00",
+  "hold_day": false,
+  "equity": 94855.93,
+  "targets": {
+    "NVDA": 0.1,
+    "GOOGL": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 150.905,
+    "GOOGL": 277.0,
+    "META": 587.8,
+    "AVGO": 300.5,
+    "JPM": 316.37,
+    "CSCO": 92.905
+  }
+}

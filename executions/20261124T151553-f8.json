@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-24T15:15:52+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 39,
+      "side": "buy"
+    },
+    {
+      "symbol": "COST",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 65,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "V",
+      "qty": 22,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611241000-ADBE-buy",
+      "id": "7e01fe27-b369-4def-87eb-e067ecc8bdca",
+      "symbol": "ADBE",
+      "qty": 39,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611241000-COST-buy",
+      "id": "e8e62c63-175d-4fde-8a72-9d4d2a522755",
+      "symbol": "COST",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611241000-PEP-buy",
+      "id": "3b4a47b5-df43-4f79-9cad-9d89ccd13278",
+      "symbol": "PEP",
+      "qty": 65,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611241000-UNH-buy",
+      "id": "32624ec3-1a73-4823-b130-d0480cd634e5",
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611241000-V-buy",
+      "id": "c6ddf086-cb67-41cb-a04f-1eb0f1a4ffd3",
+      "symbol": "V",
+      "qty": 22,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0492,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-24 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 95185.81,
+  "targets": {
+    "V": 0.1,
+    "UNH": 0.1,
+    "PEP": 0.1,
+    "COST": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "V": 415.845,
+    "UNH": 339.3,
+    "PEP": 142.87,
+    "COST": 1093.29,
+    "ADBE": 233.44
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "started_at": "2026-11-24T17:00:53+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611241145-V-sell",
+      "id": "6cf505a1-31fe-4f45-927a-84df7842aa51",
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0522,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-24 11:45:00-05:00",
+  "hold_day": false,
+  "equity": 95033.42,
+  "targets": {
+    "MA": 0.1,
+    "LLY": 0.1
+  },
+  "prices": {
+    "V": 414.74,
+    "MA": 643.71,
+    "LLY": 1403.61
+  }
+}

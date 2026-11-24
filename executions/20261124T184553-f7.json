@@ -1,0 +1,55 @@
+{
+  "started_at": "2026-11-24T18:45:51+00:00",
+  "fund": 7,
+  "fund_name": "\ud83d\udc8d Frodough Baggins",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "COST",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "symbol": "PG",
+      "qty": 54,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f7-202611241330-COST-buy",
+      "id": "5fefbb92-8b4f-4db0-8ed8-953edfe918d7",
+      "symbol": "COST",
+      "qty": 8,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f7-202611241330-PG-buy",
+      "id": "d6665ed9-34a3-4ac3-a9c8-13ad471c32a4",
+      "symbol": "PG",
+      "qty": 54,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0522,
+  "strategy": {
+    "name": "intraday_rsi_pullback",
+    "ref": "strategies/candidates/intraday_rsi_pullback.py",
+    "experiment_id": "pr106-5e828d9-intraday_rsi_pullback-r37268473093-1"
+  },
+  "signal_bar": "2026-11-24 13:30:00-05:00",
+  "hold_day": false,
+  "equity": 95039.26,
+  "targets": {
+    "PG": 0.1,
+    "KO": 0.1,
+    "COST": 0.1
+  },
+  "prices": {
+    "PG": 172.05,
+    "KO": 97.785,
+    "COST": 1087.95
+  }
+}

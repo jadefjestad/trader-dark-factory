@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-24T16:15:49+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 31,
+      "side": "buy"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 101,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 16,
+      "side": "buy"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 62,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611241100-AMZN-buy",
+      "id": "7be409b2-92d3-49a0-9172-9156c9ab7c69",
+      "symbol": "AMZN",
+      "qty": 37,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611241100-AVGO-buy",
+      "id": "ee56cad4-1879-4ee5-911d-3b601e9da8b8",
+      "symbol": "AVGO",
+      "qty": 31,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611241100-CSCO-buy",
+      "id": "560865bc-db2b-40e7-b62a-2c38c587bce1",
+      "symbol": "CSCO",
+      "qty": 101,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611241100-META-buy",
+      "id": "1626b808-42ab-42ce-a2c7-8afc428acf53",
+      "symbol": "META",
+      "qty": 16,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611241100-NVDA-buy",
+      "id": "49be06ff-7c4f-4282-b879-fe2404e35158",
+      "symbol": "NVDA",
+      "qty": 62,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0495,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-24 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 95857.42,
+  "targets": {
+    "NVDA": 0.1,
+    "AMZN": 0.1,
+    "META": 0.1,
+    "AVGO": 0.1,
+    "CSCO": 0.1
+  },
+  "prices": {
+    "NVDA": 150.97,
+    "AMZN": 250.99,
+    "META": 586.08,
+    "AVGO": 298.305,
+    "CSCO": 93.005
+  }
+}
