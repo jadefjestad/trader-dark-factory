@@ -1,0 +1,224 @@
+{
+  "started_at": "2026-11-24T15:10:13+00:00",
+  "fund": 1,
+  "fund_name": "\ud83d\udc80 Darth Trader",
+  "dry_run": false,
+  "status": "submitted 12 orders",
+  "orders": [
+    {
+      "symbol": "BAC",
+      "qty": 4,
+      "side": "sell"
+    },
+    {
+      "symbol": "CSCO",
+      "qty": 10,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 3,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "JNJ",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 4,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "XOM",
+      "qty": 4,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 2,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 3,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f1-20261124-45422287925-1-BAC-sell",
+      "id": "bc2071bd-16b3-477b-9554-7edde54f3026",
+      "symbol": "BAC",
+      "qty": 4,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261124-45422287925-1-CSCO-sell",
+      "id": "7c4fa3b0-4a1a-415d-9b82-b3f72cb37abf",
+      "symbol": "CSCO",
+      "qty": 10,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261124-45422287925-1-CVX-sell",
+      "id": "634f5fe5-9b0d-4847-b12b-0c1099b59774",
+      "symbol": "CVX",
+      "qty": 3,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261124-45422287925-1-GOOGL-sell",
+      "id": "cb734c00-4ac2-4f63-b80d-01eb29e6addf",
+      "symbol": "GOOGL",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261124-45422287925-1-JNJ-sell",
+      "id": "7384c6dc-2524-48f0-97de-ec85b620cfcb",
+      "symbol": "JNJ",
+      "qty": 2,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261124-45422287925-1-KO-sell",
+      "id": "e6e305d2-c514-427c-9f91-580015818c94",
+      "symbol": "KO",
+      "qty": 4,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261124-45422287925-1-META-sell",
+      "id": "3aa74155-0a10-4f7f-b8cf-9b4143f616db",
+      "symbol": "META",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261124-45422287925-1-MRK-sell",
+      "id": "b5789e72-490d-4fdb-bf18-9000447bea15",
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261124-45422287925-1-NVDA-sell",
+      "id": "81666de0-f63d-4f67-854d-239df8087695",
+      "symbol": "NVDA",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261124-45422287925-1-XOM-sell",
+      "id": "2369067e-5f96-4ee3-823e-e5138fb1c4ca",
+      "symbol": "XOM",
+      "qty": 4,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f1-20261124-45422287925-1-ADBE-buy",
+      "id": "ee12421b-abd6-4a91-befb-2dbf802db8a7",
+      "symbol": "ADBE",
+      "qty": 2,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f1-20261124-45422287925-1-UNH-buy",
+      "id": "f63bb684-d9bd-4d05-9f3e-d653d3d1b761",
+      "symbol": "UNH",
+      "qty": 3,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0067,
+  "strategy": {
+    "name": "invvolresid_lcrankwt",
+    "ref": "strategies/candidates/invvolresid_lcrankwt.py",
+    "experiment_id": "pr443-0639324-invvolresid_lcrankwt-r41208445960-1"
+  },
+  "champion": {
+    "name": "invvolresid_lcrankwt",
+    "ref": "strategies/candidates/invvolresid_lcrankwt.py",
+    "experiment_id": "pr443-0639324-invvolresid_lcrankwt-r41208445960-1"
+  },
+  "signal_bar": "2026-11-23",
+  "hold_day": false,
+  "equity": 103202.09,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.0,
+    "MSFT": 0.0,
+    "NVDA": 0.004667881770393975,
+    "AMZN": 0.0,
+    "GOOGL": 0.004667881770393975,
+    "META": 0.0,
+    "AVGO": 0.0,
+    "JPM": 0.0,
+    "V": 0.0,
+    "MA": 0.0,
+    "UNH": 0.010149840510008756,
+    "LLY": 0.0,
+    "JNJ": 0.007749438271301586,
+    "MRK": 0.0065125005896591774,
+    "XOM": 0.011679183351272713,
+    "CVX": 0.012428678822489863,
+    "PG": 0.0,
+    "KO": 0.010867615614425168,
+    "PEP": 0.0,
+    "COST": 0.0,
+    "WMT": 0.0,
+    "HD": 0.0,
+    "BAC": 0.004667881770393975,
+    "ADBE": 0.004667881770393975,
+    "CSCO": 0.005043941738786656
+  },
+  "prices": {
+    "AAPL": 352.38,
+    "MSFT": 492.115,
+    "NVDA": 153.71,
+    "AMZN": 254.475,
+    "GOOGL": 280.33,
+    "META": 596.33,
+    "AVGO": 304.16,
+    "JPM": 318.42,
+    "V": 416.165,
+    "MA": 647.58,
+    "UNH": 340.13,
+    "LLY": 1407.195,
+    "JNJ": 273.85,
+    "MRK": 138.02,
+    "XOM": 158.705,
+    "CVX": 209.72,
+    "PG": 171.995,
+    "KO": 97.4,
+    "PEP": 142.38,
+    "COST": 1090.965,
+    "WMT": 131.89,
+    "HD": 349.39,
+    "BAC": 48.77,
+    "ADBE": 232.41,
+    "CSCO": 94.52
+  }
+}

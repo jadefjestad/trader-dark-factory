@@ -1,0 +1,123 @@
+{
+  "started_at": "2026-11-24T15:10:49+00:00",
+  "fund": 4,
+  "fund_name": "\ud83d\udef9 Marty McBuy",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "GOOGL",
+      "qty": 31,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 88,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 25,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f4-20261124-45422287925-1-GOOGL-sell",
+      "id": "2c6f7370-2efc-4b9c-9f7d-8e731733843e",
+      "symbol": "GOOGL",
+      "qty": 31,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f4-20261124-45422287925-1-LLY-sell",
+      "id": "dd5d66e9-7823-4b12-9c45-a206eaf6a86e",
+      "symbol": "LLY",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f4-20261124-45422287925-1-KO-buy",
+      "id": "42d63d8e-6108-4c4c-8da4-1c1d10be0734",
+      "symbol": "KO",
+      "qty": 88,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f4-20261124-45422287925-1-UNH-buy",
+      "id": "9ef6cdec-d1f9-4c72-8608-c1a174c6afde",
+      "symbol": "UNH",
+      "qty": 25,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0406,
+  "strategy": {
+    "name": "vol_target_momentum_10",
+    "ref": "strategies/candidates/vol_target_momentum_10.py",
+    "experiment_id": "pr19-6b2e162-vol_target_momentum_10-r37182506562-1"
+  },
+  "signal_bar": "2026-11-23",
+  "hold_day": true,
+  "equity": 99891.48,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.08799779458232973,
+    "MSFT": 0.0,
+    "NVDA": 0.0,
+    "AMZN": 0.0,
+    "GOOGL": 0.0,
+    "META": 0.0,
+    "AVGO": 0.0,
+    "JPM": 0.0,
+    "V": 0.0,
+    "MA": 0.0,
+    "UNH": 0.08799779458232973,
+    "LLY": 0.0,
+    "JNJ": 0.08799779458232973,
+    "MRK": 0.08799779458232973,
+    "XOM": 0.08799779458232973,
+    "CVX": 0.08799779458232973,
+    "PG": 0.0,
+    "KO": 0.08799779458232973,
+    "PEP": 0.0,
+    "COST": 0.0,
+    "WMT": 0.0,
+    "HD": 0.0,
+    "BAC": 0.0,
+    "ADBE": 0.0,
+    "CSCO": 0.08799779458232973
+  },
+  "prices": {
+    "AAPL": 352.51,
+    "MSFT": 492.23,
+    "NVDA": 153.76,
+    "AMZN": 254.52,
+    "GOOGL": 280.33,
+    "META": 596.33,
+    "AVGO": 303.89,
+    "JPM": 318.42,
+    "V": 416.13,
+    "MA": 647.44,
+    "UNH": 339.8,
+    "LLY": 1407.82,
+    "JNJ": 273.85,
+    "MRK": 138.02,
+    "XOM": 158.74,
+    "CVX": 209.72,
+    "PG": 171.99,
+    "KO": 97.385,
+    "PEP": 142.4,
+    "COST": 1091.22,
+    "WMT": 131.92,
+    "HD": 349.39,
+    "BAC": 48.755,
+    "ADBE": 232.41,
+    "CSCO": 94.44
+  }
+}

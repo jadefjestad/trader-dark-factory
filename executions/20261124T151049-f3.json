@@ -1,0 +1,135 @@
+{
+  "started_at": "2026-11-24T15:10:47+00:00",
+  "fund": 3,
+  "fund_name": "\ud83d\udd96 Live Long and Profit",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "HD",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 79,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 95,
+      "side": "sell"
+    },
+    {
+      "symbol": "ADBE",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "AVGO",
+      "qty": 3,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f3-20261124-45422287925-1-HD-sell",
+      "id": "a31367e2-f42b-4c49-add9-e5394e000f73",
+      "symbol": "HD",
+      "qty": 35,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261124-45422287925-1-NVDA-sell",
+      "id": "a5d654fa-a664-4bbd-a27c-80af52e9d2a7",
+      "symbol": "NVDA",
+      "qty": 79,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261124-45422287925-1-WMT-sell",
+      "id": "9ea6983a-5345-4e75-a931-85b7275cc15e",
+      "symbol": "WMT",
+      "qty": 95,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f3-20261124-45422287925-1-ADBE-buy",
+      "id": "f98cf82e-e7c1-41b5-b68a-451271defaf8",
+      "symbol": "ADBE",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f3-20261124-45422287925-1-AVGO-buy",
+      "id": "38254834-86d4-4050-b187-dc1f1031ee78",
+      "symbol": "AVGO",
+      "qty": 3,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0516,
+  "strategy": {
+    "name": "earnings_announcement_premium",
+    "ref": "strategies/candidates/earnings_announcement_premium.py",
+    "experiment_id": "pr87-6530167-earnings_announcement_premium-r37243169062-1"
+  },
+  "signal_bar": "2026-11-23",
+  "hold_day": false,
+  "equity": 99130.64,
+  "data_source": "alpaca:sip",
+  "targets": {
+    "AAPL": 0.0,
+    "MSFT": 0.0,
+    "NVDA": 0.0,
+    "AMZN": 0.0,
+    "GOOGL": 0.0,
+    "META": 0.0,
+    "AVGO": 0.125,
+    "JPM": 0.0,
+    "V": 0.0,
+    "MA": 0.0,
+    "UNH": 0.0,
+    "LLY": 0.0,
+    "JNJ": 0.0,
+    "MRK": 0.0,
+    "XOM": 0.0,
+    "CVX": 0.0,
+    "PG": 0.0,
+    "KO": 0.0,
+    "PEP": 0.0,
+    "COST": 0.0,
+    "WMT": 0.0,
+    "HD": 0.0,
+    "BAC": 0.0,
+    "ADBE": 0.125,
+    "CSCO": 0.0
+  },
+  "prices": {
+    "AAPL": 352.51,
+    "MSFT": 492.23,
+    "NVDA": 153.75,
+    "AMZN": 254.46,
+    "GOOGL": 280.33,
+    "META": 596.33,
+    "AVGO": 304.03,
+    "JPM": 318.42,
+    "V": 416.13,
+    "MA": 647.44,
+    "UNH": 339.8,
+    "LLY": 1407.82,
+    "JNJ": 273.85,
+    "MRK": 138.02,
+    "XOM": 158.74,
+    "CVX": 209.72,
+    "PG": 171.99,
+    "KO": 97.385,
+    "PEP": 142.4,
+    "COST": 1091.22,
+    "WMT": 131.9,
+    "HD": 349.39,
+    "BAC": 48.77,
+    "ADBE": 232.41,
+    "CSCO": 94.49
+  }
+}
