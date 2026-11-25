@@ -1,0 +1,82 @@
+{
+  "started_at": "2026-11-25T17:00:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 19,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611251145-AAPL-sell",
+      "id": "a06166cf-4ec4-4a9a-82fc-3b00e889a40c",
+      "symbol": "AAPL",
+      "qty": 26,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611251145-AMZN-sell",
+      "id": "da05bdc6-9833-4546-a2d2-718d3cb23741",
+      "symbol": "AMZN",
+      "qty": 39,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611251145-MSFT-sell",
+      "id": "94fa9169-510c-4764-846b-805b5253cfc2",
+      "symbol": "MSFT",
+      "qty": 19,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611251145-LLY-buy",
+      "id": "41e77f3a-67bc-4080-b934-ffe8e77fb3cf",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0559,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-25 11:45:00-05:00",
+  "hold_day": false,
+  "equity": 94986.23,
+  "targets": {
+    "NVDA": 0.1,
+    "LLY": 0.1,
+    "MRK": 0.1
+  },
+  "prices": {
+    "AAPL": 349.02,
+    "MSFT": 482.62,
+    "NVDA": 142.215,
+    "AMZN": 240.155,
+    "LLY": 1376.62,
+    "MRK": 138.49
+  }
+}

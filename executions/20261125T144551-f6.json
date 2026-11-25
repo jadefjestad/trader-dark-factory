@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-11-25T14:45:50+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "COST",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "symbol": "KO",
+      "qty": 96,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 66,
+      "side": "sell"
+    },
+    {
+      "symbol": "PG",
+      "qty": 54,
+      "side": "sell"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 71,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611250930-COST-sell",
+      "id": "b19be22d-5d73-4a9c-a477-6353050a0785",
+      "symbol": "COST",
+      "qty": 8,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611250930-KO-sell",
+      "id": "6379335c-a6c8-452e-9d86-c75dfc462259",
+      "symbol": "KO",
+      "qty": 96,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611250930-PEP-sell",
+      "id": "5f703d57-5110-49de-a3aa-1cf7d78cb93e",
+      "symbol": "PEP",
+      "qty": 66,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611250930-PG-sell",
+      "id": "258cd1d4-18c1-4552-b87d-d41b936c7bf4",
+      "symbol": "PG",
+      "qty": 54,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611250930-WMT-sell",
+      "id": "6673fd46-3172-4775-b1d6-a3bec7f2d2e0",
+      "symbol": "WMT",
+      "qty": 71,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0426,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-25 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 96553.03,
+  "targets": {},
+  "prices": {
+    "PG": 173.11,
+    "KO": 97.9,
+    "PEP": 144.09,
+    "COST": 1089.83,
+    "WMT": 132.27
+  }
+}

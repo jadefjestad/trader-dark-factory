@@ -1,0 +1,89 @@
+{
+  "started_at": "2026-11-25T14:45:53+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 40,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 66,
+      "side": "sell"
+    },
+    {
+      "symbol": "PEP",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611250930-ADBE-sell",
+      "id": "d1a563ba-882b-4822-87b6-109570555d1e",
+      "symbol": "ADBE",
+      "qty": 40,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611250930-MRK-sell",
+      "id": "89df3028-69a2-488c-b1ce-86ef577beaa3",
+      "symbol": "MRK",
+      "qty": 66,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611250930-PEP-sell",
+      "id": "146ee67e-1cde-4f16-872f-7736447d62e9",
+      "symbol": "PEP",
+      "qty": 65,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611250930-UNH-sell",
+      "id": "9dcbb178-0018-4bcc-ae27-bf898c7f8db5",
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611250930-V-sell",
+      "id": "84477a25-a0d5-4a79-b2cd-9d60b83ee45d",
+      "symbol": "V",
+      "qty": 22,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0527,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-25 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 94831.16,
+  "targets": {},
+  "prices": {
+    "V": 414.3,
+    "UNH": 335.05,
+    "MRK": 140.05,
+    "PEP": 144.09,
+    "ADBE": 228.14
+  }
+}

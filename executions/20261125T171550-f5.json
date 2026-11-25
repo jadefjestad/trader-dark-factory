@@ -1,0 +1,65 @@
+{
+  "started_at": "2026-11-25T17:15:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 65,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611251200-LLY-sell",
+      "id": "4c7d3e8b-3449-472a-886f-bb412eeec13d",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611251200-MRK-sell",
+      "id": "b0568f44-e7bf-4264-87fd-d2eb2130115a",
+      "symbol": "MRK",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f5-202611251200-NVDA-sell",
+      "id": "aa7675c1-a102-4b24-ab4b-c2a9e5198049",
+      "symbol": "NVDA",
+      "qty": 65,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0527,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-25 12:00:00-05:00",
+  "hold_day": false,
+  "equity": 95312.17,
+  "targets": {
+    "MRK": 0.1
+  },
+  "prices": {
+    "NVDA": 144.85,
+    "LLY": 1387.77,
+    "MRK": 139.5
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "started_at": "2026-11-25T17:00:57+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 2 orders",
+  "orders": [
+    {
+      "symbol": "META",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611251145-META-sell",
+      "id": "933996c3-bf33-4c88-909e-ae9d8e9c9cbb",
+      "symbol": "META",
+      "qty": 1,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611251145-UNH-buy",
+      "id": "74f66009-7a1e-435a-bfce-36df7bb158ee",
+      "symbol": "UNH",
+      "qty": 1,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0538,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-25 11:45:00-05:00",
+  "hold_day": false,
+  "equity": 94725.49,
+  "targets": {
+    "META": 0.1,
+    "MA": 0.1,
+    "UNH": 0.1,
+    "PG": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "META": 586.44,
+    "MA": 649.99,
+    "UNH": 343.02,
+    "PG": 173.675,
+    "HD": 357.53
+  }
+}

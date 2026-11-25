@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-11-25T17:15:52+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "UNH",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611251200-UNH-sell",
+      "id": "d982dea5-97b8-4e41-8a5f-7505a9eba05d",
+      "symbol": "UNH",
+      "qty": 1,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0503,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-25 12:00:00-05:00",
+  "hold_day": false,
+  "equity": 95078.89,
+  "targets": {
+    "META": 0.1,
+    "MA": 0.1,
+    "UNH": 0.1,
+    "PG": 0.1,
+    "HD": 0.1
+  },
+  "prices": {
+    "META": 595.68,
+    "MA": 653.73,
+    "UNH": 345.86,
+    "PG": 174.07,
+    "HD": 360.37
+  }
+}

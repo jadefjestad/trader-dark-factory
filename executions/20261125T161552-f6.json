@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-25T16:15:50+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "symbol": "JPM",
+      "qty": 30,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "buy"
+    },
+    {
+      "symbol": "WMT",
+      "qty": 71,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611251100-AAPL-buy",
+      "id": "2d2f153c-193b-4ca8-9325-3c7b35b4a37a",
+      "symbol": "AAPL",
+      "qty": 27,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611251100-JPM-buy",
+      "id": "fc146bb9-e40c-4776-93a1-764dc05f0860",
+      "symbol": "JPM",
+      "qty": 30,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611251100-LLY-buy",
+      "id": "183364f3-e67a-4505-8830-6cc4fa1b4a99",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611251100-MRK-buy",
+      "id": "2b830783-e7f4-4174-b211-4545ade62005",
+      "symbol": "MRK",
+      "qty": 68,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611251100-WMT-buy",
+      "id": "9bf4fb18-0995-4478-a633-261b4fb9d27f",
+      "symbol": "WMT",
+      "qty": 71,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0428,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-25 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 96537.69,
+  "targets": {
+    "AAPL": 0.1,
+    "JPM": 0.1,
+    "LLY": 0.1,
+    "MRK": 0.1,
+    "WMT": 0.1
+  },
+  "prices": {
+    "AAPL": 346.48,
+    "JPM": 311.115,
+    "LLY": 1372.04,
+    "MRK": 138.655,
+    "WMT": 131.97
+  }
+}

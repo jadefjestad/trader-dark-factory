@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-25T15:15:52+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "ADBE",
+      "qty": 39,
+      "side": "buy"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 43,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 16,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611251000-ADBE-buy",
+      "id": "23df7386-b1e2-42b7-8b43-f1d4a54310ca",
+      "symbol": "ADBE",
+      "qty": 39,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611251000-CVX-buy",
+      "id": "d2725b8b-3a50-45db-841e-a957e567fa25",
+      "symbol": "CVX",
+      "qty": 43,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611251000-GOOGL-buy",
+      "id": "50ca8e49-2d56-4b15-a159-8bcf960aedaa",
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611251000-META-buy",
+      "id": "a497dbc3-2df7-452e-98f6-fda71ebb1803",
+      "symbol": "META",
+      "qty": 16,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611251000-UNH-buy",
+      "id": "b9d622cb-12bf-460a-8f6c-5385bb6c6fc1",
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0529,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-25 10:00:00-05:00",
+  "hold_day": false,
+  "equity": 94813.53,
+  "targets": {
+    "GOOGL": 0.1,
+    "META": 0.1,
+    "UNH": 0.1,
+    "CVX": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "GOOGL": 267.525,
+    "META": 578.17,
+    "UNH": 340.895,
+    "CVX": 211.35,
+    "ADBE": 232.86
+  }
+}

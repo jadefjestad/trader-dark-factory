@@ -1,0 +1,83 @@
+{
+  "started_at": "2026-11-25T15:30:53+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 4 orders",
+  "orders": [
+    {
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "symbol": "META",
+      "qty": 16,
+      "side": "sell"
+    },
+    {
+      "symbol": "CVX",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "symbol": "HD",
+      "qty": 25,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611251015-GOOGL-sell",
+      "id": "66cdded7-aace-4486-be58-2beada5d532a",
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611251015-META-sell",
+      "id": "26d3eb15-5b08-4772-b716-8748c1a640d4",
+      "symbol": "META",
+      "qty": 16,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611251015-CVX-buy",
+      "id": "b74eec62-ac7f-4908-8467-077c93a4980c",
+      "symbol": "CVX",
+      "qty": 1,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611251015-HD-buy",
+      "id": "47cc5ea0-507d-4b56-abf8-e8046379c4d6",
+      "symbol": "HD",
+      "qty": 25,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0549,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-25 10:15:00-05:00",
+  "hold_day": false,
+  "equity": 94610.44,
+  "targets": {
+    "UNH": 0.1,
+    "CVX": 0.1,
+    "HD": 0.1,
+    "ADBE": 0.1
+  },
+  "prices": {
+    "GOOGL": 265.85,
+    "META": 574.39,
+    "UNH": 340.06,
+    "CVX": 210.57,
+    "HD": 356.69,
+    "ADBE": 231.89
+  }
+}
