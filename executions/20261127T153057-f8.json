@@ -1,0 +1,68 @@
+{
+  "started_at": "2026-11-27T15:30:53+00:00",
+  "fund": 8,
+  "fund_name": "\ud83d\udc3a Jon Dough",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 3 orders",
+  "orders": [
+    {
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "symbol": "META",
+      "qty": 14,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f8-202611271015-AVGO-sell",
+      "id": "3d8f1a9a-c2ee-49aa-a908-7843b04b37df",
+      "symbol": "AVGO",
+      "qty": 30,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f8-202611271015-MA-buy",
+      "id": "383b54ef-4f72-4295-b551-e4a79b9c48bb",
+      "symbol": "MA",
+      "qty": 14,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f8-202611271015-META-buy",
+      "id": "7d31a790-2304-40aa-88e2-20ed3ba19b64",
+      "symbol": "META",
+      "qty": 14,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.0439,
+  "strategy": {
+    "name": "intraday_vwap_trend",
+    "ref": "strategies/candidates/intraday_vwap_trend.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_trend-r37268473093-1"
+  },
+  "signal_bar": "2026-11-27 10:15:00-05:00",
+  "hold_day": false,
+  "equity": 95713.97,
+  "targets": {
+    "META": 0.1,
+    "V": 0.1,
+    "MA": 0.1
+  },
+  "prices": {
+    "META": 631.66,
+    "AVGO": 308.33,
+    "V": 431.13,
+    "MA": 667.45
+  }
+}

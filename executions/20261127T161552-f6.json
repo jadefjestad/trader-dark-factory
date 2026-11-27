@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-27T16:15:50+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "buy"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 19,
+      "side": "buy"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "buy"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611271100-CVX-buy",
+      "id": "a612e222-7f99-4f40-b778-7093101139a3",
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611271100-GOOGL-buy",
+      "id": "39075842-9e12-4a2e-a8c2-4c4be305bf52",
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611271100-LLY-buy",
+      "id": "58c4e206-373d-4b06-a287-0691f3c1a3ee",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611271100-MSFT-buy",
+      "id": "dcabbd76-b027-46e7-b2a3-b18302eaec0d",
+      "symbol": "MSFT",
+      "qty": 19,
+      "side": "buy"
+    },
+    {
+      "client_order_id": "tdf-f6-202611271100-UNH-buy",
+      "id": "a9dbb98c-a9e1-4e9c-a803-960d47d180dd",
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "buy"
+    }
+  ],
+  "drawdown": 0.037,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "signal_bar": "2026-11-27 11:00:00-05:00",
+  "hold_day": false,
+  "equity": 97116.79,
+  "targets": {
+    "MSFT": 0.1,
+    "GOOGL": 0.1,
+    "UNH": 0.1,
+    "LLY": 0.1,
+    "CVX": 0.1
+  },
+  "prices": {
+    "MSFT": 489.04,
+    "GOOGL": 272.055,
+    "UNH": 351.38,
+    "LLY": 1389.43,
+    "CVX": 213.6
+  }
+}

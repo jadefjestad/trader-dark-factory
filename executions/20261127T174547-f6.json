@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-11-27T17:45:46+00:00",
+  "fund": 6,
+  "fund_name": "\ud83e\uddd9 Wizard of Odds",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 5 orders",
+  "orders": [
+    {
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "sell"
+    },
+    {
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 19,
+      "side": "sell"
+    },
+    {
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f6-202611271245-CVX-sell",
+      "id": "c41eee60-ec89-46ae-99c5-4242d51744d8",
+      "symbol": "CVX",
+      "qty": 44,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611271245-GOOGL-sell",
+      "id": "f2517b52-6038-4b2d-988a-eb3241dacd55",
+      "symbol": "GOOGL",
+      "qty": 34,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611271245-LLY-sell",
+      "id": "84728e12-2b31-48ee-bc02-a0bda1a0e586",
+      "symbol": "LLY",
+      "qty": 6,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611271245-MSFT-sell",
+      "id": "a5e599c6-35ff-45cf-82cd-b874183f8d17",
+      "symbol": "MSFT",
+      "qty": 19,
+      "side": "sell"
+    },
+    {
+      "client_order_id": "tdf-f6-202611271245-UNH-sell",
+      "id": "65167618-496a-4c43-ab99-34140cf50a1a",
+      "symbol": "UNH",
+      "qty": 27,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0362,
+  "strategy": {
+    "name": "intraday_hourly_reversal",
+    "ref": "strategies/candidates/intraday_hourly_reversal.py",
+    "experiment_id": "pr106-5e828d9-intraday_hourly_reversal-r37268473093-1"
+  },
+  "note": "flat: end of session",
+  "signal_bar": null,
+  "hold_day": false,
+  "equity": 97200.51,
+  "targets": {},
+  "prices": {
+    "MSFT": 491.245,
+    "GOOGL": 273.03,
+    "UNH": 351.43,
+    "LLY": 1392.815,
+    "CVX": 213.195
+  }
+}

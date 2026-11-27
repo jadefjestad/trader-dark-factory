@@ -1,0 +1,37 @@
+{
+  "started_at": "2026-11-27T14:45:45+00:00",
+  "fund": 5,
+  "fund_name": "\ud83d\udd70\ufe0f Back to the Futures",
+  "kind": "intraday",
+  "dry_run": false,
+  "status": "submitted 1 orders",
+  "orders": [
+    {
+      "symbol": "WMT",
+      "qty": 70,
+      "side": "sell"
+    }
+  ],
+  "submitted": [
+    {
+      "client_order_id": "tdf-f5-202611270930-WMT-sell",
+      "id": "c2c7d0fa-a045-4834-9315-d4f89c8e86a4",
+      "symbol": "WMT",
+      "qty": 70,
+      "side": "sell"
+    }
+  ],
+  "drawdown": 0.0518,
+  "strategy": {
+    "name": "intraday_vwap_reversion",
+    "ref": "strategies/candidates/intraday_vwap_reversion.py",
+    "experiment_id": "pr106-5e828d9-intraday_vwap_reversion-r37268473093-1"
+  },
+  "signal_bar": "2026-11-27 09:30:00-05:00",
+  "hold_day": false,
+  "equity": 95399.99,
+  "targets": {},
+  "prices": {
+    "WMT": 132.115
+  }
+}
